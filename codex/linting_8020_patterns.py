@@ -9,6 +9,7 @@ Based on analysis of successful projects like Django, FastAPI, and Pandas.
 """
 
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Any
 
 

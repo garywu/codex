@@ -100,11 +100,17 @@ class Pattern(BaseModel):
     rationale: str = Field("", description="Why this pattern matters")
 
     # Detection and fixing
-    detection: PatternDetection = Field(default_factory=PatternDetection)
-    fix: PatternFix = Field(default_factory=PatternFix)
+    detection: PatternDetection = Field(
+        default_factory=lambda: PatternDetection(regex=None, ast_pattern=None, keywords=[], confidence=0.9)
+    )
+    fix: PatternFix = Field(
+        default_factory=lambda: PatternFix(
+            template=None, complexity="medium", auto_fixable=False, suggestions=[], prerequisites=[]
+        )
+    )
 
     # Examples
-    examples: PatternExample = Field(default_factory=PatternExample)
+    examples: PatternExample = Field(default_factory=lambda: PatternExample(good=None, bad=None, context=None))
 
     # Metadata
     source: str = Field(default="project-init", description="Pattern source")
@@ -221,8 +227,8 @@ class ScanResult(BaseModel):
 
     def get_summary(self) -> dict[str, Any]:
         """Get scan summary."""
-        violations_by_priority = {}
-        violations_by_category = {}
+        violations_by_priority: dict[str, int] = {}
+        violations_by_category: dict[str, int] = {}
 
         for violation in self.violations:
             # By priority
@@ -269,14 +275,20 @@ class PatternImport(BaseModel):
                     rule=pattern_data.get("rule", pattern_data.get("description", "")),
                     rationale=pattern_data.get("why", ""),
                     detection=PatternDetection(
-                        regex=pattern_data.get("detect"), confidence=pattern_data.get("confidence", 0.9)
+                        regex=pattern_data.get("detect"),
+                        ast_pattern=pattern_data.get("ast_pattern"),
+                        confidence=pattern_data.get("confidence", 0.9),
                     ),
                     fix=PatternFix(
                         template=pattern_data.get("fix"),
                         auto_fixable=bool(pattern_data.get("auto_fixable", False)),
                         complexity=self._map_complexity(pattern_data.get("fix_complexity", "medium")),
                     ),
-                    examples=PatternExample(good=pattern_data.get("good_example"), bad=pattern_data.get("bad_example")),
+                    examples=PatternExample(
+                        good=pattern_data.get("good_example"),
+                        bad=pattern_data.get("bad_example"),
+                        context=pattern_data.get("context"),
+                    ),
                     source=pattern_data.get("source", self.source),
                     tags=self._extract_tags(pattern_data),
                     ai_explanation=pattern_data.get("ai_explanation"),

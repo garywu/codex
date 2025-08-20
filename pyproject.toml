@@ -160,11 +160,17 @@ module = [
     "codex.cli",
     "codex.tools",
     "codex.portable_tools",
-    "codex.fix_*",
-    "codex.scan_*",
-    "codex.interactive_*",
-    "codex.batch_*",
-    "codex.violation_*",
+    "codex.fix_audit_trail",
+    "codex.fix_orchestrator",
+    "codex.fix_context_analyzer",
+    "codex.safe_fixer",
+    "codex.scan_cli",
+    "codex.scan_discovery",
+    "codex.scan_registry",
+    "codex.scanner",
+    "codex.interactive_fixer",
+    "codex.batch_fixer",
+    "codex.violation_analysis",
 ]
 ignore_errors = true
 

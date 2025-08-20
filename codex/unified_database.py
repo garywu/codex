@@ -7,8 +7,8 @@ Single database instance with all tables including FTS5 for AI queries.
 import json
 import logging
 import sqlite3
-import sys
 from contextlib import contextmanager
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
@@ -175,10 +175,10 @@ class UnifiedDatabase:
                 )
             """)
 
-            logging.info("✅ FTS5 tables initialized", file=sys.stderr)
+            logging.info("✅ FTS5 tables initialized")
 
         except sqlite3.OperationalError:
-            logging.info("⚠️  FTS5 not available - full-text search disabled", file=sys.stderr)
+            logging.info("⚠️  FTS5 not available - full-text search disabled")
 
     @contextmanager
     def get_connection(self):
@@ -197,8 +197,6 @@ class UnifiedDatabase:
         with self.get_connection() as conn:
             # Check if pattern exists
             existing = conn.execute("SELECT id FROM patterns WHERE name = ?", (pattern.name,)).fetchone()
-
-            pattern_dict = pattern.to_dict()
 
             if existing:
                 # Update existing pattern
@@ -302,6 +300,13 @@ class UnifiedDatabase:
                 return self._row_to_pattern(dict(row))
             return None
 
+    def get_patterns_by_category(self, category: str) -> list[Pattern]:
+        """Get patterns by category."""
+        with self.get_connection() as conn:
+            rows = conn.execute("SELECT * FROM patterns WHERE category = ? AND enabled = 1", (category,)).fetchall()
+
+            return [self._row_to_pattern(dict(row)) for row in rows]
+
     def get_all_patterns(self, enabled_only: bool = True) -> list[Pattern]:
         """Get all patterns from the database."""
         with self.get_connection() as conn:
@@ -385,8 +390,8 @@ class UnifiedDatabase:
             usage_count=row.get("usage_count", 0),
             success_rate=row.get("success_rate", 1.0),
             last_used=row.get("last_used"),
-            created_at=row.get("created_at"),
-            updated_at=row.get("updated_at"),
+            created_at=row.get("created_at") or datetime.utcnow(),
+            updated_at=row.get("updated_at") or datetime.utcnow(),
         )
 
     # ========== Scan Operations ==========
@@ -675,6 +680,11 @@ class UnifiedDatabase:
                 (min_votes, confidence_threshold, pattern_name),
             )
             conn.commit()
+
+    def close(self) -> None:
+        """Close database connection (no-op for context manager pattern)."""
+        # We use context managers for connections, so nothing to close
+        pass
 
 
 # Global database instance

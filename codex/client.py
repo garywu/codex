@@ -29,7 +29,7 @@ class CodexClient:
         farm_url: str = "http://localhost:8001",
     ):
         """Initialize Codex client."""
-        self.db = Database(db_path)
+        self.db = Database(Path(db_path) if db_path else None)
         self.farm_url = farm_url
         self.farm_client: FarmClient | None = None
         self.trained_agents: dict[str, str] = {}
@@ -60,7 +60,7 @@ class CodexClient:
             )
 
             # Get all patterns from database
-            patterns = await self.db.get_all_patterns()
+            patterns = self.db.get_all_patterns()
 
             # Initialize result
             result = AnalysisResult(
@@ -81,7 +81,17 @@ class CodexClient:
                         result.applied_patterns.append(pattern.name)
                     else:
                         result.violations.append(match)
-                        result.score *= 1 - match.priority.value / 10
+                        # Map priority to numeric value
+                        priority_scores = {
+                            "MANDATORY": 10,
+                            "CRITICAL": 8,
+                            "HIGH": 6,
+                            "MEDIUM": 4,
+                            "LOW": 2,
+                            "OPTIONAL": 1,
+                        }
+                        priority_value = priority_scores.get(match.priority.value, 4)
+                        result.score *= 1 - priority_value / 10
                 elif pattern.priority in ["MANDATORY", "CRITICAL"]:
                     result.missing_patterns.append(pattern.name)
                     result.score *= 0.9
@@ -196,7 +206,7 @@ class CodexClient:
             self.farm_client = FarmClient(self.farm_url)
 
         # Get patterns from category
-        patterns = await self.db.get_patterns_by_category(category)
+        patterns = self.db.get_patterns_by_category(category)
 
         if not patterns:
             raise FarmAgentError(name, f"No patterns found for category {category}")
@@ -251,7 +261,7 @@ class CodexClient:
         """Generate project from CookieCutter template."""
         try:
             # Add Codex patterns to context
-            patterns = await self.db.get_all_patterns()
+            patterns = self.db.get_all_patterns()
             context["codex_patterns"] = [p.name for p in patterns[:10]]
 
             project_path = cookiecutter(
@@ -283,4 +293,4 @@ class CodexClient:
 
     async def close(self) -> None:
         """Close connections."""
-        await self.db.close()
+        self.db.close()
