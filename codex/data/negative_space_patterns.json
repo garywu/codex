@@ -1,0 +1,277 @@
+[
+  {
+    "name": "core-package-separation",
+    "category": "architecture_excellence",
+    "priority": "HIGH",
+    "description": "Projects with core/ packages consistently avoid business logic in CLI violations",
+    "negative_space_analysis": {
+      "problems_prevented": ["core_business_logic_separation", "cli_as_thin_layer"],
+      "clean_projects": ["farm", "hepha"],
+      "problematic_projects": ["allm", "codex"],
+      "avoidance_rate": 0.6
+    },
+    "detection": {
+      "structural_indicators": [
+        "has_core_package",
+        "has_api_package", 
+        "has_cli_package"
+      ],
+      "protective_patterns": [
+        "core/.*\\.py$ contains business logic",
+        "cli/.*\\.py$ only contains user interface",
+        "api/.*\\.py$ only contains endpoints"
+      ]
+    },
+    "implementation_guide": {
+      "steps": [
+        "Create core/ package for all business logic",
+        "Move CLI to cli/ package with only user interaction",
+        "Separate API endpoints in api/ package",
+        "Ensure clean imports: cli → api → core"
+      ],
+      "benefits": [
+        "Prevents business logic in CLI",
+        "Enables multiple interface types",
+        "Improves testability",
+        "Clear separation of concerns"
+      ]
+    },
+    "validation_patterns": {
+      "good_indicators": [
+        "from core import.*",
+        "def main\\(\\).*api\\.",
+        "typer\\.run\\(.*api"
+      ],
+      "violation_indicators": [
+        "cli/.*class.*Service",
+        "cli/.*def.*process_",
+        "cli/.*database.*session"
+      ]
+    },
+    "examples": {
+      "good": "cli/main.py calls api.create_user() which calls core.UserService.create()",
+      "bad": "cli/main.py contains UserService class and database operations"
+    },
+    "tags": ["architecture", "separation_of_concerns", "negative_space", "evidence_based"]
+  },
+  {
+    "name": "settings-consolidation-excellence",
+    "category": "configuration_excellence", 
+    "priority": "MANDATORY",
+    "description": "Projects with unified Pydantic settings avoid configuration chaos and hardcoded secrets",
+    "negative_space_analysis": {
+      "problems_prevented": ["settings_consolidation", "hardcoded_secrets"],
+      "clean_projects": ["farm", "fust"],
+      "problematic_projects": ["allm", "codex", "hermes"],
+      "avoidance_rate": 0.4
+    },
+    "detection": {
+      "structural_indicators": [
+        "has_settings_file",
+        "uses_pydantic_basesettings",
+        "environment_variable_integration"
+      ],
+      "protective_patterns": [
+        "class.*Settings\\(BaseSettings\\)",
+        "Field\\(.*env=",
+        "os\\.environ\\.get\\("
+      ]
+    },
+    "implementation_guide": {
+      "steps": [
+        "Create single settings.py with Pydantic BaseSettings",
+        "Use environment variables for all configuration",
+        "Import settings in one place, pass as dependency",
+        "Never hardcode secrets or configuration values"
+      ],
+      "benefits": [
+        "Single source of truth for configuration",
+        "Type-safe configuration with validation",
+        "Environment-specific overrides",
+        "No hardcoded secrets"
+      ]
+    },
+    "validation_patterns": {
+      "good_indicators": [
+        "class.*Settings\\(BaseSettings\\)",
+        "settings\\.database_url",
+        "Field\\(.*description="
+      ],
+      "violation_indicators": [
+        "os\\.environ\\.get\\([^)]*,\\s*['\"][^'\"]*['\"]\\)",
+        "['\"]password['\"]\\s*:\\s*['\"]",
+        "DATABASE_URL\\s*=\\s*['\"]"
+      ]
+    },
+    "examples": {
+      "good": "settings = Settings() # Loads from environment",
+      "bad": "DATABASE_URL = 'postgresql://user:pass@localhost/db'"
+    },
+    "tags": ["configuration", "security", "pydantic", "negative_space"]
+  },
+  {
+    "name": "package-depth-optimization",
+    "category": "organization_excellence",
+    "priority": "MEDIUM", 
+    "description": "Projects with 2-4 package depth avoid complexity and naming redundancy",
+    "negative_space_analysis": {
+      "problems_prevented": ["redundant_package_naming", "package_based_architecture"],
+      "clean_projects": ["circle", "psi"],
+      "problematic_projects": ["heimdall", "hermes"],
+      "avoidance_rate": 0.3
+    },
+    "detection": {
+      "structural_indicators": [
+        "optimal_package_depth",
+        "clear_hierarchy",
+        "minimal_redundancy"
+      ],
+      "protective_patterns": [
+        "2-4 levels of __init__.py nesting",
+        "No package name repetition in modules",
+        "Clear functional grouping"
+      ]
+    },
+    "implementation_guide": {
+      "steps": [
+        "Organize packages by function, not implementation",
+        "Keep nesting to 2-4 levels maximum",
+        "Avoid repeating package names in module names",
+        "Use clear, non-redundant naming"
+      ],
+      "benefits": [
+        "Reduces cognitive load",
+        "Cleaner imports",
+        "Less naming conflicts",
+        "Better IDE navigation"
+      ]
+    },
+    "validation_patterns": {
+      "good_indicators": [
+        "from package.module import Class",
+        "Clear functional separation",
+        "Non-redundant naming"
+      ],
+      "violation_indicators": [
+        "package/package_module\\.py",
+        "Very deep nesting (>5 levels)",
+        "Redundant naming patterns"
+      ]
+    },
+    "examples": {
+      "good": "hepha/core/models.py, hepha/api/routes.py",
+      "bad": "hepha/hepha_core/hepha_models.py"
+    },
+    "tags": ["organization", "naming", "complexity", "negative_space"]
+  },
+  {
+    "name": "comprehensive-testing-protection", 
+    "category": "quality_excellence",
+    "priority": "HIGH",
+    "description": "Projects with proper test structure avoid mock naming violations and quality issues",
+    "negative_space_analysis": {
+      "problems_prevented": ["mock_naming_compliance", "pre_commit_skip_usage"],
+      "clean_projects": ["farm", "circle", "psi"],
+      "problematic_projects": ["allm", "codex", "hepha", "heimdall"],
+      "avoidance_rate": 0.3
+    },
+    "detection": {
+      "structural_indicators": [
+        "has_tests_directory",
+        "proper_test_naming",
+        "pytest_configuration"
+      ],
+      "protective_patterns": [
+        "tests/.*test_.*\\.py",
+        "pytest\\.fixture",
+        "mock_.*function naming"
+      ]
+    },
+    "implementation_guide": {
+      "steps": [
+        "Create tests/ directory with clear structure",
+        "Follow pytest naming conventions",
+        "Use proper mock_ prefixes for test doubles",
+        "Configure pytest properly"
+      ],
+      "benefits": [
+        "Prevents mock naming violations",
+        "Reduces pre-commit skip usage", 
+        "Clear test organization",
+        "Better test discoverability"
+      ]
+    },
+    "validation_patterns": {
+      "good_indicators": [
+        "tests/test_.*\\.py",
+        "def mock_.*function",
+        "pytest\\.fixture"
+      ],
+      "violation_indicators": [
+        "def fake.*\\(\\) without mock_ prefix",
+        "SKIP= in commit messages",
+        "No tests/ directory"
+      ]
+    },
+    "examples": {
+      "good": "tests/test_api.py with def mock_database_session()",
+      "bad": "def fake_user() in main code without proper structure"
+    },
+    "tags": ["testing", "quality", "mock_compliance", "negative_space"]
+  },
+  {
+    "name": "security-excellence-patterns",
+    "category": "security_excellence",
+    "priority": "CRITICAL",
+    "description": "Projects avoiding CORS wildcards and hardcoded secrets through environmental practices",
+    "negative_space_analysis": {
+      "problems_prevented": ["cors_never_wildcard", "hardcoded_secrets"],
+      "clean_projects": ["farm", "fust", "circle"],
+      "problematic_projects": ["allm", "codex", "hepha", "heimdall"],
+      "avoidance_rate": 0.5
+    },
+    "detection": {
+      "structural_indicators": [
+        "environment_variable_usage",
+        "specific_cors_origins",
+        "secrets_management"
+      ],
+      "protective_patterns": [
+        "os\\.environ\\.get\\(['\"]\\w*SECRET",
+        "allow_origins=\\[[^*]",
+        "settings\\.secret_key"
+      ]
+    },
+    "implementation_guide": {
+      "steps": [
+        "Use environment variables for all secrets",
+        "Configure specific CORS origins, never wildcard",
+        "Use proper secrets management patterns",
+        "Validate security configuration"
+      ],
+      "benefits": [
+        "No hardcoded secrets in code",
+        "Proper CORS security",
+        "Environment-specific configuration",
+        "Security by default"
+      ]
+    },
+    "validation_patterns": {
+      "good_indicators": [
+        "SECRET_KEY = os\\.environ\\.get",
+        "origins=\\[['\"]https://specific-domain",
+        "settings\\.database_password"
+      ],
+      "violation_indicators": [
+        "SECRET_KEY = ['\"]hardcoded",
+        "origins=\\[\\*\\]",
+        "password['\"]\\s*:\\s*['\"]\\w+"
+      ]
+    },
+    "examples": {
+      "good": "SECRET_KEY = os.environ.get('SECRET_KEY')",
+      "bad": "SECRET_KEY = 'hardcoded-secret-key-123'"
+    },
+    "tags": ["security", "environment", "cors", "secrets", "negative_space"]
+  }
+]

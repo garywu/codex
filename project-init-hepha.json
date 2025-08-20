@@ -1,0 +1,141 @@
+{
+  "patterns": [
+    {
+      "name": "flat-module-structure",
+      "category": "organization",
+      "priority": "MANDATORY",
+      "description": "Use flat module structure with no subdirectories in main package",
+      "rationale": "Documented architectural decision for simplicity and maintainability",
+      "detection_rules": {
+        "rules": ["def __init__.py in nested subdirectories"]
+      },
+      "fix_template": "Move modules to flat structure under main package directory",
+      "example_good": "hepha/component.py, hepha/server.py",
+      "example_bad": "hepha/utils/helper.py, hepha/models/user.py"
+    },
+    {
+      "name": "uv-package-manager",
+      "category": "dependencies",
+      "priority": "MANDATORY", 
+      "description": "Use UV package manager instead of pip or poetry",
+      "rationale": "Project standardized on UV for faster, more reliable package management",
+      "detection_rules": {
+        "rules": ["pip install", "poetry add", "requirements.txt"]
+      },
+      "fix_template": "Replace with: uv add <package>",
+      "example_good": "uv add fastapi[all]",
+      "example_bad": "pip install fastapi"
+    },
+    {
+      "name": "gh-cli-operations",
+      "category": "git",
+      "priority": "HIGH",
+      "description": "Use gh CLI for GitHub operations instead of git commands",
+      "rationale": "Better integration with GitHub API and consistent workflow",
+      "detection_rules": {
+        "rules": ["git push origin", "git pull request"]
+      },
+      "fix_template": "Use: gh pr create, gh issue create, gh repo clone",
+      "example_good": "gh pr create --title 'Feature: Add component'",
+      "example_bad": "git push origin feature-branch"
+    },
+    {
+      "name": "zero-tolerance-precommit",
+      "category": "ci_cd",
+      "priority": "MANDATORY",
+      "description": "All pre-commit hook errors must be fixed before commit",
+      "rationale": "Maintains code quality and prevents broken builds",
+      "detection_rules": {
+        "rules": ["# TODO: fix this later", "# FIXME", "# HACK"]
+      },
+      "fix_template": "Fix all issues before committing, no workarounds allowed",
+      "example_good": "Clean code that passes all hooks",
+      "example_bad": "Temporary fixes or commented-out failing code"
+    },
+    {
+      "name": "mock-naming-convention",
+      "category": "testing",
+      "priority": "HIGH",
+      "description": "Mock code must use mock_ prefix for clear identification",
+      "rationale": "Distinguishes test mocks from production code",
+      "detection_rules": {
+        "rules": ["def fake_", "class Mock", "def stub_"]
+      },
+      "fix_template": "Rename to mock_ prefix: mock_user_data, mock_api_response",
+      "example_good": "mock_user_data = {...}",
+      "example_bad": "fake_user_data = {...}"
+    },
+    {
+      "name": "fastapi-sqlalchemy2-async",
+      "category": "database",
+      "priority": "HIGH",
+      "description": "Use SQLAlchemy 2.0 with async support for FastAPI applications",
+      "rationale": "Modern async patterns improve performance and scalability",
+      "detection_rules": {
+        "rules": ["from sqlalchemy.ext.declarative", "sessionmaker()", "Session()"]
+      },
+      "fix_template": "Use async_sessionmaker and AsyncSession with SQLAlchemy 2.0 syntax",
+      "example_good": "async with async_session() as session:",
+      "example_bad": "session = Session()"
+    },
+    {
+      "name": "forgejs-component-system",
+      "category": "frontend",
+      "priority": "HIGH",
+      "description": "Use ForgeJS plugin system for Obsidian component integration",
+      "rationale": "Provides seamless integration between Python backend and Obsidian frontend",
+      "detection_rules": {
+        "rules": ["document.createElement", "vanilla javascript"]
+      },
+      "fix_template": "Use ForgeJS code blocks with proper component registration",
+      "example_good": "```forge-js\\nconst component = forge.component('MyComponent');",
+      "example_bad": "document.createElement('div')"
+    },
+    {
+      "name": "comprehensive-ruff-config",
+      "category": "linting",
+      "priority": "HIGH",
+      "description": "Use comprehensive Ruff configuration with 15+ rule categories",
+      "rationale": "Ensures consistent code quality across entire codebase",
+      "detection_rules": {
+        "rules": ["flake8", "pylint", "black", "isort"]
+      },
+      "fix_template": "Configure Ruff with E, W, F, I, UP, B, C4, SIM, ARG, TCH, RUF, PL, TRY, FLY, PERF, LOG",
+      "example_good": "[tool.ruff.lint]\\nselect = [\"E\", \"W\", \"F\", \"I\", \"UP\"]",
+      "example_bad": "Using separate tools for formatting and linting"
+    },
+    {
+      "name": "mypy-module-overrides",
+      "category": "typing",
+      "priority": "MEDIUM",
+      "description": "Use strategic MyPy module overrides for complex dependencies",
+      "rationale": "Balances type safety with practical development needs",
+      "detection_rules": {
+        "rules": ["# type: ignore", "# mypy: ignore-errors"]
+      },
+      "fix_template": "Configure module-level overrides in pyproject.toml [tool.mypy]",
+      "example_good": "[[tool.mypy.overrides]]\\nmodule = \"problematic_module.*\"",
+      "example_bad": "# type: ignore on every line"
+    },
+    {
+      "name": "pytest-marker-system",
+      "category": "testing",
+      "priority": "MEDIUM",
+      "description": "Use comprehensive pytest marker system for test organization",
+      "rationale": "Enables selective test running and better test categorization",
+      "detection_rules": {
+        "rules": ["def test_", "assert"]
+      },
+      "fix_template": "Add markers: @pytest.mark.unit, @pytest.mark.integration, @pytest.mark.slow",
+      "example_good": "@pytest.mark.unit\\ndef test_component():",
+      "example_bad": "def test_something(): # no markers"
+    }
+  ],
+  "metadata": {
+    "project": "hepha",
+    "version": "0.1.0",
+    "description": "Python content management system for Obsidian with ForgeJS integration",
+    "extracted_from": "project_analysis",
+    "timestamp": "2025-08-19T14:33:00Z"
+  }
+}

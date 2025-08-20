@@ -1,0 +1,37 @@
+[Unit]
+Description=Codex MCP Server for AI Pattern Queries
+Documentation=https://github.com/your-org/codex
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=admin
+Group=admin
+WorkingDirectory=/Users/admin/Work/codex
+ExecStart=/usr/bin/python3 -m codex.mcp_server
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=codex-mcp
+
+# Environment
+Environment=PYTHONPATH=/Users/admin/Work/codex
+Environment=CODEX_LOG_LEVEL=INFO
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/Users/admin/Work/codex/logs
+ReadWritePaths=/Users/admin/Work/codex/data
+
+# Resource limits
+LimitNOFILE=1024
+MemoryMax=512M
+
+[Install]
+WantedBy=multi-user.target

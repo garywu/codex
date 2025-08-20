@@ -1,0 +1,14 @@
+project_name = "codex"
+scan_patterns = [ "**/*.py",]
+exclude_patterns = [ "__pycache__", "*.pyc", ".venv", "venv", ".pytest_cache", ".mypy_cache", ".coverage",]
+max_file_size = 10485760
+enabled_categories = [ "naming", "error_handling", "security", "testing",]
+min_priority = "HIGH"
+custom_patterns = []
+cache_enabled = true
+cache_ttl_hours = 24
+output_format = "human"
+quiet_mode = false
+pre_commit_enabled = true
+ci_mode = false
+parallel_scanning = true

@@ -1,0 +1,67 @@
+# Codex Configuration File
+# This fixes the duplicate scanning issue with backup directories
+
+[codex]
+# Patterns to exclude from scanning
+exclude = [
+    # Python artifacts
+    "*.pyc",
+    "__pycache__",
+    "*.pyo",
+    
+    # Virtual environments
+    ".venv",
+    "venv",
+    "env",
+    
+    # Version control
+    ".git",
+    
+    # Build artifacts
+    "build/",
+    "dist/",
+    "*.egg-info",
+    
+    # CRITICAL FIX: Exclude backup directories
+    # This prevents scanning 576 duplicate violations
+    "*_backup_*/",
+    "quality_enforcement_backup_*/",
+    "codex_backup_*/",
+    
+    # Cache directories
+    ".pytest_cache",
+    ".mypy_cache",
+    ".ruff_cache",
+    
+    # Node modules
+    "node_modules",
+    
+    # OS files
+    ".DS_Store",
+    "Thumbs.db",
+    
+    # Experimental/demo files in root
+    "demo_*.py",
+    "experiment_*.py",
+    "extract_*.py",
+    "enhanced_*.py",
+]
+
+# Use gitignore patterns as additional exclusions
+use_gitignore = true
+
+# Run external tools during scan
+run_tools = true
+
+# Which tools to run
+[codex.tools]
+ruff = true
+mypy = true
+typos = true
+
+# Pattern-specific exclusions
+# Some patterns shouldn't apply to certain directories
+[codex.pattern_exclusions]
+# Test fixtures might have intentional violations
+"mock-code-naming" = ["tests/fixtures/", "tests/data/"]
+"no-hardcoded-secrets" = ["tests/test_data/", "examples/"]

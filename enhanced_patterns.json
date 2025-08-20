@@ -1,0 +1,208 @@
+[
+  {
+    "name": "zombie_versioned_files",
+    "category": "code_quality",
+    "priority": "HIGH",
+    "description": "Detect files with version suffixes that indicate zombie code",
+    "detection_rules": {
+      "file_patterns": [
+        ".*_v[0-9]+\\.py$",
+        ".*_v[0-9]+_[0-9]+\\.py$",
+        ".*_simple\\.py$",
+        ".*_legacy\\.py$",
+        ".*_backup\\.py$",
+        ".*_old\\.py$",
+        ".*_new\\.py$",
+        ".*_original\\.py$",
+        ".*_copy\\.py$"
+      ],
+      "excludes": [
+        "test_.*",
+        ".*_test\\.py$",
+        "migrations/.*"
+      ]
+    },
+    "rationale": "",
+    "fix_strategy": "consolidate_to_canonical",
+    "severity": "WARNING"
+  },
+  {
+    "name": "zombie_duplicate_classes",
+    "category": "code_quality",
+    "priority": "HIGH",
+    "description": "Detect multiple implementations of the same class",
+    "detection_rules": {
+      "content_patterns": [
+        "class\\s+(\\w+)Handler\\s*\\(",
+        "class\\s+(\\w+)Manager\\s*\\(",
+        "class\\s+(\\w+)Service\\s*\\(",
+        "class\\s+(\\w+)Client\\s*\\("
+      ],
+      "analysis_type": "cross_file_duplicate_detection"
+    },
+    "rationale": "Multiple implementations indicate zombie code needing consolidation",
+    "fix_strategy": "establish_canonical_implementation",
+    "severity": "WARNING"
+  },
+  {
+    "name": "mock_naming_compliance",
+    "category": "security",
+    "priority": "MANDATORY",
+    "description": "Enforce strict mock code naming requirements",
+    "detection_rules": {
+      "content_patterns": [
+        "def\\s+((?!mock_)\\w*mock\\w*)\\s*\\(",
+        "def\\s+((?!mock_)\\w*fake\\w*)\\s*\\(",
+        "def\\s+((?!mock_)\\w*dummy\\w*)\\s*\\(",
+        "def\\s+((?!mock_)\\w*stub\\w*)\\s*\\(",
+        "class\\s+((?!Mock)\\w*Mock\\w*)\\s*\\(",
+        "class\\s+((?!Mock)\\w*Fake\\w*)\\s*\\(",
+        "class\\s+((?!Mock)\\w*Dummy\\w*)\\s*\\("
+      ],
+      "file_patterns": [
+        "(?!mock_).*mock.*\\.py$",
+        "(?!mock_).*fake.*\\.py$",
+        "(?!mock_).*dummy.*\\.py$"
+      ]
+    },
+    "rationale": {
+      "files": "Must start with mock_ prefix",
+      "functions": "Must start with mock_ prefix",
+      "classes": "Must start with Mock prefix"
+    },
+    "fix_strategy": "rename_to_mock_prefix",
+    "severity": "ERROR"
+  },
+  {
+    "name": "mock_warning_requirements",
+    "category": "security",
+    "priority": "MANDATORY",
+    "description": "Ensure all mock functions log warnings",
+    "detection_rules": {
+      "content_patterns": [
+        "def\\s+mock_\\w+\\s*\\([^)]*\\):[^}]*?(?!.*warning.*mock).*?(?=def|\\Z)"
+      ],
+      "required_patterns": [
+        "logfire\\.warning.*\u26a0\ufe0f\\s*MOCK",
+        "logging\\.warning.*\u26a0\ufe0f\\s*MOCK",
+        "logger\\.warning.*\u26a0\ufe0f\\s*MOCK"
+      ]
+    },
+    "rationale": "All mock functions must log warnings for visibility",
+    "fix_strategy": "add_mock_warnings",
+    "severity": "ERROR"
+  },
+  {
+    "name": "business_logic_in_cli",
+    "category": "architecture",
+    "priority": "HIGH",
+    "description": "Detect business logic that should be in core package",
+    "detection_rules": {
+      "file_patterns": [
+        ".*cli\\.py$",
+        "cli/.*\\.py$"
+      ],
+      "content_patterns": [
+        "class\\s+\\w+(?:Service|Manager|Handler|Engine|Processor)\\s*\\(",
+        "def\\s+(?:process|calculate|analyze|generate|transform)_\\w+",
+        "(?:for|while)\\s+\\w+\\s+in.*:.*(?:for|while)",
+        "try:\\s*\\n.*except\\s+\\w+.*:\\s*\\n.*(?:raise|return)"
+      ],
+      "excludes": [
+        "def\\s+.*(?:parse|format|display|print|show).*",
+        "typer\\.",
+        "click\\."
+      ]
+    },
+    "rationale": "",
+    "fix_strategy": "move_to_core_package",
+    "severity": "WARNING"
+  },
+  {
+    "name": "redundant_package_naming",
+    "category": "architecture",
+    "priority": "MEDIUM",
+    "description": "Detect redundant naming within packages",
+    "detection_rules": {
+      "analysis_type": "package_scoping_analysis",
+      "patterns": [
+        "codex/codex_\\w+\\.py$",
+        "hepha/hepha_\\w+\\.py$",
+        "class\\s+Codex\\w+.*:",
+        "class\\s+Hepha\\w+.*:",
+        "def\\s+codex_\\w+",
+        "def\\s+hepha_\\w+"
+      ]
+    },
+    "rationale": "Package scoping eliminates need for redundant naming",
+    "fix_strategy": "remove_redundant_prefixes",
+    "severity": "INFO"
+  },
+  {
+    "name": "cors_never_wildcard",
+    "category": "security",
+    "priority": "MANDATORY",
+    "description": "NEVER use wildcard (*) in production CORS origins",
+    "detection_rules": {
+      "content_patterns": [
+        "allow_origins\\s*=\\s*\\[\\s*[\"\\']?\\*[\"\\']?\\s*\\]",
+        "origins\\s*=\\s*\\[\\s*[\"\\']?\\*[\"\\']?\\s*\\]",
+        "Access-Control-Allow-Origin.*\\*",
+        "CORS.*origins.*\\*"
+      ],
+      "excludes": [
+        "#.*test",
+        "development",
+        "local"
+      ]
+    },
+    "rationale": "NEVER use '*' in production CORS origins",
+    "fix_strategy": "specify_exact_origins",
+    "severity": "ERROR"
+  },
+  {
+    "name": "hardcoded_secrets",
+    "category": "security",
+    "priority": "CRITICAL",
+    "description": "Detect hardcoded secrets and credentials",
+    "detection_rules": {
+      "content_patterns": [
+        "(?:password|secret|key|token)\\s*=\\s*[\"\\'][^\"\\']{8,}[\"\\']",
+        "(?:api_key|auth_token|jwt_secret)\\s*=\\s*[\"\\'][^\"\\']+[\"\\']",
+        "Bearer\\s+[A-Za-z0-9_-]{20,}",
+        "(?:sk-|pk_)[A-Za-z0-9_-]{32,}"
+      ],
+      "excludes": [
+        "test_.*",
+        "example",
+        "placeholder",
+        "your_.*_here"
+      ]
+    },
+    "rationale": "Never commit secrets to version control",
+    "fix_strategy": "use_environment_variables",
+    "severity": "CRITICAL"
+  },
+  {
+    "name": "pre_commit_skip_usage",
+    "category": "code_quality",
+    "priority": "HIGH",
+    "description": "Detect usage of SKIP flags in commits",
+    "detection_rules": {
+      "git_patterns": [
+        "SKIP=.*git\\s+commit",
+        "git\\s+commit.*--no-verify",
+        "pre-commit.*--no-verify"
+      ],
+      "commit_message_patterns": [
+        "SKIP=",
+        "skip.*pre-commit",
+        "ignore.*linting",
+        "will.*fix.*later"
+      ]
+    },
+    "rationale": "ALL PRE-COMMIT ERRORS MUST BE FIXED - NO EXCEPTIONS",
+    "fix_strategy": "enforce_pre_commit_compliance",
+    "severity": "ERROR"
+  }
+]

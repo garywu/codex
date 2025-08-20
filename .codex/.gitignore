@@ -1,0 +1,10 @@
+# Codex cache and temporary files
+cache/
+logs/
+temp/
+*.tmp
+*.log
+
+# Keep the config file
+!config.toml
+!README.md

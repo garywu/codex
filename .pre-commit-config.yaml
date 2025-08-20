@@ -1,0 +1,47 @@
+# Dogfooding: Codex uses itself as a pre-commit hook!
+repos:
+  # Codex pattern scanner - our own tool
+  - repo: local
+    hooks:
+      - id: codex-scan
+        name: Codex Pattern Scanner
+        entry: uv run codex scan
+        language: system
+        pass_filenames: true
+        types: [python]
+        require_serial: true
+        description: "Run Codex pattern scanner for code quality"
+
+  # Ruff - Astral's fast Python linter and formatter
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.0
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+
+  # Mypy - type checking
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.13.0
+    hooks:
+      - id: mypy
+        additional_dependencies: [pydantic, sqlmodel, typer]
+        args: [--strict, --ignore-missing-imports]
+
+  # Typos - spell checker
+  - repo: https://github.com/crate-ci/typos
+    rev: v1.28.4
+    hooks:
+      - id: typos
+
+  # Standard pre-commit hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: check-toml
+      - id: check-added-large-files
+      - id: check-merge-conflict

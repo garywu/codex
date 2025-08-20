@@ -1,0 +1,436 @@
+[
+  {
+    "name": "secure-jwt-storage",
+    "category": "security",
+    "priority": "MANDATORY",
+    "description": "Store JWT secrets in secure credential manager, never hardcode",
+    "rule": "Store JWT secrets in secure credential manager, never hardcode",
+    "detection": {
+      "regex": "(jwt_secret|JWT_SECRET)\\s*=\\s*['\\\"][^'\\\"]+['\\\"]",
+      "keywords": [
+        "jwt_secret",
+        "JWT_SECRET",
+        "hardcode"
+      ],
+      "confidence": 0.95
+    },
+    "fix": {
+      "template": "Use environment variables or secure credential manager",
+      "complexity": "medium",
+      "auto_fixable": false,
+      "suggestions": [
+        "Use secrets manager",
+        "Environment variables",
+        "Vault integration"
+      ]
+    },
+    "examples": {
+      "good": "jwt_secret = os.getenv('JWT_SECRET') or vault.get_secret('jwt_secret')",
+      "bad": "jwt_secret = 'hardcoded-secret-key'"
+    },
+    "rationale": "Hardcoded secrets in code are a critical security vulnerability",
+    "source": "project-init-v3-comprehensive",
+    "enabled": true,
+    "tags": [
+      "security",
+      "mandatory"
+    ],
+    "created_at": "2025-08-19T17:57:17.718308",
+    "updated_at": "2025-08-19T17:57:17.718460"
+  },
+  {
+    "name": "no-cors-wildcard",
+    "category": "security",
+    "priority": "MANDATORY",
+    "description": "NEVER use '*' in production CORS origins",
+    "rule": "NEVER use '*' in production CORS origins",
+    "detection": {
+      "regex": "cors.*origins.*[\\[\\\"'][*][\\\"'\\]]",
+      "keywords": [
+        "cors",
+        "origins",
+        "*",
+        "wildcard"
+      ],
+      "confidence": 0.9
+    },
+    "fix": {
+      "template": "Replace '*' with specific allowed origins",
+      "complexity": "simple",
+      "auto_fixable": true,
+      "suggestions": [
+        "List specific domains",
+        "Use environment-specific origins"
+      ]
+    },
+    "examples": {
+      "good": "origins=['https://app.example.com', 'https://admin.example.com']",
+      "bad": "origins=['*']"
+    },
+    "source": "project-init-v3-comprehensive",
+    "enabled": true,
+    "tags": [
+      "security",
+      "mandatory"
+    ],
+    "created_at": "2025-08-19T17:57:17.718465",
+    "updated_at": "2025-08-19T17:57:17.718466"
+  },
+  {
+    "name": "use-pydantic-validation",
+    "category": "validation",
+    "priority": "HIGH",
+    "description": "Use Pydantic for all API input validation",
+    "rule": "Use Pydantic for all API input validation",
+    "detection": {
+      "regex": "@app\\.(post|put|patch).*def.*request.*:",
+      "keywords": [
+        "fastapi",
+        "request",
+        "validation"
+      ],
+      "confidence": 0.8
+    },
+    "fix": {
+      "template": "Create Pydantic model for request validation",
+      "complexity": "medium",
+      "auto_fixable": false
+    },
+    "source": "project-init-v3-comprehensive",
+    "enabled": true,
+    "tags": [
+      "validation",
+      "high"
+    ],
+    "created_at": "2025-08-19T17:57:17.718468",
+    "updated_at": "2025-08-19T17:57:17.718469"
+  },
+  {
+    "name": "sanitize-production-errors",
+    "category": "security",
+    "priority": "HIGH",
+    "description": "Return generic error messages in production",
+    "rule": "Return generic error messages in production",
+    "detection": {
+      "regex": "raise.*Exception.*traceback|str\\(e\\)",
+      "keywords": [
+        "exception",
+        "traceback",
+        "debug"
+      ],
+      "confidence": 0.75
+    },
+    "source": "project-init-v3-comprehensive",
+    "enabled": true,
+    "tags": [
+      "security",
+      "high"
+    ],
+    "created_at": "2025-08-19T17:57:17.718471",
+    "updated_at": "2025-08-19T17:57:17.718472"
+  },
+  {
+    "name": "use-db-context-managers",
+    "category": "database",
+    "priority": "HIGH",
+    "description": "Always use context managers for database sessions",
+    "rule": "Always use context managers for sessions",
+    "detection": {
+      "regex": "session\\s*=.*Session\\(\\)(?!\\s*with)",
+      "keywords": [
+        "session",
+        "Session",
+        "context manager"
+      ],
+      "confidence": 0.85
+    },
+    "fix": {
+      "template": "with get_db_session() as session:",
+      "complexity": "simple",
+      "auto_fixable": true
+    },
+    "examples": {
+      "good": "with get_db_session() as session:\n    result = session.query(User).all()",
+      "bad": "session = SessionLocal()\nresult = session.query(User).all()\nsession.close()"
+    },
+    "source": "project-init-v3-comprehensive",
+    "enabled": true,
+    "tags": [
+      "database",
+      "high"
+    ],
+    "created_at": "2025-08-19T17:57:17.718473",
+    "updated_at": "2025-08-19T17:57:17.718474"
+  },
+  {
+    "name": "implement-health-checks",
+    "category": "monitoring",
+    "priority": "HIGH",
+    "description": "Implement /health and /ready endpoints for container orchestration",
+    "rule": "/health endpoint for container orchestration",
+    "detection": {
+      "regex": "@app\\.get.*['\\\"][^'\\\"]*health[^'\\\"]*['\\\"]",
+      "keywords": [
+        "health",
+        "endpoint",
+        "liveness"
+      ],
+      "confidence": 0.8
+    },
+    "source": "project-init-v3-comprehensive",
+    "enabled": true,
+    "tags": [
+      "monitoring",
+      "high"
+    ],
+    "created_at": "2025-08-19T17:57:17.718475",
+    "updated_at": "2025-08-19T17:57:17.718476"
+  },
+  {
+    "name": "structured-logging",
+    "category": "logging",
+    "priority": "HIGH",
+    "description": "Use JSON structured logs with consistent schema",
+    "rule": "JSON structured logs with consistent schema",
+    "detection": {
+      "regex": "logger\\.(info|debug|warning|error)\\([^{]",
+      "keywords": [
+        "logger",
+        "logging",
+        "structured"
+      ],
+      "confidence": 0.7
+    },
+    "fix": {
+      "template": "Use structured logging with JSON format",
+      "complexity": "medium",
+      "auto_fixable": false
+    },
+    "examples": {
+      "good": "logger.info({'event': 'user_login', 'user_id': user.id, 'timestamp': now()})",
+      "bad": "logger.info(f'User {user.id} logged in at {timestamp}')"
+    },
+    "source": "project-init-v3-comprehensive",
+    "enabled": true,
+    "tags": [
+      "logging",
+      "high"
+    ],
+    "created_at": "2025-08-19T17:57:17.718478",
+    "updated_at": "2025-08-19T17:57:17.718478"
+  },
+  {
+    "name": "strict-type-checking",
+    "category": "typing",
+    "priority": "HIGH",
+    "description": "Enable strict type checking in production code",
+    "rule": "Enable strict type checking in production code",
+    "detection": {
+      "regex": "def\\s+\\w+\\([^)]*\\)(?!\\s*->)",
+      "keywords": [
+        "function",
+        "typing",
+        "return type"
+      ],
+      "confidence": 0.8
+    },
+    "fix": {
+      "template": "Add return type annotation",
+      "complexity": "simple",
+      "auto_fixable": false
+    },
+    "source": "project-init-v3-comprehensive",
+    "enabled": true,
+    "tags": [
+      "typing",
+      "high"
+    ],
+    "created_at": "2025-08-19T17:57:17.718481",
+    "updated_at": "2025-08-19T17:57:17.718483"
+  },
+  {
+    "name": "avoid-any-type",
+    "category": "typing",
+    "priority": "HIGH",
+    "description": "Avoid Any type except at boundaries",
+    "rule": "Avoid Any type except at boundaries",
+    "detection": {
+      "regex": ":\\s*Any\\b|List\\[Any\\]|Dict\\[.*Any.*\\]",
+      "keywords": [
+        "Any",
+        "typing"
+      ],
+      "confidence": 0.9
+    },
+    "fix": {
+      "template": "Use specific types instead of Any",
+      "complexity": "medium",
+      "auto_fixable": false
+    },
+    "source": "project-init-v3-comprehensive",
+    "enabled": true,
+    "tags": [
+      "typing",
+      "high"
+    ],
+    "created_at": "2025-08-19T17:57:17.718484",
+    "updated_at": "2025-08-19T17:57:17.718485"
+  },
+  {
+    "name": "minimum-test-coverage",
+    "category": "testing",
+    "priority": "HIGH",
+    "description": "Maintain 80% minimum code coverage",
+    "rule": "80% code coverage minimum",
+    "detection": {
+      "regex": "def\\s+(?!test_)\\w+.*:",
+      "keywords": [
+        "function",
+        "coverage",
+        "test"
+      ],
+      "confidence": 0.6
+    },
+    "source": "project-init-v3-comprehensive",
+    "enabled": true,
+    "tags": [
+      "testing",
+      "high"
+    ],
+    "created_at": "2025-08-19T17:57:17.718486",
+    "updated_at": "2025-08-19T17:57:17.718487"
+  },
+  {
+    "name": "public-function-docstrings",
+    "category": "documentation",
+    "priority": "MEDIUM",
+    "description": "All public functions need docstrings",
+    "rule": "All public functions need docstrings",
+    "detection": {
+      "regex": "def\\s+(?!_)\\w+.*:\\n(?!\\s*['\\\"])",
+      "keywords": [
+        "function",
+        "docstring",
+        "documentation"
+      ],
+      "confidence": 0.85
+    },
+    "fix": {
+      "template": "Add docstring with description and parameters",
+      "complexity": "simple",
+      "auto_fixable": false
+    },
+    "source": "project-init-v3-comprehensive",
+    "enabled": true,
+    "tags": [
+      "documentation",
+      "medium"
+    ],
+    "created_at": "2025-08-19T17:57:17.718488",
+    "updated_at": "2025-08-19T17:57:17.718489"
+  },
+  {
+    "name": "zero-tolerance-precommit",
+    "category": "ci_cd",
+    "priority": "MANDATORY",
+    "description": "ALL PRE-COMMIT ERRORS MUST BE FIXED - NO EXCEPTIONS",
+    "rule": "ALL PRE-COMMIT ERRORS MUST BE FIXED - NO EXCEPTIONS",
+    "detection": {
+      "regex": "SKIP=.*git commit|git commit.*--no-verify",
+      "keywords": [
+        "SKIP",
+        "no-verify",
+        "pre-commit"
+      ],
+      "confidence": 0.95
+    },
+    "fix": {
+      "template": "Fix all pre-commit errors before committing",
+      "complexity": "simple",
+      "auto_fixable": false
+    },
+    "examples": {
+      "good": "uv run pre-commit run --all-files && git commit -m 'fix: resolved all issues'",
+      "bad": "SKIP=ruff git commit -m 'quick fix'"
+    },
+    "source": "project-init-v3-comprehensive",
+    "enabled": true,
+    "tags": [
+      "ci_cd",
+      "mandatory"
+    ],
+    "created_at": "2025-08-19T17:57:17.718491",
+    "updated_at": "2025-08-19T17:57:17.718492"
+  },
+  {
+    "name": "use-uv-package-manager",
+    "category": "dependencies",
+    "priority": "HIGH",
+    "description": "Use uv for speed and reliability",
+    "rule": "Use uv for speed and reliability",
+    "detection": {
+      "regex": "pip install|pip freeze|requirements\\.txt",
+      "keywords": [
+        "pip",
+        "requirements",
+        "package manager"
+      ],
+      "confidence": 0.8
+    },
+    "fix": {
+      "template": "Replace pip with uv commands",
+      "complexity": "simple",
+      "auto_fixable": true,
+      "suggestions": [
+        "uv pip install",
+        "uv pip freeze",
+        "pyproject.toml"
+      ]
+    },
+    "examples": {
+      "good": "uv pip install package-name",
+      "bad": "pip install package-name"
+    },
+    "source": "project-init-v3-comprehensive",
+    "enabled": true,
+    "tags": [
+      "dependencies",
+      "high"
+    ],
+    "created_at": "2025-08-19T17:57:17.718493",
+    "updated_at": "2025-08-19T17:57:17.718494"
+  },
+  {
+    "name": "mock-code-naming",
+    "category": "testing",
+    "priority": "MANDATORY",
+    "description": "Mock functions must start with mock_ prefix and log warnings",
+    "rule": "Mock code must be clearly identified and include runtime warnings",
+    "detection": {
+      "regex": "def\\s+((?!mock_)\\w+).*mock|def\\s+\\w+.*:\\s*#.*mock",
+      "keywords": [
+        "mock",
+        "test",
+        "warning"
+      ],
+      "confidence": 0.85
+    },
+    "fix": {
+      "template": "Add mock_ prefix and logfire.warning('\u26a0\ufe0f MOCK: ...')",
+      "complexity": "simple",
+      "auto_fixable": true
+    },
+    "examples": {
+      "good": "def mock_process_payment():\n    logfire.warning('\u26a0\ufe0f MOCK: Using mock_process_payment - not for production')",
+      "bad": "def process_payment():\n    # Mock implementation\n    return True"
+    },
+    "source": "project-init-v3-comprehensive",
+    "enabled": true,
+    "tags": [
+      "testing",
+      "mandatory"
+    ],
+    "created_at": "2025-08-19T17:57:17.718495",
+    "updated_at": "2025-08-19T17:57:17.718496"
+  }
+]

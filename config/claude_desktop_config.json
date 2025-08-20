@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "codex-patterns": {
+      "command": "python3",
+      "args": ["-m", "codex.mcp_server"],
+      "cwd": "/Users/admin/Work/codex",
+      "env": {
+        "PYTHONPATH": "/Users/admin/Work/codex",
+        "CODEX_LOG_LEVEL": "INFO"
+      }
+    }
+  }
+}
