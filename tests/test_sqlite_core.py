@@ -416,7 +416,7 @@ def test_ai_queries(db):
     """)
 
     results = cursor.fetchall()
-    print(f"Files with violations:")
+    print("Files with violations:")
     for row in results:
         print(
             f"  • {row['file_path']}: {row['violation_count']} violations (avg severity: {row['avg_severity_score']:.1f})"

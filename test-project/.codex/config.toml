@@ -1,0 +1,29 @@
+[codex]
+patterns = ["all"]
+exclude = [
+  "*.pyc",
+  "__pycache__",
+  ".git",
+  ".venv",
+  "venv",
+  "node_modules",
+  ".pytest_cache",
+  ".mypy_cache",
+  "dist",
+  "build",
+  "populate_*pattern*.py",
+  "*_rules.py",
+  "validate_violations.py",
+  "populate_ensemble*.py",
+]
+auto_fix = false
+enforce = ["mandatory", "critical", "high"]
+farm_url = "http://localhost:8001"
+quiet = false
+show_diff = false
+run_tools = true
+
+[codex.tools]
+ruff = true
+mypy = true
+typos = true

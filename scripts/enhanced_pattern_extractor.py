@@ -403,7 +403,7 @@ def main():
     patterns = add_pattern_metadata(patterns)
 
     # Statistics
-    print(f"\n📊 Pattern Statistics:")
+    print("\n📊 Pattern Statistics:")
     print(f"Total patterns: {len(patterns)}")
 
     # By category

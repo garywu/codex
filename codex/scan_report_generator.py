@@ -207,18 +207,18 @@ class ScanReportGenerator:
 
         # Build markdown report
         report = f"""# Executive Summary Report
-Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+Generated: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
 
 ## Current Status
-- **Latest Scan**: {latest.get('timestamp', 'N/A')}
-- **Total Violations**: {latest.get('total_violations', 0)}
-- **Files Scanned**: {latest.get('scanned_files', 0)}
-- **Fix Rate**: {fix_rate.get('fix_rate', 0):.1f}% ({fix_rate.get('fixed_count', 0)} fixed / {fix_rate.get('total_count', 0)} total)
+- **Latest Scan**: {latest.get("timestamp", "N/A")}
+- **Total Violations**: {latest.get("total_violations", 0)}
+- **Files Scanned**: {latest.get("scanned_files", 0)}
+- **Fix Rate**: {fix_rate.get("fix_rate", 0):.1f}% ({fix_rate.get("fixed_count", 0)} fixed / {fix_rate.get("total_count", 0)} total)
 
 ## Trend
-- **Current**: {trend.get('current', 0)} violations
-- **Previous**: {trend.get('previous', 0)} violations
-- **Change**: {trend.get('change', 0):+d} ({('↑' if trend.get('change', 0) > 0 else '↓' if trend.get('change', 0) < 0 else '→')})
+- **Current**: {trend.get("current", 0)} violations
+- **Previous**: {trend.get("previous", 0)} violations
+- **Change**: {trend.get("change", 0):+d} ({("↑" if trend.get("change", 0) > 0 else "↓" if trend.get("change", 0) < 0 else "→")})
 
 ## Top Issues
 """
@@ -232,7 +232,7 @@ Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
         cursor = self.conn.cursor()
 
         report = f"""# Detailed Scan Report
-Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+Generated: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
 Database: {self.db_path}
 
 """
@@ -365,10 +365,10 @@ Database: {self.db_path}
         from rich.panel import Panel
 
         status_text = f"""
-📊 Scan ID: {summary.get('scan_id', 'N/A')}
-📅 Timestamp: {summary.get('timestamp', 'N/A')[:19]}
-📁 Files Scanned: {summary.get('scanned_files', 0)}
-🔍 Total Violations: {summary.get('total_violations', 0)}
+📊 Scan ID: {summary.get("scan_id", "N/A")}
+📅 Timestamp: {summary.get("timestamp", "N/A")[:19]}
+📁 Files Scanned: {summary.get("scanned_files", 0)}
+🔍 Total Violations: {summary.get("total_violations", 0)}
         """
         self.console.print(Panel(status_text.strip(), title="Current Status", border_style="blue"))
 
@@ -404,7 +404,7 @@ Database: {self.db_path}
         # Database Stats
         if summary.get("database_stats"):
             stats = summary["database_stats"]
-            self.console.print(f"\n[dim]Database Statistics:[/dim]")
+            self.console.print("\n[dim]Database Statistics:[/dim]")
             self.console.print(f"[dim]  • Total Scans: {stats['total_scans']}[/dim]")
             self.console.print(f"[dim]  • Total Violations Tracked: {stats['total_violations']}[/dim]")
             self.console.print(f"[dim]  • Unique Patterns: {stats['unique_patterns']}[/dim]")

@@ -20,20 +20,20 @@ def load_config() -> dict[str, Any]:
     4. Default configuration + auto-init if needed
     """
     config = get_default_config()
-    
+
     # Try project-specific .codex/config.toml (PRIMARY)
     project_config = Path(".codex/config.toml")
     if project_config.exists():
         config.update(load_toml_config(project_config))
         return config, project_config
-    
+
     # Try user-global config
     user_config = Path.home() / ".config" / "codex" / "config.toml"
     if user_config.exists():
         config.update(load_toml_config(user_config))
         # Still return project path for potential auto-init
         return config, project_config
-    
+
     # Try legacy pyproject.toml
     pyproject = Path("pyproject.toml")
     if pyproject.exists():
@@ -42,7 +42,7 @@ def load_config() -> dict[str, Any]:
             if "tool" in data and "codex" in data["tool"]:
                 config.update(data["tool"]["codex"])
                 return config, project_config
-    
+
     # No config found - return defaults with project path for auto-init
     return config, project_config
 
@@ -95,22 +95,23 @@ def get_default_config() -> dict[str, Any]:
 def auto_init_project(project_config_path: Path) -> bool:
     """
     Auto-initialize project with .codex/config.toml.
-    
+
     Returns True if initialization was performed.
     """
     if project_config_path.exists():
         return False
-    
+
     # Create .codex directory
     codex_dir = project_config_path.parent
     codex_dir.mkdir(exist_ok=True)
-    
+
     # Create default config
     default_config = get_default_config()
-    
+
     # Write config file (need to install tomli-w if not available)
     try:
         import tomli_w
+
         with open(project_config_path, "wb") as f:
             tomli_w.dump({"codex": default_config}, f)
     except ImportError:
@@ -118,25 +119,25 @@ def auto_init_project(project_config_path: Path) -> bool:
         with open(project_config_path, "w") as f:
             f.write("[codex]\n")
             f.write('patterns = ["all"]\n')
-            f.write('exclude = [\n')
+            f.write("exclude = [\n")
             for pattern in default_config["exclude"]:
                 f.write(f'  "{pattern}",\n')
-            f.write(']\n')
-            f.write('auto_fix = false\n')
+            f.write("]\n")
+            f.write("auto_fix = false\n")
             f.write('enforce = ["mandatory", "critical", "high"]\n')
             f.write('farm_url = "http://localhost:8001"\n')
-            f.write('quiet = false\n')
-            f.write('show_diff = false\n')
-            f.write('run_tools = true\n')
-            f.write('\n[codex.tools]\n')
-            f.write('ruff = true\n')
-            f.write('mypy = true\n')
-            f.write('typos = true\n')
-    
-    # Create cache directory  
+            f.write("quiet = false\n")
+            f.write("show_diff = false\n")
+            f.write("run_tools = true\n")
+            f.write("\n[codex.tools]\n")
+            f.write("ruff = true\n")
+            f.write("mypy = true\n")
+            f.write("typos = true\n")
+
+    # Create cache directory
     cache_dir = codex_dir / "cache"
     cache_dir.mkdir(exist_ok=True)
-    
+
     return True
 
 

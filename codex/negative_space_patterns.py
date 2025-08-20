@@ -435,15 +435,15 @@ DISCOVERED PATTERNS ({len(patterns)} total):
    Avoidance Rate: {pattern.avoidance_rate:.1%}
 
    Protective Structures:
-   {chr(10).join(f'   • {structure}' for structure in pattern.protective_structures)}
+   {chr(10).join(f"   • {structure}" for structure in pattern.protective_structures)}
 
-   Prevents: {', '.join(pattern.problems_prevented)}
+   Prevents: {", ".join(pattern.problems_prevented)}
 
    Implementation: {pattern.implementation_guide}
 
    Examples:
-   ✅ Clean projects: {', '.join(pattern.examples['clean'])}
-   ❌ Problematic projects: {', '.join(pattern.examples['problematic'])}
+   ✅ Clean projects: {", ".join(pattern.examples["clean"])}
+   ❌ Problematic projects: {", ".join(pattern.examples["problematic"])}
 """
 
         report += f"""

@@ -16,12 +16,12 @@ def show_detailed_violations():
     scanner = EnhancedIntelligentScanner(codex_dir)
     results = scanner.comprehensive_scan()
 
-    print(f"\n=== PATTERN DETECTION SUMMARY ===")
+    print("\n=== PATTERN DETECTION SUMMARY ===")
     print(f"Total patterns loaded: {len(scanner.enhanced_patterns)}")
     for pattern in scanner.enhanced_patterns:
         print(f"  - {pattern['name']} ({pattern['priority']}): {pattern['description'][:60]}...")
 
-    print(f"\n=== VIOLATION BREAKDOWN ===")
+    print("\n=== VIOLATION BREAKDOWN ===")
 
     # Group violations by pattern
     violations_by_pattern = {}
@@ -48,10 +48,10 @@ def show_detailed_violations():
             confidence = violation.get("confidence", 0)
             print(f"      Intelligence: {intelligent_verdict} ({confidence:.1%} confidence)")
 
-    print(f"\n=== INTELLIGENCE ASSESSMENT DETAILS ===")
+    print("\n=== INTELLIGENCE ASSESSMENT DETAILS ===")
 
     # Show samples of filtered out violations
-    print(f"\nSample violations filtered out as false positives:")
+    print("\nSample violations filtered out as false positives:")
 
     # Get some raw violations from file analysis
     raw_violations = []
@@ -76,9 +76,9 @@ def show_detailed_violations():
         print(f"   {i+1}. {Path(file_path).name}:{line_num} - {pattern}")
         if code:
             print(f"      Code: {code[:80]}...")
-        print(f"      Reason: Filtered by intelligence")
+        print("      Reason: Filtered by intelligence")
 
-    print(f"\n=== RECOMMENDATIONS ===")
+    print("\n=== RECOMMENDATIONS ===")
 
     critical_count = sum(
         1 for fp in results.get("fix_plans", []) if fp.get("violation", {}).get("priority") == "CRITICAL"
@@ -89,19 +89,19 @@ def show_detailed_violations():
 
     if critical_count > 0:
         print(f"🔴 IMMEDIATE ACTION REQUIRED: {critical_count} critical security issues")
-        print(f"   - Review hardcoded secrets and security vulnerabilities")
-        print(f"   - Move sensitive data to environment variables")
+        print("   - Review hardcoded secrets and security vulnerabilities")
+        print("   - Move sensitive data to environment variables")
 
     if mandatory_count > 0:
         print(f"🟠 POLICY COMPLIANCE: {mandatory_count} mandatory violations")
-        print(f"   - Fix CORS wildcard configurations")
-        print(f"   - Ensure mock code naming compliance")
+        print("   - Fix CORS wildcard configurations")
+        print("   - Ensure mock code naming compliance")
 
     high_count = sum(1 for fp in results.get("fix_plans", []) if fp.get("violation", {}).get("priority") == "HIGH")
     if high_count > 0:
         print(f"🟡 ARCHITECTURAL IMPROVEMENTS: {high_count} high priority issues")
-        print(f"   - Move business logic to core packages")
-        print(f"   - Implement unified data source interfaces")
+        print("   - Move business logic to core packages")
+        print("   - Implement unified data source interfaces")
 
 
 if __name__ == "__main__":

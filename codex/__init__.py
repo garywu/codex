@@ -15,23 +15,23 @@ try:
     from .client import CodexClient
 
     __all__ = [
+        "AnalysisError",
+        "CodeContext",
         "CodexClient",
+        "CodexError",
         "Pattern",
         "PatternCategory",
         "PatternMatch",
-        "CodeContext",
-        "CodexError",
         "PatternNotFoundError",
-        "AnalysisError",
     ]
 except ImportError:
     # Farm SDK not available
     __all__ = [
+        "AnalysisError",
+        "CodeContext",
+        "CodexError",
         "Pattern",
         "PatternCategory",
         "PatternMatch",
-        "CodeContext",
-        "CodexError",
         "PatternNotFoundError",
-        "AnalysisError",
     ]

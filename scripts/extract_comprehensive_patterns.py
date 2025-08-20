@@ -447,11 +447,11 @@ def main():
         for pattern in mandatory_patterns:
             print(f"  • {pattern['name']}: {pattern['description']}")
 
-    print(f"\n🎯 Next Steps:")
+    print("\n🎯 Next Steps:")
     print(f"1. Review patterns: cat {output_file}")
     print(f"2. Import: uv run codex pattern bulk sync --file {output_file}")
-    print(f"3. Test: uv run codex pattern list --priority MANDATORY")
-    print(f"4. Scan: uv run codex scan .")
+    print("3. Test: uv run codex pattern list --priority MANDATORY")
+    print("4. Scan: uv run codex scan .")
 
 
 if __name__ == "__main__":

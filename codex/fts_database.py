@@ -24,4 +24,4 @@ FTSDatabase = UnifiedDatabase
 # For pattern extractor compatibility - redirect to proper model
 from .pattern_models import Pattern as FTSPattern
 
-__all__ = ["FTSDatabase", "UnifiedDatabase", "FTSPattern"]
+__all__ = ["FTSDatabase", "FTSPattern", "UnifiedDatabase"]

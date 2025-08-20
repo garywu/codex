@@ -197,16 +197,16 @@ FILES WITH MOST ISSUES:
                 ),
             )
 
-        print(f"\nStored conversational observation in database")
+        print("\nStored conversational observation in database")
 
     def show_summary(self, files_scanned: int, violations: list[dict]) -> None:
         """Show human-readable summary."""
-        print(f"\n=== CODEX SELF-SCAN SUMMARY ===")
+        print("\n=== CODEX SELF-SCAN SUMMARY ===")
         print(f"Files scanned: {files_scanned}")
         print(f"Total violations: {len(violations)}")
 
         if violations:
-            print(f"\nTop issues:")
+            print("\nTop issues:")
             by_pattern = {}
             for v in violations:
                 pattern = v["pattern"]
@@ -215,7 +215,7 @@ FILES WITH MOST ISSUES:
             for pattern, count in sorted(by_pattern.items(), key=lambda x: x[1], reverse=True)[:5]:
                 print(f"  {pattern}: {count} violations")
 
-            print(f"\nSample violations:")
+            print("\nSample violations:")
             for v in violations[:3]:
                 print(f"  {Path(v['file']).name}:{v['line']} - {v['pattern']}")
                 print(f"    {v['code_line']}")

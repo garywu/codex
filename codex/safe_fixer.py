@@ -261,18 +261,18 @@ class SafeFixer:
 
         # Decision point
         if not validation.syntax_valid:
-            self.console.print(f"[red]✗ Syntax validation failed![/red]")
+            self.console.print("[red]✗ Syntax validation failed![/red]")
             self.console.print(f"[red]{validation.error}[/red]")
             self.fix_attempts.append(attempt)
             return False, attempt
 
         if not validation.imports_valid:
-            self.console.print(f"[red]✗ Import validation failed![/red]")
+            self.console.print("[red]✗ Import validation failed![/red]")
             self.fix_attempts.append(attempt)
             return False, attempt
 
         if validation.test_status and "FAILED" in validation.test_status:
-            self.console.print(f"[yellow]⚠ Tests failed after fix:[/yellow]")
+            self.console.print("[yellow]⚠ Tests failed after fix:[/yellow]")
             self.console.print(validation.test_status)
             # Ask user whether to proceed
             if not self.confirm_risky_fix():
@@ -284,7 +284,7 @@ class SafeFixer:
             file_path.write_text(modified_content)
             attempt.applied = True
             self.fix_attempts.append(attempt)
-            self.console.print(f"[green]✓ Fix applied successfully[/green]")
+            self.console.print("[green]✓ Fix applied successfully[/green]")
             return True, attempt
         except Exception as e:
             self.console.print(f"[red]Failed to write file: {e}[/red]")

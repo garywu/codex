@@ -356,7 +356,7 @@ class OrganizationScanner:
                     for f in files[:3]:
                         self.console.print(f"    • {f}")
                     if len(files) > 3:
-                        self.console.print(f"    ... and {len(files)-3} more")
+                        self.console.print(f"    ... and {len(files) - 3} more")
 
         # Duplicates
         if results["duplicates"]:
@@ -366,7 +366,7 @@ class OrganizationScanner:
                 for f in files[:3]:
                     self.console.print(f"    • {f}")
                 if len(files) > 3:
-                    self.console.print(f"    ... and {len(files)-3} more")
+                    self.console.print(f"    ... and {len(files) - 3} more")
 
         # Recommendations
         if results["recommendations"]:

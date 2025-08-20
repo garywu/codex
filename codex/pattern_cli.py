@@ -284,12 +284,12 @@ def show(
         data_console.logging.info(f"[yellow]Description:[/yellow] {pattern.get('description', 'N/A')}")
 
         if pattern.get("detection_rules"):
-            data_console.logging.info(f"\n[yellow]Detection Rules:[/yellow]")
+            data_console.logging.info("\n[yellow]Detection Rules:[/yellow]")
             for rule in pattern.get("detection_rules", {}).get("rules", []):
                 data_console.logging.info(f"  • {rule}")
 
         if pattern.get("fix_template"):
-            data_console.logging.info(f"\n[yellow]Fix Template:[/yellow]")
+            data_console.logging.info("\n[yellow]Fix Template:[/yellow]")
             data_console.logging.info(f"  {pattern['fix_template']}")
 
         if pattern.get("tags"):
@@ -492,7 +492,7 @@ def import_file(
         imported, updated, errors = asyncio.run(import_patterns())
 
         if not quiet:
-            console.logging.info(f"\n[green]✅ Import complete:[/green]")
+            console.logging.info("\n[green]✅ Import complete:[/green]")
             console.logging.info(f"  • Imported: {imported}")
             console.logging.info(f"  • Updated: {updated}")
             if errors:
@@ -1004,7 +1004,7 @@ def ai_assist(
         result = asyncio.run(process_ai_request())
 
         # Display response
-        console.logging.info(f"\n[bold cyan]AI Assistant Response:[/bold cyan]")
+        console.logging.info("\n[bold cyan]AI Assistant Response:[/bold cyan]")
         console.logging.info(f"{result['response']}\n")
 
         if result.get("suggested_commands"):

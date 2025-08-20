@@ -360,7 +360,7 @@ def _format_value(value: Any) -> str:
         if len(value) <= 3:
             return str(value)
         else:
-            return f"[{', '.join(map(str, value[:2]))}, ... +{len(value)-2} more]"
+            return f"[{', '.join(map(str, value[:2]))}, ... +{len(value) - 2} more]"
     elif isinstance(value, dict):
         return f"<dict with {len(value)} keys>"
     elif isinstance(value, bool):

@@ -21,21 +21,21 @@ repos:
       #   always_run: true
       #   description: "Check project file organization (minimum score: 80/100)"
 
-  # Ruff - Astral's fast Python linter and formatter (disabled for now due to legacy code)
-  # - repo: https://github.com/astral-sh/ruff-pre-commit
-  #   rev: v0.8.0
-  #   hooks:
-  #     - id: ruff
-  #       args: [--fix]
-  #     - id: ruff-format
+  # Ruff - Astral's fast Python linter and formatter
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.0
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
 
-  # Mypy - type checking (disabled for now due to legacy code)
-  # - repo: https://github.com/pre-commit/mirrors-mypy
-  #   rev: v1.13.0
-  #   hooks:
-  #     - id: mypy
-  #       additional_dependencies: [pydantic, sqlmodel, typer]
-  #       args: [--strict, --ignore-missing-imports]
+  # Mypy - type checking
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.13.0
+    hooks:
+      - id: mypy
+        additional_dependencies: [pydantic, sqlmodel, typer]
+        args: [--ignore-missing-imports, --allow-untyped-defs, --allow-untyped-calls]
 
   # Typos - spell checker
   - repo: https://github.com/crate-ci/typos

@@ -417,9 +417,9 @@ def main():
     with open(patterns_file, "w") as f:
         json.dump(patterns, f, indent=2, default=str)
 
-    print(f"\n=== ANALYSIS COMPLETE ===")
+    print("\n=== ANALYSIS COMPLETE ===")
     print(f"Enhanced patterns saved to: {patterns_file}")
-    print(f"Ready for systematic implementation in Codex scanner")
+    print("Ready for systematic implementation in Codex scanner")
 
 
 if __name__ == "__main__":

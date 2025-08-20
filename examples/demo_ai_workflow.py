@@ -319,7 +319,7 @@ def main():
     # Show JSON output
     show_json_output_example()
 
-    print(f"\n🎯 Next Steps")
+    print("\n🎯 Next Steps")
     print("=" * 15)
     print("1. Try the commands above on the demo repository")
     print("2. Experiment with natural language queries")

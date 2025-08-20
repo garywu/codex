@@ -88,14 +88,14 @@ def analyze_violations():
 
                             # Check if it's actually mock-related
                             if "def " in actual_line and ("fake" in actual_line or "mock" in actual_line):
-                                print(f"    ✓ Valid: Function with 'fake' or 'mock'")
+                                print("    ✓ Valid: Function with 'fake' or 'mock'")
                             elif "test" in actual_line and '"test"' in actual_line:
-                                print(f"    ✗ FALSE POSITIVE: String literal 'test'")
+                                print("    ✗ FALSE POSITIVE: String literal 'test'")
                                 suspicious_patterns["mock-code-naming"].append(f"{file_path}:{line}")
                             else:
                                 print(f"    ? Unclear: {sample['message'][:60]}")
                 except:
-                    print(f"    ! Could not read file")
+                    print("    ! Could not read file")
 
         elif "cors" in pattern_name.lower():
             for sample in samples:
@@ -112,14 +112,14 @@ def analyze_violations():
 
                             # Check if it's actually CORS-related
                             if "cors" in actual_line.lower() or "origin" in actual_line.lower():
-                                print(f"    ✓ Valid: CORS-related code")
+                                print("    ✓ Valid: CORS-related code")
                             elif "*" in actual_line and ("glob" in actual_line or "pattern" in actual_line):
-                                print(f"    ✗ FALSE POSITIVE: Glob pattern, not CORS")
+                                print("    ✗ FALSE POSITIVE: Glob pattern, not CORS")
                                 suspicious_patterns["no-cors"].append(f"{file_path}:{line}")
                             else:
                                 print(f"    ? Check: {sample['message'][:60]}")
                 except:
-                    print(f"    ! Could not read file")
+                    print("    ! Could not read file")
 
         elif "minimum-test" in pattern_name:
             for sample in samples:

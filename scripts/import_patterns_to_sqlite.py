@@ -120,7 +120,7 @@ async def import_patterns_to_sqlmodel(patterns_file: str):
 
         await session.commit()
 
-    print(f"\n✅ Import complete!")
+    print("\n✅ Import complete!")
     print(f"  • Imported: {imported_count} new patterns")
     print(f"  • Updated: {updated_count} existing patterns")
     print(f"  • Total: {imported_count + updated_count} patterns processed")
@@ -131,7 +131,7 @@ async def import_patterns_to_sqlmodel(patterns_file: str):
 def import_patterns_to_fts(patterns_file: str):
     """Import patterns into FTS database for AI queries."""
 
-    print(f"\n📥 Importing patterns to FTS database")
+    print("\n📥 Importing patterns to FTS database")
     with open(patterns_file) as f:
         data = json.load(f)
 
@@ -191,7 +191,7 @@ async def verify_import():
             prio = pattern.priority.value
             priorities[prio] = priorities.get(prio, 0) + 1
 
-        print(f"\n📊 Database Statistics:")
+        print("\n📊 Database Statistics:")
         print(f"Total patterns: {len(patterns)}")
 
         print("\nBy Category:")

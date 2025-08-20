@@ -447,7 +447,7 @@ class FixOrchestrator:
         """Ask user to confirm a fix."""
         from rich.prompt import Confirm
 
-        self.console.print(f"\n[yellow]Fix proposal:[/yellow]")
+        self.console.print("\n[yellow]Fix proposal:[/yellow]")
         self.console.print(f"  Pattern: {fix['pattern_name']}")
         self.console.print(f"  File: {fix['file_path']}:{fix.get('line_number', '?')}")
         self.console.print(f"  Risk: {fix['risk_level']}")
@@ -536,7 +536,7 @@ class FixOrchestrator:
 Would succeed: {successful}/{len(results)}
 Estimated changes: {total_changes} lines
 Average confidence: {avg_confidence:.1%}
-High risk fixes: {sum(1 for r in results if r['simulation'].risk_assessment == 'high')}
+High risk fixes: {sum(1 for r in results if r["simulation"].risk_assessment == "high")}
 
 [yellow]This is a simulation - no files were modified[/yellow]""",
             border_style="blue",

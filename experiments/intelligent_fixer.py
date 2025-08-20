@@ -254,7 +254,7 @@ class IntelligentFixer:
 
     def _review_and_approve_fixes(self, fix_plans: list[dict[str, Any]]) -> list[dict[str, Any]]:
         """Review fix plans and approve them intelligently."""
-        print(f"\n=== INTELLIGENT FIX REVIEW ===")
+        print("\n=== INTELLIGENT FIX REVIEW ===")
 
         auto_approved = [plan for plan in fix_plans if plan["fix_approved"]]
         needs_review = [plan for plan in fix_plans if not plan["fix_approved"]]
@@ -264,7 +264,7 @@ class IntelligentFixer:
 
         # Show auto-approved fixes
         if auto_approved:
-            print(f"\n✅ Auto-approved fixes:")
+            print("\n✅ Auto-approved fixes:")
             for plan in auto_approved:
                 if plan["fix_strategy"]["action"] != "no_fix_recommended":
                     print(f"  {Path(plan['file_path']).name}:{plan['line_number']} - {plan['fix_strategy']['action']}")
@@ -287,7 +287,7 @@ class IntelligentFixer:
 
     def _apply_approved_fixes(self, approved_fixes: list[dict[str, Any]]) -> dict[str, Any]:
         """Apply the approved fixes using Codex for speed."""
-        print(f"\n=== APPLYING APPROVED FIXES ===")
+        print("\n=== APPLYING APPROVED FIXES ===")
         print("Using Codex for fast file operations...")
 
         results = {
@@ -442,15 +442,15 @@ def main():
     fixer = IntelligentFixer(codex_dir)
     results = fixer.analyze_and_fix_intelligently(real_issues)
 
-    print(f"\n=== INTELLIGENT FIXING COMPLETE ===")
+    print("\n=== INTELLIGENT FIXING COMPLETE ===")
     print(f"Issues analyzed: {len(real_issues)}")
     print(f"Fixes applied: {results['fixes_successful']}")
     print(f"Files modified: {len(results['files_modified'])}")
 
-    print(f"\nThis demonstrates the Codex-Claude collaboration:")
-    print(f"✅ Codex provided speed for scanning and file operations")
-    print(f"✅ Claude provided intelligence for analysis and decisions")
-    print(f"✅ Result: High-quality, context-aware fixing")
+    print("\nThis demonstrates the Codex-Claude collaboration:")
+    print("✅ Codex provided speed for scanning and file operations")
+    print("✅ Claude provided intelligence for analysis and decisions")
+    print("✅ Result: High-quality, context-aware fixing")
 
 
 if __name__ == "__main__":

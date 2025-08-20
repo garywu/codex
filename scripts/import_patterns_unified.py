@@ -43,7 +43,7 @@ def main():
     # Import patterns
     result = db.import_patterns(import_file)
 
-    print(f"\n✅ Import Results:")
+    print("\n✅ Import Results:")
     print(f"  • New patterns: {result['imported']}")
     print(f"  • Updated patterns: {result['updated']}")
     print(f"  • Total processed: {result['total']}")
@@ -51,20 +51,20 @@ def main():
     # Show statistics
     stats = db.get_statistics()
 
-    print(f"\n📊 Database Statistics:")
+    print("\n📊 Database Statistics:")
     print(f"  • Total patterns: {stats['total_patterns']}")
     print(f"  • Enabled patterns: {stats['enabled_patterns']}")
 
-    print(f"\n📁 By Category:")
+    print("\n📁 By Category:")
     for category, count in stats["by_category"].items():
         print(f"  • {category}: {count}")
 
-    print(f"\n🎯 By Priority:")
+    print("\n🎯 By Priority:")
     for priority, count in stats["by_priority"].items():
         print(f"  • {priority}: {count}")
 
     # Test search functionality
-    print(f"\n🔍 Testing Search:")
+    print("\n🔍 Testing Search:")
 
     test_queries = ["naming", "error", "validation"]
     for query in test_queries:
@@ -74,7 +74,7 @@ def main():
             print(f"    - {pattern.name} ({pattern.priority.value})")
 
     # Show MANDATORY patterns
-    print(f"\n🔴 MANDATORY Patterns:")
+    print("\n🔴 MANDATORY Patterns:")
     all_patterns = db.get_all_patterns()
     mandatory = [p for p in all_patterns if p.priority == PatternPriority.MANDATORY]
 
@@ -82,7 +82,7 @@ def main():
         print(f"  • {pattern.name}")
         print(f"    {pattern.description}")
 
-    print(f"\n✨ Import complete!")
+    print("\n✨ Import complete!")
     print(f"\nDatabase ready at: {settings.database_path}")
     print("\nUse these commands:")
     print("  codex scan .           # Scan with new patterns")

@@ -364,7 +364,7 @@ def main():
     patterns = create_codex_patterns(project_init)
 
     # Display summary
-    print(f"\n📊 Pattern Summary:")
+    print("\n📊 Pattern Summary:")
     print(f"Total patterns extracted: {len(patterns)}")
 
     # Group by category

@@ -127,7 +127,7 @@ class PatternRefiner:
 
         # Classify the contexts
         types = Counter(ctx["type"] for ctx in contexts)
-        print(f"\nLogging line types:")
+        print("\nLogging line types:")
         for line_type, count in types.items():
             print(f"  {line_type}: {count}")
 
@@ -170,12 +170,12 @@ class PatternRefiner:
 
         # Classify star usage
         types = Counter(usage["type"] for usage in star_usage)
-        print(f"Star (*) usage types:")
+        print("Star (*) usage types:")
         for usage_type, count in types.items():
             print(f"  {usage_type}: {count}")
 
         # Show samples
-        print(f"\nSample star usage:")
+        print("\nSample star usage:")
         for usage in star_usage[:5]:
             print(f"  {usage['file']}:{usage['line']} ({usage['type']}): {usage['content'][:60]}")
 
@@ -399,10 +399,10 @@ def main():
     # Record the refinement session
     refiner.create_refinement_conversation(analysis, refined_patterns)
 
-    print(f"\n=== PATTERN REFINEMENT COMPLETE ===")
+    print("\n=== PATTERN REFINEMENT COMPLETE ===")
     print(f"Analyzed {len(analysis.get('pattern_trends', {}))} patterns")
     print(f"Created {len(refined_patterns)} refined patterns")
-    print(f"Check database for full refinement conversation")
+    print("Check database for full refinement conversation")
 
 
 if __name__ == "__main__":

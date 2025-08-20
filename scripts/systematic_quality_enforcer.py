@@ -478,7 +478,7 @@ def main():
 
     print(results["report"])
 
-    print(f"\n=== SYSTEMATIC ENFORCEMENT COMPLETE ===")
+    print("\n=== SYSTEMATIC ENFORCEMENT COMPLETE ===")
     print(f"Quality status: {results['validation_results']['validation_status']}")
     print(f"Backup location: {results['backup_location']}")
 

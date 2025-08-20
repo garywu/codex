@@ -238,7 +238,7 @@ def history(
                 if duration_ms < 1000:
                     duration = f"{duration_ms}ms"
                 else:
-                    duration = f"{duration_ms/1000:.1f}s"
+                    duration = f"{duration_ms / 1000:.1f}s"
 
             table.add_row(
                 session.get("session_id", "")[:8],
@@ -379,7 +379,7 @@ def _output_results(session, format: OutputFormat, quiet: bool, verbose: bool):
 
     else:  # HUMAN format
         if not quiet:
-            console.logging.info(f"\n[bold]Scan Results[/bold]")
+            console.logging.info("\n[bold]Scan Results[/bold]")
             console.logging.info(f"Session: {session.session_id[:8]}")
             console.logging.info(f"Duration: {session.summary.get('duration_ms', 0)}ms")
             console.logging.info()

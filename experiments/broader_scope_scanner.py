@@ -134,7 +134,7 @@ def main():
     scanner = BroaderScopeScanner(work_dir)
     results = scanner.scan_multiple_projects()
 
-    print(f"\n=== BROADER SCOPE SCAN RESULTS ===")
+    print("\n=== BROADER SCOPE SCAN RESULTS ===")
     print(f"Projects scanned: {results['total_projects_scanned']}")
     print(f"Total violations found: {results['total_violations_found']}")
     print(f"Projects with violations: {results['projects_with_violations']}")
@@ -142,20 +142,20 @@ def main():
     print(f"Clean project percentage: {results['effectiveness_metrics']['projects_clean_percentage']:.1f}%")
 
     if results["total_violations_found"] > 0:
-        print(f"\nViolations by priority:")
+        print("\nViolations by priority:")
         for priority, count in results["aggregate_priority"].items():
             if count > 0:
                 print(f"  {priority}: {count}")
 
-        print(f"\nProject details:")
+        print("\nProject details:")
         for project_name, details in results["project_details"].items():
             if details["violations"] > 0:
                 print(f"  {project_name}: {details['violations']} violations")
     else:
-        print(f"\n🎉 ALL SCANNED PROJECTS ARE CLEAN!")
-        print(f"Enhanced patterns validate excellent code quality across all projects")
+        print("\n🎉 ALL SCANNED PROJECTS ARE CLEAN!")
+        print("Enhanced patterns validate excellent code quality across all projects")
 
-    print(f"\nEffectiveness metrics:")
+    print("\nEffectiveness metrics:")
     print(f"  Average violations per project: {results['effectiveness_metrics']['average_violations_per_project']:.1f}")
     print(f"  Critical security issues: {results['effectiveness_metrics']['critical_issues_found']}")
     print(f"  Mandatory policy violations: {results['effectiveness_metrics']['mandatory_issues_found']}")

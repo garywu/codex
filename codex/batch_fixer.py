@@ -326,7 +326,7 @@ if __name__ == "__main__":
 
     summary = batch_fix_directory(directory, dry_run=dry_run)
 
-    print(f"\nBatch Fix Summary:")
+    print("\nBatch Fix Summary:")
     print(f"  Files modified: {summary['files_modified']}")
     print(f"  Total fixes: {summary['fixes_applied']}")
 

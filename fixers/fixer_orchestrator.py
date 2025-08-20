@@ -196,7 +196,7 @@ def main():
 
     # Show summary
     summary = orchestrator.get_overall_summary()
-    print(f"\n=== ORCHESTRATION COMPLETE ===")
+    print("\n=== ORCHESTRATION COMPLETE ===")
     print(f"Total fixes applied: {summary['total_fixes_applied']}")
     print(f"Successful fixers: {summary['successful_fixers']}/{summary['total_fixers_run']}")
 

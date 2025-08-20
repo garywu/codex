@@ -203,12 +203,12 @@ class SmartScanner:
         print(f"Refined pattern violations: {len(refined_violations)}")
         print(f"Patterns with violations: {len(by_pattern)}")
 
-        print(f"\nRefined violations by pattern:")
+        print("\nRefined violations by pattern:")
         for pattern, violations in sorted(by_pattern.items(), key=lambda x: len(x[1]), reverse=True):
             print(f"  {pattern}: {len(violations)} violations")
 
         # Show samples
-        print(f"\nSample refined violations:")
+        print("\nSample refined violations:")
         for violation in refined_violations[:5]:
             print(f"  {Path(violation['file']).name}:{violation['line']} - {violation['pattern']}")
             print(f"    {violation['code_line']}")
@@ -311,8 +311,8 @@ def main():
     # Record results
     scanner.create_comparison_conversation(summary)
 
-    print(f"\n=== SMART SCANNING COMPLETE ===")
-    print(f"Check database for full comparison conversation")
+    print("\n=== SMART SCANNING COMPLETE ===")
+    print("Check database for full comparison conversation")
 
 
 if __name__ == "__main__":

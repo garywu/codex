@@ -48,7 +48,7 @@ def main():
         print("\nRun 'uv run python -m codex.organization_scanner' for full report")
         return 1
     else:
-        print(f"✅ Organization check passed!")
+        print("✅ Organization check passed!")
         return 0
 
 

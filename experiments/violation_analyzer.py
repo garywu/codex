@@ -130,12 +130,12 @@ class ViolationAnalyzer:
         print(f"Patterns with violations: {len(by_pattern)}")
 
         # Show breakdown by pattern
-        print(f"\nViolations by pattern:")
+        print("\nViolations by pattern:")
         for pattern, violations in sorted(by_pattern.items(), key=lambda x: len(x[1]), reverse=True):
             print(f"  {pattern}: {len(violations)}")
 
         # Show breakdown by category
-        print(f"\nViolations by category:")
+        print("\nViolations by category:")
         for category, violations in sorted(by_category.items(), key=lambda x: len(x[1]), reverse=True):
             print(f"  {category}: {len(violations)}")
 
@@ -250,24 +250,24 @@ def main():
     analyzer = ViolationAnalyzer(db_path, codex_dir)
     analysis = analyzer.analyze_all_violations()
 
-    print(f"\n=== ANALYSIS SUMMARY ===")
+    print("\n=== ANALYSIS SUMMARY ===")
     print(f"Total violations: {analysis['total_violations']}")
     print(f"Real issues identified: {len(analysis['real_issues'])}")
     print(f"False positives identified: {len(analysis['false_positives'])}")
 
     if analysis["real_issues"]:
-        print(f"\nReal issues to fix:")
+        print("\nReal issues to fix:")
         for issue in analysis["real_issues"]:
             print(f"  - {issue}")
 
     if analysis["false_positives"]:
-        print(f"\nFalse positives to refine:")
+        print("\nFalse positives to refine:")
         for fp in analysis["false_positives"][:5]:  # Show first 5
             print(f"  - {fp}")
 
     # Create fix plan
     fix_plan = analyzer.create_targeted_fix_plan(analysis)
-    print(f"\n=== TARGETED FIX PLAN ===")
+    print("\n=== TARGETED FIX PLAN ===")
     print(f"Actions needed: {len(fix_plan['actions'])}")
     for action in fix_plan["actions"]:
         print(f"  {action['type']}: {action['name']} ({action['complexity']} complexity)")

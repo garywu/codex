@@ -13,8 +13,8 @@ from .print_to_logging_fixer import PrintToLoggingFixer
 
 __all__ = [
     "ExternalToolsFixer",
-    "PrintToLoggingFixer",
+    "FixerOrchestrator",
     "HardcodedPathsFixer",
     "ImportConsolidationFixer",
-    "FixerOrchestrator",
+    "PrintToLoggingFixer",
 ]

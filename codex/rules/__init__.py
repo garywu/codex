@@ -12,8 +12,8 @@ from .categories import RulePrefix
 from .registry import Rule, RuleRegistry, Violation
 
 __all__ = [
-    "RuleRegistry",
     "Rule",
-    "Violation",
     "RulePrefix",
+    "RuleRegistry",
+    "Violation",
 ]

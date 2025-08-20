@@ -137,8 +137,12 @@ def scan(
     ] = False,
     list_files: Annotated[bool, typer.Option("--list-files", help="List all files that would be scanned")] = False,
     explain: Annotated[bool, typer.Option("--explain", help="Verbose mode explaining every decision")] = False,
-    fail_on_violations: Annotated[bool, typer.Option("--fail-on-violations", help="Exit with code 1 if violations found (for CI/CD)")] = False,
-    recommendations: Annotated[bool, typer.Option("--recommendations", help="Include technology and architecture recommendations")] = False,
+    fail_on_violations: Annotated[
+        bool, typer.Option("--fail-on-violations", help="Exit with code 1 if violations found (for CI/CD)")
+    ] = False,
+    recommendations: Annotated[
+        bool, typer.Option("--recommendations", help="Include technology and architecture recommendations")
+    ] = False,
 ) -> None:
     """Scan files for pattern violations."""
 
@@ -148,12 +152,12 @@ def scan(
 
     # Load configuration with auto-init
     from .config import auto_init_project, should_auto_init
-    
+
     if should_auto_init():
         auto_init_project(Path(".codex/config.toml"))
         if not quiet:
             console.print("[dim]Initialized .codex/config.toml for this project[/dim]")
-    
+
     config_data, config_path = load_config()
 
     # Override tools setting if no_tools flag is set
@@ -209,7 +213,7 @@ def scan(
 
                     if explain:
                         # Show detailed exclusion reasons
-                        print(f"\n🔍 Detailed Exclusion Explanations:", file=sys.stderr)
+                        print("\n🔍 Detailed Exclusion Explanations:", file=sys.stderr)
                         exclusion_counts = {}
                         for decision in discovery_result.excluded_files[:20]:  # Show first 20
                             reason_key = (
@@ -333,6 +337,7 @@ def scan(
         # Technology recommendations if requested
         if recommendations and not quiet:
             from .recommendation_engine import ProjectArchitectureAnalyzer
+
             analyzer = ProjectArchitectureAnalyzer(quiet=quiet)
             tech_recommendations = analyzer.analyze_project(Path.cwd())
             analyzer.print_recommendations(tech_recommendations)
@@ -369,36 +374,39 @@ def scan(
 @app.command(name="precommit", help="Pre-commit hook mode - blocks commits on violations")
 def precommit(
     paths: Annotated[list[Path] | None, typer.Argument(help="Files to check")] = None,
-    recommendations: Annotated[bool, typer.Option("--recommendations", help="Include technology recommendations")] = False,
+    recommendations: Annotated[
+        bool, typer.Option("--recommendations", help="Include technology recommendations")
+    ] = False,
 ) -> None:
     """Pre-commit hook mode that fails on violations to block commits."""
-    
+
     # Force fail-on-violations for pre-commit hooks
     import sys
     from pathlib import Path
-    
+
     if not paths:
         paths = [Path.cwd()]
-    
+
     # Call scan with pre-commit settings
     sys.argv = ["codex", "scan", "--fail-on-violations", "--quiet"]
     if recommendations:
         sys.argv.append("--recommendations")
     for path in paths:
         sys.argv.append(str(path))
-    
+
     # Re-invoke scan with pre-commit settings
     from .config import auto_init_project, should_auto_init
-    
+
     if should_auto_init():
         auto_init_project(Path(".codex/config.toml"))
-    
+
     config_data, config_path = load_config()
-    
+
     async def _precommit_scan() -> int:
         from .scanner import Scanner
+
         scanner = Scanner(quiet=True)
-        
+
         total_violations = 0
         for path in paths:
             if path.is_file():
@@ -408,9 +416,9 @@ def precommit(
                 results = await scanner.scan_directory(path)
                 for result in results:
                     total_violations += len(result.violations) if result.violations else 0
-        
+
         return 1 if total_violations > 0 else 0
-    
+
     exit_code = asyncio.run(_precommit_scan())
     raise typer.Exit(exit_code)
 
@@ -419,29 +427,31 @@ def precommit(
 def ci(
     paths: Annotated[list[Path] | None, typer.Argument(help="Files or directories to check")] = None,
     format_output: Annotated[str, typer.Option("--format", help="Output format: json, text")] = "text",
-    recommendations: Annotated[bool, typer.Option("--recommendations", help="Include technology recommendations")] = False,
+    recommendations: Annotated[
+        bool, typer.Option("--recommendations", help="Include technology recommendations")
+    ] = False,
     no_fail: Annotated[bool, typer.Option("--no-fail", help="Don't exit with error code on violations")] = False,
 ) -> None:
     """CI/CD mode with structured output for automation."""
-    
+
     # Default to current directory if no paths specified
     if not paths:
         paths = [Path.cwd()]
-    
+
     # Auto-init if needed
     from .config import auto_init_project, should_auto_init
-    
+
     if should_auto_init():
         auto_init_project(Path(".codex/config.toml"))
-    
+
     config_data, config_path = load_config()
-    
+
     async def _check_scan() -> int:
         from .scanner import Scanner
-        
+
         scanner = Scanner(quiet=True)
         all_violations = []
-        
+
         for path in paths:
             if path.is_file():
                 result = await scanner.scan_file(path)
@@ -452,18 +462,20 @@ def ci(
                 for result in results:
                     if result.violations:
                         all_violations.extend(result.violations)
-        
+
         # Technology recommendations if requested
         if recommendations:
             from .recommendation_engine import ProjectArchitectureAnalyzer
+
             analyzer = ProjectArchitectureAnalyzer(quiet=True)
             tech_recommendations = analyzer.analyze_project(Path.cwd())
         else:
             tech_recommendations = []
-        
+
         # Output results
         if format_output == "json":
             import json
+
             result = {
                 "violations": len(all_violations),
                 "files_scanned": len([p for p in paths if p.is_file()]),
@@ -472,11 +484,11 @@ def ci(
                         "technology": rec.technology,
                         "priority": rec.priority,
                         "reason": rec.reason,
-                        "effort": rec.implementation_effort
+                        "effort": rec.implementation_effort,
                     }
                     for rec in tech_recommendations
                 ],
-                "exit_code": 1 if (len(all_violations) > 0 and not no_fail) else 0
+                "exit_code": 1 if (len(all_violations) > 0 and not no_fail) else 0,
             }
             print(json.dumps(result, indent=2))
         else:
@@ -485,12 +497,12 @@ def ci(
                 console.print(f"Found {len(all_violations)} violations")
             else:
                 console.print("✓ No violations found")
-                
+
             if tech_recommendations:
                 console.print(f"Found {len(tech_recommendations)} technology recommendations")
-        
+
         return 1 if (len(all_violations) > 0 and not no_fail) else 0
-    
+
     exit_code = asyncio.run(_check_scan())
     raise typer.Exit(exit_code)
 
@@ -695,13 +707,13 @@ def fix_safe(
             f"""[bold]Fix Summary[/bold]
 
 Mode: {fix_mode.value}
-Fixes applied: {result.get('fixes_applied', 0)}
-Fixes failed: {result.get('fixes_failed', 0)}
-Fixes skipped: {result.get('fixes_skipped', 0)}
-Success rate: {result.get('success_rate', 0):.1f}%
-Execution time: {result.get('execution_time_seconds', 0):.1f}s
+Fixes applied: {result.get("fixes_applied", 0)}
+Fixes failed: {result.get("fixes_failed", 0)}
+Fixes skipped: {result.get("fixes_skipped", 0)}
+Success rate: {result.get("success_rate", 0):.1f}%
+Execution time: {result.get("execution_time_seconds", 0):.1f}s
 
-Session ID: {result.get('session_id', 'N/A')}""",
+Session ID: {result.get("session_id", "N/A")}""",
             border_style="green" if result.get("fixes_failed", 0) == 0 else "yellow",
         )
         console.print(summary)
@@ -809,6 +821,8 @@ def patterns(
     """Manage pattern database."""
 
     async def _patterns() -> None:
+        from .database import Database
+
         db = Database()
 
         if add and add.exists():
@@ -978,7 +992,7 @@ def context(
             }.get(pattern["priority"], "white")
 
             console.logging.info(
-                f"[{priority_color}]{pattern['priority']:10}[/{priority_color}] " f"[bold]{pattern['name']}[/bold]"
+                f"[{priority_color}]{pattern['priority']:10}[/{priority_color}] [bold]{pattern['name']}[/bold]"
             )
             console.logging.info(f"  {pattern['description']}")
             console.logging.info()
@@ -1059,7 +1073,7 @@ def validate(
     ai_query = AIQueryInterface()
     result = ai_query.validate_code_snippet(code_text, language)
 
-    console.logging.info(f"[bold]🔍 Code Validation Results[/bold]\n")
+    console.logging.info("[bold]🔍 Code Validation Results[/bold]\n")
     console.logging.info(f"[bold]Language:[/bold] {result['language']}")
     console.logging.info(f"[bold]Score:[/bold] {result['score']:.2f}")
     console.logging.info(f"[bold]Compliant:[/bold] {'✅ Yes' if result['is_compliant'] else '❌ No'}\n")
@@ -1226,7 +1240,7 @@ def install_startup(
                 result = subprocess.run(["launchctl", "load", str(plist_dest)], capture_output=True, text=True)
 
             if result.returncode == 0:
-                console.logging.info(f"[green]✅ Installed Codex MCP server startup service[/green]")
+                console.logging.info("[green]✅ Installed Codex MCP server startup service[/green]")
                 console.logging.info(f"[dim]Config: {plist_dest}[/dim]")
                 console.logging.info(f"[dim]Logs: {codex_root}/logs/[/dim]")
 
@@ -1276,7 +1290,7 @@ def install_startup(
                 subprocess.run(["systemctl", "--user", "enable", "codex-mcp.service"])
                 subprocess.run(["systemctl", "--user", "start", "codex-mcp.service"])
 
-            console.logging.info(f"[green]✅ Installed Codex MCP server startup service[/green]")
+            console.logging.info("[green]✅ Installed Codex MCP server startup service[/green]")
             console.logging.info(f"[dim]Config: {service_dest}[/dim]")
 
         except Exception as e:
@@ -1702,7 +1716,7 @@ def any_repo(
         # Step 4: Run Codex pattern scan if we have patterns
         if patterns:
             if not quiet:
-                console.logging.info(f"\n[blue]🎯 Running pattern analysis...[/blue]")
+                console.logging.info("\n[blue]🎯 Running pattern analysis...[/blue]")
 
             scanner = Scanner(quiet=quiet, fix=fix)
             scan_results = await scanner.scan_directory(repo_path)
@@ -1723,7 +1737,7 @@ def any_repo(
             if total_violations == 0:
                 console.logging.info("[green]🎉 Repository meets quality standards![/green]")
             else:
-                console.logging.info(f"[yellow]⚠️  Quality improvements needed[/yellow]")
+                console.logging.info("[yellow]⚠️  Quality improvements needed[/yellow]")
 
         return 1 if total_violations > 0 else 0
 
@@ -1839,13 +1853,13 @@ def query_database(
 
             # Show AI insights if available
             if result.get("ai_insights"):
-                console.logging.info(f"\n[bold blue]💡 AI Insights:[/bold blue]")
+                console.logging.info("\n[bold blue]💡 AI Insights:[/bold blue]")
                 for insight in result["ai_insights"]:
                     console.logging.info(f"  • {insight}")
 
             # Show suggested follow-ups
             if result.get("suggested_follow_ups"):
-                console.logging.info(f"\n[bold blue]🔍 Suggested follow-up queries:[/bold blue]")
+                console.logging.info("\n[bold blue]🔍 Suggested follow-up queries:[/bold blue]")
                 for suggestion in result["suggested_follow_ups"][:3]:
                     console.logging.info(f"  • {suggestion}")
 
@@ -2086,14 +2100,14 @@ def install_mcp(
             )
 
             if result.returncode == 0:
-                console.logging.info(f"[green]✅ Codex MCP server installed successfully![/green]")
+                console.logging.info("[green]✅ Codex MCP server installed successfully![/green]")
                 console.logging.info(f"[blue]Command:[/blue] {codex_path} mcp-server")
-                console.logging.info(f"[blue]Scope:[/blue] User (available in all projects)")
+                console.logging.info("[blue]Scope:[/blue] User (available in all projects)")
 
                 # Show the configuration
                 config_result = subprocess.run(["claude", "mcp", "get", "codex"], capture_output=True, text=True)
                 if config_result.returncode == 0:
-                    console.logging.info(f"\n[blue]Configuration:[/blue]")
+                    console.logging.info("\n[blue]Configuration:[/blue]")
                     console.logging.info(config_result.stdout)
 
                 console.logging.info("\n[bold]🎯 Available Tools:[/bold]")
@@ -2108,7 +2122,7 @@ def install_mcp(
                 console.logging.info("Start a new Claude Code session to use the Codex tools!")
 
             else:
-                console.logging.info(f"[red]❌ Failed to install MCP server:[/red]")
+                console.logging.info("[red]❌ Failed to install MCP server:[/red]")
                 console.logging.info(result.stderr)
                 raise typer.Exit(1)
 
@@ -2127,7 +2141,7 @@ def install_mcp(
         project_root = Path.cwd()
         mcp_file = project_root / ".mcp.json"
 
-        console.logging.info(f"[bold blue]🔧 Installing Codex MCP Server (Project Level)[/bold blue]")
+        console.logging.info("[bold blue]🔧 Installing Codex MCP Server (Project Level)[/bold blue]")
         console.logging.info(f"[blue]Project:[/blue] {project_root}")
 
         # Check if file already exists
@@ -2169,7 +2183,7 @@ def install_mcp(
             with open(mcp_file, "w") as f:
                 json.dump(mcp_config, f, indent=2)
 
-            console.logging.info(f"[green]✅ Codex MCP server installed successfully![/green]")
+            console.logging.info("[green]✅ Codex MCP server installed successfully![/green]")
             console.logging.info(f"[blue]Config file:[/blue] {mcp_file}")
             console.logging.info(f"[blue]Command:[/blue] {codex_path} mcp-server")
             console.logging.info("\n[dim]Note: .mcp.json should be committed to version control[/dim]")
@@ -2281,7 +2295,7 @@ def mcp_status():
     console.logging.info("2. Commit .mcp.json to version control")
     console.logging.info("3. Restart Claude Code")
 
-    console.logging.info(f"\n[bold]📍 MCP Command for Claude Code:[/bold]")
+    console.logging.info("\n[bold]📍 MCP Command for Claude Code:[/bold]")
     console.logging.info(f"   [cyan]/mcp install codex {codex_path} mcp-server[/cyan]")
 
 
@@ -2580,6 +2594,8 @@ def scan_report(
             generator.export_markdown_report(export)
         elif detailed:
             report = generator.generate_detailed_report()
+            from rich.markdown import Markdown
+
             console.print(Markdown(report))
         else:
             generator.print_automatic_report()
@@ -2698,7 +2714,7 @@ def analyze_violations(
         analyzer.print_cross_analysis()
 
     console.print(f"\n[green]✅ Scan recorded:[/green] {scan_id}")
-    console.print(f"[dim]Database: .codex/scans.db[/dim]")
+    console.print("[dim]Database: .codex/scans.db[/dim]")
 
     # Export if requested
     if export_json:

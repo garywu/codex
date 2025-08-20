@@ -308,7 +308,7 @@ class Scanner:
 
         if not detection_rules:
             if not self.quiet:
-                logging.info(f"No detection rules for pattern", file=__import__("sys").stderr)
+                logging.info("No detection rules for pattern", file=__import__("sys").stderr)
             return None
 
         # Check for forbidden patterns

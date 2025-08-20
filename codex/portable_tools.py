@@ -743,13 +743,13 @@ warn-unused-ignores = true
                 self.console.logging.info(f"  [green]🔧 Fixed: {result.fixed} issue(s)[/green]")
 
             if result.config_created:
-                self.console.logging.info(f"  [cyan]📝 Created portable config[/cyan]")
+                self.console.logging.info("  [cyan]📝 Created portable config[/cyan]")
 
             if result.tool_installed:
-                self.console.logging.info(f"  [yellow]📦 Tool installed by Codex[/yellow]")
+                self.console.logging.info("  [yellow]📦 Tool installed by Codex[/yellow]")
 
         # Summary
-        self.console.logging.info(f"\n[bold]Summary:[/bold]")
+        self.console.logging.info("\n[bold]Summary:[/bold]")
         self.console.logging.info(f"  Total violations: {total_violations}")
         if total_fixed > 0:
             self.console.logging.info(f"  Total fixed: {total_fixed}")

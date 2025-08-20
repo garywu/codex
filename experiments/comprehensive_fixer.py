@@ -471,7 +471,7 @@ def main():
 
         print(f"\n{summary}")
 
-        print(f"\n=== COMPREHENSIVE FIXING COMPLETE ===")
+        print("\n=== COMPREHENSIVE FIXING COMPLETE ===")
         print(f"Applied {len(all_fixes)} fixes across {len(set(fix['file'] for fix in all_fixes))} files")
         print(f"Backup saved to: {backup_dir}")
 

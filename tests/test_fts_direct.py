@@ -251,7 +251,7 @@ def test_fts_database():
             print("    → No patterns found")
 
     conn.close()
-    print(f"\n✅ FTS testing completed successfully!")
+    print("\n✅ FTS testing completed successfully!")
     print(f"Database created at: {Path(db_path).absolute()}")
 
 

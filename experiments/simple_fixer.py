@@ -186,7 +186,7 @@ class SimpleFixer:
 
                 # Replace obvious print statements with logger calls
                 replacements = [
-                    ('print(f"', 'logging.info(f"'),
+                    ('print("', 'logging.info(f"'),
                     ('print("', 'logging.info("'),
                     ("print('", "logging.info('"),
                 ]
@@ -367,8 +367,8 @@ def main():
     # Record the session
     fixer.create_fix_conversation(external_results, simple_fixes)
 
-    print(f"\n=== FIXING COMPLETE ===")
-    print(f"Check database for conversational record of fixes applied")
+    print("\n=== FIXING COMPLETE ===")
+    print("Check database for conversational record of fixes applied")
 
 
 if __name__ == "__main__":

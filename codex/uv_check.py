@@ -137,14 +137,14 @@ class UVEnvironmentChecker:
 
                 if result.returncode == 0:
                     if not self.quiet:
-                        logging.info(f"✅ Installed missing packages")
+                        logging.info("✅ Installed missing packages")
                     return True
                 else:
                     self.errors.append(f"Failed to install packages: {', '.join(missing)}")
                     return False
             else:
                 if not self.quiet:
-                    logging.info(f"✅ All required packages installed")
+                    logging.info("✅ All required packages installed")
                 return True
 
         except Exception as e:

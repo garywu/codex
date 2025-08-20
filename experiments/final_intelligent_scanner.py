@@ -248,13 +248,13 @@ def main():
     print(report)
 
     if violations:
-        print(f"\n=== APPLYING FINAL FIXES ===")
+        print("\n=== APPLYING FINAL FIXES ===")
         # Apply any remaining fixes here
         for violation in violations:
             print(f"Would fix: {violation['file']}:{violation['line']}")
     else:
-        print(f"\n🎉 ALL VIOLATIONS RESOLVED! 🎉")
-        print(f"Intelligent analysis confirms: No real issues remaining")
+        print("\n🎉 ALL VIOLATIONS RESOLVED! 🎉")
+        print("Intelligent analysis confirms: No real issues remaining")
 
 
 if __name__ == "__main__":

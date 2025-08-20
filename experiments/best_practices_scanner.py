@@ -629,15 +629,15 @@ def main():
             for practice in result["best_practices"]:
                 practice_frequency[practice["pattern"]["name"]] += 1
 
-        print(f"\n🌟 MOST COMMON BEST PRACTICES:")
+        print("\n🌟 MOST COMMON BEST PRACTICES:")
         for practice_name, count in practice_frequency.most_common(5):
             print(f"  • {practice_name}: {count}/{len(all_results)} projects")
 
-        print(f"\n💡 ORGANIZATIONAL RECOMMENDATIONS:")
-        print(f"  • Replicate excellence patterns from top-performing projects")
-        print(f"  • Establish organization-wide standards based on best practices")
-        print(f"  • Create learning sessions to share architectural insights")
-        print(f"  • Implement excellence patterns as code review guidelines")
+        print("\n💡 ORGANIZATIONAL RECOMMENDATIONS:")
+        print("  • Replicate excellence patterns from top-performing projects")
+        print("  • Establish organization-wide standards based on best practices")
+        print("  • Create learning sessions to share architectural insights")
+        print("  • Implement excellence patterns as code review guidelines")
 
 
 if __name__ == "__main__":

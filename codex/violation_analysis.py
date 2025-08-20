@@ -382,7 +382,7 @@ class ViolationAnalyzer:
 🎯 Top Issues:
 1. [yellow]{list(self.report.by_category.keys())[0]}[/yellow]: {len(self.report.by_category[list(self.report.by_category.keys())[0]])} violations
 2. [yellow]{list(self.report.patterns_frequency.keys())[0]}[/yellow]: {self.report.patterns_frequency[list(self.report.patterns_frequency.keys())[0]]} occurrences
-3. Hotspot: [red]{self.report.hotspots[0][0] if self.report.hotspots else 'N/A'}[/red] ({self.report.hotspots[0][1] if self.report.hotspots else 0} violations)
+3. Hotspot: [red]{self.report.hotspots[0][0] if self.report.hotspots else "N/A"}[/red] ({self.report.hotspots[0][1] if self.report.hotspots else 0} violations)
 """,
             border_style="bold blue",
             box=box.DOUBLE,

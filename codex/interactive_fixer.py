@@ -226,11 +226,11 @@ class InteractiveFixer:
                 if success:
                     self.fixed_count += 1
                     if self.console:
-                        self.console.print(f"    [green]✅ Fixed[/green]")
+                        self.console.print("    [green]✅ Fixed[/green]")
                 else:
                     self.failed_count += 1
                     if self.console:
-                        self.console.print(f"    [red]❌ Failed[/red]")
+                        self.console.print("    [red]❌ Failed[/red]")
             except Exception as e:
                 self.failed_count += 1
                 if self.console:
@@ -342,7 +342,7 @@ class InteractiveFixer:
             ast.parse(content)
         except SyntaxError:
             if self.console:
-                self.console.print(f"[red]⚠️  File has existing syntax errors, skipping[/red]")
+                self.console.print("[red]⚠️  File has existing syntax errors, skipping[/red]")
             return False
 
         lines = content.split("\n")
@@ -603,7 +603,7 @@ Impact: {plan.estimated_impact}
 {plan.explanation}
 
 [cyan]Suggested Fix:[/cyan]
-{plan.fix_code if plan.fix_code else 'Manual intervention required'}
+{plan.fix_code if plan.fix_code else "Manual intervention required"}
 """
         self.console.print(Panel(panel_content, border_style="magenta"))
 

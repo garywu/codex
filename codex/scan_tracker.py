@@ -440,9 +440,9 @@ class ScanTracker:
 ✅ Violations Fixed: [bold green]{fixed_count}[/bold green]
 
 Latest Scan:
-  • ID: {latest['scan_id'] if latest else 'None'}
-  • Time: {latest['timestamp'][:19] if latest else 'N/A'}
-  • Violations: {latest['total_violations'] if latest else 0}
+  • ID: {latest["scan_id"] if latest else "None"}
+  • Time: {latest["timestamp"][:19] if latest else "N/A"}
+  • Violations: {latest["total_violations"] if latest else 0}
 """,
             border_style="blue",
             box=box.DOUBLE,
@@ -490,7 +490,7 @@ Latest Scan:
         change_symbol = "📈" if total["change"] > 0 else "📉" if total["change"] < 0 else "➡️"
         change_color = "red" if total["change"] > 0 else "green" if total["change"] < 0 else "yellow"
 
-        self.console.print(f"\n[bold]Progress Report[/bold]")
+        self.console.print("\n[bold]Progress Report[/bold]")
         self.console.print(
             f"{change_symbol} Total Violations: [bold]{total['current']}[/bold] "
             f"([{change_color}]{total['change']:+d}, {total['change_pct']:+.1f}%[/{change_color}])"

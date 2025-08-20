@@ -50,7 +50,7 @@ codex ci --recommendations                     # CI/CD with architecture guidanc
 
 # Examples of what it detects:
 # - Multiple env vars → Recommend Pydantic Settings
-# - Manual validation → Recommend Pydantic Models  
+# - Manual validation → Recommend Pydantic Models
 # - Basic logging → Recommend Logfire integration
 ```
 

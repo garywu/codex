@@ -451,9 +451,9 @@ def main():
     # Create evolution roadmap
     tracker.create_evolution_roadmap()
 
-    print(f"\n=== EVOLUTION ROADMAP COMPLETE ===")
-    print(f"Codex's path forward is documented in the conversational database")
-    print(f"Ready to begin the next phase of evolution")
+    print("\n=== EVOLUTION ROADMAP COMPLETE ===")
+    print("Codex's path forward is documented in the conversational database")
+    print("Ready to begin the next phase of evolution")
 
 
 if __name__ == "__main__":

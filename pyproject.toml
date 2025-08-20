@@ -52,8 +52,16 @@ required-version = ">=0.8.0"
 
 [tool.ruff.lint]
 select = ["E", "W", "F", "I", "UP", "B", "C4", "SIM", "ARG", "TCH", "RUF", "PL", "TRY", "FLY", "PERF", "LOG"]
-ignore = ["E501", "B008", "TRY003", "PLR0913"]
-fixable = ["F401", "I", "UP", "RUF100"]
+ignore = [
+    "E501",     # Line too long - we use 120 char limit
+    "B008",     # Function calls in argument defaults
+    "TRY003",   # Long exception messages
+    "PLR0913",  # Too many arguments
+    "ARG002",   # Unused arguments (often needed for interfaces)
+    "SIM105",   # Use contextlib.suppress (readability preference)
+    "PLR2004",  # Magic values (constants not always needed)
+]
+fixable = ["F401", "I", "UP", "RUF100", "RUF022"]
 
 [tool.ruff.lint.per-file-ignores]
 "__init__.py" = ["E402", "F401", "F403"]

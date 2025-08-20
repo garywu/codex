@@ -518,4 +518,4 @@ if __name__ == "__main__":
 
     # Export audit trail
     context.export_audit_trail(Path("scan_audit.json"))
-    print(f"\nAudit trail exported to scan_audit.json")
+    print("\nAudit trail exported to scan_audit.json")

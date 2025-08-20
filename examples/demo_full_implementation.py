@@ -505,7 +505,7 @@ except Exception as e:
 
     for test in test_codes:
         print(f"\n🔍 Validating: {test['description']}")
-        print(f"Command: codex validate --code '...'")
+        print("Command: codex validate --code '...'")
 
         result = ai_query.validate_code_snippet(test["code"])
         print(f"Score: {result['score']:.2f}")

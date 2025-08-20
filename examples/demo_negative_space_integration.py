@@ -62,11 +62,11 @@ def demo_mcp_safe_negative_space():
                 # Show recommendations
                 recommendations = result.get("recommendations", [])
                 if recommendations:
-                    print(f"   💡 Top Recommendations:", file=sys.stderr)
+                    print("   💡 Top Recommendations:", file=sys.stderr)
                     for i, rec in enumerate(recommendations[:3], 1):
                         print(f"      {i}. {rec}", file=sys.stderr)
                 else:
-                    print(f"   ✨ No recommendations - excellent structure!", file=sys.stderr)
+                    print("   ✨ No recommendations - excellent structure!", file=sys.stderr)
 
             # Test JSON serializability (MCP requirement)
             try:
@@ -113,7 +113,7 @@ def demo_cli_integration():
 
             stdout_content = captured_stdout.getvalue()
             if stdout_content:
-                print(f"❌ CLI Integration: MCP violation detected", file=sys.stderr)
+                print("❌ CLI Integration: MCP violation detected", file=sys.stderr)
                 return False
             else:
                 print("✅ CLI Integration: MCP-safe", file=sys.stderr)
@@ -123,7 +123,7 @@ def demo_cli_integration():
             # Error is expected due to validation issues, but check MCP compliance
             stdout_content = captured_stdout.getvalue()
             if stdout_content:
-                print(f"❌ CLI Integration: MCP violation during error", file=sys.stderr)
+                print("❌ CLI Integration: MCP violation during error", file=sys.stderr)
                 return False
             else:
                 print("✅ CLI Integration: MCP-safe even during errors", file=sys.stderr)
