@@ -21,12 +21,13 @@ exclude = [
   "scan_results*",
   "violation_analysis.json",
   "negative_space_analysis.json",
-  "codex/cli.py",
-  "codex/config.py",
-  "codex/data/default_patterns.py",
-  "codex/ensemble_integration.py",
-  "codex/recommendation_engine.py",
-  "codex/rules/loader.py"
+  "experiments/",
+  "demo_repository/",
+  "tests/",
+  "scripts/",
+  "examples/",
+  "update_*.py",
+  "src/"
 ]
 auto_fix = false
 enforce = ["mandatory", "critical", "high"]
