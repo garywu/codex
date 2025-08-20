@@ -1022,9 +1022,30 @@ def ai_assist(
 
         if execute and result.get("suggested_commands"):
             console.logging.info("\n[green]Executing first suggested command...[/green]")
+            import shlex
             import subprocess
 
-            subprocess.run(result["suggested_commands"][0], shell=True)
+            # SECURITY: Never use shell=True with user input
+            # Parse command safely and validate
+            command = result["suggested_commands"][0]
+            
+            # Whitelist of allowed commands
+            ALLOWED_COMMANDS = {
+                "codex", "uv", "pip", "python", "git", "mkdir", "touch", "cp", "mv",
+                "ls", "cat", "grep", "find", "wc", "head", "tail"
+            }
+            
+            try:
+                cmd_parts = shlex.split(command)
+                if cmd_parts and cmd_parts[0] not in ALLOWED_COMMANDS:
+                    console.logging.info(f"[red]Command not allowed: {cmd_parts[0]}[/red]")
+                    console.logging.info("Allowed commands: " + ", ".join(sorted(ALLOWED_COMMANDS)))
+                    return
+                
+                # Execute safely without shell
+                subprocess.run(cmd_parts, shell=False, timeout=30, check=True)
+            except (ValueError, subprocess.TimeoutExpired, subprocess.CalledProcessError) as cmd_error:
+                console.logging.info(f"[red]Command execution failed: {cmd_error}[/red]")
 
     except Exception as e:
         console.logging.info(f"[red]❌ AI assist error: {e}[/red]")
