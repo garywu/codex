@@ -80,7 +80,7 @@ class CodexClient:
                         result.applied_patterns.append(pattern.name)
                     else:
                         result.violations.append(match)
-                        result.score *= (1 - match.priority.value / 10)
+                        result.score *= 1 - match.priority.value / 10
                 elif pattern.priority in ["MANDATORY", "CRITICAL"]:
                     result.missing_patterns.append(pattern.name)
                     result.score *= 0.9
@@ -95,9 +95,7 @@ class CodexClient:
         except Exception as e:
             raise AnalysisError(file_path, str(e)) from e
 
-    async def _check_pattern(
-        self, pattern: Any, context: CodeContext
-    ) -> PatternMatch | None:
+    async def _check_pattern(self, pattern: Any, context: CodeContext) -> PatternMatch | None:
         """Check if a pattern is present in the code."""
         # Simple detection based on rules
         if pattern.detection_rules:
@@ -145,7 +143,7 @@ class CodexClient:
                     agent_name,
                     {"code": context.content, "file_path": context.file_path},
                 )
-                
+
                 if result.output.get("violations"):
                     for violation in result.output["violations"]:
                         matches.append(
@@ -167,9 +165,7 @@ class CodexClient:
 
         return matches
 
-    async def apply_fixes(
-        self, file_path: str, violations: list[PatternMatch]
-    ) -> int:
+    async def apply_fixes(self, file_path: str, violations: list[PatternMatch]) -> int:
         """Apply automatic fixes for violations."""
         fixed_count = 0
         path = Path(file_path)
@@ -193,9 +189,7 @@ class CodexClient:
 
         return fixed_count
 
-    async def train_pattern_agent(
-        self, name: str, category: PatternCategory
-    ) -> str:
+    async def train_pattern_agent(self, name: str, category: PatternCategory) -> str:
         """Train a Farm agent for pattern detection."""
         if not self.farm_client:
             self.farm_client = FarmClient(self.farm_url)
@@ -252,9 +246,7 @@ class CodexClient:
         except Exception as e:
             raise FarmAgentError(name, str(e)) from e
 
-    async def generate_from_template(
-        self, template: str, output_dir: str, context: dict[str, Any]
-    ) -> str:
+    async def generate_from_template(self, template: str, output_dir: str, context: dict[str, Any]) -> str:
         """Generate project from CookieCutter template."""
         try:
             # Add Codex patterns to context

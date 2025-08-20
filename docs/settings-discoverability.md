@@ -54,7 +54,7 @@ $ codex config list
 $ codex config search exclude
 Found 3 settings matching 'exclude':
 • exclude - Patterns to exclude from scanning
-• use_gitignore - Also exclude .gitignore patterns  
+• use_gitignore - Also exclude .gitignore patterns
 • pattern_exclusions - Exclude specific patterns from paths
 ```
 
@@ -63,12 +63,12 @@ Found 3 settings matching 'exclude':
 $ codex config init
 Welcome to Codex configuration wizard!
 
-? Where should we save the configuration? › 
+? Where should we save the configuration? ›
 ❯ .codex.toml (project-specific)
   pyproject.toml (in [tool.codex] section)
   ~/.config/codex/settings.toml (user-global)
 
-? What should be excluded from scanning? › 
+? What should be excluded from scanning? ›
 ✓ Python artifacts (*.pyc, __pycache__)
 ✓ Virtual environments (.venv, venv)
 ✓ Version control (.git)
@@ -131,7 +131,7 @@ Analyzing exclusions...
 
 Top exclusion reasons:
 1. "*_backup_*/" pattern → 576 files (3 directories)
-2. ".venv/**" from .gitignore → 2,104 files  
+2. ".venv/**" from .gitignore → 2,104 files
 3. "build/" pattern → 107 files
 4. "__pycache__" pattern → 89 files
 5. "*.pyc" pattern → 67 files
@@ -164,20 +164,20 @@ exclude = [
     # Python artifacts
     "*.pyc",
     "__pycache__",
-    
+
     # Virtual environments
     ".venv",
     "venv",
     "env",
-    
+
     # Build artifacts
     "build/",
     "dist/",
     "*.egg-info",
-    
+
     # Backup directories (fixes duplicate scanning issue)
     "*_backup_*/",      # Added to fix 576 duplicate violations
-    
+
     # Project-specific
     "experiments/",     # Experimental code with known issues
     "legacy/",          # Old code being phased out
@@ -295,7 +295,7 @@ With pattern exclusions:
 
 Environment variable:
   export CODEX_EXCLUDE='["vendor/", "legacy/"]'
-  
+
 MORE HELP:
   codex config --help     Configuration commands
   codex config examples   Show example configurations
@@ -347,7 +347,7 @@ Would you like to migrate to the new format? (Y/n) Y
 
 Migrating settings:
 ✓ exclude_patterns → exclude
-✓ enable_tools → run_tools  
+✓ enable_tools → run_tools
 ✓ priorities → pattern_priorities
 
 ✓ Migration complete! Old config backed up to .codexrc.backup
@@ -375,7 +375,7 @@ Features:
 
 ### Phase 1: Immediate (High Impact, Low Effort)
 1. ✅ Add `codex config show` command
-2. ✅ Add `codex config init` wizard  
+2. ✅ Add `codex config init` wizard
 3. ✅ Generate commented `.codex.toml` files
 4. ✅ Add warnings for backup directories
 

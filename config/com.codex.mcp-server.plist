@@ -5,19 +5,19 @@
     <!-- Service identification -->
     <key>Label</key>
     <string>com.codex.mcp-server</string>
-    
+
     <!-- Program to run -->
     <key>Program</key>
     <string>/Users/admin/Work/codex/scripts/startup_wrapper.sh</string>
-    
+
     <!-- Working directory -->
     <key>WorkingDirectory</key>
     <string>/Users/admin/Work/codex</string>
-    
+
     <!-- When to run -->
     <key>RunAtLoad</key>
     <true/>
-    
+
     <!-- Keep alive and restart if crashed -->
     <key>KeepAlive</key>
     <dict>
@@ -26,11 +26,11 @@
         <key>Crashed</key>
         <true/>
     </dict>
-    
+
     <!-- Restart limits -->
     <key>ThrottleInterval</key>
     <integer>30</integer>
-    
+
     <!-- Environment variables -->
     <key>EnvironmentVariables</key>
     <dict>
@@ -41,33 +41,33 @@
         <key>CODEX_LOG_LEVEL</key>
         <string>INFO</string>
     </dict>
-    
+
     <!-- User to run as -->
     <key>UserName</key>
     <string>admin</string>
-    
+
     <!-- Standard output and error -->
     <key>StandardOutPath</key>
     <string>/Users/admin/Work/codex/logs/codex-mcp-stdout.log</string>
-    
+
     <key>StandardErrorPath</key>
     <string>/Users/admin/Work/codex/logs/codex-mcp-stderr.log</string>
-    
+
     <!-- Network service -->
     <key>SoftResourceLimits</key>
     <dict>
         <key>NumberOfFiles</key>
         <integer>1024</integer>
     </dict>
-    
+
     <!-- Launch only when network is available -->
     <key>LaunchOnlyOnce</key>
     <false/>
-    
+
     <!-- Process type -->
     <key>ProcessType</key>
     <string>Background</string>
-    
+
     <!-- Don't run when on battery (optional) -->
     <key>StartOnMount</key>
     <false/>

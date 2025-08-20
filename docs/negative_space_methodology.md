@@ -75,7 +75,7 @@ The system analyzes these structural features:
 
 **Protective Structures:**
 - `has_core_package`: Separate business logic package
-- `has_api_package`: Interface layer separation  
+- `has_api_package`: Interface layer separation
 - `has_cli_package`: CLI as organized package
 - `has_tests`: Comprehensive test suite
 - `has_settings_file`: Unified configuration
@@ -104,7 +104,7 @@ if clean_rate - problem_rate > 0.4:  # 40% difference threshold
 
 **Organization Score Calculation:**
 - Package separation: 30% weight
-- Testing structure: 20% weight  
+- Testing structure: 20% weight
 - Configuration: 20% weight
 - Package organization: 20% weight
 - File organization: 10% weight
@@ -125,14 +125,14 @@ if clean_rate - problem_rate > 0.4:  # 40% difference threshold
 ```
 project/
 ├── core/           # Business logic
-├── api/            # Interface layer  
+├── api/            # Interface layer
 ├── cli/            # User interface
 └── tests/          # Test suite
 ```
 
 **Prevents:** `core_business_logic_separation`, `cli_as_thin_layer`
 
-### Settings Consolidation  
+### Settings Consolidation
 **Evidence:** Projects with unified settings avoid 70% of configuration issues
 
 **Implementation:**
@@ -143,7 +143,7 @@ from pydantic import BaseSettings
 class Settings(BaseSettings):
     database_url: str = Field(env="DATABASE_URL")
     secret_key: str = Field(env="SECRET_KEY")
-    
+
     class Config:
         env_file = ".env"
 ```
@@ -190,7 +190,7 @@ tests/
 # Daily development
 uv run codex scan                    # Quick violation check
 
-# Weekly review  
+# Weekly review
 uv run codex scan --best-practices   # Comprehensive analysis
 
 # Project setup
@@ -220,7 +220,7 @@ uv run codex scan --best-practices   # Baseline assessment
 ```json
 {
   "name": "core-package-separation",
-  "category": "architecture_excellence", 
+  "category": "architecture_excellence",
   "negative_space_analysis": {
     "problems_prevented": ["core_business_logic_separation"],
     "clean_projects": ["farm", "hepha"],
@@ -236,7 +236,7 @@ uv run codex scan --best-practices   # Baseline assessment
 
 ### Analysis Pipeline
 1. **Scan Projects**: Detect violations and structural features
-2. **Compare Patterns**: Find correlations between structure and cleanliness  
+2. **Compare Patterns**: Find correlations between structure and cleanliness
 3. **Extract Insights**: Identify protective patterns
 4. **Generate Recommendations**: Create actionable guidance
 5. **Validate Effectiveness**: Track improvement over time

@@ -56,6 +56,7 @@ class PatternPriority(str, Enum):
 
 class Pattern(SQLModel, table=True):
     """A code pattern or best practice stored in the database."""
+
     __tablename__ = "patterns"  # Explicitly set table name to match unified_database.py
 
     id: int | None = SQLField(default=None, primary_key=True)
@@ -63,19 +64,19 @@ class Pattern(SQLModel, table=True):
     category: PatternCategory = SQLField(description="Pattern category")
     priority: PatternPriority = SQLField(default=PatternPriority.MEDIUM)
     description: str = SQLField(description="What this pattern does")
-    
+
     # Pattern details
     pattern_code: str | None = SQLField(default=None, description="Example code implementing the pattern")
     anti_pattern: str | None = SQLField(default=None, description="What to avoid")
     detection_rules: dict[str, Any] = SQLField(default={}, sa_column=Column(JSON))
     fix_template: str | None = SQLField(default=None, description="Template for fixing violations")
-    
+
     # Metadata
     source: str = SQLField(default="project-init", description="Where this pattern came from")
     tags: list[str] = SQLField(default=[], sa_column=Column(JSON))
     when_to_use: list[str] = SQLField(default=[], sa_column=Column(JSON))
     best_practices: list[str] = SQLField(default=[], sa_column=Column(JSON))
-    
+
     # Usage tracking
     usage_count: int = SQLField(default=0, description="Times this pattern was applied")
     success_rate: float = SQLField(default=1.0, description="Success rate when applied")

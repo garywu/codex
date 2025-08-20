@@ -15,7 +15,7 @@ warnings.warn(
     "fts_database.py is deprecated. Please import from unified_database directly: "
     "from codex.unified_database import UnifiedDatabase",
     DeprecationWarning,
-    stacklevel=2
+    stacklevel=2,
 )
 
 # Provide FTSDatabase as alias for compatibility
@@ -24,4 +24,4 @@ FTSDatabase = UnifiedDatabase
 # For pattern extractor compatibility - redirect to proper model
 from .pattern_models import Pattern as FTSPattern
 
-__all__ = ['FTSDatabase', 'UnifiedDatabase', 'FTSPattern']
+__all__ = ["FTSDatabase", "UnifiedDatabase", "FTSPattern"]

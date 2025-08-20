@@ -36,7 +36,7 @@ Inspired by pattern analysis in open-lovable and the provider abstraction in ALL
 
 #### Layer 1: Pattern Matching (Fast)
 - **Regex-based detection** of common anti-patterns
-- **AST analysis** for structural issues  
+- **AST analysis** for structural issues
 - **Import/API validation** against known libraries
 - **Basic syntax and formatting checks**
 
@@ -48,7 +48,7 @@ Inspired by pattern analysis in open-lovable and the provider abstraction in ALL
 
 #### Layer 3: AI-Powered Analysis (Sophisticated)
 - **LLM-based code review** for complex logic issues
-- **Goal alignment assessment** against project requirements  
+- **Goal alignment assessment** against project requirements
 - **Hallucination detection** for non-existent APIs
 - **Architecture compliance** verification
 
@@ -57,7 +57,7 @@ Inspired by pattern analysis in open-lovable and the provider abstraction in ALL
 ```python
 class AnalysisResult:
     pattern_score: float      # 0-1 from regex/AST analysis
-    context_score: float      # 0-1 from contextual analysis  
+    context_score: float      # 0-1 from contextual analysis
     ai_score: float          # 0-1 from LLM analysis
     confidence: float        # Overall confidence in assessment
     issues: List[Issue]      # Specific problems found
@@ -76,9 +76,9 @@ Based on ALLM's provider abstraction pattern:
 ```python
 class CodexMCPProvider:
     """MCP interface for Claude Code CLI integration"""
-    
+
     async def analyze_code_intent(self, code: str, context: str) -> Intent
-    async def suggest_improvements(self, analysis: AnalysisResult) -> List[Suggestion]  
+    async def suggest_improvements(self, analysis: AnalysisResult) -> List[Suggestion]
     async def validate_against_requirements(self, code: str, requirements: str) -> ValidationResult
 ```
 
@@ -94,9 +94,9 @@ Inspired by error fixing patterns in open-lovable:
 ```python
 class AutoFixEngine:
     """Automatic code fixing capabilities"""
-    
+
     def fix_imports(self, code: str) -> str
-    def fix_formatting(self, code: str) -> str  
+    def fix_formatting(self, code: str) -> str
     def fix_simple_patterns(self, code: str, issues: List[Issue]) -> str
     def suggest_complex_fixes(self, code: str, context: str) -> List[FixSuggestion]
 ```
@@ -115,14 +115,14 @@ class AutoFixEngine:
 8. Commit proceeds or is aborted
 ```
 
-### Analysis Workflow  
+### Analysis Workflow
 ```
 Pre-commit trigger
     ↓
 Staged file analysis
     ↓
 Layer 1: Pattern matching (< 100ms)
-    ↓  
+    ↓
 Layer 2: Context analysis (< 500ms)
     ↓
 Layer 3: AI analysis (< 2s, only if needed)
@@ -130,7 +130,7 @@ Layer 3: AI analysis (< 2s, only if needed)
 Vote aggregation and decision
     ↓
 Present results + optional fixes
-    ↓  
+    ↓
 Developer decision (commit/fix/abort)
 ```
 
@@ -138,16 +138,16 @@ Developer decision (commit/fix/abort)
 
 ### Core Technologies
 - **Python 3.11+**: Main implementation language
-- **Pydantic**: Data validation and settings  
+- **Pydantic**: Data validation and settings
 - **httpx**: Async HTTP for any external calls
 - **Rich**: Beautiful CLI output and progress indicators
 - **Typer**: CLI interface with type hints
 - **Tree-sitter**: Multi-language AST parsing
 
-### Analysis Components  
+### Analysis Components
 - **AST Parsers**: Language-specific parsing (tree-sitter)
 - **Pattern Engine**: Regex + rule-based detection
-- **Context Engine**: Project-aware analysis  
+- **Context Engine**: Project-aware analysis
 - **AI Integration**: LLM providers for sophisticated analysis
 - **Fix Engine**: Automatic code correction
 
@@ -160,7 +160,7 @@ Developer decision (commit/fix/abort)
 ## Performance Targets
 
 - **Pattern Analysis**: < 100ms for typical changes
-- **Context Analysis**: < 500ms for complex changes  
+- **Context Analysis**: < 500ms for complex changes
 - **AI Analysis**: < 2s when needed
 - **Total Analysis**: < 1s for 90% of commits
 - **Auto-fix Application**: < 200ms for common fixes
@@ -174,17 +174,17 @@ analysis:
     pattern: true        # Always enabled
     context: true        # Enable project context
     ai: "on_complex"     # only | always | on_complex | off
-  
+
   thresholds:
     pattern_confidence: 0.8
-    context_confidence: 0.7  
+    context_confidence: 0.7
     ai_confidence: 0.6
-    
+
   auto_fix:
     formatting: true
     imports: true
     simple_patterns: true
-    
+
 integrations:
   claude_code_cli: true
   custom_rules: "./rules/"

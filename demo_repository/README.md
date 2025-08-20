@@ -5,7 +5,7 @@ This is a sample Python application for demonstrating Codex AI-first scanning.
 
 ## Features
 - User data fetching
-- Web API endpoints  
+- Web API endpoints
 - Data processing utilities
 
 ## Issues

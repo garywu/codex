@@ -1,6 +1,6 @@
 
 📋 Pre-scan Discovery for .:
-     File Discovery Summary     
+     File Discovery Summary
 ┏━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┓
 ┃ Metric             ┃   Value ┃
 ┡━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━┩
@@ -12,256 +12,256 @@
 │ Discovery Time     │ 181.7ms │
 │ Gitignore Patterns │       0 │
 └────────────────────┴─────────┘
- Files by Extension  
+ Files by Extension
 ┏━━━━━━━━━━━┳━━━━━━━┓
 ┃ Extension ┃ Count ┃
 ┡━━━━━━━━━━━╇━━━━━━━┩
 │ .py       │   101 │
 └───────────┴───────┘
-          Exclusion Reasons          
+          Exclusion Reasons
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓
 ┃ Reason                    ┃ Count ┃
 ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩
 │ Matched exclusion pattern │  2825 │
 └───────────────────────────┴───────┘
-experiment_fts.py:259: no-cors-wildcard - NEVER use '*' in production CORS 
+experiment_fts.py:259: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-experiment_fts.py:190: mock-code-naming - Mock functions must start with mock_ 
+experiment_fts.py:190: mock-code-naming - Mock functions must start with mock_
 prefix and log warnings
 experiment_fts.py:89: use-uv-package-manager - Use uv for speed and reliability
-experiment_fts.py:258: structured-logging - Use JSON structured logs with 
+experiment_fts.py:258: structured-logging - Use JSON structured logs with
 consistent schema
-experiment_fts.py:258: sanitize-production-errors - Return generic error 
+experiment_fts.py:258: sanitize-production-errors - Return generic error
 messages in production
-experiment_fts.py:190: minimum-test-coverage - Maintain 80% minimum code 
+experiment_fts.py:190: minimum-test-coverage - Maintain 80% minimum code
 coverage
   → Found 6 violations in experiment_fts.py
-intelligent_fixer.py:369: no-cors-wildcard - NEVER use '*' in production CORS 
+intelligent_fixer.py:369: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-intelligent_fixer.py:211: secure-jwt-storage - Store JWT secrets in secure 
+intelligent_fixer.py:211: secure-jwt-storage - Store JWT secrets in secure
 credential manager, never hardcode
-intelligent_fixer.py:112: mock-code-naming - Mock functions must start with 
+intelligent_fixer.py:112: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-intelligent_fixer.py:102: structured-logging - Use JSON structured logs with 
+intelligent_fixer.py:102: structured-logging - Use JSON structured logs with
 consistent schema
-intelligent_fixer.py:143: sanitize-production-errors - Return generic error 
+intelligent_fixer.py:143: sanitize-production-errors - Return generic error
 messages in production
-intelligent_fixer.py:112: minimum-test-coverage - Maintain 80% minimum code 
+intelligent_fixer.py:112: minimum-test-coverage - Maintain 80% minimum code
 coverage
   → Found 6 violations in intelligent_fixer.py
 test_startup.py:17: no-cors-wildcard - NEVER use '*' in production CORS origins
-test_startup.py:14: mock-code-naming - Mock functions must start with mock_ 
+test_startup.py:14: mock-code-naming - Mock functions must start with mock_
 prefix and log warnings
 test_startup.py:14: minimum-test-coverage - Maintain 80% minimum code coverage
   → Found 3 violations in test_startup.py
-demo_negative_space_integration.py:24: no-cors-wildcard - NEVER use '*' in 
+demo_negative_space_integration.py:24: no-cors-wildcard - NEVER use '*' in
 production CORS origins
-demo_negative_space_integration.py:15: mock-code-naming - Mock functions must 
+demo_negative_space_integration.py:15: mock-code-naming - Mock functions must
 start with mock_ prefix and log warnings
-demo_negative_space_integration.py:11: structured-logging - Use JSON structured 
+demo_negative_space_integration.py:11: structured-logging - Use JSON structured
 logs with consistent schema
-demo_negative_space_integration.py:15: minimum-test-coverage - Maintain 80% 
+demo_negative_space_integration.py:15: minimum-test-coverage - Maintain 80%
 minimum code coverage
-demo_negative_space_integration.py:124: use-pydantic-validation - Use Pydantic 
+demo_negative_space_integration.py:124: use-pydantic-validation - Use Pydantic
 for all API input validation
   → Found 5 violations in demo_negative_space_integration.py
-import_patterns_unified.py:22: no-cors-wildcard - NEVER use '*' in production 
+import_patterns_unified.py:22: no-cors-wildcard - NEVER use '*' in production
 CORS origins
 import_patterns_unified.py:73: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
 import_patterns_unified.py:70: minimum-test-coverage - Maintain 80% minimum code
 coverage
-import_patterns_unified.py:73: use-pydantic-validation - Use Pydantic for all 
+import_patterns_unified.py:73: use-pydantic-validation - Use Pydantic for all
 API input validation
   → Found 4 violations in import_patterns_unified.py
 smart_scanner.py:42: no-cors-wildcard - NEVER use '*' in production CORS origins
-smart_scanner.py:232: mock-code-naming - Mock functions must start with mock_ 
+smart_scanner.py:232: mock-code-naming - Mock functions must start with mock_
 prefix and log warnings
-smart_scanner.py:68: use-db-context-managers - Always use context managers for 
+smart_scanner.py:68: use-db-context-managers - Always use context managers for
 database sessions
 smart_scanner.py:131: use-uv-package-manager - Use uv for speed and reliability
-smart_scanner.py:25: structured-logging - Use JSON structured logs with 
+smart_scanner.py:25: structured-logging - Use JSON structured logs with
 consistent schema
 smart_scanner.py:232: minimum-test-coverage - Maintain 80% minimum code coverage
   → Found 6 violations in smart_scanner.py
-negative_space_analyzer.py:94: no-cors-wildcard - NEVER use '*' in production 
+negative_space_analyzer.py:94: no-cors-wildcard - NEVER use '*' in production
 CORS origins
-negative_space_analyzer.py:128: mock-code-naming - Mock functions must start 
+negative_space_analyzer.py:128: mock-code-naming - Mock functions must start
 with mock_ prefix and log warnings
-negative_space_analyzer.py:105: use-uv-package-manager - Use uv for speed and 
+negative_space_analyzer.py:105: use-uv-package-manager - Use uv for speed and
 reliability
-negative_space_analyzer.py:42: structured-logging - Use JSON structured logs 
+negative_space_analyzer.py:42: structured-logging - Use JSON structured logs
 with consistent schema
-negative_space_analyzer.py:128: minimum-test-coverage - Maintain 80% minimum 
+negative_space_analyzer.py:128: minimum-test-coverage - Maintain 80% minimum
 code coverage
   → Found 5 violations in negative_space_analyzer.py
-test_sqlite_scanning.py:24: no-cors-wildcard - NEVER use '*' in production CORS 
+test_sqlite_scanning.py:24: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-test_sqlite_scanning.py:13: mock-code-naming - Mock functions must start with 
+test_sqlite_scanning.py:13: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-test_sqlite_scanning.py:126: sanitize-production-errors - Return generic error 
+test_sqlite_scanning.py:126: sanitize-production-errors - Return generic error
 messages in production
-test_sqlite_scanning.py:13: minimum-test-coverage - Maintain 80% minimum code 
+test_sqlite_scanning.py:13: minimum-test-coverage - Maintain 80% minimum code
 coverage
-test_sqlite_scanning.py:34: use-pydantic-validation - Use Pydantic for all API 
+test_sqlite_scanning.py:34: use-pydantic-validation - Use Pydantic for all API
 input validation
   → Found 5 violations in test_sqlite_scanning.py
-ai_query_interface.py:115: no-cors-wildcard - NEVER use '*' in production CORS 
+ai_query_interface.py:115: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-ai_query_interface.py:135: mock-code-naming - Mock functions must start with 
+ai_query_interface.py:135: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-ai_query_interface.py:137: use-uv-package-manager - Use uv for speed and 
+ai_query_interface.py:137: use-uv-package-manager - Use uv for speed and
 reliability
-ai_query_interface.py:134: structured-logging - Use JSON structured logs with 
+ai_query_interface.py:134: structured-logging - Use JSON structured logs with
 consistent schema
-ai_query_interface.py:134: sanitize-production-errors - Return generic error 
+ai_query_interface.py:134: sanitize-production-errors - Return generic error
 messages in production
-ai_query_interface.py:185: minimum-test-coverage - Maintain 80% minimum code 
+ai_query_interface.py:185: minimum-test-coverage - Maintain 80% minimum code
 coverage
-ai_query_interface.py:141: use-pydantic-validation - Use Pydantic for all API 
+ai_query_interface.py:141: use-pydantic-validation - Use Pydantic for all API
 input validation
   → Found 7 violations in ai_query_interface.py
 enhanced_pattern_extractor.py:27: no-cors-wildcard - NEVER use '*' in production
 CORS origins
-enhanced_pattern_extractor.py:180: mock-code-naming - Mock functions must start 
+enhanced_pattern_extractor.py:180: mock-code-naming - Mock functions must start
 with mock_ prefix and log warnings
 enhanced_pattern_extractor.py:242: use-uv-package-manager - Use uv for speed and
 reliability
-enhanced_pattern_extractor.py:74: structured-logging - Use JSON structured logs 
+enhanced_pattern_extractor.py:74: structured-logging - Use JSON structured logs
 with consistent schema
-enhanced_pattern_extractor.py:70: sanitize-production-errors - Return generic 
+enhanced_pattern_extractor.py:70: sanitize-production-errors - Return generic
 error messages in production
-enhanced_pattern_extractor.py:54: minimum-test-coverage - Maintain 80% minimum 
+enhanced_pattern_extractor.py:54: minimum-test-coverage - Maintain 80% minimum
 code coverage
-enhanced_pattern_extractor.py:146: use-pydantic-validation - Use Pydantic for 
+enhanced_pattern_extractor.py:146: use-pydantic-validation - Use Pydantic for
 all API input validation
   → Found 7 violations in enhanced_pattern_extractor.py
-test_fts_direct.py:13: no-cors-wildcard - NEVER use '*' in production CORS 
+test_fts_direct.py:13: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-test_fts_direct.py:12: mock-code-naming - Mock functions must start with mock_ 
+test_fts_direct.py:12: mock-code-naming - Mock functions must start with mock_
 prefix and log warnings
-test_fts_direct.py:102: use-uv-package-manager - Use uv for speed and 
+test_fts_direct.py:102: use-uv-package-manager - Use uv for speed and
 reliability
-test_fts_direct.py:116: structured-logging - Use JSON structured logs with 
+test_fts_direct.py:116: structured-logging - Use JSON structured logs with
 consistent schema
-test_fts_direct.py:116: sanitize-production-errors - Return generic error 
+test_fts_direct.py:116: sanitize-production-errors - Return generic error
 messages in production
-test_fts_direct.py:29: minimum-test-coverage - Maintain 80% minimum code 
+test_fts_direct.py:29: minimum-test-coverage - Maintain 80% minimum code
 coverage
-test_fts_direct.py:94: use-pydantic-validation - Use Pydantic for all API input 
+test_fts_direct.py:94: use-pydantic-validation - Use Pydantic for all API input
 validation
   → Found 7 violations in test_fts_direct.py
-demo_ai_workflow.py:57: no-cors-wildcard - NEVER use '*' in production CORS 
+demo_ai_workflow.py:57: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-demo_ai_workflow.py:254: use-db-context-managers - Always use context managers 
+demo_ai_workflow.py:254: use-db-context-managers - Always use context managers
 for database sessions
-demo_ai_workflow.py:131: use-uv-package-manager - Use uv for speed and 
+demo_ai_workflow.py:131: use-uv-package-manager - Use uv for speed and
 reliability
-demo_ai_workflow.py:97: structured-logging - Use JSON structured logs with 
+demo_ai_workflow.py:97: structured-logging - Use JSON structured logs with
 consistent schema
-demo_ai_workflow.py:309: minimum-test-coverage - Maintain 80% minimum code 
+demo_ai_workflow.py:309: minimum-test-coverage - Maintain 80% minimum code
 coverage
 demo_ai_workflow.py:25: use-pydantic-validation - Use Pydantic for all API input
 validation
   → Found 6 violations in demo_ai_workflow.py
 detailed_violation_scanner.py:91: no-cors-wildcard - NEVER use '*' in production
 CORS origins
-detailed_violation_scanner.py:86: secure-jwt-storage - Store JWT secrets in 
+detailed_violation_scanner.py:86: secure-jwt-storage - Store JWT secrets in
 secure credential manager, never hardcode
-detailed_violation_scanner.py:92: mock-code-naming - Mock functions must start 
+detailed_violation_scanner.py:92: mock-code-naming - Mock functions must start
 with mock_ prefix and log warnings
   → Found 3 violations in detailed_violation_scanner.py
 test.py:1: use-uv-package-manager - Use uv for speed and reliability
 test.py:1: use-pydantic-validation - Use Pydantic for all API input validation
   → Found 2 violations in test.py
-pattern_refiner.py:85: no-cors-wildcard - NEVER use '*' in production CORS 
+pattern_refiner.py:85: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-pattern_refiner.py:43: mock-code-naming - Mock functions must start with mock_ 
+pattern_refiner.py:43: mock-code-naming - Mock functions must start with mock_
 prefix and log warnings
-pattern_refiner.py:386: use-db-context-managers - Always use context managers 
+pattern_refiner.py:386: use-db-context-managers - Always use context managers
 for database sessions
-pattern_refiner.py:140: structured-logging - Use JSON structured logs with 
+pattern_refiner.py:140: structured-logging - Use JSON structured logs with
 consistent schema
-pattern_refiner.py:139: sanitize-production-errors - Return generic error 
+pattern_refiner.py:139: sanitize-production-errors - Return generic error
 messages in production
-pattern_refiner.py:226: minimum-test-coverage - Maintain 80% minimum code 
+pattern_refiner.py:226: minimum-test-coverage - Maintain 80% minimum code
 coverage
   → Found 6 violations in pattern_refiner.py
-test_implementation.py:76: no-cors-wildcard - NEVER use '*' in production CORS 
+test_implementation.py:76: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-test_implementation.py:14: mock-code-naming - Mock functions must start with 
+test_implementation.py:14: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-test_implementation.py:43: use-uv-package-manager - Use uv for speed and 
+test_implementation.py:43: use-uv-package-manager - Use uv for speed and
 reliability
-test_implementation.py:14: minimum-test-coverage - Maintain 80% minimum code 
+test_implementation.py:14: minimum-test-coverage - Maintain 80% minimum code
 coverage
-test_implementation.py:57: use-pydantic-validation - Use Pydantic for all API 
+test_implementation.py:57: use-pydantic-validation - Use Pydantic for all API
 input validation
   → Found 5 violations in test_implementation.py
-evolution_tracker.py:111: no-cors-wildcard - NEVER use '*' in production CORS 
+evolution_tracker.py:111: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-evolution_tracker.py:101: mock-code-naming - Mock functions must start with 
+evolution_tracker.py:101: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-evolution_tracker.py:101: minimum-test-coverage - Maintain 80% minimum code 
+evolution_tracker.py:101: minimum-test-coverage - Maintain 80% minimum code
 coverage
-evolution_tracker.py:401: use-pydantic-validation - Use Pydantic for all API 
+evolution_tracker.py:401: use-pydantic-validation - Use Pydantic for all API
 input validation
   → Found 4 violations in evolution_tracker.py
 test_violation.py:1: use-uv-package-manager - Use uv for speed and reliability
-test_violation.py:1: use-pydantic-validation - Use Pydantic for all API input 
+test_violation.py:1: use-pydantic-validation - Use Pydantic for all API input
 validation
   → Found 2 violations in test_violation.py
 import_patterns_to_sqlite.py:220: no-cors-wildcard - NEVER use '*' in production
 CORS origins
-import_patterns_to_sqlite.py:34: mock-code-naming - Mock functions must start 
+import_patterns_to_sqlite.py:34: mock-code-naming - Mock functions must start
 with mock_ prefix and log warnings
-import_patterns_to_sqlite.py:70: use-db-context-managers - Always use context 
+import_patterns_to_sqlite.py:70: use-db-context-managers - Always use context
 managers for database sessions
-import_patterns_to_sqlite.py:29: structured-logging - Use JSON structured logs 
+import_patterns_to_sqlite.py:29: structured-logging - Use JSON structured logs
 with consistent schema
-import_patterns_to_sqlite.py:217: minimum-test-coverage - Maintain 80% minimum 
+import_patterns_to_sqlite.py:217: minimum-test-coverage - Maintain 80% minimum
 code coverage
-import_patterns_to_sqlite.py:30: use-pydantic-validation - Use Pydantic for all 
+import_patterns_to_sqlite.py:30: use-pydantic-validation - Use Pydantic for all
 API input validation
   → Found 6 violations in import_patterns_to_sqlite.py
-demo_full_implementation.py:14: no-cors-wildcard - NEVER use '*' in production 
+demo_full_implementation.py:14: no-cors-wildcard - NEVER use '*' in production
 CORS origins
-demo_full_implementation.py:180: mock-code-naming - Mock functions must start 
+demo_full_implementation.py:180: mock-code-naming - Mock functions must start
 with mock_ prefix and log warnings
-demo_full_implementation.py:132: use-uv-package-manager - Use uv for speed and 
+demo_full_implementation.py:132: use-uv-package-manager - Use uv for speed and
 reliability
-demo_full_implementation.py:181: structured-logging - Use JSON structured logs 
+demo_full_implementation.py:181: structured-logging - Use JSON structured logs
 with consistent schema
-demo_full_implementation.py:163: sanitize-production-errors - Return generic 
+demo_full_implementation.py:163: sanitize-production-errors - Return generic
 error messages in production
-demo_full_implementation.py:345: minimum-test-coverage - Maintain 80% minimum 
+demo_full_implementation.py:345: minimum-test-coverage - Maintain 80% minimum
 code coverage
-demo_full_implementation.py:149: use-pydantic-validation - Use Pydantic for all 
+demo_full_implementation.py:149: use-pydantic-validation - Use Pydantic for all
 API input validation
   → Found 7 violations in demo_full_implementation.py
 example.py:1: use-uv-package-manager - Use uv for speed and reliability
-example.py:1: use-pydantic-validation - Use Pydantic for all API input 
+example.py:1: use-pydantic-validation - Use Pydantic for all API input
 validation
   → Found 2 violations in example.py
 test_file.py:1: use-uv-package-manager - Use uv for speed and reliability
-test_file.py:1: use-pydantic-validation - Use Pydantic for all API input 
+test_file.py:1: use-pydantic-validation - Use Pydantic for all API input
 validation
   → Found 2 violations in test_file.py
-extract_comprehensive_patterns.py:50: no-cors-wildcard - NEVER use '*' in 
+extract_comprehensive_patterns.py:50: no-cors-wildcard - NEVER use '*' in
 production CORS origins
-extract_comprehensive_patterns.py:32: secure-jwt-storage - Store JWT secrets in 
+extract_comprehensive_patterns.py:32: secure-jwt-storage - Store JWT secrets in
 secure credential manager, never hardcode
-extract_comprehensive_patterns.py:320: mock-code-naming - Mock functions must 
+extract_comprehensive_patterns.py:320: mock-code-naming - Mock functions must
 start with mock_ prefix and log warnings
-extract_comprehensive_patterns.py:121: use-db-context-managers - Always use 
+extract_comprehensive_patterns.py:121: use-db-context-managers - Always use
 context managers for database sessions
 extract_comprehensive_patterns.py:302: use-uv-package-manager - Use uv for speed
 and reliability
-extract_comprehensive_patterns.py:164: structured-logging - Use JSON structured 
+extract_comprehensive_patterns.py:164: structured-logging - Use JSON structured
 logs with consistent schema
-extract_comprehensive_patterns.py:104: sanitize-production-errors - Return 
+extract_comprehensive_patterns.py:104: sanitize-production-errors - Return
 generic error messages in production
-extract_comprehensive_patterns.py:196: minimum-test-coverage - Maintain 80% 
+extract_comprehensive_patterns.py:196: minimum-test-coverage - Maintain 80%
 minimum code coverage
 extract_comprehensive_patterns.py:84: use-pydantic-validation - Use Pydantic for
 all API input validation
@@ -269,198 +269,198 @@ all API input validation
 mycode.py:1: use-uv-package-manager - Use uv for speed and reliability
 mycode.py:1: use-pydantic-validation - Use Pydantic for all API input validation
   → Found 2 violations in mycode.py
-comprehensive_fixer.py:85: no-cors-wildcard - NEVER use '*' in production CORS 
+comprehensive_fixer.py:85: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-comprehensive_fixer.py:165: secure-jwt-storage - Store JWT secrets in secure 
+comprehensive_fixer.py:165: secure-jwt-storage - Store JWT secrets in secure
 credential manager, never hardcode
-comprehensive_fixer.py:414: use-db-context-managers - Always use context 
+comprehensive_fixer.py:414: use-db-context-managers - Always use context
 managers for database sessions
-comprehensive_fixer.py:81: structured-logging - Use JSON structured logs with 
+comprehensive_fixer.py:81: structured-logging - Use JSON structured logs with
 consistent schema
   → Found 4 violations in comprehensive_fixer.py
-update_patterns_from_project_init.py:31: no-cors-wildcard - NEVER use '*' in 
+update_patterns_from_project_init.py:31: no-cors-wildcard - NEVER use '*' in
 production CORS origins
 update_patterns_from_project_init.py:187: mock-code-naming - Mock functions must
 start with mock_ prefix and log warnings
-update_patterns_from_project_init.py:261: use-uv-package-manager - Use uv for 
+update_patterns_from_project_init.py:261: use-uv-package-manager - Use uv for
 speed and reliability
-update_patterns_from_project_init.py:130: structured-logging - Use JSON 
+update_patterns_from_project_init.py:130: structured-logging - Use JSON
 structured logs with consistent schema
-update_patterns_from_project_init.py:87: sanitize-production-errors - Return 
+update_patterns_from_project_init.py:87: sanitize-production-errors - Return
 generic error messages in production
-update_patterns_from_project_init.py:324: minimum-test-coverage - Maintain 80% 
+update_patterns_from_project_init.py:324: minimum-test-coverage - Maintain 80%
 minimum code coverage
 update_patterns_from_project_init.py:132: use-pydantic-validation - Use Pydantic
 for all API input validation
   → Found 7 violations in update_patterns_from_project_init.py
-test_sqlite_core.py:323: no-cors-wildcard - NEVER use '*' in production CORS 
+test_sqlite_core.py:323: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-test_sqlite_core.py:3: mock-code-naming - Mock functions must start with mock_ 
+test_sqlite_core.py:3: mock-code-naming - Mock functions must start with mock_
 prefix and log warnings
-test_sqlite_core.py:27: use-db-context-managers - Always use context managers 
+test_sqlite_core.py:27: use-db-context-managers - Always use context managers
 for database sessions
-test_sqlite_core.py:204: structured-logging - Use JSON structured logs with 
+test_sqlite_core.py:204: structured-logging - Use JSON structured logs with
 consistent schema
-test_sqlite_core.py:517: sanitize-production-errors - Return generic error 
+test_sqlite_core.py:517: sanitize-production-errors - Return generic error
 messages in production
-test_sqlite_core.py:479: minimum-test-coverage - Maintain 80% minimum code 
+test_sqlite_core.py:479: minimum-test-coverage - Maintain 80% minimum code
 coverage
-test_sqlite_core.py:189: use-pydantic-validation - Use Pydantic for all API 
+test_sqlite_core.py:189: use-pydantic-validation - Use Pydantic for all API
 input validation
   → Found 7 violations in test_sqlite_core.py
 simple_fixer.py:158: no-cors-wildcard - NEVER use '*' in production CORS origins
-simple_fixer.py:261: use-db-context-managers - Always use context managers for 
+simple_fixer.py:261: use-db-context-managers - Always use context managers for
 database sessions
-simple_fixer.py:185: structured-logging - Use JSON structured logs with 
+simple_fixer.py:185: structured-logging - Use JSON structured logs with
 consistent schema
-simple_fixer.py:141: use-pydantic-validation - Use Pydantic for all API input 
+simple_fixer.py:141: use-pydantic-validation - Use Pydantic for all API input
 validation
   → Found 4 violations in simple_fixer.py
-test_cli_commands.py:12: no-cors-wildcard - NEVER use '*' in production CORS 
+test_cli_commands.py:12: no-cors-wildcard - NEVER use '*' in production CORS
 origins
 test_cli_commands.py:42: mock-code-naming - Mock functions must start with mock_
 prefix and log warnings
-test_cli_commands.py:3: minimum-test-coverage - Maintain 80% minimum code 
+test_cli_commands.py:3: minimum-test-coverage - Maintain 80% minimum code
 coverage
   → Found 3 violations in test_cli_commands.py
 broader_scope_scanner.py:77: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-broader_scope_scanner.py:21: mock-code-naming - Mock functions must start with 
+broader_scope_scanner.py:21: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-broader_scope_scanner.py:70: use-uv-package-manager - Use uv for speed and 
+broader_scope_scanner.py:70: use-uv-package-manager - Use uv for speed and
 reliability
-broader_scope_scanner.py:21: minimum-test-coverage - Maintain 80% minimum code 
+broader_scope_scanner.py:21: minimum-test-coverage - Maintain 80% minimum code
 coverage
   → Found 4 violations in broader_scope_scanner.py
-test_dogfooding.py:30: sanitize-production-errors - Return generic error 
+test_dogfooding.py:30: sanitize-production-errors - Return generic error
 messages in production
-test_dogfooding.py:11: minimum-test-coverage - Maintain 80% minimum code 
+test_dogfooding.py:11: minimum-test-coverage - Maintain 80% minimum code
 coverage
-test_dogfooding.py:8: use-pydantic-validation - Use Pydantic for all API input 
+test_dogfooding.py:8: use-pydantic-validation - Use Pydantic for all API input
 validation
   → Found 3 violations in test_dogfooding.py
-final_intelligent_scanner.py:28: no-cors-wildcard - NEVER use '*' in production 
+final_intelligent_scanner.py:28: no-cors-wildcard - NEVER use '*' in production
 CORS origins
-final_intelligent_scanner.py:61: secure-jwt-storage - Store JWT secrets in 
+final_intelligent_scanner.py:61: secure-jwt-storage - Store JWT secrets in
 secure credential manager, never hardcode
-final_intelligent_scanner.py:76: mock-code-naming - Mock functions must start 
+final_intelligent_scanner.py:76: mock-code-naming - Mock functions must start
 with mock_ prefix and log warnings
-final_intelligent_scanner.py:55: structured-logging - Use JSON structured logs 
+final_intelligent_scanner.py:55: structured-logging - Use JSON structured logs
 with consistent schema
-final_intelligent_scanner.py:118: sanitize-production-errors - Return generic 
+final_intelligent_scanner.py:118: sanitize-production-errors - Return generic
 error messages in production
-final_intelligent_scanner.py:213: minimum-test-coverage - Maintain 80% minimum 
+final_intelligent_scanner.py:213: minimum-test-coverage - Maintain 80% minimum
 code coverage
   → Found 6 violations in final_intelligent_scanner.py
-systematic_quality_enforcer.py:137: no-cors-wildcard - NEVER use '*' in 
+systematic_quality_enforcer.py:137: no-cors-wildcard - NEVER use '*' in
 production CORS origins
-systematic_quality_enforcer.py:153: secure-jwt-storage - Store JWT secrets in 
+systematic_quality_enforcer.py:153: secure-jwt-storage - Store JWT secrets in
 secure credential manager, never hardcode
-systematic_quality_enforcer.py:83: mock-code-naming - Mock functions must start 
+systematic_quality_enforcer.py:83: mock-code-naming - Mock functions must start
 with mock_ prefix and log warnings
 systematic_quality_enforcer.py:14: structured-logging - Use JSON structured logs
 with consistent schema
 systematic_quality_enforcer.py:288: minimum-test-coverage - Maintain 80% minimum
 code coverage
-systematic_quality_enforcer.py:51: use-pydantic-validation - Use Pydantic for 
+systematic_quality_enforcer.py:51: use-pydantic-validation - Use Pydantic for
 all API input validation
   → Found 6 violations in systematic_quality_enforcer.py
-pattern_enhancement_analyzer.py:212: no-cors-wildcard - NEVER use '*' in 
+pattern_enhancement_analyzer.py:212: no-cors-wildcard - NEVER use '*' in
 production CORS origins
-pattern_enhancement_analyzer.py:243: secure-jwt-storage - Store JWT secrets in 
+pattern_enhancement_analyzer.py:243: secure-jwt-storage - Store JWT secrets in
 secure credential manager, never hardcode
 pattern_enhancement_analyzer.py:85: mock-code-naming - Mock functions must start
 with mock_ prefix and log warnings
-pattern_enhancement_analyzer.py:96: use-uv-package-manager - Use uv for speed 
+pattern_enhancement_analyzer.py:96: use-uv-package-manager - Use uv for speed
 and reliability
-pattern_enhancement_analyzer.py:135: structured-logging - Use JSON structured 
+pattern_enhancement_analyzer.py:135: structured-logging - Use JSON structured
 logs with consistent schema
-pattern_enhancement_analyzer.py:126: minimum-test-coverage - Maintain 80% 
+pattern_enhancement_analyzer.py:126: minimum-test-coverage - Maintain 80%
 minimum code coverage
-pattern_enhancement_analyzer.py:146: use-pydantic-validation - Use Pydantic for 
+pattern_enhancement_analyzer.py:146: use-pydantic-validation - Use Pydantic for
 all API input validation
   → Found 7 violations in pattern_enhancement_analyzer.py
-simple_scanner.py:96: no-cors-wildcard - NEVER use '*' in production CORS 
+simple_scanner.py:96: no-cors-wildcard - NEVER use '*' in production CORS
 origins
   → Found 1 violations in simple_scanner.py
-enhanced_intelligent_scanner.py:365: no-cors-wildcard - NEVER use '*' in 
+enhanced_intelligent_scanner.py:365: no-cors-wildcard - NEVER use '*' in
 production CORS origins
-enhanced_intelligent_scanner.py:367: secure-jwt-storage - Store JWT secrets in 
+enhanced_intelligent_scanner.py:367: secure-jwt-storage - Store JWT secrets in
 secure credential manager, never hardcode
-enhanced_intelligent_scanner.py:121: mock-code-naming - Mock functions must 
+enhanced_intelligent_scanner.py:121: mock-code-naming - Mock functions must
 start with mock_ prefix and log warnings
-enhanced_intelligent_scanner.py:45: structured-logging - Use JSON structured 
+enhanced_intelligent_scanner.py:45: structured-logging - Use JSON structured
 logs with consistent schema
 enhanced_intelligent_scanner.py:97: minimum-test-coverage - Maintain 80% minimum
 code coverage
-enhanced_intelligent_scanner.py:24: use-pydantic-validation - Use Pydantic for 
+enhanced_intelligent_scanner.py:24: use-pydantic-validation - Use Pydantic for
 all API input validation
   → Found 6 violations in enhanced_intelligent_scanner.py
-intelligent_scanner.py:66: no-cors-wildcard - NEVER use '*' in production CORS 
+intelligent_scanner.py:66: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-intelligent_scanner.py:61: secure-jwt-storage - Store JWT secrets in secure 
+intelligent_scanner.py:61: secure-jwt-storage - Store JWT secrets in secure
 credential manager, never hardcode
-intelligent_scanner.py:63: mock-code-naming - Mock functions must start with 
+intelligent_scanner.py:63: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-intelligent_scanner.py:276: structured-logging - Use JSON structured logs with 
+intelligent_scanner.py:276: structured-logging - Use JSON structured logs with
 consistent schema
-intelligent_scanner.py:196: sanitize-production-errors - Return generic error 
+intelligent_scanner.py:196: sanitize-production-errors - Return generic error
 messages in production
-intelligent_scanner.py:296: minimum-test-coverage - Maintain 80% minimum code 
+intelligent_scanner.py:296: minimum-test-coverage - Maintain 80% minimum code
 coverage
   → Found 6 violations in intelligent_scanner.py
-violation_analyzer.py:29: no-cors-wildcard - NEVER use '*' in production CORS 
+violation_analyzer.py:29: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-violation_analyzer.py:25: structured-logging - Use JSON structured logs with 
+violation_analyzer.py:25: structured-logging - Use JSON structured logs with
 consistent schema
-violation_analyzer.py:87: minimum-test-coverage - Maintain 80% minimum code 
+violation_analyzer.py:87: minimum-test-coverage - Maintain 80% minimum code
 coverage
   → Found 3 violations in violation_analyzer.py
-best_practices_scanner.py:139: no-cors-wildcard - NEVER use '*' in production 
+best_practices_scanner.py:139: no-cors-wildcard - NEVER use '*' in production
 CORS origins
 best_practices_scanner.py:167: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-best_practices_scanner.py:656: use-db-context-managers - Always use context 
+best_practices_scanner.py:656: use-db-context-managers - Always use context
 managers for database sessions
-best_practices_scanner.py:614: use-uv-package-manager - Use uv for speed and 
+best_practices_scanner.py:614: use-uv-package-manager - Use uv for speed and
 reliability
-best_practices_scanner.py:111: structured-logging - Use JSON structured logs 
+best_practices_scanner.py:111: structured-logging - Use JSON structured logs
 with consistent schema
 best_practices_scanner.py:111: sanitize-production-errors - Return generic error
 messages in production
 best_practices_scanner.py:300: minimum-test-coverage - Maintain 80% minimum code
 coverage
-best_practices_scanner.py:394: use-pydantic-validation - Use Pydantic for all 
+best_practices_scanner.py:394: use-pydantic-validation - Use Pydantic for all
 API input validation
   → Found 8 violations in best_practices_scanner.py
-test_quick_mcp.py:12: mock-code-naming - Mock functions must start with mock_ 
+test_quick_mcp.py:12: mock-code-naming - Mock functions must start with mock_
 prefix and log warnings
 test_quick_mcp.py:5: minimum-test-coverage - Maintain 80% minimum code coverage
   → Found 2 violations in test_quick_mcp.py
-quality_enforcement_backup_20250819_200552/pattern_models.py:22: 
+quality_enforcement_backup_20250819_200552/pattern_models.py:22:
 mock-code-naming - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_200552/pattern_models.py:5: 
+quality_enforcement_backup_20250819_200552/pattern_models.py:5:
 structured-logging - Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_200552/pattern_models.py:28: 
+quality_enforcement_backup_20250819_200552/pattern_models.py:28:
 minimum-test-coverage - Maintain 80% minimum code coverage
-quality_enforcement_backup_20250819_200552/pattern_models.py:18: 
+quality_enforcement_backup_20250819_200552/pattern_models.py:18:
 use-pydantic-validation - Use Pydantic for all API input validation
-  → Found 4 violations in 
+  → Found 4 violations in
 quality_enforcement_backup_20250819_200552/pattern_models.py
-quality_enforcement_backup_20250819_200552/scanner.py:90: no-cors-wildcard - 
+quality_enforcement_backup_20250819_200552/scanner.py:90: no-cors-wildcard -
 NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_200552/scanner.py:268: mock-code-naming - 
+quality_enforcement_backup_20250819_200552/scanner.py:268: mock-code-naming -
 Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_200552/scanner.py:8: structured-logging - 
+quality_enforcement_backup_20250819_200552/scanner.py:8: structured-logging -
 Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_200552/scanner.py:255: 
+quality_enforcement_backup_20250819_200552/scanner.py:255:
 sanitize-production-errors - Return generic error messages in production
 quality_enforcement_backup_20250819_200552/scanner.py:268: minimum-test-coverage
 - Maintain 80% minimum code coverage
-quality_enforcement_backup_20250819_200552/scanner.py:79: 
+quality_enforcement_backup_20250819_200552/scanner.py:79:
 use-pydantic-validation - Use Pydantic for all API input validation
   → Found 6 violations in quality_enforcement_backup_20250819_200552/scanner.py
-quality_enforcement_backup_20250819_200552/config.py:62: no-cors-wildcard - 
+quality_enforcement_backup_20250819_200552/config.py:62: no-cors-wildcard -
 NEVER use '*' in production CORS origins
 quality_enforcement_backup_20250819_200552/config.py:68: mock-code-naming - Mock
 functions must start with mock_ prefix and log warnings
@@ -471,465 +471,465 @@ quality_enforcement_backup_20250819_200552/models.py:26: mock-code-naming - Mock
 functions must start with mock_ prefix and log warnings
 quality_enforcement_backup_20250819_200552/models.py:33: minimum-test-coverage -
 Maintain 80% minimum code coverage
-quality_enforcement_backup_20250819_200552/models.py:4: use-pydantic-validation 
+quality_enforcement_backup_20250819_200552/models.py:4: use-pydantic-validation
 - Use Pydantic for all API input validation
   → Found 3 violations in quality_enforcement_backup_20250819_200552/models.py
-quality_enforcement_backup_20250819_200552/unified_database.py:280: 
+quality_enforcement_backup_20250819_200552/unified_database.py:280:
 no-cors-wildcard - NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_200552/unified_database.py:168: 
+quality_enforcement_backup_20250819_200552/unified_database.py:168:
 use-db-context-managers - Always use context managers for database sessions
-quality_enforcement_backup_20250819_200552/unified_database.py:8: 
+quality_enforcement_backup_20250819_200552/unified_database.py:8:
 structured-logging - Use JSON structured logs with consistent schema
-  → Found 3 violations in 
+  → Found 3 violations in
 quality_enforcement_backup_20250819_200552/unified_database.py
-quality_enforcement_backup_20250819_200552/scan_rules.py:60: no-cors-wildcard - 
+quality_enforcement_backup_20250819_200552/scan_rules.py:60: no-cors-wildcard -
 NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_200552/scan_rules.py:93: secure-jwt-storage 
+quality_enforcement_backup_20250819_200552/scan_rules.py:93: secure-jwt-storage
 - Store JWT secrets in secure credential manager, never hardcode
-quality_enforcement_backup_20250819_200552/scan_rules.py:25: mock-code-naming - 
+quality_enforcement_backup_20250819_200552/scan_rules.py:25: mock-code-naming -
 Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_200552/scan_rules.py:114: 
+quality_enforcement_backup_20250819_200552/scan_rules.py:114:
 use-db-context-managers - Always use context managers for database sessions
-quality_enforcement_backup_20250819_200552/scan_rules.py:165: 
+quality_enforcement_backup_20250819_200552/scan_rules.py:165:
 use-uv-package-manager - Use uv for speed and reliability
 quality_enforcement_backup_20250819_200552/scan_rules.py:262: structured-logging
 - Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_200552/scan_rules.py:25: 
+quality_enforcement_backup_20250819_200552/scan_rules.py:25:
 minimum-test-coverage - Maintain 80% minimum code coverage
-quality_enforcement_backup_20250819_200552/scan_rules.py:292: 
+quality_enforcement_backup_20250819_200552/scan_rules.py:292:
 use-pydantic-validation - Use Pydantic for all API input validation
-  → Found 8 violations in 
+  → Found 8 violations in
 quality_enforcement_backup_20250819_200552/scan_rules.py
-quality_enforcement_backup_20250819_200552/database.py:8: mock-code-naming - 
+quality_enforcement_backup_20250819_200552/database.py:8: mock-code-naming -
 Mock functions must start with mock_ prefix and log warnings
   → Found 1 violations in quality_enforcement_backup_20250819_200552/database.py
-quality_enforcement_backup_20250819_200552/client.py:83: no-cors-wildcard - 
+quality_enforcement_backup_20250819_200552/client.py:83: no-cors-wildcard -
 NEVER use '*' in production CORS origins
 quality_enforcement_backup_20250819_200552/client.py:36: mock-code-naming - Mock
 functions must start with mock_ prefix and log warnings
 quality_enforcement_backup_20250819_200552/client.py:248: use-uv-package-manager
 - Use uv for speed and reliability
-quality_enforcement_backup_20250819_200552/client.py:13: 
+quality_enforcement_backup_20250819_200552/client.py:13:
 sanitize-production-errors - Return generic error messages in production
 quality_enforcement_backup_20250819_200552/client.py:36: minimum-test-coverage -
 Maintain 80% minimum code coverage
   → Found 5 violations in quality_enforcement_backup_20250819_200552/client.py
 quality_enforcement_backup_20250819_200552/tools.py:83: no-cors-wildcard - NEVER
 use '*' in production CORS origins
-quality_enforcement_backup_20250819_200552/tools.py:340: structured-logging - 
+quality_enforcement_backup_20250819_200552/tools.py:340: structured-logging -
 Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_200552/tools.py:83: 
+quality_enforcement_backup_20250819_200552/tools.py:83:
 sanitize-production-errors - Return generic error messages in production
 quality_enforcement_backup_20250819_200552/tools.py:118: use-pydantic-validation
 - Use Pydantic for all API input validation
   → Found 4 violations in quality_enforcement_backup_20250819_200552/tools.py
-quality_enforcement_backup_20250819_200552/ai_sqlite_query.py:28: 
+quality_enforcement_backup_20250819_200552/ai_sqlite_query.py:28:
 no-cors-wildcard - NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_200552/ai_sqlite_query.py:509: 
+quality_enforcement_backup_20250819_200552/ai_sqlite_query.py:509:
 mock-code-naming - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_200552/ai_sqlite_query.py:146: 
+quality_enforcement_backup_20250819_200552/ai_sqlite_query.py:146:
 use-db-context-managers - Always use context managers for database sessions
-quality_enforcement_backup_20250819_200552/ai_sqlite_query.py:59: 
+quality_enforcement_backup_20250819_200552/ai_sqlite_query.py:59:
 structured-logging - Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_200552/ai_sqlite_query.py:509: 
+quality_enforcement_backup_20250819_200552/ai_sqlite_query.py:509:
 minimum-test-coverage - Maintain 80% minimum code coverage
-  → Found 5 violations in 
+  → Found 5 violations in
 quality_enforcement_backup_20250819_200552/ai_sqlite_query.py
 quality_enforcement_backup_20250819_200552/pattern_cli.py:60: no-cors-wildcard -
 NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_200552/pattern_cli.py:620: mock-code-naming 
+quality_enforcement_backup_20250819_200552/pattern_cli.py:620: mock-code-naming
 - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_200552/pattern_cli.py:9: structured-logging 
+quality_enforcement_backup_20250819_200552/pattern_cli.py:9: structured-logging
 - Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_200552/pattern_cli.py:57: 
+quality_enforcement_backup_20250819_200552/pattern_cli.py:57:
 sanitize-production-errors - Return generic error messages in production
-quality_enforcement_backup_20250819_200552/pattern_cli.py:620: 
+quality_enforcement_backup_20250819_200552/pattern_cli.py:620:
 minimum-test-coverage - Maintain 80% minimum code coverage
-quality_enforcement_backup_20250819_200552/pattern_cli.py:66: 
+quality_enforcement_backup_20250819_200552/pattern_cli.py:66:
 use-pydantic-validation - Use Pydantic for all API input validation
-  → Found 6 violations in 
+  → Found 6 violations in
 quality_enforcement_backup_20250819_200552/pattern_cli.py
-quality_enforcement_backup_20250819_200552/__init__.py:10: 
+quality_enforcement_backup_20250819_200552/__init__.py:10:
 sanitize-production-errors - Return generic error messages in production
   → Found 1 violations in quality_enforcement_backup_20250819_200552/__init__.py
-quality_enforcement_backup_20250819_200552/sqlite_scanner.py:218: 
+quality_enforcement_backup_20250819_200552/sqlite_scanner.py:218:
 no-cors-wildcard - NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_200552/sqlite_scanner.py:344: 
+quality_enforcement_backup_20250819_200552/sqlite_scanner.py:344:
 mock-code-naming - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_200552/sqlite_scanner.py:35: 
+quality_enforcement_backup_20250819_200552/sqlite_scanner.py:35:
 use-db-context-managers - Always use context managers for database sessions
-quality_enforcement_backup_20250819_200552/sqlite_scanner.py:461: 
+quality_enforcement_backup_20250819_200552/sqlite_scanner.py:461:
 structured-logging - Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_200552/sqlite_scanner.py:477: 
+quality_enforcement_backup_20250819_200552/sqlite_scanner.py:477:
 sanitize-production-errors - Return generic error messages in production
-quality_enforcement_backup_20250819_200552/sqlite_scanner.py:487: 
+quality_enforcement_backup_20250819_200552/sqlite_scanner.py:487:
 minimum-test-coverage - Maintain 80% minimum code coverage
-quality_enforcement_backup_20250819_200552/sqlite_scanner.py:327: 
+quality_enforcement_backup_20250819_200552/sqlite_scanner.py:327:
 use-pydantic-validation - Use Pydantic for all API input validation
-  → Found 7 violations in 
+  → Found 7 violations in
 quality_enforcement_backup_20250819_200552/sqlite_scanner.py
-quality_enforcement_backup_20250819_200552/project_config.py:29: 
+quality_enforcement_backup_20250819_200552/project_config.py:29:
 no-cors-wildcard - NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_200552/project_config.py:188: 
+quality_enforcement_backup_20250819_200552/project_config.py:188:
 mock-code-naming - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_200552/project_config.py:10: 
+quality_enforcement_backup_20250819_200552/project_config.py:10:
 structured-logging - Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_200552/project_config.py:188: 
+quality_enforcement_backup_20250819_200552/project_config.py:188:
 minimum-test-coverage - Maintain 80% minimum code coverage
-  → Found 4 violations in 
+  → Found 4 violations in
 quality_enforcement_backup_20250819_200552/project_config.py
-quality_enforcement_backup_20250819_200552/scan_cli.py:281: no-cors-wildcard - 
+quality_enforcement_backup_20250819_200552/scan_cli.py:281: no-cors-wildcard -
 NEVER use '*' in production CORS origins
 quality_enforcement_backup_20250819_200552/scan_cli.py:293: secure-jwt-storage -
 Store JWT secrets in secure credential manager, never hardcode
-quality_enforcement_backup_20250819_200552/scan_cli.py:111: 
+quality_enforcement_backup_20250819_200552/scan_cli.py:111:
 use-db-context-managers - Always use context managers for database sessions
-quality_enforcement_backup_20250819_200552/scan_cli.py:13: structured-logging - 
+quality_enforcement_backup_20250819_200552/scan_cli.py:13: structured-logging -
 Use JSON structured logs with consistent schema
   → Found 4 violations in quality_enforcement_backup_20250819_200552/scan_cli.py
-quality_enforcement_backup_20250819_200552/fts_database_OLD.py:31: 
+quality_enforcement_backup_20250819_200552/fts_database_OLD.py:31:
 no-cors-wildcard - NEVER use '*' in production CORS origins
-  → Found 1 violations in 
+  → Found 1 violations in
 quality_enforcement_backup_20250819_200552/fts_database_OLD.py
 quality_enforcement_backup_20250819_200552/fts_database.py:9: mock-code-naming -
 Mock functions must start with mock_ prefix and log warnings
-  → Found 1 violations in 
+  → Found 1 violations in
 quality_enforcement_backup_20250819_200552/fts_database.py
-quality_enforcement_backup_20250819_200552/ai_query.py:155: no-cors-wildcard - 
+quality_enforcement_backup_20250819_200552/ai_query.py:155: no-cors-wildcard -
 NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_200552/ai_query.py:255: mock-code-naming - 
+quality_enforcement_backup_20250819_200552/ai_query.py:255: mock-code-naming -
 Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_200552/ai_query.py:130: 
+quality_enforcement_backup_20250819_200552/ai_query.py:130:
 use-uv-package-manager - Use uv for speed and reliability
 quality_enforcement_backup_20250819_200552/ai_query.py:141: structured-logging -
 Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_200552/ai_query.py:141: 
+quality_enforcement_backup_20250819_200552/ai_query.py:141:
 sanitize-production-errors - Return generic error messages in production
-quality_enforcement_backup_20250819_200552/ai_query.py:255: 
+quality_enforcement_backup_20250819_200552/ai_query.py:255:
 minimum-test-coverage - Maintain 80% minimum code coverage
-quality_enforcement_backup_20250819_200552/ai_query.py:261: 
+quality_enforcement_backup_20250819_200552/ai_query.py:261:
 use-pydantic-validation - Use Pydantic for all API input validation
   → Found 7 violations in quality_enforcement_backup_20250819_200552/ai_query.py
-quality_enforcement_backup_20250819_200552/scan_registry.py:107: 
+quality_enforcement_backup_20250819_200552/scan_registry.py:107:
 no-cors-wildcard - NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_200552/scan_registry.py:44: 
-secure-jwt-storage - Store JWT secrets in secure credential manager, never 
+quality_enforcement_backup_20250819_200552/scan_registry.py:44:
+secure-jwt-storage - Store JWT secrets in secure credential manager, never
 hardcode
-quality_enforcement_backup_20250819_200552/scan_registry.py:154: 
+quality_enforcement_backup_20250819_200552/scan_registry.py:154:
 mock-code-naming - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_200552/scan_registry.py:258: 
+quality_enforcement_backup_20250819_200552/scan_registry.py:258:
 structured-logging - Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_200552/scan_registry.py:154: 
+quality_enforcement_backup_20250819_200552/scan_registry.py:154:
 minimum-test-coverage - Maintain 80% minimum code coverage
-  → Found 5 violations in 
+  → Found 5 violations in
 quality_enforcement_backup_20250819_200552/scan_registry.py
-quality_enforcement_backup_20250819_200552/cli.py:251: no-cors-wildcard - NEVER 
+quality_enforcement_backup_20250819_200552/cli.py:251: no-cors-wildcard - NEVER
 use '*' in production CORS origins
-quality_enforcement_backup_20250819_200552/cli.py:1609: mock-code-naming - Mock 
+quality_enforcement_backup_20250819_200552/cli.py:1609: mock-code-naming - Mock
 functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_200552/cli.py:1721: use-db-context-managers 
+quality_enforcement_backup_20250819_200552/cli.py:1721: use-db-context-managers
 - Always use context managers for database sessions
-quality_enforcement_backup_20250819_200552/cli.py:361: use-uv-package-manager - 
+quality_enforcement_backup_20250819_200552/cli.py:361: use-uv-package-manager -
 Use uv for speed and reliability
-quality_enforcement_backup_20250819_200552/cli.py:35: structured-logging - Use 
+quality_enforcement_backup_20250819_200552/cli.py:35: structured-logging - Use
 JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_200552/cli.py:1863: minimum-test-coverage - 
+quality_enforcement_backup_20250819_200552/cli.py:1863: minimum-test-coverage -
 Maintain 80% minimum code coverage
-quality_enforcement_backup_20250819_200552/cli.py:1041: use-pydantic-validation 
+quality_enforcement_backup_20250819_200552/cli.py:1041: use-pydantic-validation
 - Use Pydantic for all API input validation
   → Found 7 violations in quality_enforcement_backup_20250819_200552/cli.py
 quality_enforcement_backup_20250819_200552/database_OLD.py:102: no-cors-wildcard
 - NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_200552/database_OLD.py:13: 
+quality_enforcement_backup_20250819_200552/database_OLD.py:13:
 use-db-context-managers - Always use context managers for database sessions
-  → Found 2 violations in 
+  → Found 2 violations in
 quality_enforcement_backup_20250819_200552/database_OLD.py
-quality_enforcement_backup_20250819_200552/portable_tools.py:97: 
+quality_enforcement_backup_20250819_200552/portable_tools.py:97:
 no-cors-wildcard - NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_200552/portable_tools.py:97: 
+quality_enforcement_backup_20250819_200552/portable_tools.py:97:
 mock-code-naming - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_200552/portable_tools.py:291: 
+quality_enforcement_backup_20250819_200552/portable_tools.py:291:
 use-uv-package-manager - Use uv for speed and reliability
-quality_enforcement_backup_20250819_200552/portable_tools.py:212: 
+quality_enforcement_backup_20250819_200552/portable_tools.py:212:
 structured-logging - Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_200552/portable_tools.py:93: 
+quality_enforcement_backup_20250819_200552/portable_tools.py:93:
 sanitize-production-errors - Return generic error messages in production
-quality_enforcement_backup_20250819_200552/portable_tools.py:97: 
+quality_enforcement_backup_20250819_200552/portable_tools.py:97:
 minimum-test-coverage - Maintain 80% minimum code coverage
-quality_enforcement_backup_20250819_200552/portable_tools.py:229: 
+quality_enforcement_backup_20250819_200552/portable_tools.py:229:
 use-pydantic-validation - Use Pydantic for all API input validation
-  → Found 7 violations in 
+  → Found 7 violations in
 quality_enforcement_backup_20250819_200552/portable_tools.py
-quality_enforcement_backup_20250819_200552/settings.py:68: no-cors-wildcard - 
+quality_enforcement_backup_20250819_200552/settings.py:68: no-cors-wildcard -
 NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_200552/settings.py:67: mock-code-naming - 
+quality_enforcement_backup_20250819_200552/settings.py:67: mock-code-naming -
 Mock functions must start with mock_ prefix and log warnings
 quality_enforcement_backup_20250819_200552/settings.py:67: minimum-test-coverage
 - Maintain 80% minimum code coverage
   → Found 3 violations in quality_enforcement_backup_20250819_200552/settings.py
-quality_enforcement_backup_20250819_200552/pattern_importer.py:153: 
+quality_enforcement_backup_20250819_200552/pattern_importer.py:153:
 mock-code-naming - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_200552/pattern_importer.py:39: 
+quality_enforcement_backup_20250819_200552/pattern_importer.py:39:
 use-uv-package-manager - Use uv for speed and reliability
-quality_enforcement_backup_20250819_200552/pattern_importer.py:7: 
+quality_enforcement_backup_20250819_200552/pattern_importer.py:7:
 sanitize-production-errors - Return generic error messages in production
-quality_enforcement_backup_20250819_200552/pattern_importer.py:154: 
+quality_enforcement_backup_20250819_200552/pattern_importer.py:154:
 minimum-test-coverage - Maintain 80% minimum code coverage
-quality_enforcement_backup_20250819_200552/pattern_importer.py:150: 
+quality_enforcement_backup_20250819_200552/pattern_importer.py:150:
 use-pydantic-validation - Use Pydantic for all API input validation
-  → Found 5 violations in 
+  → Found 5 violations in
 quality_enforcement_backup_20250819_200552/pattern_importer.py
-quality_enforcement_backup_20250819_200552/exceptions.py:2: 
+quality_enforcement_backup_20250819_200552/exceptions.py:2:
 sanitize-production-errors - Return generic error messages in production
-  → Found 1 violations in 
+  → Found 1 violations in
 quality_enforcement_backup_20250819_200552/exceptions.py
-quality_enforcement_backup_20250819_200552/gitignore_handler.py:24: 
+quality_enforcement_backup_20250819_200552/gitignore_handler.py:24:
 no-cors-wildcard - NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_200552/gitignore_handler.py:26: 
+quality_enforcement_backup_20250819_200552/gitignore_handler.py:26:
 mock-code-naming - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_200552/gitignore_handler.py:27: 
+quality_enforcement_backup_20250819_200552/gitignore_handler.py:27:
 use-uv-package-manager - Use uv for speed and reliability
-quality_enforcement_backup_20250819_200552/gitignore_handler.py:31: 
+quality_enforcement_backup_20250819_200552/gitignore_handler.py:31:
 sanitize-production-errors - Return generic error messages in production
-quality_enforcement_backup_20250819_200552/gitignore_handler.py:26: 
+quality_enforcement_backup_20250819_200552/gitignore_handler.py:26:
 minimum-test-coverage - Maintain 80% minimum code coverage
-  → Found 5 violations in 
+  → Found 5 violations in
 quality_enforcement_backup_20250819_200552/gitignore_handler.py
-quality_enforcement_backup_20250819_200552/pattern_extractor.py:48: 
+quality_enforcement_backup_20250819_200552/pattern_extractor.py:48:
 mock-code-naming - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_200552/pattern_extractor.py:41: 
+quality_enforcement_backup_20250819_200552/pattern_extractor.py:41:
 use-uv-package-manager - Use uv for speed and reliability
-quality_enforcement_backup_20250819_200552/pattern_extractor.py:153: 
+quality_enforcement_backup_20250819_200552/pattern_extractor.py:153:
 sanitize-production-errors - Return generic error messages in production
-quality_enforcement_backup_20250819_200552/pattern_extractor.py:48: 
+quality_enforcement_backup_20250819_200552/pattern_extractor.py:48:
 minimum-test-coverage - Maintain 80% minimum code coverage
-  → Found 4 violations in 
+  → Found 4 violations in
 quality_enforcement_backup_20250819_200552/pattern_extractor.py
 quality_enforcement_backup_20250819_200552/scan_manager.py:220: no-cors-wildcard
 - NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_200552/scan_manager.py:28: 
-secure-jwt-storage - Store JWT secrets in secure credential manager, never 
+quality_enforcement_backup_20250819_200552/scan_manager.py:28:
+secure-jwt-storage - Store JWT secrets in secure credential manager, never
 hardcode
-quality_enforcement_backup_20250819_200552/scan_manager.py:79: mock-code-naming 
+quality_enforcement_backup_20250819_200552/scan_manager.py:79: mock-code-naming
 - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_200552/scan_manager.py:89: 
+quality_enforcement_backup_20250819_200552/scan_manager.py:89:
 use-db-context-managers - Always use context managers for database sessions
-quality_enforcement_backup_20250819_200552/scan_manager.py:220: 
+quality_enforcement_backup_20250819_200552/scan_manager.py:220:
 sanitize-production-errors - Return generic error messages in production
-quality_enforcement_backup_20250819_200552/scan_manager.py:40: 
+quality_enforcement_backup_20250819_200552/scan_manager.py:40:
 minimum-test-coverage - Maintain 80% minimum code coverage
-  → Found 6 violations in 
+  → Found 6 violations in
 quality_enforcement_backup_20250819_200552/scan_manager.py
-quality_enforcement_backup_20250819_200552/rules_cli.py:92: no-cors-wildcard - 
+quality_enforcement_backup_20250819_200552/rules_cli.py:92: no-cors-wildcard -
 NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_200552/rules_cli.py:98: mock-code-naming - 
+quality_enforcement_backup_20250819_200552/rules_cli.py:98: mock-code-naming -
 Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_200552/rules_cli.py:8: structured-logging - 
+quality_enforcement_backup_20250819_200552/rules_cli.py:8: structured-logging -
 Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_200552/rules_cli.py:98: 
+quality_enforcement_backup_20250819_200552/rules_cli.py:98:
 minimum-test-coverage - Maintain 80% minimum code coverage
-quality_enforcement_backup_20250819_200552/rules_cli.py:116: 
+quality_enforcement_backup_20250819_200552/rules_cli.py:116:
 use-pydantic-validation - Use Pydantic for all API input validation
-  → Found 5 violations in 
+  → Found 5 violations in
 quality_enforcement_backup_20250819_200552/rules_cli.py
-quality_enforcement_backup_20250819_200552/uv_check.py:216: no-cors-wildcard - 
+quality_enforcement_backup_20250819_200552/uv_check.py:216: no-cors-wildcard -
 NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_200552/uv_check.py:38: mock-code-naming - 
+quality_enforcement_backup_20250819_200552/uv_check.py:38: mock-code-naming -
 Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_200552/uv_check.py:126: 
+quality_enforcement_backup_20250819_200552/uv_check.py:126:
 use-uv-package-manager - Use uv for speed and reliability
-quality_enforcement_backup_20250819_200552/uv_check.py:12: structured-logging - 
+quality_enforcement_backup_20250819_200552/uv_check.py:12: structured-logging -
 Use JSON structured logs with consistent schema
   → Found 4 violations in quality_enforcement_backup_20250819_200552/uv_check.py
 quality_enforcement_backup_20250819_200552/mcp_server.py:255: no-cors-wildcard -
 NEVER use '*' in production CORS origins
 quality_enforcement_backup_20250819_200552/mcp_server.py:108: mock-code-naming -
 Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_200552/mcp_server.py:48: structured-logging 
+quality_enforcement_backup_20250819_200552/mcp_server.py:48: structured-logging
 - Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_200552/mcp_server.py:9: 
+quality_enforcement_backup_20250819_200552/mcp_server.py:9:
 sanitize-production-errors - Return generic error messages in production
-quality_enforcement_backup_20250819_200552/mcp_server.py:108: 
+quality_enforcement_backup_20250819_200552/mcp_server.py:108:
 minimum-test-coverage - Maintain 80% minimum code coverage
-quality_enforcement_backup_20250819_200552/mcp_server.py:160: 
+quality_enforcement_backup_20250819_200552/mcp_server.py:160:
 use-pydantic-validation - Use Pydantic for all API input validation
-  → Found 6 violations in 
+  → Found 6 violations in
 quality_enforcement_backup_20250819_200552/mcp_server.py
-demo_repository/server.py:10: no-cors-wildcard - NEVER use '*' in production 
+demo_repository/server.py:10: no-cors-wildcard - NEVER use '*' in production
 CORS origins
-demo_repository/server.py:2: use-pydantic-validation - Use Pydantic for all API 
+demo_repository/server.py:2: use-pydantic-validation - Use Pydantic for all API
 input validation
   → Found 2 violations in demo_repository/server.py
-demo_repository/client.py:2: use-pydantic-validation - Use Pydantic for all API 
+demo_repository/client.py:2: use-pydantic-validation - Use Pydantic for all API
 input validation
   → Found 1 violations in demo_repository/client.py
-demo_repository/utils.py:7: structured-logging - Use JSON structured logs with 
+demo_repository/utils.py:7: structured-logging - Use JSON structured logs with
 consistent schema
-demo_repository/utils.py:19: use-pydantic-validation - Use Pydantic for all API 
+demo_repository/utils.py:19: use-pydantic-validation - Use Pydantic for all API
 input validation
   → Found 2 violations in demo_repository/utils.py
-codex/pattern_models.py:22: mock-code-naming - Mock functions must start with 
+codex/pattern_models.py:22: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-codex/pattern_models.py:5: structured-logging - Use JSON structured logs with 
+codex/pattern_models.py:5: structured-logging - Use JSON structured logs with
 consistent schema
-codex/pattern_models.py:28: minimum-test-coverage - Maintain 80% minimum code 
+codex/pattern_models.py:28: minimum-test-coverage - Maintain 80% minimum code
 coverage
-codex/pattern_models.py:18: use-pydantic-validation - Use Pydantic for all API 
+codex/pattern_models.py:18: use-pydantic-validation - Use Pydantic for all API
 input validation
   → Found 4 violations in codex/pattern_models.py
-codex/safe_fixer.py:36: mock-code-naming - Mock functions must start with mock_ 
+codex/safe_fixer.py:36: mock-code-naming - Mock functions must start with mock_
 prefix and log warnings
-codex/safe_fixer.py:317: use-db-context-managers - Always use context managers 
+codex/safe_fixer.py:317: use-db-context-managers - Always use context managers
 for database sessions
-codex/safe_fixer.py:531: use-uv-package-manager - Use uv for speed and 
+codex/safe_fixer.py:531: use-uv-package-manager - Use uv for speed and
 reliability
-codex/safe_fixer.py:13: structured-logging - Use JSON structured logs with 
+codex/safe_fixer.py:13: structured-logging - Use JSON structured logs with
 consistent schema
-codex/safe_fixer.py:212: minimum-test-coverage - Maintain 80% minimum code 
+codex/safe_fixer.py:212: minimum-test-coverage - Maintain 80% minimum code
 coverage
-codex/safe_fixer.py:5: use-pydantic-validation - Use Pydantic for all API input 
+codex/safe_fixer.py:5: use-pydantic-validation - Use Pydantic for all API input
 validation
   → Found 6 violations in codex/safe_fixer.py
-codex/fix_audit_trail.py:402: no-cors-wildcard - NEVER use '*' in production 
+codex/fix_audit_trail.py:402: no-cors-wildcard - NEVER use '*' in production
 CORS origins
-codex/fix_audit_trail.py:652: mock-code-naming - Mock functions must start with 
+codex/fix_audit_trail.py:652: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-codex/fix_audit_trail.py:45: use-db-context-managers - Always use context 
+codex/fix_audit_trail.py:45: use-db-context-managers - Always use context
 managers for database sessions
-codex/fix_audit_trail.py:654: minimum-test-coverage - Maintain 80% minimum code 
+codex/fix_audit_trail.py:654: minimum-test-coverage - Maintain 80% minimum code
 coverage
-codex/fix_audit_trail.py:35: use-pydantic-validation - Use Pydantic for all API 
+codex/fix_audit_trail.py:35: use-pydantic-validation - Use Pydantic for all API
 input validation
   → Found 5 violations in codex/fix_audit_trail.py
-codex/scanner.py:611: no-cors-wildcard - NEVER use '*' in production CORS 
+codex/scanner.py:611: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-codex/scanner.py:606: secure-jwt-storage - Store JWT secrets in secure 
+codex/scanner.py:606: secure-jwt-storage - Store JWT secrets in secure
 credential manager, never hardcode
-codex/scanner.py:380: mock-code-naming - Mock functions must start with mock_ 
+codex/scanner.py:380: mock-code-naming - Mock functions must start with mock_
 prefix and log warnings
-codex/scanner.py:9: structured-logging - Use JSON structured logs with 
+codex/scanner.py:9: structured-logging - Use JSON structured logs with
 consistent schema
 codex/scanner.py:367: sanitize-production-errors - Return generic error messages
 in production
 codex/scanner.py:380: minimum-test-coverage - Maintain 80% minimum code coverage
-codex/scanner.py:170: use-pydantic-validation - Use Pydantic for all API input 
+codex/scanner.py:170: use-pydantic-validation - Use Pydantic for all API input
 validation
   → Found 7 violations in codex/scanner.py
 codex/config.py:62: no-cors-wildcard - NEVER use '*' in production CORS origins
-codex/config.py:68: mock-code-naming - Mock functions must start with mock_ 
+codex/config.py:68: mock-code-naming - Mock functions must start with mock_
 prefix and log warnings
 codex/config.py:68: minimum-test-coverage - Maintain 80% minimum code coverage
   → Found 3 violations in codex/config.py
-codex/models.py:26: mock-code-naming - Mock functions must start with mock_ 
+codex/models.py:26: mock-code-naming - Mock functions must start with mock_
 prefix and log warnings
-codex/models.py:37: structured-logging - Use JSON structured logs with 
+codex/models.py:37: structured-logging - Use JSON structured logs with
 consistent schema
 codex/models.py:33: minimum-test-coverage - Maintain 80% minimum code coverage
-codex/models.py:4: use-pydantic-validation - Use Pydantic for all API input 
+codex/models.py:4: use-pydantic-validation - Use Pydantic for all API input
 validation
   → Found 4 violations in codex/models.py
 codex/fix_validation_rules.py:15: no-cors-wildcard - NEVER use '*' in production
 CORS origins
-codex/fix_validation_rules.py:207: secure-jwt-storage - Store JWT secrets in 
+codex/fix_validation_rules.py:207: secure-jwt-storage - Store JWT secrets in
 secure credential manager, never hardcode
-codex/fix_validation_rules.py:35: mock-code-naming - Mock functions must start 
+codex/fix_validation_rules.py:35: mock-code-naming - Mock functions must start
 with mock_ prefix and log warnings
 codex/fix_validation_rules.py:208: use-uv-package-manager - Use uv for speed and
 reliability
 codex/fix_validation_rules.py:139: structured-logging - Use JSON structured logs
 with consistent schema
-codex/fix_validation_rules.py:206: minimum-test-coverage - Maintain 80% minimum 
+codex/fix_validation_rules.py:206: minimum-test-coverage - Maintain 80% minimum
 code coverage
-codex/fix_validation_rules.py:208: use-pydantic-validation - Use Pydantic for 
+codex/fix_validation_rules.py:208: use-pydantic-validation - Use Pydantic for
 all API input validation
   → Found 7 violations in codex/fix_validation_rules.py
-codex/negative_space_patterns.py:81: no-cors-wildcard - NEVER use '*' in 
+codex/negative_space_patterns.py:81: no-cors-wildcard - NEVER use '*' in
 production CORS origins
-codex/negative_space_patterns.py:104: secure-jwt-storage - Store JWT secrets in 
+codex/negative_space_patterns.py:104: secure-jwt-storage - Store JWT secrets in
 secure credential manager, never hardcode
-codex/negative_space_patterns.py:126: mock-code-naming - Mock functions must 
+codex/negative_space_patterns.py:126: mock-code-naming - Mock functions must
 start with mock_ prefix and log warnings
-codex/negative_space_patterns.py:446: use-uv-package-manager - Use uv for speed 
+codex/negative_space_patterns.py:446: use-uv-package-manager - Use uv for speed
 and reliability
-codex/negative_space_patterns.py:462: minimum-test-coverage - Maintain 80% 
+codex/negative_space_patterns.py:462: minimum-test-coverage - Maintain 80%
 minimum code coverage
   → Found 5 violations in codex/negative_space_patterns.py
-codex/unified_database.py:280: no-cors-wildcard - NEVER use '*' in production 
+codex/unified_database.py:280: no-cors-wildcard - NEVER use '*' in production
 CORS origins
-codex/unified_database.py:168: use-db-context-managers - Always use context 
+codex/unified_database.py:168: use-db-context-managers - Always use context
 managers for database sessions
-codex/unified_database.py:8: structured-logging - Use JSON structured logs with 
+codex/unified_database.py:8: structured-logging - Use JSON structured logs with
 consistent schema
   → Found 3 violations in codex/unified_database.py
-codex/scan_rules.py:60: no-cors-wildcard - NEVER use '*' in production CORS 
+codex/scan_rules.py:60: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-codex/scan_rules.py:93: secure-jwt-storage - Store JWT secrets in secure 
+codex/scan_rules.py:93: secure-jwt-storage - Store JWT secrets in secure
 credential manager, never hardcode
-codex/scan_rules.py:25: mock-code-naming - Mock functions must start with mock_ 
+codex/scan_rules.py:25: mock-code-naming - Mock functions must start with mock_
 prefix and log warnings
-codex/scan_rules.py:114: use-db-context-managers - Always use context managers 
+codex/scan_rules.py:114: use-db-context-managers - Always use context managers
 for database sessions
-codex/scan_rules.py:165: use-uv-package-manager - Use uv for speed and 
+codex/scan_rules.py:165: use-uv-package-manager - Use uv for speed and
 reliability
-codex/scan_rules.py:262: structured-logging - Use JSON structured logs with 
+codex/scan_rules.py:262: structured-logging - Use JSON structured logs with
 consistent schema
-codex/scan_rules.py:25: minimum-test-coverage - Maintain 80% minimum code 
+codex/scan_rules.py:25: minimum-test-coverage - Maintain 80% minimum code
 coverage
-codex/scan_rules.py:292: use-pydantic-validation - Use Pydantic for all API 
+codex/scan_rules.py:292: use-pydantic-validation - Use Pydantic for all API
 input validation
   → Found 8 violations in codex/scan_rules.py
-codex/scan_discovery.py:51: no-cors-wildcard - NEVER use '*' in production CORS 
+codex/scan_discovery.py:51: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-codex/scan_discovery.py:109: mock-code-naming - Mock functions must start with 
+codex/scan_discovery.py:109: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-codex/scan_discovery.py:76: structured-logging - Use JSON structured logs with 
+codex/scan_discovery.py:76: structured-logging - Use JSON structured logs with
 consistent schema
-codex/scan_discovery.py:109: minimum-test-coverage - Maintain 80% minimum code 
+codex/scan_discovery.py:109: minimum-test-coverage - Maintain 80% minimum code
 coverage
-codex/scan_discovery.py:123: use-pydantic-validation - Use Pydantic for all API 
+codex/scan_discovery.py:123: use-pydantic-validation - Use Pydantic for all API
 input validation
   → Found 5 violations in codex/scan_discovery.py
-codex/database.py:8: mock-code-naming - Mock functions must start with mock_ 
+codex/database.py:8: mock-code-naming - Mock functions must start with mock_
 prefix and log warnings
   → Found 1 violations in codex/database.py
 codex/client.py:83: no-cors-wildcard - NEVER use '*' in production CORS origins
-codex/client.py:36: mock-code-naming - Mock functions must start with mock_ 
+codex/client.py:36: mock-code-naming - Mock functions must start with mock_
 prefix and log warnings
 codex/client.py:248: use-uv-package-manager - Use uv for speed and reliability
-codex/client.py:13: sanitize-production-errors - Return generic error messages 
+codex/client.py:13: sanitize-production-errors - Return generic error messages
 in production
 codex/client.py:36: minimum-test-coverage - Maintain 80% minimum code coverage
   → Found 5 violations in codex/client.py
 codex/tools.py:84: no-cors-wildcard - NEVER use '*' in production CORS origins
-codex/tools.py:9: structured-logging - Use JSON structured logs with consistent 
+codex/tools.py:9: structured-logging - Use JSON structured logs with consistent
 schema
 codex/tools.py:84: sanitize-production-errors - Return generic error messages in
 production
-codex/tools.py:119: use-pydantic-validation - Use Pydantic for all API input 
+codex/tools.py:119: use-pydantic-validation - Use Pydantic for all API input
 validation
   → Found 4 violations in codex/tools.py
 codex/ai_sqlite_query.py:28: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-codex/ai_sqlite_query.py:509: mock-code-naming - Mock functions must start with 
+codex/ai_sqlite_query.py:509: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-codex/ai_sqlite_query.py:146: use-db-context-managers - Always use context 
+codex/ai_sqlite_query.py:146: use-db-context-managers - Always use context
 managers for database sessions
-codex/ai_sqlite_query.py:59: structured-logging - Use JSON structured logs with 
+codex/ai_sqlite_query.py:59: structured-logging - Use JSON structured logs with
 consistent schema
-codex/ai_sqlite_query.py:509: minimum-test-coverage - Maintain 80% minimum code 
+codex/ai_sqlite_query.py:509: minimum-test-coverage - Maintain 80% minimum code
 coverage
   → Found 5 violations in codex/ai_sqlite_query.py
-codex/pattern_cli.py:60: no-cors-wildcard - NEVER use '*' in production CORS 
+codex/pattern_cli.py:60: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-codex/pattern_cli.py:620: mock-code-naming - Mock functions must start with 
+codex/pattern_cli.py:620: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-codex/pattern_cli.py:9: structured-logging - Use JSON structured logs with 
+codex/pattern_cli.py:9: structured-logging - Use JSON structured logs with
 consistent schema
-codex/pattern_cli.py:57: sanitize-production-errors - Return generic error 
+codex/pattern_cli.py:57: sanitize-production-errors - Return generic error
 messages in production
-codex/pattern_cli.py:620: minimum-test-coverage - Maintain 80% minimum code 
+codex/pattern_cli.py:620: minimum-test-coverage - Maintain 80% minimum code
 coverage
-codex/pattern_cli.py:66: use-pydantic-validation - Use Pydantic for all API 
+codex/pattern_cli.py:66: use-pydantic-validation - Use Pydantic for all API
 input validation
   → Found 6 violations in codex/pattern_cli.py
 codex/__init__.py:10: sanitize-production-errors - Return generic error messages
@@ -937,160 +937,160 @@ in production
   → Found 1 violations in codex/__init__.py
 codex/sqlite_scanner.py:218: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-codex/sqlite_scanner.py:344: mock-code-naming - Mock functions must start with 
+codex/sqlite_scanner.py:344: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-codex/sqlite_scanner.py:35: use-db-context-managers - Always use context 
+codex/sqlite_scanner.py:35: use-db-context-managers - Always use context
 managers for database sessions
-codex/sqlite_scanner.py:461: structured-logging - Use JSON structured logs with 
+codex/sqlite_scanner.py:461: structured-logging - Use JSON structured logs with
 consistent schema
-codex/sqlite_scanner.py:477: sanitize-production-errors - Return generic error 
+codex/sqlite_scanner.py:477: sanitize-production-errors - Return generic error
 messages in production
-codex/sqlite_scanner.py:487: minimum-test-coverage - Maintain 80% minimum code 
+codex/sqlite_scanner.py:487: minimum-test-coverage - Maintain 80% minimum code
 coverage
-codex/sqlite_scanner.py:327: use-pydantic-validation - Use Pydantic for all API 
+codex/sqlite_scanner.py:327: use-pydantic-validation - Use Pydantic for all API
 input validation
   → Found 7 violations in codex/sqlite_scanner.py
-codex/project_config.py:29: no-cors-wildcard - NEVER use '*' in production CORS 
+codex/project_config.py:29: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-codex/project_config.py:188: mock-code-naming - Mock functions must start with 
+codex/project_config.py:188: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-codex/project_config.py:10: structured-logging - Use JSON structured logs with 
+codex/project_config.py:10: structured-logging - Use JSON structured logs with
 consistent schema
-codex/project_config.py:188: minimum-test-coverage - Maintain 80% minimum code 
+codex/project_config.py:188: minimum-test-coverage - Maintain 80% minimum code
 coverage
   → Found 4 violations in codex/project_config.py
-codex/scan_cli.py:281: no-cors-wildcard - NEVER use '*' in production CORS 
+codex/scan_cli.py:281: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-codex/scan_cli.py:293: secure-jwt-storage - Store JWT secrets in secure 
+codex/scan_cli.py:293: secure-jwt-storage - Store JWT secrets in secure
 credential manager, never hardcode
 codex/scan_cli.py:111: use-db-context-managers - Always use context managers for
 database sessions
-codex/scan_cli.py:13: structured-logging - Use JSON structured logs with 
+codex/scan_cli.py:13: structured-logging - Use JSON structured logs with
 consistent schema
   → Found 4 violations in codex/scan_cli.py
-codex/fts_database_OLD.py:31: no-cors-wildcard - NEVER use '*' in production 
+codex/fts_database_OLD.py:31: no-cors-wildcard - NEVER use '*' in production
 CORS origins
   → Found 1 violations in codex/fts_database_OLD.py
 codex/fts_database.py:9: mock-code-naming - Mock functions must start with mock_
 prefix and log warnings
   → Found 1 violations in codex/fts_database.py
-codex/fix_orchestrator.py:218: no-cors-wildcard - NEVER use '*' in production 
+codex/fix_orchestrator.py:218: no-cors-wildcard - NEVER use '*' in production
 CORS origins
 codex/fix_orchestrator.py:499: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-codex/fix_orchestrator.py:653: use-db-context-managers - Always use context 
+codex/fix_orchestrator.py:653: use-db-context-managers - Always use context
 managers for database sessions
-codex/fix_orchestrator.py:726: use-uv-package-manager - Use uv for speed and 
+codex/fix_orchestrator.py:726: use-uv-package-manager - Use uv for speed and
 reliability
-codex/fix_orchestrator.py:65: minimum-test-coverage - Maintain 80% minimum code 
+codex/fix_orchestrator.py:65: minimum-test-coverage - Maintain 80% minimum code
 coverage
-codex/fix_orchestrator.py:726: use-pydantic-validation - Use Pydantic for all 
+codex/fix_orchestrator.py:726: use-pydantic-validation - Use Pydantic for all
 API input validation
   → Found 6 violations in codex/fix_orchestrator.py
-codex/fix_context_analyzer.py:489: no-cors-wildcard - NEVER use '*' in 
+codex/fix_context_analyzer.py:489: no-cors-wildcard - NEVER use '*' in
 production CORS origins
-codex/fix_context_analyzer.py:300: mock-code-naming - Mock functions must start 
+codex/fix_context_analyzer.py:300: mock-code-naming - Mock functions must start
 with mock_ prefix and log warnings
 codex/fix_context_analyzer.py:306: use-uv-package-manager - Use uv for speed and
 reliability
 codex/fix_context_analyzer.py:371: structured-logging - Use JSON structured logs
 with consistent schema
-codex/fix_context_analyzer.py:22: minimum-test-coverage - Maintain 80% minimum 
+codex/fix_context_analyzer.py:22: minimum-test-coverage - Maintain 80% minimum
 code coverage
   → Found 5 violations in codex/fix_context_analyzer.py
-codex/ai_query.py:155: no-cors-wildcard - NEVER use '*' in production CORS 
+codex/ai_query.py:155: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-codex/ai_query.py:255: mock-code-naming - Mock functions must start with mock_ 
+codex/ai_query.py:255: mock-code-naming - Mock functions must start with mock_
 prefix and log warnings
 codex/ai_query.py:130: use-uv-package-manager - Use uv for speed and reliability
-codex/ai_query.py:141: structured-logging - Use JSON structured logs with 
+codex/ai_query.py:141: structured-logging - Use JSON structured logs with
 consistent schema
-codex/ai_query.py:141: sanitize-production-errors - Return generic error 
+codex/ai_query.py:141: sanitize-production-errors - Return generic error
 messages in production
-codex/ai_query.py:255: minimum-test-coverage - Maintain 80% minimum code 
+codex/ai_query.py:255: minimum-test-coverage - Maintain 80% minimum code
 coverage
-codex/ai_query.py:261: use-pydantic-validation - Use Pydantic for all API input 
+codex/ai_query.py:261: use-pydantic-validation - Use Pydantic for all API input
 validation
   → Found 7 violations in codex/ai_query.py
-codex/scan_registry.py:107: no-cors-wildcard - NEVER use '*' in production CORS 
+codex/scan_registry.py:107: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-codex/scan_registry.py:44: secure-jwt-storage - Store JWT secrets in secure 
+codex/scan_registry.py:44: secure-jwt-storage - Store JWT secrets in secure
 credential manager, never hardcode
-codex/scan_registry.py:154: mock-code-naming - Mock functions must start with 
+codex/scan_registry.py:154: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-codex/scan_registry.py:258: structured-logging - Use JSON structured logs with 
+codex/scan_registry.py:258: structured-logging - Use JSON structured logs with
 consistent schema
-codex/scan_registry.py:154: minimum-test-coverage - Maintain 80% minimum code 
+codex/scan_registry.py:154: minimum-test-coverage - Maintain 80% minimum code
 coverage
   → Found 5 violations in codex/scan_registry.py
 codex/cli.py:363: no-cors-wildcard - NEVER use '*' in production CORS origins
 codex/cli.py:353: mock-code-naming - Mock functions must start with mock_ prefix
 and log warnings
-codex/cli.py:343: use-db-context-managers - Always use context managers for 
+codex/cli.py:343: use-db-context-managers - Always use context managers for
 database sessions
 codex/cli.py:716: use-uv-package-manager - Use uv for speed and reliability
-codex/cli.py:36: structured-logging - Use JSON structured logs with consistent 
+codex/cli.py:36: structured-logging - Use JSON structured logs with consistent
 schema
 codex/cli.py:147: minimum-test-coverage - Maintain 80% minimum code coverage
-codex/cli.py:243: use-pydantic-validation - Use Pydantic for all API input 
+codex/cli.py:243: use-pydantic-validation - Use Pydantic for all API input
 validation
   → Found 7 violations in codex/cli.py
-codex/database_OLD.py:102: no-cors-wildcard - NEVER use '*' in production CORS 
+codex/database_OLD.py:102: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-codex/database_OLD.py:13: use-db-context-managers - Always use context managers 
+codex/database_OLD.py:13: use-db-context-managers - Always use context managers
 for database sessions
   → Found 2 violations in codex/database_OLD.py
-codex/scan_context.py:535: no-cors-wildcard - NEVER use '*' in production CORS 
+codex/scan_context.py:535: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-codex/scan_context.py:530: mock-code-naming - Mock functions must start with 
+codex/scan_context.py:530: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-codex/scan_context.py:98: structured-logging - Use JSON structured logs with 
+codex/scan_context.py:98: structured-logging - Use JSON structured logs with
 consistent schema
-codex/scan_context.py:191: sanitize-production-errors - Return generic error 
+codex/scan_context.py:191: sanitize-production-errors - Return generic error
 messages in production
-codex/scan_context.py:530: minimum-test-coverage - Maintain 80% minimum code 
+codex/scan_context.py:530: minimum-test-coverage - Maintain 80% minimum code
 coverage
   → Found 5 violations in codex/scan_context.py
-codex/portable_tools.py:97: no-cors-wildcard - NEVER use '*' in production CORS 
+codex/portable_tools.py:97: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-codex/portable_tools.py:97: mock-code-naming - Mock functions must start with 
+codex/portable_tools.py:97: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-codex/portable_tools.py:291: use-uv-package-manager - Use uv for speed and 
+codex/portable_tools.py:291: use-uv-package-manager - Use uv for speed and
 reliability
-codex/portable_tools.py:212: structured-logging - Use JSON structured logs with 
+codex/portable_tools.py:212: structured-logging - Use JSON structured logs with
 consistent schema
-codex/portable_tools.py:93: sanitize-production-errors - Return generic error 
+codex/portable_tools.py:93: sanitize-production-errors - Return generic error
 messages in production
-codex/portable_tools.py:97: minimum-test-coverage - Maintain 80% minimum code 
+codex/portable_tools.py:97: minimum-test-coverage - Maintain 80% minimum code
 coverage
-codex/portable_tools.py:229: use-pydantic-validation - Use Pydantic for all API 
+codex/portable_tools.py:229: use-pydantic-validation - Use Pydantic for all API
 input validation
   → Found 7 violations in codex/portable_tools.py
-codex/settings.py:68: no-cors-wildcard - NEVER use '*' in production CORS 
+codex/settings.py:68: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-codex/settings.py:67: mock-code-naming - Mock functions must start with mock_ 
+codex/settings.py:67: mock-code-naming - Mock functions must start with mock_
 prefix and log warnings
 codex/settings.py:67: minimum-test-coverage - Maintain 80% minimum code coverage
   → Found 3 violations in codex/settings.py
 codex/pattern_importer.py:153: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-codex/pattern_importer.py:39: use-uv-package-manager - Use uv for speed and 
+codex/pattern_importer.py:39: use-uv-package-manager - Use uv for speed and
 reliability
-codex/pattern_importer.py:7: sanitize-production-errors - Return generic error 
+codex/pattern_importer.py:7: sanitize-production-errors - Return generic error
 messages in production
 codex/pattern_importer.py:154: minimum-test-coverage - Maintain 80% minimum code
 coverage
-codex/pattern_importer.py:150: use-pydantic-validation - Use Pydantic for all 
+codex/pattern_importer.py:150: use-pydantic-validation - Use Pydantic for all
 API input validation
   → Found 5 violations in codex/pattern_importer.py
-codex/exceptions.py:2: sanitize-production-errors - Return generic error 
+codex/exceptions.py:2: sanitize-production-errors - Return generic error
 messages in production
   → Found 1 violations in codex/exceptions.py
-codex/gitignore_handler.py:24: no-cors-wildcard - NEVER use '*' in production 
+codex/gitignore_handler.py:24: no-cors-wildcard - NEVER use '*' in production
 CORS origins
 codex/gitignore_handler.py:26: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-codex/gitignore_handler.py:27: use-uv-package-manager - Use uv for speed and 
+codex/gitignore_handler.py:27: use-uv-package-manager - Use uv for speed and
 reliability
 codex/gitignore_handler.py:31: sanitize-production-errors - Return generic error
 messages in production
@@ -1099,277 +1099,277 @@ coverage
   → Found 5 violations in codex/gitignore_handler.py
 codex/pattern_extractor.py:48: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-codex/pattern_extractor.py:41: use-uv-package-manager - Use uv for speed and 
+codex/pattern_extractor.py:41: use-uv-package-manager - Use uv for speed and
 reliability
-codex/pattern_extractor.py:153: sanitize-production-errors - Return generic 
+codex/pattern_extractor.py:153: sanitize-production-errors - Return generic
 error messages in production
 codex/pattern_extractor.py:48: minimum-test-coverage - Maintain 80% minimum code
 coverage
   → Found 4 violations in codex/pattern_extractor.py
-codex/scan_manager.py:220: no-cors-wildcard - NEVER use '*' in production CORS 
+codex/scan_manager.py:220: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-codex/scan_manager.py:28: secure-jwt-storage - Store JWT secrets in secure 
+codex/scan_manager.py:28: secure-jwt-storage - Store JWT secrets in secure
 credential manager, never hardcode
-codex/scan_manager.py:79: mock-code-naming - Mock functions must start with 
+codex/scan_manager.py:79: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-codex/scan_manager.py:89: use-db-context-managers - Always use context managers 
+codex/scan_manager.py:89: use-db-context-managers - Always use context managers
 for database sessions
-codex/scan_manager.py:220: sanitize-production-errors - Return generic error 
+codex/scan_manager.py:220: sanitize-production-errors - Return generic error
 messages in production
-codex/scan_manager.py:40: minimum-test-coverage - Maintain 80% minimum code 
+codex/scan_manager.py:40: minimum-test-coverage - Maintain 80% minimum code
 coverage
   → Found 6 violations in codex/scan_manager.py
-codex/rules_cli.py:92: no-cors-wildcard - NEVER use '*' in production CORS 
+codex/rules_cli.py:92: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-codex/rules_cli.py:98: mock-code-naming - Mock functions must start with mock_ 
+codex/rules_cli.py:98: mock-code-naming - Mock functions must start with mock_
 prefix and log warnings
-codex/rules_cli.py:8: structured-logging - Use JSON structured logs with 
+codex/rules_cli.py:8: structured-logging - Use JSON structured logs with
 consistent schema
-codex/rules_cli.py:98: minimum-test-coverage - Maintain 80% minimum code 
+codex/rules_cli.py:98: minimum-test-coverage - Maintain 80% minimum code
 coverage
 codex/rules_cli.py:116: use-pydantic-validation - Use Pydantic for all API input
 validation
   → Found 5 violations in codex/rules_cli.py
-codex/violation_reporter.py:325: no-cors-wildcard - NEVER use '*' in production 
+codex/violation_reporter.py:325: no-cors-wildcard - NEVER use '*' in production
 CORS origins
-codex/violation_reporter.py:336: mock-code-naming - Mock functions must start 
+codex/violation_reporter.py:336: mock-code-naming - Mock functions must start
 with mock_ prefix and log warnings
-codex/violation_reporter.py:46: structured-logging - Use JSON structured logs 
+codex/violation_reporter.py:46: structured-logging - Use JSON structured logs
 with consistent schema
-codex/violation_reporter.py:107: sanitize-production-errors - Return generic 
+codex/violation_reporter.py:107: sanitize-production-errors - Return generic
 error messages in production
-codex/violation_reporter.py:340: minimum-test-coverage - Maintain 80% minimum 
+codex/violation_reporter.py:340: minimum-test-coverage - Maintain 80% minimum
 code coverage
   → Found 5 violations in codex/violation_reporter.py
-codex/uv_check.py:216: no-cors-wildcard - NEVER use '*' in production CORS 
+codex/uv_check.py:216: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-codex/uv_check.py:38: mock-code-naming - Mock functions must start with mock_ 
+codex/uv_check.py:38: mock-code-naming - Mock functions must start with mock_
 prefix and log warnings
 codex/uv_check.py:126: use-uv-package-manager - Use uv for speed and reliability
-codex/uv_check.py:12: structured-logging - Use JSON structured logs with 
+codex/uv_check.py:12: structured-logging - Use JSON structured logs with
 consistent schema
   → Found 4 violations in codex/uv_check.py
-codex/mcp_server.py:255: no-cors-wildcard - NEVER use '*' in production CORS 
+codex/mcp_server.py:255: no-cors-wildcard - NEVER use '*' in production CORS
 origins
 codex/mcp_server.py:108: mock-code-naming - Mock functions must start with mock_
 prefix and log warnings
-codex/mcp_server.py:48: structured-logging - Use JSON structured logs with 
+codex/mcp_server.py:48: structured-logging - Use JSON structured logs with
 consistent schema
-codex/mcp_server.py:9: sanitize-production-errors - Return generic error 
+codex/mcp_server.py:9: sanitize-production-errors - Return generic error
 messages in production
-codex/mcp_server.py:108: minimum-test-coverage - Maintain 80% minimum code 
+codex/mcp_server.py:108: minimum-test-coverage - Maintain 80% minimum code
 coverage
-codex/mcp_server.py:160: use-pydantic-validation - Use Pydantic for all API 
+codex/mcp_server.py:160: use-pydantic-validation - Use Pydantic for all API
 input validation
   → Found 6 violations in codex/mcp_server.py
-codex/batch_fixer.py:88: no-cors-wildcard - NEVER use '*' in production CORS 
+codex/batch_fixer.py:88: no-cors-wildcard - NEVER use '*' in production CORS
 origins
 codex/batch_fixer.py:23: mock-code-naming - Mock functions must start with mock_
 prefix and log warnings
-codex/batch_fixer.py:117: use-uv-package-manager - Use uv for speed and 
+codex/batch_fixer.py:117: use-uv-package-manager - Use uv for speed and
 reliability
-codex/batch_fixer.py:10: structured-logging - Use JSON structured logs with 
+codex/batch_fixer.py:10: structured-logging - Use JSON structured logs with
 consistent schema
-codex/batch_fixer.py:82: minimum-test-coverage - Maintain 80% minimum code 
+codex/batch_fixer.py:82: minimum-test-coverage - Maintain 80% minimum code
 coverage
   → Found 5 violations in codex/batch_fixer.py
-codex/interactive_fixer.py:71: no-cors-wildcard - NEVER use '*' in production 
+codex/interactive_fixer.py:71: no-cors-wildcard - NEVER use '*' in production
 CORS origins
 codex/interactive_fixer.py:596: secure-jwt-storage - Store JWT secrets in secure
 credential manager, never hardcode
 codex/interactive_fixer.py:76: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-codex/interactive_fixer.py:90: use-db-context-managers - Always use context 
+codex/interactive_fixer.py:90: use-db-context-managers - Always use context
 managers for database sessions
-codex/interactive_fixer.py:402: use-uv-package-manager - Use uv for speed and 
+codex/interactive_fixer.py:402: use-uv-package-manager - Use uv for speed and
 reliability
-codex/interactive_fixer.py:11: structured-logging - Use JSON structured logs 
+codex/interactive_fixer.py:11: structured-logging - Use JSON structured logs
 with consistent schema
-codex/interactive_fixer.py:521: sanitize-production-errors - Return generic 
+codex/interactive_fixer.py:521: sanitize-production-errors - Return generic
 error messages in production
-codex/interactive_fixer.py:211: minimum-test-coverage - Maintain 80% minimum 
+codex/interactive_fixer.py:211: minimum-test-coverage - Maintain 80% minimum
 code coverage
-codex/interactive_fixer.py:78: use-pydantic-validation - Use Pydantic for all 
+codex/interactive_fixer.py:78: use-pydantic-validation - Use Pydantic for all
 API input validation
   → Found 9 violations in codex/interactive_fixer.py
-tests/test_safe_fixing.py:263: no-cors-wildcard - NEVER use '*' in production 
+tests/test_safe_fixing.py:263: no-cors-wildcard - NEVER use '*' in production
 CORS origins
-tests/test_safe_fixing.py:183: secure-jwt-storage - Store JWT secrets in secure 
+tests/test_safe_fixing.py:183: secure-jwt-storage - Store JWT secrets in secure
 credential manager, never hardcode
-tests/test_safe_fixing.py:12: mock-code-naming - Mock functions must start with 
+tests/test_safe_fixing.py:12: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-tests/test_safe_fixing.py:209: use-uv-package-manager - Use uv for speed and 
+tests/test_safe_fixing.py:209: use-uv-package-manager - Use uv for speed and
 reliability
-tests/test_safe_fixing.py:309: structured-logging - Use JSON structured logs 
+tests/test_safe_fixing.py:309: structured-logging - Use JSON structured logs
 with consistent schema
 tests/test_safe_fixing.py:333: sanitize-production-errors - Return generic error
 messages in production
-tests/test_safe_fixing.py:56: minimum-test-coverage - Maintain 80% minimum code 
+tests/test_safe_fixing.py:56: minimum-test-coverage - Maintain 80% minimum code
 coverage
-tests/test_safe_fixing.py:209: use-pydantic-validation - Use Pydantic for all 
+tests/test_safe_fixing.py:209: use-pydantic-validation - Use Pydantic for all
 API input validation
   → Found 8 violations in tests/test_safe_fixing.py
-tests/test_mcp_protocol.py:35: secure-jwt-storage - Store JWT secrets in secure 
+tests/test_mcp_protocol.py:35: secure-jwt-storage - Store JWT secrets in secure
 credential manager, never hardcode
 tests/test_mcp_protocol.py:14: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-tests/test_mcp_protocol.py:101: structured-logging - Use JSON structured logs 
+tests/test_mcp_protocol.py:101: structured-logging - Use JSON structured logs
 with consistent schema
-tests/test_mcp_protocol.py:207: sanitize-production-errors - Return generic 
+tests/test_mcp_protocol.py:207: sanitize-production-errors - Return generic
 error messages in production
 tests/test_mcp_protocol.py:34: minimum-test-coverage - Maintain 80% minimum code
 coverage
-tests/test_mcp_protocol.py:272: use-pydantic-validation - Use Pydantic for all 
+tests/test_mcp_protocol.py:272: use-pydantic-validation - Use Pydantic for all
 API input validation
   → Found 6 violations in tests/test_mcp_protocol.py
-fixers/__init__.py:10: secure-jwt-storage - Store JWT secrets in secure 
+fixers/__init__.py:10: secure-jwt-storage - Store JWT secrets in secure
 credential manager, never hardcode
-fixers/__init__.py:9: structured-logging - Use JSON structured logs with 
+fixers/__init__.py:9: structured-logging - Use JSON structured logs with
 consistent schema
   → Found 2 violations in fixers/__init__.py
 fixers/external_tools_fixer.py:13: structured-logging - Use JSON structured logs
 with consistent schema
   → Found 1 violations in fixers/external_tools_fixer.py
-fixers/print_to_logging_fixer.py:60: no-cors-wildcard - NEVER use '*' in 
+fixers/print_to_logging_fixer.py:60: no-cors-wildcard - NEVER use '*' in
 production CORS origins
-fixers/print_to_logging_fixer.py:13: structured-logging - Use JSON structured 
+fixers/print_to_logging_fixer.py:13: structured-logging - Use JSON structured
 logs with consistent schema
   → Found 2 violations in fixers/print_to_logging_fixer.py
-fixers/import_consolidation_fixer.py💯 no-cors-wildcard - NEVER use '*' in 
+fixers/import_consolidation_fixer.py💯 no-cors-wildcard - NEVER use '*' in
 production CORS origins
-fixers/import_consolidation_fixer.py:12: structured-logging - Use JSON 
+fixers/import_consolidation_fixer.py:12: structured-logging - Use JSON
 structured logs with consistent schema
   → Found 2 violations in fixers/import_consolidation_fixer.py
-fixers/fixer_orchestrator.py:17: secure-jwt-storage - Store JWT secrets in 
+fixers/fixer_orchestrator.py:17: secure-jwt-storage - Store JWT secrets in
 secure credential manager, never hardcode
-fixers/fixer_orchestrator.py:181: mock-code-naming - Mock functions must start 
+fixers/fixer_orchestrator.py:181: mock-code-naming - Mock functions must start
 with mock_ prefix and log warnings
-fixers/fixer_orchestrator.py:80: use-db-context-managers - Always use context 
+fixers/fixer_orchestrator.py:80: use-db-context-managers - Always use context
 managers for database sessions
-fixers/fixer_orchestrator.py:20: structured-logging - Use JSON structured logs 
+fixers/fixer_orchestrator.py:20: structured-logging - Use JSON structured logs
 with consistent schema
-fixers/fixer_orchestrator.py:175: sanitize-production-errors - Return generic 
+fixers/fixer_orchestrator.py:175: sanitize-production-errors - Return generic
 error messages in production
-fixers/fixer_orchestrator.py:181: minimum-test-coverage - Maintain 80% minimum 
+fixers/fixer_orchestrator.py:181: minimum-test-coverage - Maintain 80% minimum
 code coverage
   → Found 6 violations in fixers/fixer_orchestrator.py
-fixers/hardcoded_paths_fixer.py:137: no-cors-wildcard - NEVER use '*' in 
+fixers/hardcoded_paths_fixer.py:137: no-cors-wildcard - NEVER use '*' in
 production CORS origins
-fixers/hardcoded_paths_fixer.py:3: secure-jwt-storage - Store JWT secrets in 
+fixers/hardcoded_paths_fixer.py:3: secure-jwt-storage - Store JWT secrets in
 secure credential manager, never hardcode
-fixers/hardcoded_paths_fixer.py:13: structured-logging - Use JSON structured 
+fixers/hardcoded_paths_fixer.py:13: structured-logging - Use JSON structured
 logs with consistent schema
   → Found 3 violations in fixers/hardcoded_paths_fixer.py
-fixers/remaining_issues_fixer.py:119: no-cors-wildcard - NEVER use '*' in 
+fixers/remaining_issues_fixer.py:119: no-cors-wildcard - NEVER use '*' in
 production CORS origins
-fixers/remaining_issues_fixer.py:13: structured-logging - Use JSON structured 
+fixers/remaining_issues_fixer.py:13: structured-logging - Use JSON structured
 logs with consistent schema
   → Found 2 violations in fixers/remaining_issues_fixer.py
-codex_backup_20250819_185515/pattern_models.py:22: mock-code-naming - Mock 
+codex_backup_20250819_185515/pattern_models.py:22: mock-code-naming - Mock
 functions must start with mock_ prefix and log warnings
 codex_backup_20250819_185515/pattern_models.py:10: structured-logging - Use JSON
 structured logs with consistent schema
-codex_backup_20250819_185515/pattern_models.py:28: minimum-test-coverage - 
+codex_backup_20250819_185515/pattern_models.py:28: minimum-test-coverage -
 Maintain 80% minimum code coverage
 codex_backup_20250819_185515/pattern_models.py:18: use-pydantic-validation - Use
 Pydantic for all API input validation
   → Found 4 violations in codex_backup_20250819_185515/pattern_models.py
-codex_backup_20250819_185515/scanner.py:90: no-cors-wildcard - NEVER use '*' in 
+codex_backup_20250819_185515/scanner.py:90: no-cors-wildcard - NEVER use '*' in
 production CORS origins
-codex_backup_20250819_185515/scanner.py:268: mock-code-naming - Mock functions 
+codex_backup_20250819_185515/scanner.py:268: mock-code-naming - Mock functions
 must start with mock_ prefix and log warnings
-codex_backup_20250819_185515/scanner.py:16: structured-logging - Use JSON 
+codex_backup_20250819_185515/scanner.py:16: structured-logging - Use JSON
 structured logs with consistent schema
 codex_backup_20250819_185515/scanner.py:255: sanitize-production-errors - Return
 generic error messages in production
-codex_backup_20250819_185515/scanner.py:268: minimum-test-coverage - Maintain 
+codex_backup_20250819_185515/scanner.py:268: minimum-test-coverage - Maintain
 80% minimum code coverage
-codex_backup_20250819_185515/scanner.py:79: use-pydantic-validation - Use 
+codex_backup_20250819_185515/scanner.py:79: use-pydantic-validation - Use
 Pydantic for all API input validation
   → Found 6 violations in codex_backup_20250819_185515/scanner.py
-codex_backup_20250819_185515/config.py:62: no-cors-wildcard - NEVER use '*' in 
+codex_backup_20250819_185515/config.py:62: no-cors-wildcard - NEVER use '*' in
 production CORS origins
-codex_backup_20250819_185515/config.py:68: mock-code-naming - Mock functions 
+codex_backup_20250819_185515/config.py:68: mock-code-naming - Mock functions
 must start with mock_ prefix and log warnings
-codex_backup_20250819_185515/config.py:68: minimum-test-coverage - Maintain 80% 
+codex_backup_20250819_185515/config.py:68: minimum-test-coverage - Maintain 80%
 minimum code coverage
   → Found 3 violations in codex_backup_20250819_185515/config.py
-codex_backup_20250819_185515/models.py:26: mock-code-naming - Mock functions 
+codex_backup_20250819_185515/models.py:26: mock-code-naming - Mock functions
 must start with mock_ prefix and log warnings
-codex_backup_20250819_185515/models.py:33: minimum-test-coverage - Maintain 80% 
+codex_backup_20250819_185515/models.py:33: minimum-test-coverage - Maintain 80%
 minimum code coverage
 codex_backup_20250819_185515/models.py:4: use-pydantic-validation - Use Pydantic
 for all API input validation
   → Found 3 violations in codex_backup_20250819_185515/models.py
-codex_backup_20250819_185515/unified_database.py:280: no-cors-wildcard - NEVER 
+codex_backup_20250819_185515/unified_database.py:280: no-cors-wildcard - NEVER
 use '*' in production CORS origins
-codex_backup_20250819_185515/unified_database.py:168: use-db-context-managers - 
+codex_backup_20250819_185515/unified_database.py:168: use-db-context-managers -
 Always use context managers for database sessions
-codex_backup_20250819_185515/unified_database.py:16: structured-logging - Use 
+codex_backup_20250819_185515/unified_database.py:16: structured-logging - Use
 JSON structured logs with consistent schema
   → Found 3 violations in codex_backup_20250819_185515/unified_database.py
-codex_backup_20250819_185515/scan_rules.py:60: no-cors-wildcard - NEVER use '*' 
+codex_backup_20250819_185515/scan_rules.py:60: no-cors-wildcard - NEVER use '*'
 in production CORS origins
-codex_backup_20250819_185515/scan_rules.py:93: secure-jwt-storage - Store JWT 
+codex_backup_20250819_185515/scan_rules.py:93: secure-jwt-storage - Store JWT
 secrets in secure credential manager, never hardcode
 codex_backup_20250819_185515/scan_rules.py:25: mock-code-naming - Mock functions
 must start with mock_ prefix and log warnings
 codex_backup_20250819_185515/scan_rules.py:114: use-db-context-managers - Always
 use context managers for database sessions
-codex_backup_20250819_185515/scan_rules.py:165: use-uv-package-manager - Use uv 
+codex_backup_20250819_185515/scan_rules.py:165: use-uv-package-manager - Use uv
 for speed and reliability
-codex_backup_20250819_185515/scan_rules.py:262: structured-logging - Use JSON 
+codex_backup_20250819_185515/scan_rules.py:262: structured-logging - Use JSON
 structured logs with consistent schema
-codex_backup_20250819_185515/scan_rules.py:25: minimum-test-coverage - Maintain 
+codex_backup_20250819_185515/scan_rules.py:25: minimum-test-coverage - Maintain
 80% minimum code coverage
-codex_backup_20250819_185515/scan_rules.py:292: use-pydantic-validation - Use 
+codex_backup_20250819_185515/scan_rules.py:292: use-pydantic-validation - Use
 Pydantic for all API input validation
   → Found 8 violations in codex_backup_20250819_185515/scan_rules.py
-codex_backup_20250819_185515/database.py:8: mock-code-naming - Mock functions 
+codex_backup_20250819_185515/database.py:8: mock-code-naming - Mock functions
 must start with mock_ prefix and log warnings
   → Found 1 violations in codex_backup_20250819_185515/database.py
-codex_backup_20250819_185515/client.py:83: no-cors-wildcard - NEVER use '*' in 
+codex_backup_20250819_185515/client.py:83: no-cors-wildcard - NEVER use '*' in
 production CORS origins
-codex_backup_20250819_185515/client.py:36: mock-code-naming - Mock functions 
+codex_backup_20250819_185515/client.py:36: mock-code-naming - Mock functions
 must start with mock_ prefix and log warnings
-codex_backup_20250819_185515/client.py:248: use-uv-package-manager - Use uv for 
+codex_backup_20250819_185515/client.py:248: use-uv-package-manager - Use uv for
 speed and reliability
-codex_backup_20250819_185515/client.py:13: sanitize-production-errors - Return 
+codex_backup_20250819_185515/client.py:13: sanitize-production-errors - Return
 generic error messages in production
-codex_backup_20250819_185515/client.py:36: minimum-test-coverage - Maintain 80% 
+codex_backup_20250819_185515/client.py:36: minimum-test-coverage - Maintain 80%
 minimum code coverage
   → Found 5 violations in codex_backup_20250819_185515/client.py
-codex_backup_20250819_185515/tools.py:84: no-cors-wildcard - NEVER use '*' in 
+codex_backup_20250819_185515/tools.py:84: no-cors-wildcard - NEVER use '*' in
 production CORS origins
-codex_backup_20250819_185515/tools.py:16: structured-logging - Use JSON 
+codex_backup_20250819_185515/tools.py:16: structured-logging - Use JSON
 structured logs with consistent schema
-codex_backup_20250819_185515/tools.py:84: sanitize-production-errors - Return 
+codex_backup_20250819_185515/tools.py:84: sanitize-production-errors - Return
 generic error messages in production
-codex_backup_20250819_185515/tools.py:119: use-pydantic-validation - Use 
+codex_backup_20250819_185515/tools.py:119: use-pydantic-validation - Use
 Pydantic for all API input validation
   → Found 4 violations in codex_backup_20250819_185515/tools.py
 codex_backup_20250819_185515/ai_sqlite_query.py:28: no-cors-wildcard - NEVER use
 '*' in production CORS origins
-codex_backup_20250819_185515/ai_sqlite_query.py:509: mock-code-naming - Mock 
+codex_backup_20250819_185515/ai_sqlite_query.py:509: mock-code-naming - Mock
 functions must start with mock_ prefix and log warnings
-codex_backup_20250819_185515/ai_sqlite_query.py:146: use-db-context-managers - 
+codex_backup_20250819_185515/ai_sqlite_query.py:146: use-db-context-managers -
 Always use context managers for database sessions
-codex_backup_20250819_185515/ai_sqlite_query.py:59: structured-logging - Use 
+codex_backup_20250819_185515/ai_sqlite_query.py:59: structured-logging - Use
 JSON structured logs with consistent schema
-codex_backup_20250819_185515/ai_sqlite_query.py:509: minimum-test-coverage - 
+codex_backup_20250819_185515/ai_sqlite_query.py:509: minimum-test-coverage -
 Maintain 80% minimum code coverage
   → Found 5 violations in codex_backup_20250819_185515/ai_sqlite_query.py
 codex_backup_20250819_185515/pattern_cli.py:60: no-cors-wildcard - NEVER use '*'
 in production CORS origins
-codex_backup_20250819_185515/pattern_cli.py:620: mock-code-naming - Mock 
+codex_backup_20250819_185515/pattern_cli.py:620: mock-code-naming - Mock
 functions must start with mock_ prefix and log warnings
-codex_backup_20250819_185515/pattern_cli.py:19: structured-logging - Use JSON 
+codex_backup_20250819_185515/pattern_cli.py:19: structured-logging - Use JSON
 structured logs with consistent schema
-codex_backup_20250819_185515/pattern_cli.py:57: sanitize-production-errors - 
+codex_backup_20250819_185515/pattern_cli.py:57: sanitize-production-errors -
 Return generic error messages in production
-codex_backup_20250819_185515/pattern_cli.py:620: minimum-test-coverage - 
+codex_backup_20250819_185515/pattern_cli.py:620: minimum-test-coverage -
 Maintain 80% minimum code coverage
-codex_backup_20250819_185515/pattern_cli.py:66: use-pydantic-validation - Use 
+codex_backup_20250819_185515/pattern_cli.py:66: use-pydantic-validation - Use
 Pydantic for all API input validation
   → Found 6 violations in codex_backup_20250819_185515/pattern_cli.py
 codex_backup_20250819_185515/__init__.py:10: sanitize-production-errors - Return
@@ -1377,215 +1377,215 @@ generic error messages in production
   → Found 1 violations in codex_backup_20250819_185515/__init__.py
 codex_backup_20250819_185515/sqlite_scanner.py:218: no-cors-wildcard - NEVER use
 '*' in production CORS origins
-codex_backup_20250819_185515/sqlite_scanner.py:344: mock-code-naming - Mock 
+codex_backup_20250819_185515/sqlite_scanner.py:344: mock-code-naming - Mock
 functions must start with mock_ prefix and log warnings
-codex_backup_20250819_185515/sqlite_scanner.py:35: use-db-context-managers - 
+codex_backup_20250819_185515/sqlite_scanner.py:35: use-db-context-managers -
 Always use context managers for database sessions
-codex_backup_20250819_185515/sqlite_scanner.py:461: structured-logging - Use 
+codex_backup_20250819_185515/sqlite_scanner.py:461: structured-logging - Use
 JSON structured logs with consistent schema
 codex_backup_20250819_185515/sqlite_scanner.py:477: sanitize-production-errors -
 Return generic error messages in production
-codex_backup_20250819_185515/sqlite_scanner.py:487: minimum-test-coverage - 
+codex_backup_20250819_185515/sqlite_scanner.py:487: minimum-test-coverage -
 Maintain 80% minimum code coverage
-codex_backup_20250819_185515/sqlite_scanner.py:327: use-pydantic-validation - 
+codex_backup_20250819_185515/sqlite_scanner.py:327: use-pydantic-validation -
 Use Pydantic for all API input validation
   → Found 7 violations in codex_backup_20250819_185515/sqlite_scanner.py
-codex_backup_20250819_185515/project_config.py:29: no-cors-wildcard - NEVER use 
+codex_backup_20250819_185515/project_config.py:29: no-cors-wildcard - NEVER use
 '*' in production CORS origins
-codex_backup_20250819_185515/project_config.py:188: mock-code-naming - Mock 
+codex_backup_20250819_185515/project_config.py:188: mock-code-naming - Mock
 functions must start with mock_ prefix and log warnings
 codex_backup_20250819_185515/project_config.py:17: structured-logging - Use JSON
 structured logs with consistent schema
-codex_backup_20250819_185515/project_config.py:188: minimum-test-coverage - 
+codex_backup_20250819_185515/project_config.py:188: minimum-test-coverage -
 Maintain 80% minimum code coverage
   → Found 4 violations in codex_backup_20250819_185515/project_config.py
-codex_backup_20250819_185515/scan_cli.py:281: no-cors-wildcard - NEVER use '*' 
+codex_backup_20250819_185515/scan_cli.py:281: no-cors-wildcard - NEVER use '*'
 in production CORS origins
-codex_backup_20250819_185515/scan_cli.py:293: secure-jwt-storage - Store JWT 
+codex_backup_20250819_185515/scan_cli.py:293: secure-jwt-storage - Store JWT
 secrets in secure credential manager, never hardcode
-codex_backup_20250819_185515/scan_cli.py:111: use-db-context-managers - Always 
+codex_backup_20250819_185515/scan_cli.py:111: use-db-context-managers - Always
 use context managers for database sessions
-codex_backup_20250819_185515/scan_cli.py:23: structured-logging - Use JSON 
+codex_backup_20250819_185515/scan_cli.py:23: structured-logging - Use JSON
 structured logs with consistent schema
   → Found 4 violations in codex_backup_20250819_185515/scan_cli.py
-codex_backup_20250819_185515/fts_database_OLD.py:30: no-cors-wildcard - NEVER 
+codex_backup_20250819_185515/fts_database_OLD.py:30: no-cors-wildcard - NEVER
 use '*' in production CORS origins
   → Found 1 violations in codex_backup_20250819_185515/fts_database_OLD.py
-codex_backup_20250819_185515/fts_database.py:9: mock-code-naming - Mock 
+codex_backup_20250819_185515/fts_database.py:9: mock-code-naming - Mock
 functions must start with mock_ prefix and log warnings
   → Found 1 violations in codex_backup_20250819_185515/fts_database.py
-codex_backup_20250819_185515/ai_query.py:155: no-cors-wildcard - NEVER use '*' 
+codex_backup_20250819_185515/ai_query.py:155: no-cors-wildcard - NEVER use '*'
 in production CORS origins
-codex_backup_20250819_185515/ai_query.py:255: mock-code-naming - Mock functions 
+codex_backup_20250819_185515/ai_query.py:255: mock-code-naming - Mock functions
 must start with mock_ prefix and log warnings
-codex_backup_20250819_185515/ai_query.py:130: use-uv-package-manager - Use uv 
+codex_backup_20250819_185515/ai_query.py:130: use-uv-package-manager - Use uv
 for speed and reliability
-codex_backup_20250819_185515/ai_query.py:141: structured-logging - Use JSON 
+codex_backup_20250819_185515/ai_query.py:141: structured-logging - Use JSON
 structured logs with consistent schema
-codex_backup_20250819_185515/ai_query.py:141: sanitize-production-errors - 
+codex_backup_20250819_185515/ai_query.py:141: sanitize-production-errors -
 Return generic error messages in production
-codex_backup_20250819_185515/ai_query.py:255: minimum-test-coverage - Maintain 
+codex_backup_20250819_185515/ai_query.py:255: minimum-test-coverage - Maintain
 80% minimum code coverage
-codex_backup_20250819_185515/ai_query.py:261: use-pydantic-validation - Use 
+codex_backup_20250819_185515/ai_query.py:261: use-pydantic-validation - Use
 Pydantic for all API input validation
   → Found 7 violations in codex_backup_20250819_185515/ai_query.py
-codex_backup_20250819_185515/scan_registry.py:107: no-cors-wildcard - NEVER use 
+codex_backup_20250819_185515/scan_registry.py:107: no-cors-wildcard - NEVER use
 '*' in production CORS origins
 codex_backup_20250819_185515/scan_registry.py:44: secure-jwt-storage - Store JWT
 secrets in secure credential manager, never hardcode
-codex_backup_20250819_185515/scan_registry.py:154: mock-code-naming - Mock 
+codex_backup_20250819_185515/scan_registry.py:154: mock-code-naming - Mock
 functions must start with mock_ prefix and log warnings
 codex_backup_20250819_185515/scan_registry.py:258: structured-logging - Use JSON
 structured logs with consistent schema
-codex_backup_20250819_185515/scan_registry.py:154: minimum-test-coverage - 
+codex_backup_20250819_185515/scan_registry.py:154: minimum-test-coverage -
 Maintain 80% minimum code coverage
   → Found 5 violations in codex_backup_20250819_185515/scan_registry.py
-codex_backup_20250819_185515/cli.py:252: no-cors-wildcard - NEVER use '*' in 
+codex_backup_20250819_185515/cli.py:252: no-cors-wildcard - NEVER use '*' in
 production CORS origins
 codex_backup_20250819_185515/cli.py:1610: mock-code-naming - Mock functions must
 start with mock_ prefix and log warnings
-codex_backup_20250819_185515/cli.py:1722: use-db-context-managers - Always use 
+codex_backup_20250819_185515/cli.py:1722: use-db-context-managers - Always use
 context managers for database sessions
-codex_backup_20250819_185515/cli.py:362: use-uv-package-manager - Use uv for 
+codex_backup_20250819_185515/cli.py:362: use-uv-package-manager - Use uv for
 speed and reliability
 codex_backup_20250819_185515/cli.py:48: structured-logging - Use JSON structured
 logs with consistent schema
-codex_backup_20250819_185515/cli.py:1864: minimum-test-coverage - Maintain 80% 
+codex_backup_20250819_185515/cli.py:1864: minimum-test-coverage - Maintain 80%
 minimum code coverage
 codex_backup_20250819_185515/cli.py:1042: use-pydantic-validation - Use Pydantic
 for all API input validation
   → Found 7 violations in codex_backup_20250819_185515/cli.py
-codex_backup_20250819_185515/database_OLD.py:102: no-cors-wildcard - NEVER use 
+codex_backup_20250819_185515/database_OLD.py:102: no-cors-wildcard - NEVER use
 '*' in production CORS origins
-codex_backup_20250819_185515/database_OLD.py:13: use-db-context-managers - 
+codex_backup_20250819_185515/database_OLD.py:13: use-db-context-managers -
 Always use context managers for database sessions
   → Found 2 violations in codex_backup_20250819_185515/database_OLD.py
-codex_backup_20250819_185515/portable_tools.py:98: no-cors-wildcard - NEVER use 
+codex_backup_20250819_185515/portable_tools.py:98: no-cors-wildcard - NEVER use
 '*' in production CORS origins
-codex_backup_20250819_185515/portable_tools.py:98: mock-code-naming - Mock 
+codex_backup_20250819_185515/portable_tools.py:98: mock-code-naming - Mock
 functions must start with mock_ prefix and log warnings
 codex_backup_20250819_185515/portable_tools.py:292: use-uv-package-manager - Use
 uv for speed and reliability
 codex_backup_20250819_185515/portable_tools.py:20: structured-logging - Use JSON
 structured logs with consistent schema
-codex_backup_20250819_185515/portable_tools.py:94: sanitize-production-errors - 
+codex_backup_20250819_185515/portable_tools.py:94: sanitize-production-errors -
 Return generic error messages in production
-codex_backup_20250819_185515/portable_tools.py:98: minimum-test-coverage - 
+codex_backup_20250819_185515/portable_tools.py:98: minimum-test-coverage -
 Maintain 80% minimum code coverage
-codex_backup_20250819_185515/portable_tools.py:230: use-pydantic-validation - 
+codex_backup_20250819_185515/portable_tools.py:230: use-pydantic-validation -
 Use Pydantic for all API input validation
   → Found 7 violations in codex_backup_20250819_185515/portable_tools.py
 codex_backup_20250819_185515/settings.py:68: no-cors-wildcard - NEVER use '*' in
 production CORS origins
-codex_backup_20250819_185515/settings.py:67: mock-code-naming - Mock functions 
+codex_backup_20250819_185515/settings.py:67: mock-code-naming - Mock functions
 must start with mock_ prefix and log warnings
-codex_backup_20250819_185515/settings.py:67: minimum-test-coverage - Maintain 
+codex_backup_20250819_185515/settings.py:67: minimum-test-coverage - Maintain
 80% minimum code coverage
   → Found 3 violations in codex_backup_20250819_185515/settings.py
-codex_backup_20250819_185515/pattern_importer.py:154: mock-code-naming - Mock 
+codex_backup_20250819_185515/pattern_importer.py:154: mock-code-naming - Mock
 functions must start with mock_ prefix and log warnings
-codex_backup_20250819_185515/pattern_importer.py:40: use-uv-package-manager - 
+codex_backup_20250819_185515/pattern_importer.py:40: use-uv-package-manager -
 Use uv for speed and reliability
 codex_backup_20250819_185515/pattern_importer.py:7: sanitize-production-errors -
 Return generic error messages in production
-codex_backup_20250819_185515/pattern_importer.py:155: minimum-test-coverage - 
+codex_backup_20250819_185515/pattern_importer.py:155: minimum-test-coverage -
 Maintain 80% minimum code coverage
-codex_backup_20250819_185515/pattern_importer.py:151: use-pydantic-validation - 
+codex_backup_20250819_185515/pattern_importer.py:151: use-pydantic-validation -
 Use Pydantic for all API input validation
   → Found 5 violations in codex_backup_20250819_185515/pattern_importer.py
-codex_backup_20250819_185515/exceptions.py:2: sanitize-production-errors - 
+codex_backup_20250819_185515/exceptions.py:2: sanitize-production-errors -
 Return generic error messages in production
   → Found 1 violations in codex_backup_20250819_185515/exceptions.py
-codex_backup_20250819_185515/gitignore_handler.py:23: no-cors-wildcard - NEVER 
+codex_backup_20250819_185515/gitignore_handler.py:23: no-cors-wildcard - NEVER
 use '*' in production CORS origins
-codex_backup_20250819_185515/gitignore_handler.py:25: mock-code-naming - Mock 
+codex_backup_20250819_185515/gitignore_handler.py:25: mock-code-naming - Mock
 functions must start with mock_ prefix and log warnings
-codex_backup_20250819_185515/gitignore_handler.py:26: use-uv-package-manager - 
+codex_backup_20250819_185515/gitignore_handler.py:26: use-uv-package-manager -
 Use uv for speed and reliability
 codex_backup_20250819_185515/gitignore_handler.py:30: sanitize-production-errors
 - Return generic error messages in production
-codex_backup_20250819_185515/gitignore_handler.py:25: minimum-test-coverage - 
+codex_backup_20250819_185515/gitignore_handler.py:25: minimum-test-coverage -
 Maintain 80% minimum code coverage
   → Found 5 violations in codex_backup_20250819_185515/gitignore_handler.py
-codex_backup_20250819_185515/pattern_extractor.py:49: mock-code-naming - Mock 
+codex_backup_20250819_185515/pattern_extractor.py:49: mock-code-naming - Mock
 functions must start with mock_ prefix and log warnings
-codex_backup_20250819_185515/pattern_extractor.py:42: use-uv-package-manager - 
+codex_backup_20250819_185515/pattern_extractor.py:42: use-uv-package-manager -
 Use uv for speed and reliability
-codex_backup_20250819_185515/pattern_extractor.py:154: 
+codex_backup_20250819_185515/pattern_extractor.py:154:
 sanitize-production-errors - Return generic error messages in production
-codex_backup_20250819_185515/pattern_extractor.py:49: minimum-test-coverage - 
+codex_backup_20250819_185515/pattern_extractor.py:49: minimum-test-coverage -
 Maintain 80% minimum code coverage
   → Found 4 violations in codex_backup_20250819_185515/pattern_extractor.py
-codex_backup_20250819_185515/scan_manager.py:220: no-cors-wildcard - NEVER use 
+codex_backup_20250819_185515/scan_manager.py:220: no-cors-wildcard - NEVER use
 '*' in production CORS origins
-codex_backup_20250819_185515/scan_manager.py:28: secure-jwt-storage - Store JWT 
+codex_backup_20250819_185515/scan_manager.py:28: secure-jwt-storage - Store JWT
 secrets in secure credential manager, never hardcode
-codex_backup_20250819_185515/scan_manager.py:79: mock-code-naming - Mock 
+codex_backup_20250819_185515/scan_manager.py:79: mock-code-naming - Mock
 functions must start with mock_ prefix and log warnings
-codex_backup_20250819_185515/scan_manager.py:89: use-db-context-managers - 
+codex_backup_20250819_185515/scan_manager.py:89: use-db-context-managers -
 Always use context managers for database sessions
-codex_backup_20250819_185515/scan_manager.py:220: sanitize-production-errors - 
+codex_backup_20250819_185515/scan_manager.py:220: sanitize-production-errors -
 Return generic error messages in production
-codex_backup_20250819_185515/scan_manager.py:40: minimum-test-coverage - 
+codex_backup_20250819_185515/scan_manager.py:40: minimum-test-coverage -
 Maintain 80% minimum code coverage
   → Found 6 violations in codex_backup_20250819_185515/scan_manager.py
-codex_backup_20250819_185515/rules_cli.py:92: no-cors-wildcard - NEVER use '*' 
+codex_backup_20250819_185515/rules_cli.py:92: no-cors-wildcard - NEVER use '*'
 in production CORS origins
-codex_backup_20250819_185515/rules_cli.py:98: mock-code-naming - Mock functions 
+codex_backup_20250819_185515/rules_cli.py:98: mock-code-naming - Mock functions
 must start with mock_ prefix and log warnings
-codex_backup_20250819_185515/rules_cli.py:23: structured-logging - Use JSON 
+codex_backup_20250819_185515/rules_cli.py:23: structured-logging - Use JSON
 structured logs with consistent schema
-codex_backup_20250819_185515/rules_cli.py:98: minimum-test-coverage - Maintain 
+codex_backup_20250819_185515/rules_cli.py:98: minimum-test-coverage - Maintain
 80% minimum code coverage
-codex_backup_20250819_185515/rules_cli.py:116: use-pydantic-validation - Use 
+codex_backup_20250819_185515/rules_cli.py:116: use-pydantic-validation - Use
 Pydantic for all API input validation
   → Found 5 violations in codex_backup_20250819_185515/rules_cli.py
-codex_backup_20250819_185515/uv_check.py:216: no-cors-wildcard - NEVER use '*' 
+codex_backup_20250819_185515/uv_check.py:216: no-cors-wildcard - NEVER use '*'
 in production CORS origins
-codex_backup_20250819_185515/uv_check.py:38: mock-code-naming - Mock functions 
+codex_backup_20250819_185515/uv_check.py:38: mock-code-naming - Mock functions
 must start with mock_ prefix and log warnings
-codex_backup_20250819_185515/uv_check.py:126: use-uv-package-manager - Use uv 
+codex_backup_20250819_185515/uv_check.py:126: use-uv-package-manager - Use uv
 for speed and reliability
-codex_backup_20250819_185515/uv_check.py:15: structured-logging - Use JSON 
+codex_backup_20250819_185515/uv_check.py:15: structured-logging - Use JSON
 structured logs with consistent schema
   → Found 4 violations in codex_backup_20250819_185515/uv_check.py
 codex_backup_20250819_185515/mcp_server.py:255: no-cors-wildcard - NEVER use '*'
 in production CORS origins
-codex_backup_20250819_185515/mcp_server.py:108: mock-code-naming - Mock 
+codex_backup_20250819_185515/mcp_server.py:108: mock-code-naming - Mock
 functions must start with mock_ prefix and log warnings
-codex_backup_20250819_185515/mcp_server.py:48: structured-logging - Use JSON 
+codex_backup_20250819_185515/mcp_server.py:48: structured-logging - Use JSON
 structured logs with consistent schema
-codex_backup_20250819_185515/mcp_server.py:9: sanitize-production-errors - 
+codex_backup_20250819_185515/mcp_server.py:9: sanitize-production-errors -
 Return generic error messages in production
 codex_backup_20250819_185515/mcp_server.py:108: minimum-test-coverage - Maintain
 80% minimum code coverage
-codex_backup_20250819_185515/mcp_server.py:160: use-pydantic-validation - Use 
+codex_backup_20250819_185515/mcp_server.py:160: use-pydantic-validation - Use
 Pydantic for all API input validation
   → Found 6 violations in codex_backup_20250819_185515/mcp_server.py
-quality_enforcement_backup_20250819_194047/pattern_models.py:22: 
+quality_enforcement_backup_20250819_194047/pattern_models.py:22:
 mock-code-naming - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_194047/pattern_models.py:5: 
+quality_enforcement_backup_20250819_194047/pattern_models.py:5:
 structured-logging - Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_194047/pattern_models.py:28: 
+quality_enforcement_backup_20250819_194047/pattern_models.py:28:
 minimum-test-coverage - Maintain 80% minimum code coverage
-quality_enforcement_backup_20250819_194047/pattern_models.py:18: 
+quality_enforcement_backup_20250819_194047/pattern_models.py:18:
 use-pydantic-validation - Use Pydantic for all API input validation
-  → Found 4 violations in 
+  → Found 4 violations in
 quality_enforcement_backup_20250819_194047/pattern_models.py
-quality_enforcement_backup_20250819_194047/scanner.py:90: no-cors-wildcard - 
+quality_enforcement_backup_20250819_194047/scanner.py:90: no-cors-wildcard -
 NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_194047/scanner.py:268: mock-code-naming - 
+quality_enforcement_backup_20250819_194047/scanner.py:268: mock-code-naming -
 Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_194047/scanner.py:8: structured-logging - 
+quality_enforcement_backup_20250819_194047/scanner.py:8: structured-logging -
 Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_194047/scanner.py:255: 
+quality_enforcement_backup_20250819_194047/scanner.py:255:
 sanitize-production-errors - Return generic error messages in production
 quality_enforcement_backup_20250819_194047/scanner.py:268: minimum-test-coverage
 - Maintain 80% minimum code coverage
-quality_enforcement_backup_20250819_194047/scanner.py:79: 
+quality_enforcement_backup_20250819_194047/scanner.py:79:
 use-pydantic-validation - Use Pydantic for all API input validation
   → Found 6 violations in quality_enforcement_backup_20250819_194047/scanner.py
-quality_enforcement_backup_20250819_194047/config.py:62: no-cors-wildcard - 
+quality_enforcement_backup_20250819_194047/config.py:62: no-cors-wildcard -
 NEVER use '*' in production CORS origins
 quality_enforcement_backup_20250819_194047/config.py:68: mock-code-naming - Mock
 functions must start with mock_ prefix and log warnings
@@ -1596,726 +1596,726 @@ quality_enforcement_backup_20250819_194047/models.py:26: mock-code-naming - Mock
 functions must start with mock_ prefix and log warnings
 quality_enforcement_backup_20250819_194047/models.py:33: minimum-test-coverage -
 Maintain 80% minimum code coverage
-quality_enforcement_backup_20250819_194047/models.py:4: use-pydantic-validation 
+quality_enforcement_backup_20250819_194047/models.py:4: use-pydantic-validation
 - Use Pydantic for all API input validation
   → Found 3 violations in quality_enforcement_backup_20250819_194047/models.py
-quality_enforcement_backup_20250819_194047/unified_database.py:280: 
+quality_enforcement_backup_20250819_194047/unified_database.py:280:
 no-cors-wildcard - NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_194047/unified_database.py:168: 
+quality_enforcement_backup_20250819_194047/unified_database.py:168:
 use-db-context-managers - Always use context managers for database sessions
-quality_enforcement_backup_20250819_194047/unified_database.py:8: 
+quality_enforcement_backup_20250819_194047/unified_database.py:8:
 structured-logging - Use JSON structured logs with consistent schema
-  → Found 3 violations in 
+  → Found 3 violations in
 quality_enforcement_backup_20250819_194047/unified_database.py
-quality_enforcement_backup_20250819_194047/scan_rules.py:60: no-cors-wildcard - 
+quality_enforcement_backup_20250819_194047/scan_rules.py:60: no-cors-wildcard -
 NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_194047/scan_rules.py:93: secure-jwt-storage 
+quality_enforcement_backup_20250819_194047/scan_rules.py:93: secure-jwt-storage
 - Store JWT secrets in secure credential manager, never hardcode
-quality_enforcement_backup_20250819_194047/scan_rules.py:25: mock-code-naming - 
+quality_enforcement_backup_20250819_194047/scan_rules.py:25: mock-code-naming -
 Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_194047/scan_rules.py:114: 
+quality_enforcement_backup_20250819_194047/scan_rules.py:114:
 use-db-context-managers - Always use context managers for database sessions
-quality_enforcement_backup_20250819_194047/scan_rules.py:165: 
+quality_enforcement_backup_20250819_194047/scan_rules.py:165:
 use-uv-package-manager - Use uv for speed and reliability
 quality_enforcement_backup_20250819_194047/scan_rules.py:262: structured-logging
 - Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_194047/scan_rules.py:25: 
+quality_enforcement_backup_20250819_194047/scan_rules.py:25:
 minimum-test-coverage - Maintain 80% minimum code coverage
-quality_enforcement_backup_20250819_194047/scan_rules.py:292: 
+quality_enforcement_backup_20250819_194047/scan_rules.py:292:
 use-pydantic-validation - Use Pydantic for all API input validation
-  → Found 8 violations in 
+  → Found 8 violations in
 quality_enforcement_backup_20250819_194047/scan_rules.py
-quality_enforcement_backup_20250819_194047/database.py:8: mock-code-naming - 
+quality_enforcement_backup_20250819_194047/database.py:8: mock-code-naming -
 Mock functions must start with mock_ prefix and log warnings
   → Found 1 violations in quality_enforcement_backup_20250819_194047/database.py
-quality_enforcement_backup_20250819_194047/client.py:83: no-cors-wildcard - 
+quality_enforcement_backup_20250819_194047/client.py:83: no-cors-wildcard -
 NEVER use '*' in production CORS origins
 quality_enforcement_backup_20250819_194047/client.py:36: mock-code-naming - Mock
 functions must start with mock_ prefix and log warnings
 quality_enforcement_backup_20250819_194047/client.py:248: use-uv-package-manager
 - Use uv for speed and reliability
-quality_enforcement_backup_20250819_194047/client.py:13: 
+quality_enforcement_backup_20250819_194047/client.py:13:
 sanitize-production-errors - Return generic error messages in production
 quality_enforcement_backup_20250819_194047/client.py:36: minimum-test-coverage -
 Maintain 80% minimum code coverage
   → Found 5 violations in quality_enforcement_backup_20250819_194047/client.py
 quality_enforcement_backup_20250819_194047/tools.py:83: no-cors-wildcard - NEVER
 use '*' in production CORS origins
-quality_enforcement_backup_20250819_194047/tools.py:340: structured-logging - 
+quality_enforcement_backup_20250819_194047/tools.py:340: structured-logging -
 Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_194047/tools.py:83: 
+quality_enforcement_backup_20250819_194047/tools.py:83:
 sanitize-production-errors - Return generic error messages in production
 quality_enforcement_backup_20250819_194047/tools.py:118: use-pydantic-validation
 - Use Pydantic for all API input validation
   → Found 4 violations in quality_enforcement_backup_20250819_194047/tools.py
-quality_enforcement_backup_20250819_194047/ai_sqlite_query.py:28: 
+quality_enforcement_backup_20250819_194047/ai_sqlite_query.py:28:
 no-cors-wildcard - NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_194047/ai_sqlite_query.py:509: 
+quality_enforcement_backup_20250819_194047/ai_sqlite_query.py:509:
 mock-code-naming - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_194047/ai_sqlite_query.py:146: 
+quality_enforcement_backup_20250819_194047/ai_sqlite_query.py:146:
 use-db-context-managers - Always use context managers for database sessions
-quality_enforcement_backup_20250819_194047/ai_sqlite_query.py:59: 
+quality_enforcement_backup_20250819_194047/ai_sqlite_query.py:59:
 structured-logging - Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_194047/ai_sqlite_query.py:509: 
+quality_enforcement_backup_20250819_194047/ai_sqlite_query.py:509:
 minimum-test-coverage - Maintain 80% minimum code coverage
-  → Found 5 violations in 
+  → Found 5 violations in
 quality_enforcement_backup_20250819_194047/ai_sqlite_query.py
 quality_enforcement_backup_20250819_194047/pattern_cli.py:60: no-cors-wildcard -
 NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_194047/pattern_cli.py:620: mock-code-naming 
+quality_enforcement_backup_20250819_194047/pattern_cli.py:620: mock-code-naming
 - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_194047/pattern_cli.py:9: structured-logging 
+quality_enforcement_backup_20250819_194047/pattern_cli.py:9: structured-logging
 - Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_194047/pattern_cli.py:57: 
+quality_enforcement_backup_20250819_194047/pattern_cli.py:57:
 sanitize-production-errors - Return generic error messages in production
-quality_enforcement_backup_20250819_194047/pattern_cli.py:620: 
+quality_enforcement_backup_20250819_194047/pattern_cli.py:620:
 minimum-test-coverage - Maintain 80% minimum code coverage
-quality_enforcement_backup_20250819_194047/pattern_cli.py:66: 
+quality_enforcement_backup_20250819_194047/pattern_cli.py:66:
 use-pydantic-validation - Use Pydantic for all API input validation
-  → Found 6 violations in 
+  → Found 6 violations in
 quality_enforcement_backup_20250819_194047/pattern_cli.py
-quality_enforcement_backup_20250819_194047/__init__.py:10: 
+quality_enforcement_backup_20250819_194047/__init__.py:10:
 sanitize-production-errors - Return generic error messages in production
   → Found 1 violations in quality_enforcement_backup_20250819_194047/__init__.py
-quality_enforcement_backup_20250819_194047/sqlite_scanner.py:218: 
+quality_enforcement_backup_20250819_194047/sqlite_scanner.py:218:
 no-cors-wildcard - NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_194047/sqlite_scanner.py:344: 
+quality_enforcement_backup_20250819_194047/sqlite_scanner.py:344:
 mock-code-naming - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_194047/sqlite_scanner.py:35: 
+quality_enforcement_backup_20250819_194047/sqlite_scanner.py:35:
 use-db-context-managers - Always use context managers for database sessions
-quality_enforcement_backup_20250819_194047/sqlite_scanner.py:461: 
+quality_enforcement_backup_20250819_194047/sqlite_scanner.py:461:
 structured-logging - Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_194047/sqlite_scanner.py:477: 
+quality_enforcement_backup_20250819_194047/sqlite_scanner.py:477:
 sanitize-production-errors - Return generic error messages in production
-quality_enforcement_backup_20250819_194047/sqlite_scanner.py:487: 
+quality_enforcement_backup_20250819_194047/sqlite_scanner.py:487:
 minimum-test-coverage - Maintain 80% minimum code coverage
-quality_enforcement_backup_20250819_194047/sqlite_scanner.py:327: 
+quality_enforcement_backup_20250819_194047/sqlite_scanner.py:327:
 use-pydantic-validation - Use Pydantic for all API input validation
-  → Found 7 violations in 
+  → Found 7 violations in
 quality_enforcement_backup_20250819_194047/sqlite_scanner.py
-quality_enforcement_backup_20250819_194047/project_config.py:29: 
+quality_enforcement_backup_20250819_194047/project_config.py:29:
 no-cors-wildcard - NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_194047/project_config.py:188: 
+quality_enforcement_backup_20250819_194047/project_config.py:188:
 mock-code-naming - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_194047/project_config.py:10: 
+quality_enforcement_backup_20250819_194047/project_config.py:10:
 structured-logging - Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_194047/project_config.py:188: 
+quality_enforcement_backup_20250819_194047/project_config.py:188:
 minimum-test-coverage - Maintain 80% minimum code coverage
-  → Found 4 violations in 
+  → Found 4 violations in
 quality_enforcement_backup_20250819_194047/project_config.py
-quality_enforcement_backup_20250819_194047/scan_cli.py:281: no-cors-wildcard - 
+quality_enforcement_backup_20250819_194047/scan_cli.py:281: no-cors-wildcard -
 NEVER use '*' in production CORS origins
 quality_enforcement_backup_20250819_194047/scan_cli.py:293: secure-jwt-storage -
 Store JWT secrets in secure credential manager, never hardcode
-quality_enforcement_backup_20250819_194047/scan_cli.py:111: 
+quality_enforcement_backup_20250819_194047/scan_cli.py:111:
 use-db-context-managers - Always use context managers for database sessions
-quality_enforcement_backup_20250819_194047/scan_cli.py:13: structured-logging - 
+quality_enforcement_backup_20250819_194047/scan_cli.py:13: structured-logging -
 Use JSON structured logs with consistent schema
   → Found 4 violations in quality_enforcement_backup_20250819_194047/scan_cli.py
-quality_enforcement_backup_20250819_194047/fts_database_OLD.py:31: 
+quality_enforcement_backup_20250819_194047/fts_database_OLD.py:31:
 no-cors-wildcard - NEVER use '*' in production CORS origins
-  → Found 1 violations in 
+  → Found 1 violations in
 quality_enforcement_backup_20250819_194047/fts_database_OLD.py
 quality_enforcement_backup_20250819_194047/fts_database.py:9: mock-code-naming -
 Mock functions must start with mock_ prefix and log warnings
-  → Found 1 violations in 
+  → Found 1 violations in
 quality_enforcement_backup_20250819_194047/fts_database.py
-quality_enforcement_backup_20250819_194047/ai_query.py:155: no-cors-wildcard - 
+quality_enforcement_backup_20250819_194047/ai_query.py:155: no-cors-wildcard -
 NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_194047/ai_query.py:255: mock-code-naming - 
+quality_enforcement_backup_20250819_194047/ai_query.py:255: mock-code-naming -
 Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_194047/ai_query.py:130: 
+quality_enforcement_backup_20250819_194047/ai_query.py:130:
 use-uv-package-manager - Use uv for speed and reliability
 quality_enforcement_backup_20250819_194047/ai_query.py:141: structured-logging -
 Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_194047/ai_query.py:141: 
+quality_enforcement_backup_20250819_194047/ai_query.py:141:
 sanitize-production-errors - Return generic error messages in production
-quality_enforcement_backup_20250819_194047/ai_query.py:255: 
+quality_enforcement_backup_20250819_194047/ai_query.py:255:
 minimum-test-coverage - Maintain 80% minimum code coverage
-quality_enforcement_backup_20250819_194047/ai_query.py:261: 
+quality_enforcement_backup_20250819_194047/ai_query.py:261:
 use-pydantic-validation - Use Pydantic for all API input validation
   → Found 7 violations in quality_enforcement_backup_20250819_194047/ai_query.py
-quality_enforcement_backup_20250819_194047/scan_registry.py:107: 
+quality_enforcement_backup_20250819_194047/scan_registry.py:107:
 no-cors-wildcard - NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_194047/scan_registry.py:44: 
-secure-jwt-storage - Store JWT secrets in secure credential manager, never 
+quality_enforcement_backup_20250819_194047/scan_registry.py:44:
+secure-jwt-storage - Store JWT secrets in secure credential manager, never
 hardcode
-quality_enforcement_backup_20250819_194047/scan_registry.py:154: 
+quality_enforcement_backup_20250819_194047/scan_registry.py:154:
 mock-code-naming - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_194047/scan_registry.py:258: 
+quality_enforcement_backup_20250819_194047/scan_registry.py:258:
 structured-logging - Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_194047/scan_registry.py:154: 
+quality_enforcement_backup_20250819_194047/scan_registry.py:154:
 minimum-test-coverage - Maintain 80% minimum code coverage
-  → Found 5 violations in 
+  → Found 5 violations in
 quality_enforcement_backup_20250819_194047/scan_registry.py
-quality_enforcement_backup_20250819_194047/cli.py:251: no-cors-wildcard - NEVER 
+quality_enforcement_backup_20250819_194047/cli.py:251: no-cors-wildcard - NEVER
 use '*' in production CORS origins
-quality_enforcement_backup_20250819_194047/cli.py:1609: mock-code-naming - Mock 
+quality_enforcement_backup_20250819_194047/cli.py:1609: mock-code-naming - Mock
 functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_194047/cli.py:1721: use-db-context-managers 
+quality_enforcement_backup_20250819_194047/cli.py:1721: use-db-context-managers
 - Always use context managers for database sessions
-quality_enforcement_backup_20250819_194047/cli.py:361: use-uv-package-manager - 
+quality_enforcement_backup_20250819_194047/cli.py:361: use-uv-package-manager -
 Use uv for speed and reliability
-quality_enforcement_backup_20250819_194047/cli.py:35: structured-logging - Use 
+quality_enforcement_backup_20250819_194047/cli.py:35: structured-logging - Use
 JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_194047/cli.py:1863: minimum-test-coverage - 
+quality_enforcement_backup_20250819_194047/cli.py:1863: minimum-test-coverage -
 Maintain 80% minimum code coverage
-quality_enforcement_backup_20250819_194047/cli.py:1041: use-pydantic-validation 
+quality_enforcement_backup_20250819_194047/cli.py:1041: use-pydantic-validation
 - Use Pydantic for all API input validation
   → Found 7 violations in quality_enforcement_backup_20250819_194047/cli.py
 quality_enforcement_backup_20250819_194047/database_OLD.py:102: no-cors-wildcard
 - NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_194047/database_OLD.py:13: 
+quality_enforcement_backup_20250819_194047/database_OLD.py:13:
 use-db-context-managers - Always use context managers for database sessions
-  → Found 2 violations in 
+  → Found 2 violations in
 quality_enforcement_backup_20250819_194047/database_OLD.py
-quality_enforcement_backup_20250819_194047/portable_tools.py:97: 
+quality_enforcement_backup_20250819_194047/portable_tools.py:97:
 no-cors-wildcard - NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_194047/portable_tools.py:97: 
+quality_enforcement_backup_20250819_194047/portable_tools.py:97:
 mock-code-naming - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_194047/portable_tools.py:291: 
+quality_enforcement_backup_20250819_194047/portable_tools.py:291:
 use-uv-package-manager - Use uv for speed and reliability
-quality_enforcement_backup_20250819_194047/portable_tools.py:212: 
+quality_enforcement_backup_20250819_194047/portable_tools.py:212:
 structured-logging - Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_194047/portable_tools.py:93: 
+quality_enforcement_backup_20250819_194047/portable_tools.py:93:
 sanitize-production-errors - Return generic error messages in production
-quality_enforcement_backup_20250819_194047/portable_tools.py:97: 
+quality_enforcement_backup_20250819_194047/portable_tools.py:97:
 minimum-test-coverage - Maintain 80% minimum code coverage
-quality_enforcement_backup_20250819_194047/portable_tools.py:229: 
+quality_enforcement_backup_20250819_194047/portable_tools.py:229:
 use-pydantic-validation - Use Pydantic for all API input validation
-  → Found 7 violations in 
+  → Found 7 violations in
 quality_enforcement_backup_20250819_194047/portable_tools.py
-quality_enforcement_backup_20250819_194047/settings.py:68: no-cors-wildcard - 
+quality_enforcement_backup_20250819_194047/settings.py:68: no-cors-wildcard -
 NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_194047/settings.py:67: mock-code-naming - 
+quality_enforcement_backup_20250819_194047/settings.py:67: mock-code-naming -
 Mock functions must start with mock_ prefix and log warnings
 quality_enforcement_backup_20250819_194047/settings.py:67: minimum-test-coverage
 - Maintain 80% minimum code coverage
   → Found 3 violations in quality_enforcement_backup_20250819_194047/settings.py
-quality_enforcement_backup_20250819_194047/pattern_importer.py:153: 
+quality_enforcement_backup_20250819_194047/pattern_importer.py:153:
 mock-code-naming - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_194047/pattern_importer.py:39: 
+quality_enforcement_backup_20250819_194047/pattern_importer.py:39:
 use-uv-package-manager - Use uv for speed and reliability
-quality_enforcement_backup_20250819_194047/pattern_importer.py:7: 
+quality_enforcement_backup_20250819_194047/pattern_importer.py:7:
 sanitize-production-errors - Return generic error messages in production
-quality_enforcement_backup_20250819_194047/pattern_importer.py:154: 
+quality_enforcement_backup_20250819_194047/pattern_importer.py:154:
 minimum-test-coverage - Maintain 80% minimum code coverage
-quality_enforcement_backup_20250819_194047/pattern_importer.py:150: 
+quality_enforcement_backup_20250819_194047/pattern_importer.py:150:
 use-pydantic-validation - Use Pydantic for all API input validation
-  → Found 5 violations in 
+  → Found 5 violations in
 quality_enforcement_backup_20250819_194047/pattern_importer.py
-quality_enforcement_backup_20250819_194047/exceptions.py:2: 
+quality_enforcement_backup_20250819_194047/exceptions.py:2:
 sanitize-production-errors - Return generic error messages in production
-  → Found 1 violations in 
+  → Found 1 violations in
 quality_enforcement_backup_20250819_194047/exceptions.py
-quality_enforcement_backup_20250819_194047/gitignore_handler.py:23: 
+quality_enforcement_backup_20250819_194047/gitignore_handler.py:23:
 no-cors-wildcard - NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_194047/gitignore_handler.py:25: 
+quality_enforcement_backup_20250819_194047/gitignore_handler.py:25:
 mock-code-naming - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_194047/gitignore_handler.py:26: 
+quality_enforcement_backup_20250819_194047/gitignore_handler.py:26:
 use-uv-package-manager - Use uv for speed and reliability
-quality_enforcement_backup_20250819_194047/gitignore_handler.py:30: 
+quality_enforcement_backup_20250819_194047/gitignore_handler.py:30:
 sanitize-production-errors - Return generic error messages in production
-quality_enforcement_backup_20250819_194047/gitignore_handler.py:25: 
+quality_enforcement_backup_20250819_194047/gitignore_handler.py:25:
 minimum-test-coverage - Maintain 80% minimum code coverage
-  → Found 5 violations in 
+  → Found 5 violations in
 quality_enforcement_backup_20250819_194047/gitignore_handler.py
-quality_enforcement_backup_20250819_194047/pattern_extractor.py:48: 
+quality_enforcement_backup_20250819_194047/pattern_extractor.py:48:
 mock-code-naming - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_194047/pattern_extractor.py:41: 
+quality_enforcement_backup_20250819_194047/pattern_extractor.py:41:
 use-uv-package-manager - Use uv for speed and reliability
-quality_enforcement_backup_20250819_194047/pattern_extractor.py:153: 
+quality_enforcement_backup_20250819_194047/pattern_extractor.py:153:
 sanitize-production-errors - Return generic error messages in production
-quality_enforcement_backup_20250819_194047/pattern_extractor.py:48: 
+quality_enforcement_backup_20250819_194047/pattern_extractor.py:48:
 minimum-test-coverage - Maintain 80% minimum code coverage
-  → Found 4 violations in 
+  → Found 4 violations in
 quality_enforcement_backup_20250819_194047/pattern_extractor.py
 quality_enforcement_backup_20250819_194047/scan_manager.py:220: no-cors-wildcard
 - NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_194047/scan_manager.py:28: 
-secure-jwt-storage - Store JWT secrets in secure credential manager, never 
+quality_enforcement_backup_20250819_194047/scan_manager.py:28:
+secure-jwt-storage - Store JWT secrets in secure credential manager, never
 hardcode
-quality_enforcement_backup_20250819_194047/scan_manager.py:79: mock-code-naming 
+quality_enforcement_backup_20250819_194047/scan_manager.py:79: mock-code-naming
 - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_194047/scan_manager.py:89: 
+quality_enforcement_backup_20250819_194047/scan_manager.py:89:
 use-db-context-managers - Always use context managers for database sessions
-quality_enforcement_backup_20250819_194047/scan_manager.py:220: 
+quality_enforcement_backup_20250819_194047/scan_manager.py:220:
 sanitize-production-errors - Return generic error messages in production
-quality_enforcement_backup_20250819_194047/scan_manager.py:40: 
+quality_enforcement_backup_20250819_194047/scan_manager.py:40:
 minimum-test-coverage - Maintain 80% minimum code coverage
-  → Found 6 violations in 
+  → Found 6 violations in
 quality_enforcement_backup_20250819_194047/scan_manager.py
-quality_enforcement_backup_20250819_194047/rules_cli.py:92: no-cors-wildcard - 
+quality_enforcement_backup_20250819_194047/rules_cli.py:92: no-cors-wildcard -
 NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_194047/rules_cli.py:98: mock-code-naming - 
+quality_enforcement_backup_20250819_194047/rules_cli.py:98: mock-code-naming -
 Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_194047/rules_cli.py:8: structured-logging - 
+quality_enforcement_backup_20250819_194047/rules_cli.py:8: structured-logging -
 Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_194047/rules_cli.py:98: 
+quality_enforcement_backup_20250819_194047/rules_cli.py:98:
 minimum-test-coverage - Maintain 80% minimum code coverage
-quality_enforcement_backup_20250819_194047/rules_cli.py:116: 
+quality_enforcement_backup_20250819_194047/rules_cli.py:116:
 use-pydantic-validation - Use Pydantic for all API input validation
-  → Found 5 violations in 
+  → Found 5 violations in
 quality_enforcement_backup_20250819_194047/rules_cli.py
-quality_enforcement_backup_20250819_194047/uv_check.py:216: no-cors-wildcard - 
+quality_enforcement_backup_20250819_194047/uv_check.py:216: no-cors-wildcard -
 NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_194047/uv_check.py:38: mock-code-naming - 
+quality_enforcement_backup_20250819_194047/uv_check.py:38: mock-code-naming -
 Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_194047/uv_check.py:126: 
+quality_enforcement_backup_20250819_194047/uv_check.py:126:
 use-uv-package-manager - Use uv for speed and reliability
-quality_enforcement_backup_20250819_194047/uv_check.py:12: structured-logging - 
+quality_enforcement_backup_20250819_194047/uv_check.py:12: structured-logging -
 Use JSON structured logs with consistent schema
   → Found 4 violations in quality_enforcement_backup_20250819_194047/uv_check.py
 quality_enforcement_backup_20250819_194047/mcp_server.py:255: no-cors-wildcard -
 NEVER use '*' in production CORS origins
 quality_enforcement_backup_20250819_194047/mcp_server.py:108: mock-code-naming -
 Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_194047/mcp_server.py:48: structured-logging 
+quality_enforcement_backup_20250819_194047/mcp_server.py:48: structured-logging
 - Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_194047/mcp_server.py:9: 
+quality_enforcement_backup_20250819_194047/mcp_server.py:9:
 sanitize-production-errors - Return generic error messages in production
-quality_enforcement_backup_20250819_194047/mcp_server.py:108: 
+quality_enforcement_backup_20250819_194047/mcp_server.py:108:
 minimum-test-coverage - Maintain 80% minimum code coverage
-quality_enforcement_backup_20250819_194047/mcp_server.py:160: 
+quality_enforcement_backup_20250819_194047/mcp_server.py:160:
 use-pydantic-validation - Use Pydantic for all API input validation
-  → Found 6 violations in 
+  → Found 6 violations in
 quality_enforcement_backup_20250819_194047/mcp_server.py
 src/main.py:1: use-uv-package-manager - Use uv for speed and reliability
-src/main.py:1: use-pydantic-validation - Use Pydantic for all API input 
+src/main.py:1: use-pydantic-validation - Use Pydantic for all API input
 validation
   → Found 2 violations in src/main.py
-quality_enforcement_backup_20250819_200552/rules/settings_rules.py:89: 
+quality_enforcement_backup_20250819_200552/rules/settings_rules.py:89:
 no-cors-wildcard - NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_200552/rules/settings_rules.py:63: 
-secure-jwt-storage - Store JWT secrets in secure credential manager, never 
+quality_enforcement_backup_20250819_200552/rules/settings_rules.py:63:
+secure-jwt-storage - Store JWT secrets in secure credential manager, never
 hardcode
-quality_enforcement_backup_20250819_200552/rules/settings_rules.py:38: 
+quality_enforcement_backup_20250819_200552/rules/settings_rules.py:38:
 sanitize-production-errors - Return generic error messages in production
-quality_enforcement_backup_20250819_200552/rules/settings_rules.py:30: 
+quality_enforcement_backup_20250819_200552/rules/settings_rules.py:30:
 use-pydantic-validation - Use Pydantic for all API input validation
-  → Found 4 violations in 
+  → Found 4 violations in
 quality_enforcement_backup_20250819_200552/rules/settings_rules.py
-quality_enforcement_backup_20250819_200552/rules/registry.py:129: 
+quality_enforcement_backup_20250819_200552/rules/registry.py:129:
 no-cors-wildcard - NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_200552/rules/registry.py:21: 
+quality_enforcement_backup_20250819_200552/rules/registry.py:21:
 mock-code-naming - Mock functions must start with mock_ prefix and log warnings
-  → Found 2 violations in 
+  → Found 2 violations in
 quality_enforcement_backup_20250819_200552/rules/registry.py
-quality_enforcement_backup_20250819_200552/rules/categories.py:45: 
+quality_enforcement_backup_20250819_200552/rules/categories.py:45:
 mock-code-naming - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_200552/rules/categories.py:60: 
+quality_enforcement_backup_20250819_200552/rules/categories.py:60:
 use-pydantic-validation - Use Pydantic for all API input validation
-  → Found 2 violations in 
+  → Found 2 violations in
 quality_enforcement_backup_20250819_200552/rules/categories.py
-quality_enforcement_backup_20250819_200552/rules/database_rules.py:191: 
+quality_enforcement_backup_20250819_200552/rules/database_rules.py:191:
 no-cors-wildcard - NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_200552/rules/database_rules.py:34: 
+quality_enforcement_backup_20250819_200552/rules/database_rules.py:34:
 use-db-context-managers - Always use context managers for database sessions
-quality_enforcement_backup_20250819_200552/rules/database_rules.py:40: 
+quality_enforcement_backup_20250819_200552/rules/database_rules.py:40:
 sanitize-production-errors - Return generic error messages in production
-quality_enforcement_backup_20250819_200552/rules/database_rules.py:123: 
+quality_enforcement_backup_20250819_200552/rules/database_rules.py:123:
 minimum-test-coverage - Maintain 80% minimum code coverage
-  → Found 4 violations in 
+  → Found 4 violations in
 quality_enforcement_backup_20250819_200552/rules/database_rules.py
-quality_enforcement_backup_20250819_200552/rules/loader.py:24: mock-code-naming 
+quality_enforcement_backup_20250819_200552/rules/loader.py:24: mock-code-naming
 - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_200552/rules/loader.py:24: 
+quality_enforcement_backup_20250819_200552/rules/loader.py:24:
 minimum-test-coverage - Maintain 80% minimum code coverage
-  → Found 2 violations in 
+  → Found 2 violations in
 quality_enforcement_backup_20250819_200552/rules/loader.py
-quality_enforcement_backup_20250819_200552/data/default_patterns.py:23: 
+quality_enforcement_backup_20250819_200552/data/default_patterns.py:23:
 no-cors-wildcard - NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_200552/data/default_patterns.py:107: 
-secure-jwt-storage - Store JWT secrets in secure credential manager, never 
+quality_enforcement_backup_20250819_200552/data/default_patterns.py:107:
+secure-jwt-storage - Store JWT secrets in secure credential manager, never
 hardcode
-quality_enforcement_backup_20250819_200552/data/default_patterns.py:144: 
+quality_enforcement_backup_20250819_200552/data/default_patterns.py:144:
 mock-code-naming - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_200552/data/default_patterns.py:39: 
+quality_enforcement_backup_20250819_200552/data/default_patterns.py:39:
 use-uv-package-manager - Use uv for speed and reliability
-quality_enforcement_backup_20250819_200552/data/default_patterns.py:193: 
+quality_enforcement_backup_20250819_200552/data/default_patterns.py:193:
 structured-logging - Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_200552/data/default_patterns.py:82: 
+quality_enforcement_backup_20250819_200552/data/default_patterns.py:82:
 sanitize-production-errors - Return generic error messages in production
-quality_enforcement_backup_20250819_200552/data/default_patterns.py:148: 
+quality_enforcement_backup_20250819_200552/data/default_patterns.py:148:
 minimum-test-coverage - Maintain 80% minimum code coverage
-quality_enforcement_backup_20250819_200552/data/default_patterns.py:51: 
+quality_enforcement_backup_20250819_200552/data/default_patterns.py:51:
 use-pydantic-validation - Use Pydantic for all API input validation
-  → Found 8 violations in 
+  → Found 8 violations in
 quality_enforcement_backup_20250819_200552/data/default_patterns.py
 codex/rules/settings_rules.py:89: no-cors-wildcard - NEVER use '*' in production
 CORS origins
-codex/rules/settings_rules.py:63: secure-jwt-storage - Store JWT secrets in 
+codex/rules/settings_rules.py:63: secure-jwt-storage - Store JWT secrets in
 secure credential manager, never hardcode
-codex/rules/settings_rules.py:38: sanitize-production-errors - Return generic 
+codex/rules/settings_rules.py:38: sanitize-production-errors - Return generic
 error messages in production
 codex/rules/settings_rules.py:30: use-pydantic-validation - Use Pydantic for all
 API input validation
   → Found 4 violations in codex/rules/settings_rules.py
 codex/rules/registry.py:129: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-codex/rules/registry.py:21: mock-code-naming - Mock functions must start with 
+codex/rules/registry.py:21: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
   → Found 2 violations in codex/rules/registry.py
-codex/rules/categories.py:45: mock-code-naming - Mock functions must start with 
+codex/rules/categories.py:45: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
 codex/rules/categories.py:60: use-pydantic-validation - Use Pydantic for all API
 input validation
   → Found 2 violations in codex/rules/categories.py
-codex/rules/database_rules.py:191: no-cors-wildcard - NEVER use '*' in 
+codex/rules/database_rules.py:191: no-cors-wildcard - NEVER use '*' in
 production CORS origins
-codex/rules/database_rules.py:34: use-db-context-managers - Always use context 
+codex/rules/database_rules.py:34: use-db-context-managers - Always use context
 managers for database sessions
-codex/rules/database_rules.py:40: sanitize-production-errors - Return generic 
+codex/rules/database_rules.py:40: sanitize-production-errors - Return generic
 error messages in production
-codex/rules/database_rules.py:123: minimum-test-coverage - Maintain 80% minimum 
+codex/rules/database_rules.py:123: minimum-test-coverage - Maintain 80% minimum
 code coverage
   → Found 4 violations in codex/rules/database_rules.py
-codex/rules/loader.py:24: mock-code-naming - Mock functions must start with 
+codex/rules/loader.py:24: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-codex/rules/loader.py:24: minimum-test-coverage - Maintain 80% minimum code 
+codex/rules/loader.py:24: minimum-test-coverage - Maintain 80% minimum code
 coverage
   → Found 2 violations in codex/rules/loader.py
-codex/data/default_patterns.py:23: no-cors-wildcard - NEVER use '*' in 
+codex/data/default_patterns.py:23: no-cors-wildcard - NEVER use '*' in
 production CORS origins
-codex/data/default_patterns.py:107: secure-jwt-storage - Store JWT secrets in 
+codex/data/default_patterns.py:107: secure-jwt-storage - Store JWT secrets in
 secure credential manager, never hardcode
 codex/data/default_patterns.py:144: mock-code-naming - Mock functions must start
 with mock_ prefix and log warnings
 codex/data/default_patterns.py:39: use-uv-package-manager - Use uv for speed and
 reliability
-codex/data/default_patterns.py:193: structured-logging - Use JSON structured 
+codex/data/default_patterns.py:193: structured-logging - Use JSON structured
 logs with consistent schema
-codex/data/default_patterns.py:82: sanitize-production-errors - Return generic 
+codex/data/default_patterns.py:82: sanitize-production-errors - Return generic
 error messages in production
 codex/data/default_patterns.py:148: minimum-test-coverage - Maintain 80% minimum
 code coverage
-codex/data/default_patterns.py:51: use-pydantic-validation - Use Pydantic for 
+codex/data/default_patterns.py:51: use-pydantic-validation - Use Pydantic for
 all API input validation
   → Found 8 violations in codex/data/default_patterns.py
-codex_backup_20250819_185515/rules/settings_rules.py:89: no-cors-wildcard - 
+codex_backup_20250819_185515/rules/settings_rules.py:89: no-cors-wildcard -
 NEVER use '*' in production CORS origins
-codex_backup_20250819_185515/rules/settings_rules.py:63: secure-jwt-storage - 
+codex_backup_20250819_185515/rules/settings_rules.py:63: secure-jwt-storage -
 Store JWT secrets in secure credential manager, never hardcode
-codex_backup_20250819_185515/rules/settings_rules.py:38: 
+codex_backup_20250819_185515/rules/settings_rules.py:38:
 sanitize-production-errors - Return generic error messages in production
 codex_backup_20250819_185515/rules/settings_rules.py:30: use-pydantic-validation
 - Use Pydantic for all API input validation
   → Found 4 violations in codex_backup_20250819_185515/rules/settings_rules.py
 codex_backup_20250819_185515/rules/registry.py:129: no-cors-wildcard - NEVER use
 '*' in production CORS origins
-codex_backup_20250819_185515/rules/registry.py:21: mock-code-naming - Mock 
+codex_backup_20250819_185515/rules/registry.py:21: mock-code-naming - Mock
 functions must start with mock_ prefix and log warnings
   → Found 2 violations in codex_backup_20250819_185515/rules/registry.py
-codex_backup_20250819_185515/rules/categories.py:45: mock-code-naming - Mock 
+codex_backup_20250819_185515/rules/categories.py:45: mock-code-naming - Mock
 functions must start with mock_ prefix and log warnings
-codex_backup_20250819_185515/rules/categories.py:60: use-pydantic-validation - 
+codex_backup_20250819_185515/rules/categories.py:60: use-pydantic-validation -
 Use Pydantic for all API input validation
   → Found 2 violations in codex_backup_20250819_185515/rules/categories.py
-codex_backup_20250819_185515/rules/database_rules.py:191: no-cors-wildcard - 
+codex_backup_20250819_185515/rules/database_rules.py:191: no-cors-wildcard -
 NEVER use '*' in production CORS origins
 codex_backup_20250819_185515/rules/database_rules.py:34: use-db-context-managers
 - Always use context managers for database sessions
-codex_backup_20250819_185515/rules/database_rules.py:40: 
+codex_backup_20250819_185515/rules/database_rules.py:40:
 sanitize-production-errors - Return generic error messages in production
-codex_backup_20250819_185515/rules/database_rules.py:123: minimum-test-coverage 
+codex_backup_20250819_185515/rules/database_rules.py:123: minimum-test-coverage
 - Maintain 80% minimum code coverage
   → Found 4 violations in codex_backup_20250819_185515/rules/database_rules.py
-codex_backup_20250819_185515/rules/loader.py:24: mock-code-naming - Mock 
+codex_backup_20250819_185515/rules/loader.py:24: mock-code-naming - Mock
 functions must start with mock_ prefix and log warnings
-codex_backup_20250819_185515/rules/loader.py:24: minimum-test-coverage - 
+codex_backup_20250819_185515/rules/loader.py:24: minimum-test-coverage -
 Maintain 80% minimum code coverage
   → Found 2 violations in codex_backup_20250819_185515/rules/loader.py
-codex_backup_20250819_185515/data/default_patterns.py:23: no-cors-wildcard - 
+codex_backup_20250819_185515/data/default_patterns.py:23: no-cors-wildcard -
 NEVER use '*' in production CORS origins
-codex_backup_20250819_185515/data/default_patterns.py:107: secure-jwt-storage - 
+codex_backup_20250819_185515/data/default_patterns.py:107: secure-jwt-storage -
 Store JWT secrets in secure credential manager, never hardcode
-codex_backup_20250819_185515/data/default_patterns.py:144: mock-code-naming - 
+codex_backup_20250819_185515/data/default_patterns.py:144: mock-code-naming -
 Mock functions must start with mock_ prefix and log warnings
 codex_backup_20250819_185515/data/default_patterns.py:39: use-uv-package-manager
 - Use uv for speed and reliability
-codex_backup_20250819_185515/data/default_patterns.py:193: structured-logging - 
+codex_backup_20250819_185515/data/default_patterns.py:193: structured-logging -
 Use JSON structured logs with consistent schema
-codex_backup_20250819_185515/data/default_patterns.py:82: 
+codex_backup_20250819_185515/data/default_patterns.py:82:
 sanitize-production-errors - Return generic error messages in production
 codex_backup_20250819_185515/data/default_patterns.py:148: minimum-test-coverage
 - Maintain 80% minimum code coverage
-codex_backup_20250819_185515/data/default_patterns.py:51: 
+codex_backup_20250819_185515/data/default_patterns.py:51:
 use-pydantic-validation - Use Pydantic for all API input validation
   → Found 8 violations in codex_backup_20250819_185515/data/default_patterns.py
-quality_enforcement_backup_20250819_194047/rules/settings_rules.py:89: 
+quality_enforcement_backup_20250819_194047/rules/settings_rules.py:89:
 no-cors-wildcard - NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_194047/rules/settings_rules.py:63: 
-secure-jwt-storage - Store JWT secrets in secure credential manager, never 
+quality_enforcement_backup_20250819_194047/rules/settings_rules.py:63:
+secure-jwt-storage - Store JWT secrets in secure credential manager, never
 hardcode
-quality_enforcement_backup_20250819_194047/rules/settings_rules.py:38: 
+quality_enforcement_backup_20250819_194047/rules/settings_rules.py:38:
 sanitize-production-errors - Return generic error messages in production
-quality_enforcement_backup_20250819_194047/rules/settings_rules.py:30: 
+quality_enforcement_backup_20250819_194047/rules/settings_rules.py:30:
 use-pydantic-validation - Use Pydantic for all API input validation
-  → Found 4 violations in 
+  → Found 4 violations in
 quality_enforcement_backup_20250819_194047/rules/settings_rules.py
-quality_enforcement_backup_20250819_194047/rules/registry.py:129: 
+quality_enforcement_backup_20250819_194047/rules/registry.py:129:
 no-cors-wildcard - NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_194047/rules/registry.py:21: 
+quality_enforcement_backup_20250819_194047/rules/registry.py:21:
 mock-code-naming - Mock functions must start with mock_ prefix and log warnings
-  → Found 2 violations in 
+  → Found 2 violations in
 quality_enforcement_backup_20250819_194047/rules/registry.py
-quality_enforcement_backup_20250819_194047/rules/categories.py:45: 
+quality_enforcement_backup_20250819_194047/rules/categories.py:45:
 mock-code-naming - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_194047/rules/categories.py:60: 
+quality_enforcement_backup_20250819_194047/rules/categories.py:60:
 use-pydantic-validation - Use Pydantic for all API input validation
-  → Found 2 violations in 
+  → Found 2 violations in
 quality_enforcement_backup_20250819_194047/rules/categories.py
-quality_enforcement_backup_20250819_194047/rules/database_rules.py:191: 
+quality_enforcement_backup_20250819_194047/rules/database_rules.py:191:
 no-cors-wildcard - NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_194047/rules/database_rules.py:34: 
+quality_enforcement_backup_20250819_194047/rules/database_rules.py:34:
 use-db-context-managers - Always use context managers for database sessions
-quality_enforcement_backup_20250819_194047/rules/database_rules.py:40: 
+quality_enforcement_backup_20250819_194047/rules/database_rules.py:40:
 sanitize-production-errors - Return generic error messages in production
-quality_enforcement_backup_20250819_194047/rules/database_rules.py:123: 
+quality_enforcement_backup_20250819_194047/rules/database_rules.py:123:
 minimum-test-coverage - Maintain 80% minimum code coverage
-  → Found 4 violations in 
+  → Found 4 violations in
 quality_enforcement_backup_20250819_194047/rules/database_rules.py
-quality_enforcement_backup_20250819_194047/rules/loader.py:24: mock-code-naming 
+quality_enforcement_backup_20250819_194047/rules/loader.py:24: mock-code-naming
 - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_194047/rules/loader.py:24: 
+quality_enforcement_backup_20250819_194047/rules/loader.py:24:
 minimum-test-coverage - Maintain 80% minimum code coverage
-  → Found 2 violations in 
+  → Found 2 violations in
 quality_enforcement_backup_20250819_194047/rules/loader.py
-quality_enforcement_backup_20250819_194047/data/default_patterns.py:23: 
+quality_enforcement_backup_20250819_194047/data/default_patterns.py:23:
 no-cors-wildcard - NEVER use '*' in production CORS origins
-quality_enforcement_backup_20250819_194047/data/default_patterns.py:107: 
-secure-jwt-storage - Store JWT secrets in secure credential manager, never 
+quality_enforcement_backup_20250819_194047/data/default_patterns.py:107:
+secure-jwt-storage - Store JWT secrets in secure credential manager, never
 hardcode
-quality_enforcement_backup_20250819_194047/data/default_patterns.py:144: 
+quality_enforcement_backup_20250819_194047/data/default_patterns.py:144:
 mock-code-naming - Mock functions must start with mock_ prefix and log warnings
-quality_enforcement_backup_20250819_194047/data/default_patterns.py:39: 
+quality_enforcement_backup_20250819_194047/data/default_patterns.py:39:
 use-uv-package-manager - Use uv for speed and reliability
-quality_enforcement_backup_20250819_194047/data/default_patterns.py:193: 
+quality_enforcement_backup_20250819_194047/data/default_patterns.py:193:
 structured-logging - Use JSON structured logs with consistent schema
-quality_enforcement_backup_20250819_194047/data/default_patterns.py:82: 
+quality_enforcement_backup_20250819_194047/data/default_patterns.py:82:
 sanitize-production-errors - Return generic error messages in production
-quality_enforcement_backup_20250819_194047/data/default_patterns.py:148: 
+quality_enforcement_backup_20250819_194047/data/default_patterns.py:148:
 minimum-test-coverage - Maintain 80% minimum code coverage
-quality_enforcement_backup_20250819_194047/data/default_patterns.py:51: 
+quality_enforcement_backup_20250819_194047/data/default_patterns.py:51:
 use-pydantic-validation - Use Pydantic for all API input validation
-  → Found 8 violations in 
+  → Found 8 violations in
 quality_enforcement_backup_20250819_194047/data/default_patterns.py
-build/lib/codex/pattern_models.py:20: mock-code-naming - Mock functions must 
+build/lib/codex/pattern_models.py:20: mock-code-naming - Mock functions must
 start with mock_ prefix and log warnings
-build/lib/codex/pattern_models.py:15: structured-logging - Use JSON structured 
+build/lib/codex/pattern_models.py:15: structured-logging - Use JSON structured
 logs with consistent schema
-build/lib/codex/pattern_models.py:26: minimum-test-coverage - Maintain 80% 
+build/lib/codex/pattern_models.py:26: minimum-test-coverage - Maintain 80%
 minimum code coverage
 build/lib/codex/pattern_models.py:16: use-pydantic-validation - Use Pydantic for
 all API input validation
   → Found 4 violations in build/lib/codex/pattern_models.py
-build/lib/codex/scanner.py:89: no-cors-wildcard - NEVER use '*' in production 
+build/lib/codex/scanner.py:89: no-cors-wildcard - NEVER use '*' in production
 CORS origins
-build/lib/codex/scanner.py:224: mock-code-naming - Mock functions must start 
+build/lib/codex/scanner.py:224: mock-code-naming - Mock functions must start
 with mock_ prefix and log warnings
-build/lib/codex/scanner.py:224: minimum-test-coverage - Maintain 80% minimum 
+build/lib/codex/scanner.py:224: minimum-test-coverage - Maintain 80% minimum
 code coverage
-build/lib/codex/scanner.py:78: use-pydantic-validation - Use Pydantic for all 
+build/lib/codex/scanner.py:78: use-pydantic-validation - Use Pydantic for all
 API input validation
   → Found 4 violations in build/lib/codex/scanner.py
-build/lib/codex/config.py:62: no-cors-wildcard - NEVER use '*' in production 
+build/lib/codex/config.py:62: no-cors-wildcard - NEVER use '*' in production
 CORS origins
-build/lib/codex/config.py:68: mock-code-naming - Mock functions must start with 
+build/lib/codex/config.py:68: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-build/lib/codex/config.py:68: minimum-test-coverage - Maintain 80% minimum code 
+build/lib/codex/config.py:68: minimum-test-coverage - Maintain 80% minimum code
 coverage
   → Found 3 violations in build/lib/codex/config.py
-build/lib/codex/models.py:25: mock-code-naming - Mock functions must start with 
+build/lib/codex/models.py:25: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-build/lib/codex/models.py:32: minimum-test-coverage - Maintain 80% minimum code 
+build/lib/codex/models.py:32: minimum-test-coverage - Maintain 80% minimum code
 coverage
-build/lib/codex/models.py:4: use-pydantic-validation - Use Pydantic for all API 
+build/lib/codex/models.py:4: use-pydantic-validation - Use Pydantic for all API
 input validation
   → Found 3 violations in build/lib/codex/models.py
-build/lib/codex/unified_database.py:280: no-cors-wildcard - NEVER use '*' in 
+build/lib/codex/unified_database.py:280: no-cors-wildcard - NEVER use '*' in
 production CORS origins
-build/lib/codex/unified_database.py:168: use-db-context-managers - Always use 
+build/lib/codex/unified_database.py:168: use-db-context-managers - Always use
 context managers for database sessions
   → Found 2 violations in build/lib/codex/unified_database.py
-build/lib/codex/database.py:101: no-cors-wildcard - NEVER use '*' in production 
+build/lib/codex/database.py:101: no-cors-wildcard - NEVER use '*' in production
 CORS origins
-build/lib/codex/database.py:13: use-db-context-managers - Always use context 
+build/lib/codex/database.py:13: use-db-context-managers - Always use context
 managers for database sessions
   → Found 2 violations in build/lib/codex/database.py
-build/lib/codex/client.py:87: no-cors-wildcard - NEVER use '*' in production 
+build/lib/codex/client.py:87: no-cors-wildcard - NEVER use '*' in production
 CORS origins
-build/lib/codex/client.py:40: mock-code-naming - Mock functions must start with 
+build/lib/codex/client.py:40: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-build/lib/codex/client.py:252: use-uv-package-manager - Use uv for speed and 
+build/lib/codex/client.py:252: use-uv-package-manager - Use uv for speed and
 reliability
-build/lib/codex/client.py:16: sanitize-production-errors - Return generic error 
+build/lib/codex/client.py:16: sanitize-production-errors - Return generic error
 messages in production
-build/lib/codex/client.py:40: minimum-test-coverage - Maintain 80% minimum code 
+build/lib/codex/client.py:40: minimum-test-coverage - Maintain 80% minimum code
 coverage
   → Found 5 violations in build/lib/codex/client.py
 build/lib/codex/tools.py:76: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-build/lib/codex/tools.py:76: sanitize-production-errors - Return generic error 
+build/lib/codex/tools.py:76: sanitize-production-errors - Return generic error
 messages in production
 build/lib/codex/tools.py:109: use-pydantic-validation - Use Pydantic for all API
 input validation
   → Found 3 violations in build/lib/codex/tools.py
-build/lib/codex/ai_sqlite_query.py:29: no-cors-wildcard - NEVER use '*' in 
+build/lib/codex/ai_sqlite_query.py:29: no-cors-wildcard - NEVER use '*' in
 production CORS origins
-build/lib/codex/ai_sqlite_query.py:510: mock-code-naming - Mock functions must 
+build/lib/codex/ai_sqlite_query.py:510: mock-code-naming - Mock functions must
 start with mock_ prefix and log warnings
-build/lib/codex/ai_sqlite_query.py:147: use-db-context-managers - Always use 
+build/lib/codex/ai_sqlite_query.py:147: use-db-context-managers - Always use
 context managers for database sessions
-build/lib/codex/ai_sqlite_query.py:60: structured-logging - Use JSON structured 
+build/lib/codex/ai_sqlite_query.py:60: structured-logging - Use JSON structured
 logs with consistent schema
-build/lib/codex/ai_sqlite_query.py:510: minimum-test-coverage - Maintain 80% 
+build/lib/codex/ai_sqlite_query.py:510: minimum-test-coverage - Maintain 80%
 minimum code coverage
   → Found 5 violations in build/lib/codex/ai_sqlite_query.py
-build/lib/codex/pattern_cli.py:62: no-cors-wildcard - NEVER use '*' in 
+build/lib/codex/pattern_cli.py:62: no-cors-wildcard - NEVER use '*' in
 production CORS origins
 build/lib/codex/pattern_cli.py:622: mock-code-naming - Mock functions must start
 with mock_ prefix and log warnings
-build/lib/codex/pattern_cli.py:622: structured-logging - Use JSON structured 
+build/lib/codex/pattern_cli.py:622: structured-logging - Use JSON structured
 logs with consistent schema
-build/lib/codex/pattern_cli.py:59: sanitize-production-errors - Return generic 
+build/lib/codex/pattern_cli.py:59: sanitize-production-errors - Return generic
 error messages in production
 build/lib/codex/pattern_cli.py:622: minimum-test-coverage - Maintain 80% minimum
 code coverage
-build/lib/codex/pattern_cli.py:68: use-pydantic-validation - Use Pydantic for 
+build/lib/codex/pattern_cli.py:68: use-pydantic-validation - Use Pydantic for
 all API input validation
   → Found 6 violations in build/lib/codex/pattern_cli.py
-build/lib/codex/__init__.py:11: sanitize-production-errors - Return generic 
+build/lib/codex/__init__.py:11: sanitize-production-errors - Return generic
 error messages in production
   → Found 1 violations in build/lib/codex/__init__.py
-build/lib/codex/sqlite_scanner.py:221: no-cors-wildcard - NEVER use '*' in 
+build/lib/codex/sqlite_scanner.py:221: no-cors-wildcard - NEVER use '*' in
 production CORS origins
-build/lib/codex/sqlite_scanner.py:347: mock-code-naming - Mock functions must 
+build/lib/codex/sqlite_scanner.py:347: mock-code-naming - Mock functions must
 start with mock_ prefix and log warnings
-build/lib/codex/sqlite_scanner.py:38: use-db-context-managers - Always use 
+build/lib/codex/sqlite_scanner.py:38: use-db-context-managers - Always use
 context managers for database sessions
-build/lib/codex/sqlite_scanner.py:464: structured-logging - Use JSON structured 
+build/lib/codex/sqlite_scanner.py:464: structured-logging - Use JSON structured
 logs with consistent schema
-build/lib/codex/sqlite_scanner.py:480: sanitize-production-errors - Return 
+build/lib/codex/sqlite_scanner.py:480: sanitize-production-errors - Return
 generic error messages in production
-build/lib/codex/sqlite_scanner.py:490: minimum-test-coverage - Maintain 80% 
+build/lib/codex/sqlite_scanner.py:490: minimum-test-coverage - Maintain 80%
 minimum code coverage
-build/lib/codex/sqlite_scanner.py:330: use-pydantic-validation - Use Pydantic 
+build/lib/codex/sqlite_scanner.py:330: use-pydantic-validation - Use Pydantic
 for all API input validation
   → Found 7 violations in build/lib/codex/sqlite_scanner.py
-build/lib/codex/project_config.py:28: no-cors-wildcard - NEVER use '*' in 
+build/lib/codex/project_config.py:28: no-cors-wildcard - NEVER use '*' in
 production CORS origins
-build/lib/codex/project_config.py:187: mock-code-naming - Mock functions must 
+build/lib/codex/project_config.py:187: mock-code-naming - Mock functions must
 start with mock_ prefix and log warnings
-build/lib/codex/project_config.py:187: minimum-test-coverage - Maintain 80% 
+build/lib/codex/project_config.py:187: minimum-test-coverage - Maintain 80%
 minimum code coverage
   → Found 3 violations in build/lib/codex/project_config.py
-build/lib/codex/fts_database.py:32: no-cors-wildcard - NEVER use '*' in 
+build/lib/codex/fts_database.py:32: no-cors-wildcard - NEVER use '*' in
 production CORS origins
   → Found 1 violations in build/lib/codex/fts_database.py
-build/lib/codex/ai_query.py:156: no-cors-wildcard - NEVER use '*' in production 
+build/lib/codex/ai_query.py:156: no-cors-wildcard - NEVER use '*' in production
 CORS origins
-build/lib/codex/ai_query.py:256: mock-code-naming - Mock functions must start 
+build/lib/codex/ai_query.py:256: mock-code-naming - Mock functions must start
 with mock_ prefix and log warnings
-build/lib/codex/ai_query.py:131: use-uv-package-manager - Use uv for speed and 
+build/lib/codex/ai_query.py:131: use-uv-package-manager - Use uv for speed and
 reliability
-build/lib/codex/ai_query.py:142: structured-logging - Use JSON structured logs 
+build/lib/codex/ai_query.py:142: structured-logging - Use JSON structured logs
 with consistent schema
-build/lib/codex/ai_query.py:142: sanitize-production-errors - Return generic 
+build/lib/codex/ai_query.py:142: sanitize-production-errors - Return generic
 error messages in production
-build/lib/codex/ai_query.py:256: minimum-test-coverage - Maintain 80% minimum 
+build/lib/codex/ai_query.py:256: minimum-test-coverage - Maintain 80% minimum
 code coverage
-build/lib/codex/ai_query.py:262: use-pydantic-validation - Use Pydantic for all 
+build/lib/codex/ai_query.py:262: use-pydantic-validation - Use Pydantic for all
 API input validation
   → Found 7 violations in build/lib/codex/ai_query.py
-build/lib/codex/cli.py:232: no-cors-wildcard - NEVER use '*' in production CORS 
+build/lib/codex/cli.py:232: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-build/lib/codex/cli.py:1588: mock-code-naming - Mock functions must start with 
+build/lib/codex/cli.py:1588: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-build/lib/codex/cli.py:1699: use-db-context-managers - Always use context 
+build/lib/codex/cli.py:1699: use-db-context-managers - Always use context
 managers for database sessions
-build/lib/codex/cli.py:342: use-uv-package-manager - Use uv for speed and 
+build/lib/codex/cli.py:342: use-uv-package-manager - Use uv for speed and
 reliability
-build/lib/codex/cli.py:1466: structured-logging - Use JSON structured logs with 
+build/lib/codex/cli.py:1466: structured-logging - Use JSON structured logs with
 consistent schema
-build/lib/codex/cli.py:36: sanitize-production-errors - Return generic error 
+build/lib/codex/cli.py:36: sanitize-production-errors - Return generic error
 messages in production
-build/lib/codex/cli.py:1841: minimum-test-coverage - Maintain 80% minimum code 
+build/lib/codex/cli.py:1841: minimum-test-coverage - Maintain 80% minimum code
 coverage
-build/lib/codex/cli.py:1020: use-pydantic-validation - Use Pydantic for all API 
+build/lib/codex/cli.py:1020: use-pydantic-validation - Use Pydantic for all API
 input validation
   → Found 8 violations in build/lib/codex/cli.py
-build/lib/codex/portable_tools.py:101: no-cors-wildcard - NEVER use '*' in 
+build/lib/codex/portable_tools.py:101: no-cors-wildcard - NEVER use '*' in
 production CORS origins
-build/lib/codex/portable_tools.py:101: mock-code-naming - Mock functions must 
+build/lib/codex/portable_tools.py:101: mock-code-naming - Mock functions must
 start with mock_ prefix and log warnings
 build/lib/codex/portable_tools.py:295: use-uv-package-manager - Use uv for speed
 and reliability
-build/lib/codex/portable_tools.py:97: sanitize-production-errors - Return 
+build/lib/codex/portable_tools.py:97: sanitize-production-errors - Return
 generic error messages in production
-build/lib/codex/portable_tools.py:101: minimum-test-coverage - Maintain 80% 
+build/lib/codex/portable_tools.py:101: minimum-test-coverage - Maintain 80%
 minimum code coverage
-build/lib/codex/portable_tools.py:233: use-pydantic-validation - Use Pydantic 
+build/lib/codex/portable_tools.py:233: use-pydantic-validation - Use Pydantic
 for all API input validation
   → Found 6 violations in build/lib/codex/portable_tools.py
-build/lib/codex/settings.py:68: no-cors-wildcard - NEVER use '*' in production 
+build/lib/codex/settings.py:68: no-cors-wildcard - NEVER use '*' in production
 CORS origins
-build/lib/codex/settings.py:67: mock-code-naming - Mock functions must start 
+build/lib/codex/settings.py:67: mock-code-naming - Mock functions must start
 with mock_ prefix and log warnings
-build/lib/codex/settings.py:67: minimum-test-coverage - Maintain 80% minimum 
+build/lib/codex/settings.py:67: minimum-test-coverage - Maintain 80% minimum
 code coverage
   → Found 3 violations in build/lib/codex/settings.py
-build/lib/codex/pattern_importer.py:153: mock-code-naming - Mock functions must 
+build/lib/codex/pattern_importer.py:153: mock-code-naming - Mock functions must
 start with mock_ prefix and log warnings
-build/lib/codex/pattern_importer.py:39: use-uv-package-manager - Use uv for 
+build/lib/codex/pattern_importer.py:39: use-uv-package-manager - Use uv for
 speed and reliability
-build/lib/codex/pattern_importer.py:8: sanitize-production-errors - Return 
+build/lib/codex/pattern_importer.py:8: sanitize-production-errors - Return
 generic error messages in production
-build/lib/codex/pattern_importer.py:154: minimum-test-coverage - Maintain 80% 
+build/lib/codex/pattern_importer.py:154: minimum-test-coverage - Maintain 80%
 minimum code coverage
-build/lib/codex/pattern_importer.py:150: use-pydantic-validation - Use Pydantic 
+build/lib/codex/pattern_importer.py:150: use-pydantic-validation - Use Pydantic
 for all API input validation
   → Found 5 violations in build/lib/codex/pattern_importer.py
-build/lib/codex/exceptions.py:2: sanitize-production-errors - Return generic 
+build/lib/codex/exceptions.py:2: sanitize-production-errors - Return generic
 error messages in production
   → Found 1 violations in build/lib/codex/exceptions.py
-build/lib/codex/gitignore_handler.py:23: no-cors-wildcard - NEVER use '*' in 
+build/lib/codex/gitignore_handler.py:23: no-cors-wildcard - NEVER use '*' in
 production CORS origins
-build/lib/codex/gitignore_handler.py:25: mock-code-naming - Mock functions must 
+build/lib/codex/gitignore_handler.py:25: mock-code-naming - Mock functions must
 start with mock_ prefix and log warnings
-build/lib/codex/gitignore_handler.py:26: use-uv-package-manager - Use uv for 
+build/lib/codex/gitignore_handler.py:26: use-uv-package-manager - Use uv for
 speed and reliability
-build/lib/codex/gitignore_handler.py:30: sanitize-production-errors - Return 
+build/lib/codex/gitignore_handler.py:30: sanitize-production-errors - Return
 generic error messages in production
-build/lib/codex/gitignore_handler.py:25: minimum-test-coverage - Maintain 80% 
+build/lib/codex/gitignore_handler.py:25: minimum-test-coverage - Maintain 80%
 minimum code coverage
   → Found 5 violations in build/lib/codex/gitignore_handler.py
-build/lib/codex/pattern_extractor.py:49: mock-code-naming - Mock functions must 
+build/lib/codex/pattern_extractor.py:49: mock-code-naming - Mock functions must
 start with mock_ prefix and log warnings
-build/lib/codex/pattern_extractor.py:42: use-uv-package-manager - Use uv for 
+build/lib/codex/pattern_extractor.py:42: use-uv-package-manager - Use uv for
 speed and reliability
-build/lib/codex/pattern_extractor.py:154: sanitize-production-errors - Return 
+build/lib/codex/pattern_extractor.py:154: sanitize-production-errors - Return
 generic error messages in production
-build/lib/codex/pattern_extractor.py:49: minimum-test-coverage - Maintain 80% 
+build/lib/codex/pattern_extractor.py:49: minimum-test-coverage - Maintain 80%
 minimum code coverage
   → Found 4 violations in build/lib/codex/pattern_extractor.py
-build/lib/codex/uv_check.py:216: no-cors-wildcard - NEVER use '*' in production 
+build/lib/codex/uv_check.py:216: no-cors-wildcard - NEVER use '*' in production
 CORS origins
-build/lib/codex/uv_check.py:38: mock-code-naming - Mock functions must start 
+build/lib/codex/uv_check.py:38: mock-code-naming - Mock functions must start
 with mock_ prefix and log warnings
-build/lib/codex/uv_check.py:126: use-uv-package-manager - Use uv for speed and 
+build/lib/codex/uv_check.py:126: use-uv-package-manager - Use uv for speed and
 reliability
   → Found 3 violations in build/lib/codex/uv_check.py
-build/lib/codex/mcp_server.py:257: no-cors-wildcard - NEVER use '*' in 
+build/lib/codex/mcp_server.py:257: no-cors-wildcard - NEVER use '*' in
 production CORS origins
-build/lib/codex/mcp_server.py:110: mock-code-naming - Mock functions must start 
+build/lib/codex/mcp_server.py:110: mock-code-naming - Mock functions must start
 with mock_ prefix and log warnings
-build/lib/codex/mcp_server.py:50: structured-logging - Use JSON structured logs 
+build/lib/codex/mcp_server.py:50: structured-logging - Use JSON structured logs
 with consistent schema
-build/lib/codex/mcp_server.py:10: sanitize-production-errors - Return generic 
+build/lib/codex/mcp_server.py:10: sanitize-production-errors - Return generic
 error messages in production
-build/lib/codex/mcp_server.py:110: minimum-test-coverage - Maintain 80% minimum 
+build/lib/codex/mcp_server.py:110: minimum-test-coverage - Maintain 80% minimum
 code coverage
-build/lib/codex/mcp_server.py:162: use-pydantic-validation - Use Pydantic for 
+build/lib/codex/mcp_server.py:162: use-pydantic-validation - Use Pydantic for
 all API input validation
   → Found 6 violations in build/lib/codex/mcp_server.py
 {

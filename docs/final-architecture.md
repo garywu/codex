@@ -24,7 +24,7 @@ class CodexLLMInterface:
                 ProviderConfig(provider=ProviderType.OLLAMA, priority=50)
             ]
         )
-    
+
     async def generate_code(self, prompt: str, **kwargs) -> LLMResponse:
         return await self.llm_client.chat(messages=prompt, **kwargs)
 ```
@@ -35,7 +35,7 @@ class CodexLLMInterface:
 - Cost tracking and token management
 - Provider-agnostic code generation
 
-### 2. DSPy (Intelligence Layer)  
+### 2. DSPy (Intelligence Layer)
 **Purpose**: Algorithmic optimization of prompts and code generation workflows
 **Integration**: DSPy modules for intelligent code generation with optimized prompts
 
@@ -48,23 +48,23 @@ class CodeGenerationModule(dspy.Module):
         self.generate_code = dspy.ChainOfThought("requirements -> code")
         self.validate_code = dspy.ChainOfThought("code, context -> validation")
         self.fix_issues = dspy.ChainOfThought("code, issues -> fixed_code")
-    
+
     def forward(self, requirements: str, context: ProjectContext):
         # DSPy automatically optimizes these prompts based on examples
         generated_code = self.generate_code(requirements=requirements)
         validation = self.validate_code(code=generated_code, context=context)
-        
+
         if validation.has_issues:
             fixed_code = self.fix_issues(code=generated_code, issues=validation.issues)
             return fixed_code
-        
+
         return generated_code
 
 class CodexDSPyEngine:
     def __init__(self):
         self.optimizer = dspy.BootstrapFewShot(metric=code_quality_metric)
         self.code_gen_module = CodeGenerationModule()
-        
+
     def optimize_for_project(self, project_examples: List[Example]):
         """Learn and optimize prompts for specific project patterns"""
         self.optimizer.compile(self.code_gen_module, trainset=project_examples)
@@ -87,16 +87,16 @@ class CodexTemplateEngine:
     def __init__(self):
         self.template_registry = {
             'python-api': 'gh:codex-templates/python-fastapi',
-            'react-app': 'gh:codex-templates/react-typescript', 
+            'react-app': 'gh:codex-templates/react-typescript',
             'cli-tool': 'gh:codex-templates/python-cli',
             'ml-project': 'gh:codex-templates/python-ml'
         }
-    
+
     def scaffold_project(self, template_name: str, project_config: dict) -> Path:
         """Generate project structure using CookieCutter templates"""
         template_url = self.template_registry[template_name]
         return cookiecutter(template_url, extra_context=project_config)
-    
+
     def generate_component(self, component_type: str, context: dict) -> str:
         """Generate individual components using mini-templates"""
         template_path = f"templates/{component_type}.j2"
@@ -114,7 +114,7 @@ class CodexTemplateEngine:
 # │       │   └── api/
 # │       └── tests/
 # └── react-typescript/
-#     ├── cookiecutter.json  
+#     ├── cookiecutter.json
 #     └── {{cookiecutter.project_name}}/
 #         ├── package.json
 #         ├── src/
@@ -136,39 +136,39 @@ class CodexTemplateEngine:
 class CodexGenerationEngine:
     def __init__(self):
         self.llm = CodexLLMInterface()           # ALLM integration
-        self.dspy_engine = CodexDSPyEngine()     # DSPy intelligence  
+        self.dspy_engine = CodexDSPyEngine()     # DSPy intelligence
         self.templates = CodexTemplateEngine()   # CookieCutter templates
         self.analyzer = MultiFactorAnalyzer()    # Quality analysis
-        
+
     async def generate_project(self, requirements: ProjectRequirements) -> Project:
         """Full project generation workflow"""
         # 1. Scaffold basic structure with CookieCutter
         project_structure = self.templates.scaffold_project(
-            requirements.template, 
+            requirements.template,
             requirements.context
         )
-        
+
         # 2. Generate code with DSPy-optimized prompts
         for component in requirements.components:
             generated_code = await self.dspy_engine.generate_component(
-                component, 
+                component,
                 project_context=project_structure
             )
-            
+
             # 3. Quality analysis before integration
             analysis = await self.analyzer.analyze(generated_code, project_structure)
-            
+
             # 4. Auto-fix if issues found
             if analysis.has_issues:
                 fixed_code = await self.dspy_engine.fix_code(
-                    generated_code, 
+                    generated_code,
                     analysis.issues
                 )
                 generated_code = fixed_code
-                
+
             # 5. Integrate into project
             project_structure.add_component(component.path, generated_code)
-            
+
         return project_structure
 ```
 
@@ -180,16 +180,16 @@ class QualityGate:
     async def validate_generated_code(self, code: str, context: ProjectContext) -> QualityResult:
         # Layer 1: Fast pattern matching
         pattern_result = await self.pattern_analyzer.analyze(code)
-        
-        # Layer 2: Project context validation  
+
+        # Layer 2: Project context validation
         context_result = await self.context_analyzer.analyze(code, context)
-        
+
         # Layer 3: AI-powered validation (using ALLM)
         if self.should_use_ai_validation(pattern_result, context_result):
             ai_result = await self.ai_analyzer.analyze(code, context)
         else:
             ai_result = None
-            
+
         # Vote aggregation
         return self.voting_engine.decide([pattern_result, context_result, ai_result])
 ```
@@ -200,18 +200,18 @@ class CodexLearningEngine:
     def __init__(self):
         self.dspy_optimizer = dspy.BootstrapFewShot()
         self.feedback_collector = FeedbackCollector()
-        
+
     async def learn_from_usage(self, project: Project, user_feedback: Feedback):
         """Continuously improve generation quality"""
         # Collect successful patterns
         if user_feedback.rating > 4:
             example = self.create_training_example(project, user_feedback)
             self.training_examples.append(example)
-            
-        # Re-optimize DSPy modules periodically  
+
+        # Re-optimize DSPy modules periodically
         if len(self.training_examples) % 10 == 0:
             await self.retrain_models()
-            
+
     async def retrain_models(self):
         """Re-optimize DSPy prompts based on collected examples"""
         self.dspy_optimizer.compile(
@@ -227,7 +227,7 @@ class CodexLearningEngine:
 1. User requests: "Create a FastAPI project with auth"
     ↓
 2. Codex scaffolds project using CookieCutter template
-    ↓  
+    ↓
 3. DSPy generates components with optimized prompts
     ↓
 4. Each component passes through quality gate analysis
@@ -239,12 +239,12 @@ class CodexLearningEngine:
 7. Future commits analyzed by the same quality pipeline
 ```
 
-#### Pre-Commit Integration  
+#### Pre-Commit Integration
 ```
 1. Developer makes changes to Codex-generated project
     ↓
 2. git commit triggers Codex pre-commit hook
-    ↓  
+    ↓
 3. Changes analyzed by multi-factor system
     ↓
 4. If issues found, DSPy generates fixes
@@ -261,29 +261,29 @@ Since Codex is now a code generation platform, the relationship with Claude Code
 ```python
 class ClaudeCodeCLIIntegration:
     """Codex can work alongside or compete with Claude Code CLI"""
-    
+
     async def collaborative_mode(self, claude_request: str) -> str:
         """Codex provides context and validates Claude's output"""
         # Provide project context to Claude Code CLI
         context = self.get_project_context()
         enhanced_request = f"{claude_request}\n\nProject Context: {context}"
-        
+
         # Let Claude Code CLI generate code
         claude_output = await self.call_claude_code_cli(enhanced_request)
-        
+
         # Validate Claude's output with Codex quality gates
         quality_result = await self.quality_gate.validate(claude_output)
-        
+
         if quality_result.needs_improvement:
             # Use DSPy to improve Claude's output
             improved_code = await self.dspy_engine.improve_code(
-                claude_output, 
+                claude_output,
                 quality_result.issues
             )
             return improved_code
-            
+
         return claude_output
-    
+
     async def standalone_mode(self, requirements: str) -> str:
         """Codex generates code directly, competing with Claude Code CLI"""
         return await self.generation_engine.generate(requirements)
@@ -293,18 +293,18 @@ class ClaudeCodeCLIIntegration:
 
 ### Vs. Claude Code CLI
 - **Template-based consistency**: CookieCutter ensures consistent project structures
-- **Learning and optimization**: DSPy improves prompts based on project success patterns  
+- **Learning and optimization**: DSPy improves prompts based on project success patterns
 - **Built-in quality gates**: Multi-factor analysis prevents bad code from being committed
 - **Project-aware generation**: Understands full project context, not just individual files
 
-### Vs. Open Lovable  
+### Vs. Open Lovable
 - **Enterprise scale**: Built for production use with quality assurance
 - **Multi-language support**: Not limited to React/JavaScript
 - **Optimized prompts**: DSPy automatically improves generation quality over time
 - **Template ecosystem**: CookieCutter provides extensible template system
 
 ### Vs. Traditional Code Generators
-- **AI-powered intelligence**: Goes beyond simple template substitution  
+- **AI-powered intelligence**: Goes beyond simple template substitution
 - **Quality assurance**: Built-in analysis and fixing capabilities
 - **Continuous learning**: Gets better with usage through DSPy optimization
 - **Flexible architecture**: Can generate anything from full projects to individual components
@@ -315,14 +315,14 @@ class ClaudeCodeCLIIntegration:
 Codex Architecture Stack:
 ┌─────────────────────────────────────────────┐
 │                 Codex Core                  │
-├─────────────────────────────────────────────┤  
+├─────────────────────────────────────────────┤
 │  DSPy (Intelligence)     │  Quality Gates   │
 │  - Optimized prompts     │  - Multi-factor  │
 │  - Learning loops        │  - Auto-fixing   │
 ├─────────────────────────────────────────────┤
 │  ALLM (LLM Layer)        │  CookieCutter    │
 │  - Unified providers     │  - Templates     │
-│  - Automatic failover    │  - Scaffolding   │  
+│  - Automatic failover    │  - Scaffolding   │
 ├─────────────────────────────────────────────┤
 │              Foundation                     │
 │  Python 3.11+ │ Pydantic │ Rich │ Typer   │

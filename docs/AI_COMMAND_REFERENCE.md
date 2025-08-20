@@ -12,7 +12,7 @@ codex query "<what you need>"
 ```
 Examples:
 - `codex query "HTTP client"` → httpx recommendations
-- `codex query "error handling"` → exception patterns  
+- `codex query "error handling"` → exception patterns
 - `codex query "ruff TRY401"` → exact fix for ruff error
 
 ### **File-Specific Context**
@@ -83,7 +83,7 @@ codex query "HTTP client best practices" --ai
 # Before writing error handling
 codex query "error handling patterns" --ai
 
-# Before adding dependencies  
+# Before adding dependencies
 codex query "package management" --ai
 ```
 
@@ -150,7 +150,7 @@ codex context --category package_management --ai
 #### **Technology-Specific Queries**
 ```bash
 codex query "HTTP client"        # → httpx patterns
-codex query "async database"     # → aiosqlite, SQLModel patterns  
+codex query "async database"     # → aiosqlite, SQLModel patterns
 codex query "CLI interface"      # → typer patterns
 codex query "API validation"     # → pydantic patterns
 ```
@@ -209,7 +209,7 @@ codex context --category security             # → security patterns
 Always use `--ai` flag for AI-friendly markdown output:
 ```bash
 codex query "HTTP client" --ai
-codex context --file src/api.py --ai  
+codex context --file src/api.py --ai
 codex explain use-httpx --ai
 ```
 
@@ -294,13 +294,13 @@ codex query "HTTP" --ai && codex query "database" --ai
 def generate_code_with_patterns(intent):
     # Get relevant patterns
     patterns = run_command(f"codex context --intent '{intent}' --ai")
-    
+
     # Generate code using patterns
     code = generate_with_patterns(patterns)
-    
+
     # Validate against patterns
     validation = run_command(f"codex validate --code '{code}'")
-    
+
     return code, validation
 ```
 
@@ -309,7 +309,7 @@ def generate_code_with_patterns(intent):
 # Pre-commit validation
 codex --quiet || exit 1
 
-# CI/CD compliance check  
+# CI/CD compliance check
 codex scan --format json > compliance.json
 
 # Pattern export for team

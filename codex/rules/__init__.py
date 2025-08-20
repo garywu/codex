@@ -13,7 +13,7 @@ from .registry import Rule, RuleRegistry, Violation
 
 __all__ = [
     "RuleRegistry",
-    "Rule", 
+    "Rule",
     "Violation",
     "RulePrefix",
 ]

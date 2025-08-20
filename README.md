@@ -36,7 +36,7 @@ codex any-repo ~/Downloads/some-project --init --patterns company.json
 
 ### ⚡ **Performance**
 - **0.1ms Pattern Queries**: Faster than loading JSON files
-- **28KB Database**: Stores thousands of patterns efficiently  
+- **28KB Database**: Stores thousands of patterns efficiently
 - **Auto-Startup**: Background service ready when you need it
 - **Parallel Scanning**: Fast file processing with async operations
 
@@ -611,14 +611,14 @@ cat "$HOME/Library/Application Support/Claude/claude_desktop_config.json"
 
 ## 🏆 Key Benefits
 
-✅ **Instant Pattern Intelligence** - Sub-millisecond pattern queries  
-✅ **AI Assistant Ready** - Direct MCP integration with Claude Desktop  
-✅ **Zero Configuration** - Auto-startup service with one-command install  
-✅ **Production Proven** - Handles 2,400+ line pattern files efficiently  
-✅ **Cross-Platform** - macOS launchd and Linux systemd support  
-✅ **Extensible** - Easy pattern addition and custom rule creation  
-✅ **Team Friendly** - Shared pattern databases and compliance reporting  
-✅ **Developer Focused** - CLI-first design with comprehensive tooling  
+✅ **Instant Pattern Intelligence** - Sub-millisecond pattern queries
+✅ **AI Assistant Ready** - Direct MCP integration with Claude Desktop
+✅ **Zero Configuration** - Auto-startup service with one-command install
+✅ **Production Proven** - Handles 2,400+ line pattern files efficiently
+✅ **Cross-Platform** - macOS launchd and Linux systemd support
+✅ **Extensible** - Easy pattern addition and custom rule creation
+✅ **Team Friendly** - Shared pattern databases and compliance reporting
+✅ **Developer Focused** - CLI-first design with comprehensive tooling
 
 ---
 

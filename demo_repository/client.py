@@ -1,6 +1,5 @@
-
 import requests
-import json
+
 
 def fetch_user_data(user_id):
     print(f"Fetching data for user {user_id}")
@@ -8,6 +7,7 @@ def fetch_user_data(user_id):
     response = requests.get(url)
     data = response.json()  # No error handling
     return data
+
 
 def process_users(user_ids):
     results = []

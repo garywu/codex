@@ -1,6 +1,6 @@
 
 📋 Pre-scan Discovery for .:
-     File Discovery Summary     
+     File Discovery Summary
 ┏━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┓
 ┃ Metric             ┃   Value ┃
 ┡━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━┩
@@ -12,89 +12,89 @@
 │ Discovery Time     │ 184.7ms │
 │ Gitignore Patterns │       0 │
 └────────────────────┴─────────┘
- Files by Extension  
+ Files by Extension
 ┏━━━━━━━━━━━┳━━━━━━━┓
 ┃ Extension ┃ Count ┃
 ┡━━━━━━━━━━━╇━━━━━━━┩
 │ .py       │   101 │
 └───────────┴───────┘
-          Exclusion Reasons          
+          Exclusion Reasons
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓
 ┃ Reason                    ┃ Count ┃
 ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩
 │ Matched exclusion pattern │  2825 │
 └───────────────────────────┴───────┘
-experiment_fts.py:259: no-cors-wildcard - NEVER use '*' in production CORS 
+experiment_fts.py:259: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-experiment_fts.py:190: mock-code-naming - Mock functions must start with mock_ 
+experiment_fts.py:190: mock-code-naming - Mock functions must start with mock_
 prefix and log warnings
 experiment_fts.py:89: use-uv-package-manager - Use uv for speed and reliability
-experiment_fts.py:258: structured-logging - Use JSON structured logs with 
+experiment_fts.py:258: structured-logging - Use JSON structured logs with
 consistent schema
-experiment_fts.py:258: sanitize-production-errors - Return generic error 
+experiment_fts.py:258: sanitize-production-errors - Return generic error
 messages in production
-experiment_fts.py:190: minimum-test-coverage - Maintain 80% minimum code 
+experiment_fts.py:190: minimum-test-coverage - Maintain 80% minimum code
 coverage
   → Found 6 violations in experiment_fts.py
-intelligent_fixer.py:369: no-cors-wildcard - NEVER use '*' in production CORS 
+intelligent_fixer.py:369: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-intelligent_fixer.py:211: secure-jwt-storage - Store JWT secrets in secure 
+intelligent_fixer.py:211: secure-jwt-storage - Store JWT secrets in secure
 credential manager, never hardcode
-intelligent_fixer.py:112: mock-code-naming - Mock functions must start with 
+intelligent_fixer.py:112: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
-intelligent_fixer.py:102: structured-logging - Use JSON structured logs with 
+intelligent_fixer.py:102: structured-logging - Use JSON structured logs with
 consistent schema
-intelligent_fixer.py:143: sanitize-production-errors - Return generic error 
+intelligent_fixer.py:143: sanitize-production-errors - Return generic error
 messages in production
-intelligent_fixer.py:112: minimum-test-coverage - Maintain 80% minimum code 
+intelligent_fixer.py:112: minimum-test-coverage - Maintain 80% minimum code
 coverage
   → Found 6 violations in intelligent_fixer.py
 test_startup.py:17: no-cors-wildcard - NEVER use '*' in production CORS origins
-test_startup.py:14: mock-code-naming - Mock functions must start with mock_ 
+test_startup.py:14: mock-code-naming - Mock functions must start with mock_
 prefix and log warnings
 test_startup.py:14: minimum-test-coverage - Maintain 80% minimum code coverage
   → Found 3 violations in test_startup.py
-demo_negative_space_integration.py:24: no-cors-wildcard - NEVER use '*' in 
+demo_negative_space_integration.py:24: no-cors-wildcard - NEVER use '*' in
 production CORS origins
-demo_negative_space_integration.py:15: mock-code-naming - Mock functions must 
+demo_negative_space_integration.py:15: mock-code-naming - Mock functions must
 start with mock_ prefix and log warnings
-demo_negative_space_integration.py:11: structured-logging - Use JSON structured 
+demo_negative_space_integration.py:11: structured-logging - Use JSON structured
 logs with consistent schema
-demo_negative_space_integration.py:15: minimum-test-coverage - Maintain 80% 
+demo_negative_space_integration.py:15: minimum-test-coverage - Maintain 80%
 minimum code coverage
-demo_negative_space_integration.py:124: use-pydantic-validation - Use Pydantic 
+demo_negative_space_integration.py:124: use-pydantic-validation - Use Pydantic
 for all API input validation
   → Found 5 violations in demo_negative_space_integration.py
-import_patterns_unified.py:22: no-cors-wildcard - NEVER use '*' in production 
+import_patterns_unified.py:22: no-cors-wildcard - NEVER use '*' in production
 CORS origins
 import_patterns_unified.py:73: mock-code-naming - Mock functions must start with
 mock_ prefix and log warnings
 import_patterns_unified.py:70: minimum-test-coverage - Maintain 80% minimum code
 coverage
-import_patterns_unified.py:73: use-pydantic-validation - Use Pydantic for all 
+import_patterns_unified.py:73: use-pydantic-validation - Use Pydantic for all
 API input validation
   → Found 4 violations in import_patterns_unified.py
 smart_scanner.py:42: no-cors-wildcard - NEVER use '*' in production CORS origins
-smart_scanner.py:232: mock-code-naming - Mock functions must start with mock_ 
+smart_scanner.py:232: mock-code-naming - Mock functions must start with mock_
 prefix and log warnings
-smart_scanner.py:68: use-db-context-managers - Always use context managers for 
+smart_scanner.py:68: use-db-context-managers - Always use context managers for
 database sessions
 smart_scanner.py:131: use-uv-package-manager - Use uv for speed and reliability
-smart_scanner.py:25: structured-logging - Use JSON structured logs with 
+smart_scanner.py:25: structured-logging - Use JSON structured logs with
 consistent schema
 smart_scanner.py:232: minimum-test-coverage - Maintain 80% minimum code coverage
   → Found 6 violations in smart_scanner.py
-negative_space_analyzer.py:94: no-cors-wildcard - NEVER use '*' in production 
+negative_space_analyzer.py:94: no-cors-wildcard - NEVER use '*' in production
 CORS origins
-negative_space_analyzer.py:128: mock-code-naming - Mock functions must start 
+negative_space_analyzer.py:128: mock-code-naming - Mock functions must start
 with mock_ prefix and log warnings
-negative_space_analyzer.py:105: use-uv-package-manager - Use uv for speed and 
+negative_space_analyzer.py:105: use-uv-package-manager - Use uv for speed and
 reliability
-negative_space_analyzer.py:42: structured-logging - Use JSON structured logs 
+negative_space_analyzer.py:42: structured-logging - Use JSON structured logs
 with consistent schema
-negative_space_analyzer.py:128: minimum-test-coverage - Maintain 80% minimum 
+negative_space_analyzer.py:128: minimum-test-coverage - Maintain 80% minimum
 code coverage
   → Found 5 violations in negative_space_analyzer.py
-test_sqlite_scanning.py:24: no-cors-wildcard - NEVER use '*' in production CORS 
+test_sqlite_scanning.py:24: no-cors-wildcard - NEVER use '*' in production CORS
 origins
-test_sqlite_scanning.py:13: mock-code-naming - Mock functions must start with 
+test_sqlite_scanning.py:13: mock-code-naming - Mock functions must start with

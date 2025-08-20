@@ -9,43 +9,43 @@ from enum import Enum
 
 class RulePrefix(str, Enum):
     """Rule prefixes for different categories."""
-    
+
     # Codex-specific rules (CDX prefix)
     CDX = "CDX"  # Codex best practices
-    
-    # Settings and Configuration (SET prefix)  
+
+    # Settings and Configuration (SET prefix)
     SET = "SET"  # Settings management (Pydantic, config)
-    
+
     # Database (DB prefix)
-    DB = "DB"    # Database patterns and practices
-    
+    DB = "DB"  # Database patterns and practices
+
     # Dependencies (DEP prefix)
     DEP = "DEP"  # Package management, dependencies
-    
+
     # Security (SEC prefix)
     SEC = "SEC"  # Security vulnerabilities
-    
+
     # Architecture (ARC prefix)
     ARC = "ARC"  # Code structure, imports
-    
+
     # Testing (TST prefix)
     TST = "TST"  # Testing patterns
-    
+
     # Logging (LOG prefix)
     LOG = "LOG"  # Logging practices
-    
+
     # API (API prefix)
     API = "API"  # API design patterns
-    
+
     # Performance (PRF prefix)
     PRF = "PRF"  # Performance optimizations
-    
+
     # External Tools (mirrors Ruff's approach)
-    E = "E"      # pycodestyle errors
-    W = "W"      # pycodestyle warnings
-    F = "F"      # Pyflakes
-    B = "B"      # flake8-bugbear
-    T = "T"      # External tools (ruff, ty, typos)
+    E = "E"  # pycodestyle errors
+    W = "W"  # pycodestyle warnings
+    F = "F"  # Pyflakes
+    B = "B"  # flake8-bugbear
+    T = "T"  # External tools (ruff, ty, typos)
 
 
 CATEGORY_DESCRIPTIONS: dict[RulePrefix, str] = {
@@ -60,7 +60,7 @@ CATEGORY_DESCRIPTIONS: dict[RulePrefix, str] = {
     RulePrefix.API: "API design and validation",
     RulePrefix.PRF: "Performance optimizations",
     RulePrefix.E: "pycodestyle errors",
-    RulePrefix.W: "pycodestyle warnings", 
+    RulePrefix.W: "pycodestyle warnings",
     RulePrefix.F: "Pyflakes",
     RulePrefix.B: "flake8-bugbear",
     RulePrefix.T: "External tools integration",
@@ -73,7 +73,7 @@ def get_prefix_from_code(code: str) -> RulePrefix:
     for prefix in RulePrefix:
         if code.startswith(prefix.value):
             return prefix
-    
+
     # Default to first letter for single-letter prefixes
     return RulePrefix(code[0])
 
@@ -81,12 +81,18 @@ def get_prefix_from_code(code: str) -> RulePrefix:
 def is_codex_rule(code: str) -> bool:
     """Check if a rule code is a Codex-specific rule."""
     codex_prefixes = {
-        RulePrefix.CDX, RulePrefix.SET, RulePrefix.DB,
-        RulePrefix.DEP, RulePrefix.SEC, RulePrefix.ARC,
-        RulePrefix.TST, RulePrefix.LOG, RulePrefix.API,
-        RulePrefix.PRF
+        RulePrefix.CDX,
+        RulePrefix.SET,
+        RulePrefix.DB,
+        RulePrefix.DEP,
+        RulePrefix.SEC,
+        RulePrefix.ARC,
+        RulePrefix.TST,
+        RulePrefix.LOG,
+        RulePrefix.API,
+        RulePrefix.PRF,
     }
-    
+
     try:
         prefix = get_prefix_from_code(code)
         return prefix in codex_prefixes

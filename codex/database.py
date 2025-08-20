@@ -14,10 +14,10 @@ warnings.warn(
     "database.py is deprecated. Please import from unified_database directly: "
     "from codex.unified_database import UnifiedDatabase",
     DeprecationWarning,
-    stacklevel=2
+    stacklevel=2,
 )
 
 # Provide Database as alias for compatibility
 Database = UnifiedDatabase
 
-__all__ = ['Database', 'UnifiedDatabase']
+__all__ = ["Database", "UnifiedDatabase"]

@@ -13,7 +13,7 @@ Codex operates within a triangular relationship model that creates a quality-ass
   - Provide context and domain expertise
 
 ### 2. AI Assistant (Co-Assist)
-- **Role**: Code generator and implementer  
+- **Role**: Code generator and implementer
 - **Responsibilities**:
   - Generate code based on human requirements
   - Implement specific features and functionality
@@ -24,7 +24,7 @@ Codex operates within a triangular relationship model that creates a quality-ass
 - **Role**: Quality guardian and strategic advisor
 - **Responsibilities**:
   - Real-time monitoring of code generation
-  - Pattern analysis and quality assessment  
+  - Pattern analysis and quality assessment
   - Hallucination detection and prevention
   - High-level project goal alignment
   - Providing MCP/CLI interfaces for AI assistant integration
@@ -54,7 +54,7 @@ Codex operates within a triangular relationship model that creates a quality-ass
 - Integration with GitHub webhooks and local file system watchers
 - Multi-language parsing and understanding
 
-### Analysis Engine  
+### Analysis Engine
 - AI-powered code quality assessment
 - Project goal alignment verification
 - Hallucination detection algorithms

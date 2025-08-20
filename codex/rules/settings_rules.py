@@ -42,13 +42,13 @@ config = {
     'api_key': os.environ.get('API_KEY'),
     'debug': os.environ.get('DEBUG', 'false') == 'true'
 }
-"""
-    }
+""",
+    },
 )
 
 
 SINGLE_SETTINGS_INSTANCE = Rule(
-    code="SET002", 
+    code="SET002",
     name="single-settings-instance",
     message_template="Creating new Settings instance - use shared 'settings' object",
     severity=Severity.ERROR,
@@ -83,43 +83,42 @@ NO_CONFIG_GET_WITH_DEFAULT = Rule(
 # Checker implementations
 class PydanticSettingsChecker(PatternChecker):
     """Check for non-Pydantic configuration patterns."""
-    
+
     def __init__(self):
         patterns = [
-            (r'config\s*=\s*\{', "dict configuration"),
-            (r'ConfigParser\(\)', "ConfigParser"),
+            (r"config\s*=\s*\{", "dict configuration"),
+            (r"ConfigParser\(\)", "ConfigParser"),
             (r'os\.environ\.get\(["\'](?!CODEX_)', "direct environ access"),
-            (r'json\.load.*config', "JSON config file"),
-            (r'yaml\.load.*config', "YAML config file"),
+            (r"json\.load.*config", "JSON config file"),
+            (r"yaml\.load.*config", "YAML config file"),
         ]
         super().__init__(USE_PYDANTIC_SETTINGS, patterns)
 
 
 class SingleSettingsChecker(ASTChecker):
     """Check for multiple Settings instantiations."""
-    
+
     def __init__(self):
         super().__init__(SINGLE_SETTINGS_INSTANCE)
-    
+
     def check_ast(self, tree: ast.AST, file_path: Path) -> list[Violation]:
         """Find Settings() instantiations."""
         violations = []
-        
+
         class SettingsVisitor(ast.NodeVisitor):
             def visit_Call(self, node):
                 # Check for Settings() or BaseSettings() calls
                 if isinstance(node.func, ast.Name):
-                    if node.func.id in ('Settings', 'BaseSettings', 'CodexSettings'):
+                    if node.func.id in ("Settings", "BaseSettings", "CodexSettings"):
                         # Skip if it's in a settings module
-                        if 'settings' not in str(file_path):
+                        if "settings" not in str(file_path):
                             location = Location(file_path, node.lineno, node.col_offset)
                             violation = SINGLE_SETTINGS_INSTANCE.create_violation(
-                                location=location,
-                                class_name=node.func.id
+                                location=location, class_name=node.func.id
                             )
                             violations.append(violation)
                 self.generic_visit(node)
-        
+
         visitor = SettingsVisitor()
         visitor.visit(tree)
         return violations
@@ -127,57 +126,54 @@ class SingleSettingsChecker(ASTChecker):
 
 class HardcodedPathChecker(RuleChecker):
     """Check for hardcoded file paths."""
-    
+
     PATH_PATTERNS = [
-        (re.compile(r'Path\(["\']\/'), 'absolute path', 'data_dir'),
-        (re.compile(r'["\']~\/\.config'), 'config directory', 'config_dir'),
-        (re.compile(r'["\']~\/\.local\/share'), 'data directory', 'data_dir'),
-        (re.compile(r'["\']~\/\.cache'), 'cache directory', 'cache_dir'),
-        (re.compile(r'\.db["\']'), 'database file', 'database_path'),
-        (re.compile(r'\/tmp\/'), 'temp directory', 'temp_dir'),
+        (re.compile(r'Path\(["\']\/'), "absolute path", "data_dir"),
+        (re.compile(r'["\']~\/\.config'), "config directory", "config_dir"),
+        (re.compile(r'["\']~\/\.local\/share'), "data directory", "data_dir"),
+        (re.compile(r'["\']~\/\.cache'), "cache directory", "cache_dir"),
+        (re.compile(r'\.db["\']'), "database file", "database_path"),
+        (re.compile(r"\/tmp\/"), "temp directory", "temp_dir"),
     ]
-    
+
     def __init__(self):
         super().__init__(NO_HARDCODED_PATHS)
-    
+
     def check_file(self, file_path: Path, content: str) -> list[Violation]:
         """Check for hardcoded paths."""
         violations = []
-        lines = content.split('\n')
-        
+        lines = content.split("\n")
+
         for line_num, line in enumerate(lines, 1):
             # Skip comments
-            if line.strip().startswith('#'):
+            if line.strip().startswith("#"):
                 continue
-            
+
             for pattern, path_type, setting_name in self.PATH_PATTERNS:
                 match = pattern.search(line)
                 if match:
                     location = Location(file_path, line_num, match.start())
-                    
+
                     # Create fix suggestion
                     fix = Fix(
                         description=f"Use settings.{setting_name}",
                         replacements=[(location, f"settings.{setting_name}")],
-                        applicability=FixApplicability.SOMETIMES
+                        applicability=FixApplicability.SOMETIMES,
                     )
-                    
+
                     violation = self.rule.create_violation(
-                        location=location,
-                        path=path_type,
-                        setting=setting_name,
-                        context=line.strip()
+                        location=location, path=path_type, setting=setting_name, context=line.strip()
                     )
                     violation.fix = fix
                     violations.append(violation)
                     break
-        
+
         return violations
 
 
 class ConfigGetChecker(PatternChecker):
     """Check for config.get() with defaults."""
-    
+
     def __init__(self):
         patterns = [
             (r'config\.get\(["\'](\w+)["\']\s*,\s*["\']?\w+', "config.get with default"),

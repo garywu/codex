@@ -71,14 +71,14 @@ paths:
   /api/v1/projects:
     post: # Register new project for monitoring
     get: # List monitored projects
-  
+
   /api/v1/projects/{id}/analysis:
     get: # Get analysis results
     post: # Trigger manual analysis
-  
+
   /api/v1/projects/{id}/feedback:
     post: # Submit feedback on analysis
-  
+
   /api/v1/webhooks/github:
     post: # GitHub webhook endpoint
 ```

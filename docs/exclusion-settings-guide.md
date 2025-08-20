@@ -28,52 +28,52 @@ The scanner uses `config.py` exclusions, not `settings.py` exclusions. This crea
 
 class CodexSettings(BaseSettings):
     # ... existing settings ...
-    
+
     # Scanning exclusion settings (enhanced)
     scan_exclude_patterns: list[str] = Field(
         default=[
             # Python artifacts
             "__pycache__", "*.pyc", "*.pyo", "*.pyd",
-            
+
             # Virtual environments
             ".venv", "venv", "env", ".env",
-            
+
             # Version control
             ".git", ".svn", ".hg",
-            
+
             # Build artifacts
             "build", "dist", "*.egg-info",
-            
+
             # Backups (THE FIX FOR OUR ISSUE)
             "*_backup_*", "*backup*", "*.backup",
-            
+
             # Caches
             ".pytest_cache", ".mypy_cache", ".ruff_cache",
-            
+
             # Node
             "node_modules",
-            
+
             # IDE
             ".vscode", ".idea", "*.swp",
-            
+
             # OS
             ".DS_Store", "Thumbs.db"
         ],
         description="Patterns to exclude from scanning"
     )
-    
+
     # Use gitignore as base
     use_gitignore: bool = Field(
         default=True,
         description="Also exclude files matching .gitignore patterns"
     )
-    
+
     # Allow .codexignore file
     use_codexignore: bool = Field(
         default=True,
         description="Use .codexignore file if present"
     )
-    
+
     # Pattern-specific exclusions
     pattern_exclusions: dict[str, list[str]] = Field(
         default={
@@ -83,13 +83,13 @@ class CodexSettings(BaseSettings):
         },
         description="Exclude specific patterns from certain paths"
     )
-    
+
     # File size limits
     max_file_size_bytes: int = Field(
         default=1_000_000,  # 1MB
         description="Skip files larger than this"
     )
-    
+
     skip_binary_files: bool = Field(
         default=True,
         description="Skip binary files automatically"
@@ -172,7 +172,7 @@ docs/
 *.md
 README.*
 
-# Examples with intentional issues  
+# Examples with intentional issues
 examples/bad_*.py
 examples/vulnerable_*.py
 
@@ -207,35 +207,35 @@ class Scanner:
         # Merge settings and config
         self.settings = settings
         self.config = load_config()
-        
+
         # Combine exclusion patterns
         self.exclude_patterns = set()
         self.exclude_patterns.update(settings.scan_exclude_patterns)
         self.exclude_patterns.update(self.config.get("exclude", []))
-        
+
         # Load .codexignore if enabled
         if settings.use_codexignore:
             self.exclude_patterns.update(self._load_codexignore())
-    
+
     def _is_excluded(self, file_path: Path) -> bool:
         """Check all exclusion sources."""
-        
+
         # Check file size
         if self.settings.skip_binary_files and self._is_binary(file_path):
             return True
-            
+
         if file_path.stat().st_size > self.settings.max_file_size_bytes:
             return True
-        
+
         # Check gitignore
         if self.settings.use_gitignore and self._matches_gitignore(file_path):
             return True
-        
+
         # Check exclusion patterns
         for pattern in self.exclude_patterns:
             if fnmatch.fnmatch(str(file_path), f"*{pattern}*"):
                 return True
-        
+
         return False
 ```
 
@@ -258,12 +258,12 @@ exclude = [
     ".mypy_cache",
     "dist",
     "build",
-    
+
     # FIX FOR BACKUP DIRECTORIES
     "*_backup_*/",
     "quality_enforcement_backup_*/",
     "codex_backup_*/",
-    
+
     # Experimental files
     "demo_*.py",
     "experiment_*.py",

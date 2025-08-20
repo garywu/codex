@@ -26,7 +26,7 @@ Runs when you log in, stops when you log out:
 codex install-startup --user
 ```
 
-**macOS**: Installs to `~/Library/LaunchAgents/`  
+**macOS**: Installs to `~/Library/LaunchAgents/`
 **Linux**: Installs to `~/.config/systemd/user/`
 
 ### System Service
@@ -36,7 +36,7 @@ Runs at boot for all users (requires sudo):
 codex install-startup --system
 ```
 
-**macOS**: Installs to `/Library/LaunchDaemons/`  
+**macOS**: Installs to `/Library/LaunchDaemons/`
 **Linux**: Installs to `/etc/systemd/system/`
 
 ## Platform-Specific Details
@@ -55,7 +55,7 @@ The service uses launchd with the following configuration:
 # Start manually
 launchctl start com.codex.mcp-server
 
-# Stop manually  
+# Stop manually
 launchctl stop com.codex.mcp-server
 
 # Check status
@@ -246,7 +246,7 @@ The service sets these environment variables:
 
 To customize, edit the configuration files directly:
 
-**macOS**: Edit the `<key>EnvironmentVariables</key>` section in the plist  
+**macOS**: Edit the `<key>EnvironmentVariables</key>` section in the plist
 **Linux**: Edit the `Environment=` lines in the service file
 
 ## AI Assistant Integration

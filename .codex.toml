@@ -8,38 +8,38 @@ exclude = [
     "*.pyc",
     "__pycache__",
     "*.pyo",
-    
+
     # Virtual environments
     ".venv",
     "venv",
     "env",
-    
+
     # Version control
     ".git",
-    
+
     # Build artifacts
     "build/",
     "dist/",
     "*.egg-info",
-    
+
     # CRITICAL FIX: Exclude backup directories
     # This prevents scanning 576 duplicate violations
     "*_backup_*/",
     "quality_enforcement_backup_*/",
     "codex_backup_*/",
-    
+
     # Cache directories
     ".pytest_cache",
     ".mypy_cache",
     ".ruff_cache",
-    
+
     # Node modules
     "node_modules",
-    
+
     # OS files
     ".DS_Store",
     "Thumbs.db",
-    
+
     # Experimental/demo files in root
     "demo_*.py",
     "experiment_*.py",

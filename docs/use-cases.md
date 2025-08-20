@@ -71,7 +71,7 @@
 - **Commit Monitoring**: Real-time feedback on committed changes
 - **Branch Strategy Support**: Different analysis approaches for different branch types
 
-### Local Development Integration  
+### Local Development Integration
 - **IDE Plugins**: Real-time feedback during coding
 - **Pre-commit Hooks**: Quality checks before code is committed
 - **Development Server Integration**: Continuous monitoring during development

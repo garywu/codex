@@ -16,7 +16,7 @@
     {
       "name": "uv-package-manager",
       "category": "dependencies",
-      "priority": "MANDATORY", 
+      "priority": "MANDATORY",
       "description": "Use UV package manager instead of pip or poetry",
       "rationale": "Project standardized on UV for faster, more reliable package management",
       "detection_rules": {

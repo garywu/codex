@@ -19,14 +19,14 @@ class PatternImporter:
     async def import_from_project_init(self, data: dict[str, Any]) -> list[Pattern]:
         """Import patterns from project-init.json structure."""
         patterns = []
-        
+
         try:
             template = data.get("project_initialization_template", {})
-            
+
             # Import package management patterns
             if "tech_stack" in template:
                 tech_stack = template["tech_stack"]
-                
+
                 # UV package management pattern
                 if "package_management" in tech_stack:
                     uv_config = tech_stack["package_management"].get("uv", {})
@@ -46,7 +46,7 @@ class PatternImporter:
                         best_practices=["Always use uv for dependency management"],
                     )
                     patterns.append(await self.db.add_pattern(pattern))
-                
+
                 # Core libraries patterns
                 for lib in tech_stack.get("core_libraries", []):
                     pattern = Pattern(
@@ -65,7 +65,7 @@ class PatternImporter:
                         best_practices=lib.get("best_practices", []),
                     )
                     patterns.append(await self.db.add_pattern(pattern))
-                
+
                 # Quality tools patterns
                 for tool in tech_stack.get("quality_tools", []):
                     pattern = Pattern(
@@ -79,7 +79,7 @@ class PatternImporter:
                         best_practices=tool.get("best_practices", []),
                     )
                     patterns.append(await self.db.add_pattern(pattern))
-            
+
             # Import implementation patterns
             if "implementation_patterns" in template:
                 for pattern_name, pattern_data in template["implementation_patterns"].items():
@@ -95,7 +95,7 @@ class PatternImporter:
                             best_practices=pattern_data.get("best_practices", []),
                         )
                         patterns.append(await self.db.add_pattern(pattern))
-            
+
             # Import decorator patterns
             if "decorators" in template:
                 for decorator_group in template["decorators"].get("cross_cutting_concerns", []):
@@ -109,7 +109,7 @@ class PatternImporter:
                         tags=["decorator", "cross-cutting"],
                     )
                     patterns.append(await self.db.add_pattern(pattern))
-            
+
             # Import security patterns
             if "best_practices" in template:
                 for security_practice in template["best_practices"].get("security", []):
@@ -123,9 +123,9 @@ class PatternImporter:
                             tags=["security", "best-practice"],
                         )
                         patterns.append(await self.db.add_pattern(pattern))
-            
+
             return patterns
-            
+
         except Exception as e:
             raise PatternImportError("project-init.json", str(e)) from e
 
@@ -155,17 +155,17 @@ class PatternImporter:
             "unified": PatternCategory.API_DESIGN,
             "graceful": PatternCategory.ERROR_HANDLING,
         }
-        
+
         for key, category in category_map.items():
             if key in pattern_name.lower():
                 return category
-        
+
         return PatternCategory.PROJECT_STRUCTURE
 
     def _extract_tags(self, pattern_data: dict[str, Any]) -> list[str]:
         """Extract tags from pattern data."""
         tags = []
-        
+
         # Extract from various fields
         if "patterns" in pattern_data:
             tags.extend(pattern_data["patterns"][:3])
@@ -176,5 +176,5 @@ class PatternImporter:
             words = pattern_data["purpose"].lower().split()
             important_words = [w for w in words if len(w) > 4][:3]
             tags.extend(important_words)
-        
+
         return list(set(tags))[:10]  # Limit to 10 unique tags

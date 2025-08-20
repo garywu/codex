@@ -19,7 +19,7 @@ Codex implements a **multi-factor voting mechanism** that balances analysis spee
 # Examples inspired by open-lovable's intent patterns
 HALLUCINATION_PATTERNS = [
     r'import\s+(\w+)\s+from\s+["\'](\w+)["\']',  # Import validation
-    r'\.(\w+)\(',                                 # Method call validation  
+    r'\.(\w+)\(',                                 # Method call validation
     r'await\s+fetch\(["\']([^"\']+)["\']',       # API endpoint validation
     r'process\.env\.(\w+)',                       # Environment variable check
 ]
@@ -32,18 +32,18 @@ ANTI_PATTERNS = [
 ]
 ```
 
-**AST-Based Structural Analysis**  
+**AST-Based Structural Analysis**
 ```python
 class ASTAnalyzer:
     def check_imports(self, tree) -> List[Issue]:
         """Validate that imported modules/functions exist"""
-        
+
     def check_function_calls(self, tree) -> List[Issue]:
         """Verify called functions are defined or imported"""
-        
+
     def check_complexity(self, tree) -> List[Issue]:
         """Measure cyclomatic complexity, nesting depth"""
-        
+
     def check_naming_conventions(self, tree) -> List[Issue]:
         """Verify consistent naming patterns"""
 ```
@@ -57,7 +57,7 @@ class ASTAnalyzer:
 ### Layer 2: Contextual Analysis (Project-Aware)
 
 **Purpose**: Understand project context and enforce consistency
-**Performance**: < 500ms for complex changes  
+**Performance**: < 500ms for complex changes
 **Coverage**: ~25% of contextual issues
 
 #### Components:
@@ -70,13 +70,13 @@ class ProjectContext:
         self.frameworks = self.detect_frameworks()        # React, FastAPI, Django, etc.
         self.patterns = self.learn_patterns()             # Existing code patterns
         self.architecture = self.analyze_architecture()   # Project structure
-        
+
     def validate_dependency(self, import_name: str) -> bool:
         """Check if imported module is actually available"""
-        
+
     def check_framework_compliance(self, code: str) -> List[Issue]:
         """Verify code follows framework best practices"""
-        
+
     def assess_consistency(self, code: str) -> List[Issue]:
         """Compare against existing patterns in the project"""
 ```
@@ -106,13 +106,13 @@ class ProjectContext:
 class AIAnalyzer:
     async def analyze_logic_correctness(self, code: str, context: str) -> AnalysisResult:
         """Deep analysis of code logic and potential bugs"""
-        
-    async def check_goal_alignment(self, code: str, requirements: str) -> AnalysisResult:  
+
+    async def check_goal_alignment(self, code: str, requirements: str) -> AnalysisResult:
         """Verify code serves intended purpose"""
-        
+
     async def detect_hallucinations(self, code: str, available_apis: List[str]) -> AnalysisResult:
         """Identify references to non-existent APIs/functions"""
-        
+
     async def assess_architecture_fit(self, code: str, project_arch: str) -> AnalysisResult:
         """Check if code fits project architecture"""
 ```
@@ -123,10 +123,10 @@ class AIProviderManager:
     def __init__(self):
         self.providers = [
             ClaudeProvider(priority=100),
-            GPT4Provider(priority=90),  
+            GPT4Provider(priority=90),
             LocalModelProvider(priority=50)
         ]
-    
+
     async def analyze_with_fallback(self, prompt: str, code: str) -> AnalysisResult:
         """Try providers in priority order with fallback"""
 ```
@@ -139,24 +139,24 @@ class VotingEngine:
     def aggregate_votes(self, results: List[LayerResult]) -> CommitDecision:
         weighted_score = 0
         total_confidence = 0
-        
+
         for result in results:
             weight = self.calculate_weight(result)
             weighted_score += result.score * weight
             total_confidence += result.confidence * weight
-            
+
         return CommitDecision(
             should_commit=weighted_score > self.threshold,
             confidence=total_confidence / len(results),
             issues=self.merge_issues(results),
             fixes=self.merge_fixes(results)
         )
-    
+
     def calculate_weight(self, result: LayerResult) -> float:
         """Weight based on layer type and confidence"""
         base_weights = {
             LayerType.PATTERN: 0.8,    # High confidence in pattern matching
-            LayerType.CONTEXT: 0.6,    # Medium confidence in context  
+            LayerType.CONTEXT: 0.6,    # Medium confidence in context
             LayerType.AI: 0.4          # Lower weight, but high value
         }
         return base_weights[result.layer] * result.confidence
@@ -170,9 +170,9 @@ voting:
   commit_threshold: 0.7      # Overall score needed to auto-commit
   block_threshold: 0.3       # Score below which commit is blocked
   ai_trigger_threshold: 0.5  # When to engage AI analysis
-  
+
 layer_weights:
-  pattern: 0.8               # Trust pattern matching highly  
+  pattern: 0.8               # Trust pattern matching highly
   context: 0.6               # Medium trust in context analysis
   ai: 0.4                    # Conservative weight for AI (but high value)
 ```
@@ -182,7 +182,7 @@ layer_weights:
 **Scenario 1: Clean Code**
 ```python
 # Layer 1: No issues found (score: 1.0, confidence: 0.9)
-# Layer 2: Consistent with project (score: 0.95, confidence: 0.8)  
+# Layer 2: Consistent with project (score: 0.95, confidence: 0.8)
 # Layer 3: Not triggered
 # Decision: Auto-commit (weighted score: 0.98)
 ```
@@ -197,7 +197,7 @@ layer_weights:
 
 **Scenario 3: Complex Logic**
 ```python
-# Layer 1: No obvious patterns (score: 0.8, confidence: 0.3) 
+# Layer 1: No obvious patterns (score: 0.8, confidence: 0.3)
 # Layer 2: Unusual for project (score: 0.6, confidence: 0.4)
 # Layer 3: AI analysis needed -> Logic looks correct (score: 0.85, confidence: 0.8)
 # Decision: Allow with review (weighted score: 0.71)
@@ -210,10 +210,10 @@ layer_weights:
 class AnalysisCache:
     def cache_pattern_results(self, file_hash: str, results: PatternResult):
         """Cache regex and AST analysis results"""
-        
+
     def cache_context_analysis(self, project_hash: str, results: ContextResult):
         """Cache project-level analysis"""
-        
+
     def invalidate_on_dependency_change(self):
         """Clear cache when dependencies change"""
 ```
@@ -223,7 +223,7 @@ class AnalysisCache:
 class IncrementalAnalyzer:
     def analyze_only_changes(self, diff: GitDiff) -> List[AnalysisTarget]:
         """Focus analysis on changed lines and their context"""
-        
+
     def propagate_impact(self, changes: List[Change]) -> List[FileToAnalyze]:
         """Identify files affected by changes"""
 ```
@@ -233,7 +233,7 @@ class IncrementalAnalyzer:
 class EarlyTermination:
     def should_continue_to_next_layer(self, current_results: LayerResult) -> bool:
         """Skip expensive analysis if early layers are conclusive"""
-        
+
     # Examples:
     # - Skip AI if pattern analysis finds critical security issue
     # - Skip context if pattern analysis shows perfect code
@@ -250,17 +250,17 @@ analysis:
     pattern:
       enabled: true
       custom_patterns: "./patterns/"
-    context:  
+    context:
       enabled: true
       learn_from_history: true
     ai:
       enabled: "smart"  # always | smart | never
       model: "claude-3.5-sonnet"
-      
+
   voting:
     weights:
       pattern: 0.8
-      context: 0.6  
+      context: 0.6
       ai: 0.4
     thresholds:
       commit: 0.7
@@ -272,10 +272,10 @@ analysis:
 class AdaptiveTuning:
     def learn_from_feedback(self, commit_hash: str, developer_override: bool):
         """Adjust weights based on developer decisions"""
-        
+
     def update_project_patterns(self, successful_commits: List[Commit]):
         """Learn project-specific good patterns"""
-        
+
     def calibrate_thresholds(self, commit_history: CommitHistory):
         """Optimize thresholds based on historical data"""
 ```

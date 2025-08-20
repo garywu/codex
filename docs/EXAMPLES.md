@@ -138,7 +138,7 @@ def get_user(user_id):
 #### 2. Pattern-Specific Validation
 ```bash
 # Check for specific anti-patterns
-codex validate --code "eval(user_input)" 
+codex validate --code "eval(user_input)"
 # Returns: Security violation - never use eval() with user input
 
 codex validate --code "pip install httpx"
@@ -267,25 +267,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
-          
+
       - name: Install Codex
         run: |
           pip install -e .
           codex import-patterns .github/patterns.json
-          
+
       - name: Run Pattern Check
         run: codex --quiet
-        
+
       - name: Generate Compliance Report
         if: failure()
         run: |
           codex scan --format json > compliance-report.json
-          
+
       - name: Upload Report
         if: failure()
         uses: actions/upload-artifact@v3
@@ -298,7 +298,7 @@ jobs:
 ```yaml
 - name: Check Security Patterns
   run: codex check security-patterns src/
-  
+
 - name: Check HTTP Client Usage
   run: codex check use-httpx src/
 
@@ -320,7 +320,7 @@ repos:
         language: system
         pass_filenames: true
         args: ['--quiet']
-        
+
       - id: codex-fix
         name: Codex Auto-Fix
         entry: codex
@@ -424,7 +424,7 @@ docker run --rm -v $(pwd):/code codex-checker scan /code --format json
 },
 {
   "key": "ctrl+shift+v",
-  "command": "workbench.action.tasks.runTask", 
+  "command": "workbench.action.tasks.runTask",
   "args": "Codex: Validate Current File"
 }
 ```
@@ -593,7 +593,7 @@ codex query "HTTP client" --ai
 codex query "requests vs httpx" --ai
 
 # Understand violations
-codex validate --code "import requests" 
+codex validate --code "import requests"
 codex validate --code "eval(user_input)"
 ```
 

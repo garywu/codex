@@ -2322,7 +2322,7 @@ WARNING:root:build/lib/codex/mcp_server.py:162: use-pydantic-validation - Use Py
 │ │                    │   │   │   │   column=None,                          │ │
 │ │                    │   │   │   │   matched_code='"good_example": "except │ │
 │ │                    ValueError as e:\\n    logger.error(\'Invalid         │ │
-│ │                    value\', erro'+6,                                     │ │
+│ │                    value\', error'+6,                                     │ │
 │ │                    │   │   │   │   confidence=0.9,                       │ │
 │ │                    │   │   │   │   suggestion='Use JSON structured logs  │ │
 │ │                    with consistent schema',                              │ │
@@ -2467,10 +2467,10 @@ WARNING:root:build/lib/codex/mcp_server.py:162: use-pydantic-validation - Use Py
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ValidationError: 1 validation error for PatternMatch
 category
-  Input should be 'package_management', 'core_libraries', 'quality_tools', 
-'project_structure', 'error_handling', 'validation', 'resource_management', 
-'testing', 'security', 'documentation', 'decorators', 'database', 'api_design', 
-'cli_design', 'functional', 'dependencies', 'git', 'logging', 'monitoring', 
-'naming', 'typing', 'imports', 'ci_cd' or 'organization' [type=enum, 
+  Input should be 'package_management', 'core_libraries', 'quality_tools',
+'project_structure', 'error_handling', 'validation', 'resource_management',
+'testing', 'security', 'documentation', 'decorators', 'database', 'api_design',
+'cli_design', 'functional', 'dependencies', 'git', 'logging', 'monitoring',
+'naming', 'typing', 'imports', 'ci_cd' or 'organization' [type=enum,
 input_value='QUALITY_TOOLS', input_type=str]
     For further information visit https://errors.pydantic.dev/2.11/v/enum

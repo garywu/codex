@@ -13,6 +13,7 @@ from .models import CodeContext, Pattern, PatternCategory, PatternMatch
 # Optional imports
 try:
     from .client import CodexClient
+
     __all__ = [
         "CodexClient",
         "Pattern",

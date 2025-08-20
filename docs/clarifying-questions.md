@@ -7,7 +7,7 @@ Based on the initial project description, here are key questions that need clari
 ### 1. Real-Time Monitoring Scope
 - **Question**: When you mention "real-time monitoring," what is the expected latency? Should analysis happen on every keystroke, file save, or git commit?
 - **Impact**: Determines the technical architecture and performance requirements
-- **Options**: 
+- **Options**:
   - Keystroke-level (immediate feedback)
   - File save-level (practical real-time)
   - Commit-level (batch analysis)

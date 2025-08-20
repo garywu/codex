@@ -27,7 +27,7 @@ This document outlines the requirements for extending Heimdall to support GitHub
 ```python
 class GitHubOrgProvider:
     """GitHub Organization scanner for pattern collection."""
-    
+
     async def list_org_repos(org: str) -> List[RepoMetadata]
     async def get_repo_tree(owner: str, repo: str) -> List[FileEntry]
     async def get_file_content(owner: str, repo: str, path: str) -> FileContent
@@ -206,25 +206,25 @@ Heimdall provides a resource allocation interface (like malloc/free) for materia
 ```python
 class HeimdallResourceManager:
     """Manage temporary local copies of GitHub resources."""
-    
+
     async def allocate(self, github_path: str, ttl_hours: int = 24) -> Path:
         """
         Allocate a local copy of a GitHub resource.
-        
+
         Args:
             github_path: "org/repo/path/to/file" or "org/repo/**/*.py"
             ttl_hours: Time-to-live before auto-cleanup (default 24h)
-            
+
         Returns:
             Path to local file/directory
         """
-        
+
     async def allocate_many(self, github_paths: List[str]) -> Dict[str, Path]:
         """Allocate multiple resources at once."""
-        
+
     async def release(self, local_path: Path) -> None:
         """Release allocated resource (mark for cleanup)."""
-        
+
     async def release_all(self) -> None:
         """Release all allocated resources."""
 ```
@@ -242,7 +242,7 @@ class AllocatedResource:
     last_accessed: datetime
     ttl_seconds: int = 86400  # Default 24 hours
     client_id: str        # Track who allocated it
-    
+
     @property
     def is_expired(self) -> bool:
         """Check if resource has exceeded TTL."""
@@ -255,7 +255,7 @@ class AllocatedResource:
 ```python
 class ResourceCleaner:
     """Background cleanup of expired resources."""
-    
+
     async def cleanup_expired(self):
         """Remove resources that exceeded TTL."""
         for resource in self.get_all_allocated():
@@ -271,7 +271,7 @@ class ResourceCleaner:
 
 - **Default TTL**: 24 hours for most resources
 - **Small files** (<1MB): 1 hour TTL
-- **Medium repos** (<100MB): 12 hours TTL  
+- **Medium repos** (<100MB): 12 hours TTL
 - **Large datasets**: Up to 7 days TTL
 - **Force cleanup**: After 48 hours regardless of TTL
 - **Background check**: Every 5 minutes for expired resources
@@ -284,20 +284,20 @@ from heimdall import HeimdallResourceManager
 
 async def analyze_repo():
     rm = HeimdallResourceManager()
-    
+
     # Allocate - fetches from GitHub if needed, returns local path
     repo_path = await rm.allocate("wtfoss/someproject", ttl_hours=24)
-    
+
     try:
         # Now use standard filesystem tools
         subprocess.run(["ruff", "check", repo_path])
         subprocess.run(["mypy", repo_path])
-        
+
         # Process files
         pyproject = repo_path / "pyproject.toml"
         if pyproject.exists():
             extract_patterns(pyproject)
-    
+
     finally:
         # Release when done (or auto-cleanup after TTL)
         await rm.release(repo_path)

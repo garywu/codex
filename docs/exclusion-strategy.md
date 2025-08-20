@@ -121,7 +121,7 @@ use_codexignore = true  # Look for .codexignore file
 
 exclude = [
     "*_backup_*/",
-    "build/", 
+    "build/",
     "experiments/",
 ]
 
@@ -143,34 +143,34 @@ def should_scan_file(file_path: Path) -> bool:
     """
     Systematic exclusion check order:
     1. Binary file check
-    2. File size check  
+    2. File size check
     3. .gitignore patterns (if use_gitignore=true)
     4. .codexignore patterns
     5. Config exclude patterns
     6. Override includes
     """
-    
+
     # 1. Skip binary files
     if is_binary(file_path):
         return False
-    
+
     # 2. Skip large files
     if file_path.stat().st_size > max_file_size:
         return False
-    
+
     # 3. Check .gitignore
     if use_gitignore and matches_gitignore(file_path):
         if not in_override_includes(file_path):
             return False
-    
+
     # 4. Check .codexignore
     if matches_codexignore(file_path):
         return False
-    
+
     # 5. Check config excludes
     if matches_config_excludes(file_path):
         return False
-    
+
     return True
 ```
 
@@ -181,11 +181,11 @@ def should_check_pattern(pattern_name: str, file_path: Path) -> bool:
     Some patterns shouldn't apply to certain files/directories
     """
     pattern_excludes = config.get_pattern_excludes(pattern_name)
-    
+
     for exclude_path in pattern_excludes:
         if file_path.match(exclude_path):
             return False
-    
+
     return True
 ```
 
@@ -314,7 +314,7 @@ codex --explain
 #   Pattern: *_backup_*/
 #   Source: .codex.toml
 
-# ✅ FILE_INCLUDED: codex/scanner.py  
+# ✅ FILE_INCLUDED: codex/scanner.py
 #   Reason: Passed all filters
 #   Checked: .gitignore (pass), .codexignore (pass), config (pass)
 ```
@@ -326,7 +326,7 @@ codex --explain
 # See what's currently being scanned
 codex --dry-run --list-files > current-files.txt
 
-# See what's excluded  
+# See what's excluded
 codex --dry-run --show-excluded > excluded-files.txt
 ```
 
@@ -393,11 +393,11 @@ exclude = [
     "*_backup_*/",
     "quality_enforcement_backup_*/",
     "codex_backup_*/",
-    
+
     # Build artifacts
     "build/",
     "dist/",
-    
+
     # Experimental files in root
     "demo_*.py",
     "test_*.py",
@@ -412,7 +412,7 @@ pattern = "mock-code-naming"
 paths = ["tests/fixtures/"]
 
 [[tool.codex.pattern_exclude]]
-pattern = "no-hardcoded-secrets"  
+pattern = "no-hardcoded-secrets"
 paths = ["tests/test_data/", "examples/"]
 ```
 

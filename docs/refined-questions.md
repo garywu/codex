@@ -13,7 +13,7 @@ Based on the major architectural clarification that **Codex is a code generation
 class UniversalCodeGenModule(dspy.Module):
     def forward(self, requirements, project_type, language): ...
 
-# Approach B: Specialized modules per domain  
+# Approach B: Specialized modules per domain
 class APICodeGenModule(dspy.Module): ...
 class ComponentCodeGenModule(dspy.Module): ...
 class TestCodeGenModule(dspy.Module): ...
@@ -41,7 +41,7 @@ class TypeScriptCodeGenModule(dspy.Module): ...
 
 **Options**:
 - Continuous learning (after each project)
-- Batch optimization (weekly/monthly)  
+- Batch optimization (weekly/monthly)
 - Project-specific optimization
 - Global optimization across all projects
 
@@ -52,7 +52,7 @@ class TypeScriptCodeGenModule(dspy.Module): ...
 
 **Granularity Options**:
 - **Project-level**: Full project scaffolding (like ALLM structure)
-- **Component-level**: Individual files/modules  
+- **Component-level**: Individual files/modules
 - **Pattern-level**: Code snippets and patterns
 - **All levels**: Hierarchical template system
 
@@ -92,7 +92,7 @@ for file in project_structure.code_files:
 - Customize provider preferences for different tasks (generation vs. analysis)
 - Route different DSPy modules to different providers based on their strengths
 
-### 3.2 Cost Optimization  
+### 3.2 Cost Optimization
 **Question**: How to balance generation quality with LLM costs?
 
 **Approaches**:
@@ -146,7 +146,7 @@ for iteration in range(max_iterations):
 - **Competitive**: Codex provides superior generation through DSPy optimization
 - **Hybrid**: Support both modes depending on user preference
 
-### 5.2 Differentiation Strategy  
+### 5.2 Differentiation Strategy
 **Question**: What are Codex's key differentiators in the code generation space?
 
 **Unique Value Props**:
@@ -193,7 +193,7 @@ for iteration in range(max_iterations):
 # Approach A: Project-focused
 codex create api-project --template fastapi --features auth,db,docs
 
-# Approach B: Component-focused  
+# Approach B: Component-focused
 codex generate component --type api-endpoint --name users
 
 # Approach C: Interactive
@@ -205,7 +205,7 @@ codex interactive  # Walks through project creation
 
 **Integration Points**:
 - IDE extensions for in-editor generation
-- Git hooks for quality assurance  
+- Git hooks for quality assurance
 - CI/CD pipeline integration
 - Project initialization commands
 
@@ -227,7 +227,7 @@ codex interactive  # Walks through project creation
 
 **Update Mechanisms**:
 - Local retraining based on user projects
-- Periodic model updates from central repository  
+- Periodic model updates from central repository
 - Community sharing of optimized modules
 
 ## Priority Questions for Next Discussion

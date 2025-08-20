@@ -13,7 +13,7 @@
     "detection": {
       "structural_indicators": [
         "has_core_package",
-        "has_api_package", 
+        "has_api_package",
         "has_cli_package"
       ],
       "protective_patterns": [
@@ -56,7 +56,7 @@
   },
   {
     "name": "settings-consolidation-excellence",
-    "category": "configuration_excellence", 
+    "category": "configuration_excellence",
     "priority": "MANDATORY",
     "description": "Projects with unified Pydantic settings avoid configuration chaos and hardcoded secrets",
     "negative_space_analysis": {
@@ -112,7 +112,7 @@
   {
     "name": "package-depth-optimization",
     "category": "organization_excellence",
-    "priority": "MEDIUM", 
+    "priority": "MEDIUM",
     "description": "Projects with 2-4 package depth avoid complexity and naming redundancy",
     "negative_space_analysis": {
       "problems_prevented": ["redundant_package_naming", "package_based_architecture"],
@@ -165,7 +165,7 @@
     "tags": ["organization", "naming", "complexity", "negative_space"]
   },
   {
-    "name": "comprehensive-testing-protection", 
+    "name": "comprehensive-testing-protection",
     "category": "quality_excellence",
     "priority": "HIGH",
     "description": "Projects with proper test structure avoid mock naming violations and quality issues",
@@ -196,7 +196,7 @@
       ],
       "benefits": [
         "Prevents mock naming violations",
-        "Reduces pre-commit skip usage", 
+        "Reduces pre-commit skip usage",
         "Clear test organization",
         "Better test discoverability"
       ]

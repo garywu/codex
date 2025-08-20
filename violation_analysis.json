@@ -1,0 +1,2517 @@
+{
+  "summary": {
+    "total_violations": 304,
+    "total_files": 78,
+    "total_modules": 5,
+    "total_patterns": 18
+  },
+  "by_module": {
+    "experiments": 20,
+    "codex": 209,
+    "tests": 43,
+    "root": 17,
+    "scripts": 15
+  },
+  "by_category": {
+    "Security": 75,
+    "Testing": 108,
+    "Other": 100,
+    "Package Management": 21
+  },
+  "by_pattern": {
+    "no-cors": 24,
+    "secure-jwt": 10,
+    "mock-code": 13,
+    "structured": 13,
+    "use-db-context": 14,
+    "use-uv-package": 12,
+    "minimum-test": 41,
+    "use-pydantic": 15,
+    "mock-code-naming": 45,
+    "structured-logging": 30,
+    "use-uv-package-manager": 9,
+    "use-pydantic-validation": 11,
+    "no-cors-wildcard": 35,
+    "secure-jwt-storage": 6,
+    "sanitize-production": 13,
+    "minimum-test-coverage": 9,
+    "sanitize-production-errors": 2,
+    "use-db-context-managers": 2
+  },
+  "hotspots": [
+    [
+      "codex/scan_rules.py",
+      8
+    ],
+    [
+      "codex/interactive_fixer.py",
+      8
+    ],
+    [
+      "codex/scanner.py",
+      7
+    ],
+    [
+      "codex/sqlite_scanner.py",
+      7
+    ],
+    [
+      "codex/ai_query.py",
+      7
+    ],
+    [
+      "codex/cli.py",
+      7
+    ],
+    [
+      "tests/test_fts_direct.py",
+      7
+    ],
+    [
+      "tests/test_safe_fixing.py",
+      7
+    ],
+    [
+      "experiments/smart_scanner.py",
+      6
+    ],
+    [
+      "codex/safe_fixer.py",
+      6
+    ]
+  ],
+  "details": [
+    {
+      "file": "experiments/intelligent_fixer.py",
+      "line": 371,
+      "pattern": "no-cors",
+      "category": "Security",
+      "module": "experiments",
+      "message": "wildcard -"
+    },
+    {
+      "file": "experiments/intelligent_fixer.py",
+      "line": 210,
+      "pattern": "secure-jwt",
+      "category": "Security",
+      "module": "experiments",
+      "message": "storage"
+    },
+    {
+      "file": "experiments/intelligent_fixer.py",
+      "line": 111,
+      "pattern": "mock-code",
+      "category": "Testing",
+      "module": "experiments",
+      "message": "naming -"
+    },
+    {
+      "file": "experiments/intelligent_fixer.py",
+      "line": 101,
+      "pattern": "structured",
+      "category": "Other",
+      "module": "experiments",
+      "message": "logging"
+    },
+    {
+      "file": "experiments/smart_scanner.py",
+      "line": 42,
+      "pattern": "no-cors",
+      "category": "Security",
+      "module": "experiments",
+      "message": "wildcard -"
+    },
+    {
+      "file": "experiments/smart_scanner.py",
+      "line": 225,
+      "pattern": "mock-code",
+      "category": "Testing",
+      "module": "experiments",
+      "message": "naming -"
+    },
+    {
+      "file": "experiments/smart_scanner.py",
+      "line": 68,
+      "pattern": "use-db-context",
+      "category": "Other",
+      "module": "experiments",
+      "message": "managers"
+    },
+    {
+      "file": "experiments/smart_scanner.py",
+      "line": 125,
+      "pattern": "use-uv-package",
+      "category": "Package Management",
+      "module": "experiments",
+      "message": "manager"
+    },
+    {
+      "file": "experiments/smart_scanner.py",
+      "line": 25,
+      "pattern": "structured",
+      "category": "Other",
+      "module": "experiments",
+      "message": "logging -"
+    },
+    {
+      "file": "experiments/smart_scanner.py",
+      "line": 225,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "experiments",
+      "message": "coverage"
+    },
+    {
+      "file": "experiments/comprehensive_fixer.py",
+      "line": 82,
+      "pattern": "no-cors",
+      "category": "Security",
+      "module": "experiments",
+      "message": "wildcard"
+    },
+    {
+      "file": "experiments/simple_fixer.py",
+      "line": 160,
+      "pattern": "no-cors",
+      "category": "Security",
+      "module": "experiments",
+      "message": "wildcard -"
+    },
+    {
+      "file": "experiments/simple_fixer.py",
+      "line": 267,
+      "pattern": "use-db-context",
+      "category": "Other",
+      "module": "experiments",
+      "message": "managers"
+    },
+    {
+      "file": "experiments/simple_fixer.py",
+      "line": 187,
+      "pattern": "structured",
+      "category": "Other",
+      "module": "experiments",
+      "message": "logging -"
+    },
+    {
+      "file": "experiments/simple_fixer.py",
+      "line": 143,
+      "pattern": "use-pydantic",
+      "category": "Other",
+      "module": "experiments",
+      "message": "validation"
+    },
+    {
+      "file": "experiments/simple_scanner.py",
+      "line": 96,
+      "pattern": "no-cors",
+      "category": "Security",
+      "module": "experiments",
+      "message": "wildcard -"
+    },
+    {
+      "file": "experiments/intelligent_scanner.py",
+      "line": 65,
+      "pattern": "no-cors",
+      "category": "Security",
+      "module": "experiments",
+      "message": "wildcard"
+    },
+    {
+      "file": "experiments/intelligent_scanner.py",
+      "line": 62,
+      "pattern": "mock-code",
+      "category": "Testing",
+      "module": "experiments",
+      "message": "naming"
+    },
+    {
+      "file": "experiments/violation_analyzer.py",
+      "line": 26,
+      "pattern": "no-cors",
+      "category": "Security",
+      "module": "experiments",
+      "message": "wildcard -"
+    },
+    {
+      "file": "experiments/violation_analyzer.py",
+      "line": 22,
+      "pattern": "structured",
+      "category": "Other",
+      "module": "experiments",
+      "message": "logging"
+    },
+    {
+      "file": "codex/pattern_models.py",
+      "line": 23,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock"
+    },
+    {
+      "file": "codex/pattern_models.py",
+      "line": 5,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use JSON"
+    },
+    {
+      "file": "codex/pattern_models.py",
+      "line": 29,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "codex",
+      "message": "coverage -"
+    },
+    {
+      "file": "codex/pattern_models.py",
+      "line": 19,
+      "pattern": "use-pydantic",
+      "category": "Other",
+      "module": "codex",
+      "message": "validation -"
+    },
+    {
+      "file": "codex/safe_fixer.py",
+      "line": 34,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock"
+    },
+    {
+      "file": "codex/safe_fixer.py",
+      "line": 308,
+      "pattern": "use-db-context",
+      "category": "Other",
+      "module": "codex",
+      "message": "managers -"
+    },
+    {
+      "file": "codex/safe_fixer.py",
+      "line": 525,
+      "pattern": "use-uv-package-manager",
+      "category": "Package Management",
+      "module": "codex",
+      "message": "Use uv"
+    },
+    {
+      "file": "codex/safe_fixer.py",
+      "line": 13,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use JSON"
+    },
+    {
+      "file": "codex/safe_fixer.py",
+      "line": 207,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "codex",
+      "message": "coverage -"
+    },
+    {
+      "file": "codex/safe_fixer.py",
+      "line": 5,
+      "pattern": "use-pydantic-validation",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use"
+    },
+    {
+      "file": "codex/fix_audit_trail.py",
+      "line": 393,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER"
+    },
+    {
+      "file": "codex/fix_audit_trail.py",
+      "line": 647,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock"
+    },
+    {
+      "file": "codex/fix_audit_trail.py",
+      "line": 47,
+      "pattern": "use-db-context",
+      "category": "Other",
+      "module": "codex",
+      "message": "managers -"
+    },
+    {
+      "file": "codex/fix_audit_trail.py",
+      "line": 649,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "codex",
+      "message": "coverage -"
+    },
+    {
+      "file": "codex/fix_audit_trail.py",
+      "line": 37,
+      "pattern": "use-pydantic",
+      "category": "Other",
+      "module": "codex",
+      "message": "validation -"
+    },
+    {
+      "file": "codex/scanner.py",
+      "line": 612,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER use '*'"
+    },
+    {
+      "file": "codex/scanner.py",
+      "line": 609,
+      "pattern": "secure-jwt-storage",
+      "category": "Security",
+      "module": "codex",
+      "message": "Store JWT"
+    },
+    {
+      "file": "codex/scanner.py",
+      "line": 380,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock functions"
+    },
+    {
+      "file": "codex/scanner.py",
+      "line": 9,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use JSON"
+    },
+    {
+      "file": "codex/scanner.py",
+      "line": 363,
+      "pattern": "sanitize-production",
+      "category": "Other",
+      "module": "codex",
+      "message": "errors -"
+    },
+    {
+      "file": "codex/scanner.py",
+      "line": 380,
+      "pattern": "minimum-test-coverage",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Maintain"
+    },
+    {
+      "file": "codex/scanner.py",
+      "line": 160,
+      "pattern": "use-pydantic-validation",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use"
+    },
+    {
+      "file": "codex/organization_scanner.py",
+      "line": 32,
+      "pattern": "no-cors",
+      "category": "Security",
+      "module": "codex",
+      "message": "wildcard -"
+    },
+    {
+      "file": "codex/organization_scanner.py",
+      "line": 32,
+      "pattern": "mock-code",
+      "category": "Testing",
+      "module": "codex",
+      "message": "naming -"
+    },
+    {
+      "file": "codex/organization_scanner.py",
+      "line": 50,
+      "pattern": "use-uv-package",
+      "category": "Package Management",
+      "module": "codex",
+      "message": "manager"
+    },
+    {
+      "file": "codex/organization_scanner.py",
+      "line": 32,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "codex",
+      "message": "coverage"
+    },
+    {
+      "file": "codex/config.py",
+      "line": 62,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER use '*' in"
+    },
+    {
+      "file": "codex/config.py",
+      "line": 68,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock functions"
+    },
+    {
+      "file": "codex/config.py",
+      "line": 68,
+      "pattern": "minimum-test-coverage",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Maintain 80%"
+    },
+    {
+      "file": "codex/models.py",
+      "line": 26,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock functions"
+    },
+    {
+      "file": "codex/models.py",
+      "line": 37,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use JSON"
+    },
+    {
+      "file": "codex/models.py",
+      "line": 33,
+      "pattern": "minimum-test-coverage",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Maintain 80%"
+    },
+    {
+      "file": "codex/models.py",
+      "line": 4,
+      "pattern": "use-pydantic-validation",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use"
+    },
+    {
+      "file": "codex/fix_validation_rules.py",
+      "line": 12,
+      "pattern": "no-cors",
+      "category": "Security",
+      "module": "codex",
+      "message": "wildcard -"
+    },
+    {
+      "file": "codex/fix_validation_rules.py",
+      "line": 205,
+      "pattern": "secure-jwt",
+      "category": "Security",
+      "module": "codex",
+      "message": "storage -"
+    },
+    {
+      "file": "codex/fix_validation_rules.py",
+      "line": 32,
+      "pattern": "mock-code",
+      "category": "Testing",
+      "module": "codex",
+      "message": "naming -"
+    },
+    {
+      "file": "codex/fix_validation_rules.py",
+      "line": 137,
+      "pattern": "structured",
+      "category": "Other",
+      "module": "codex",
+      "message": "logging -"
+    },
+    {
+      "file": "codex/fix_validation_rules.py",
+      "line": 204,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "codex",
+      "message": "coverage"
+    },
+    {
+      "file": "codex/negative_space_patterns.py",
+      "line": 82,
+      "pattern": "no-cors",
+      "category": "Security",
+      "module": "codex",
+      "message": "wildcard -"
+    },
+    {
+      "file": "codex/negative_space_patterns.py",
+      "line": 105,
+      "pattern": "secure-jwt",
+      "category": "Security",
+      "module": "codex",
+      "message": "storage"
+    },
+    {
+      "file": "codex/negative_space_patterns.py",
+      "line": 127,
+      "pattern": "mock-code",
+      "category": "Testing",
+      "module": "codex",
+      "message": "naming -"
+    },
+    {
+      "file": "codex/unified_database.py",
+      "line": 282,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER"
+    },
+    {
+      "file": "codex/unified_database.py",
+      "line": 168,
+      "pattern": "use-db-context",
+      "category": "Other",
+      "module": "codex",
+      "message": "managers -"
+    },
+    {
+      "file": "codex/unified_database.py",
+      "line": 8,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use"
+    },
+    {
+      "file": "codex/scan_rules.py",
+      "line": 62,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER use '*'"
+    },
+    {
+      "file": "codex/scan_rules.py",
+      "line": 93,
+      "pattern": "secure-jwt-storage",
+      "category": "Security",
+      "module": "codex",
+      "message": "Store JWT"
+    },
+    {
+      "file": "codex/scan_rules.py",
+      "line": 26,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock"
+    },
+    {
+      "file": "codex/scan_rules.py",
+      "line": 113,
+      "pattern": "use-db-context",
+      "category": "Other",
+      "module": "codex",
+      "message": "managers -"
+    },
+    {
+      "file": "codex/scan_rules.py",
+      "line": 161,
+      "pattern": "use-uv-package-manager",
+      "category": "Package Management",
+      "module": "codex",
+      "message": "Use uv"
+    },
+    {
+      "file": "codex/scan_rules.py",
+      "line": 252,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use JSON"
+    },
+    {
+      "file": "codex/scan_rules.py",
+      "line": 26,
+      "pattern": "minimum-test-coverage",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Maintain"
+    },
+    {
+      "file": "codex/scan_rules.py",
+      "line": 280,
+      "pattern": "use-pydantic-validation",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use"
+    },
+    {
+      "file": "codex/scan_discovery.py",
+      "line": 50,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER use"
+    },
+    {
+      "file": "codex/scan_discovery.py",
+      "line": 113,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock"
+    },
+    {
+      "file": "codex/scan_discovery.py",
+      "line": 75,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use"
+    },
+    {
+      "file": "codex/scan_discovery.py",
+      "line": 113,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "codex",
+      "message": "coverage -"
+    },
+    {
+      "file": "codex/scan_discovery.py",
+      "line": 136,
+      "pattern": "use-pydantic",
+      "category": "Other",
+      "module": "codex",
+      "message": "validation -"
+    },
+    {
+      "file": "codex/database.py",
+      "line": 8,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock functions"
+    },
+    {
+      "file": "codex/client.py",
+      "line": 83,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER use '*' in"
+    },
+    {
+      "file": "codex/client.py",
+      "line": 36,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock functions"
+    },
+    {
+      "file": "codex/client.py",
+      "line": 242,
+      "pattern": "use-uv-package-manager",
+      "category": "Package Management",
+      "module": "codex",
+      "message": "Use uv for"
+    },
+    {
+      "file": "codex/client.py",
+      "line": 13,
+      "pattern": "sanitize-production-errors",
+      "category": "Other",
+      "module": "codex",
+      "message": "Return"
+    },
+    {
+      "file": "codex/client.py",
+      "line": 36,
+      "pattern": "minimum-test-coverage",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Maintain 80%"
+    },
+    {
+      "file": "codex/tools.py",
+      "line": 85,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER use '*' in"
+    },
+    {
+      "file": "codex/tools.py",
+      "line": 9,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use JSON"
+    },
+    {
+      "file": "codex/tools.py",
+      "line": 85,
+      "pattern": "sanitize-production-errors",
+      "category": "Other",
+      "module": "codex",
+      "message": "Return"
+    },
+    {
+      "file": "codex/tools.py",
+      "line": 120,
+      "pattern": "use-pydantic-validation",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use"
+    },
+    {
+      "file": "codex/ai_sqlite_query.py",
+      "line": 28,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER"
+    },
+    {
+      "file": "codex/ai_sqlite_query.py",
+      "line": 503,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock"
+    },
+    {
+      "file": "codex/ai_sqlite_query.py",
+      "line": 141,
+      "pattern": "use-db-context",
+      "category": "Other",
+      "module": "codex",
+      "message": "managers -"
+    },
+    {
+      "file": "codex/ai_sqlite_query.py",
+      "line": 54,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use"
+    },
+    {
+      "file": "codex/ai_sqlite_query.py",
+      "line": 503,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "codex",
+      "message": "coverage -"
+    },
+    {
+      "file": "codex/pattern_cli.py",
+      "line": 61,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER use"
+    },
+    {
+      "file": "codex/pattern_cli.py",
+      "line": 629,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock"
+    },
+    {
+      "file": "codex/pattern_cli.py",
+      "line": 9,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use JSON"
+    },
+    {
+      "file": "codex/pattern_cli.py",
+      "line": 58,
+      "pattern": "sanitize-production",
+      "category": "Other",
+      "module": "codex",
+      "message": "errors -"
+    },
+    {
+      "file": "codex/pattern_cli.py",
+      "line": 629,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "codex",
+      "message": "coverage -"
+    },
+    {
+      "file": "codex/pattern_cli.py",
+      "line": 67,
+      "pattern": "use-pydantic-validation",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use"
+    },
+    {
+      "file": "codex/__init__.py",
+      "line": 10,
+      "pattern": "sanitize-production",
+      "category": "Other",
+      "module": "codex",
+      "message": "errors -"
+    },
+    {
+      "file": "codex/sqlite_scanner.py",
+      "line": 218,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER"
+    },
+    {
+      "file": "codex/sqlite_scanner.py",
+      "line": 342,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock"
+    },
+    {
+      "file": "codex/sqlite_scanner.py",
+      "line": 35,
+      "pattern": "use-db-context",
+      "category": "Other",
+      "module": "codex",
+      "message": "managers -"
+    },
+    {
+      "file": "codex/sqlite_scanner.py",
+      "line": 459,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use"
+    },
+    {
+      "file": "codex/sqlite_scanner.py",
+      "line": 471,
+      "pattern": "sanitize-production",
+      "category": "Other",
+      "module": "codex",
+      "message": "errors"
+    },
+    {
+      "file": "codex/sqlite_scanner.py",
+      "line": 481,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "codex",
+      "message": "coverage -"
+    },
+    {
+      "file": "codex/sqlite_scanner.py",
+      "line": 323,
+      "pattern": "use-pydantic",
+      "category": "Other",
+      "module": "codex",
+      "message": "validation -"
+    },
+    {
+      "file": "codex/project_config.py",
+      "line": 29,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER use"
+    },
+    {
+      "file": "codex/project_config.py",
+      "line": 191,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock"
+    },
+    {
+      "file": "codex/project_config.py",
+      "line": 10,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use"
+    },
+    {
+      "file": "codex/project_config.py",
+      "line": 193,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "codex",
+      "message": "coverage -"
+    },
+    {
+      "file": "codex/scan_cli.py",
+      "line": 281,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER use '*'"
+    },
+    {
+      "file": "codex/scan_cli.py",
+      "line": 293,
+      "pattern": "secure-jwt-storage",
+      "category": "Security",
+      "module": "codex",
+      "message": "Store JWT"
+    },
+    {
+      "file": "codex/scan_cli.py",
+      "line": 116,
+      "pattern": "use-db-context-managers",
+      "category": "Other",
+      "module": "codex",
+      "message": "Always"
+    },
+    {
+      "file": "codex/scan_cli.py",
+      "line": 13,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use JSON"
+    },
+    {
+      "file": "codex/fts_database.py",
+      "line": 9,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock"
+    },
+    {
+      "file": "codex/fix_orchestrator.py",
+      "line": 190,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER"
+    },
+    {
+      "file": "codex/fix_orchestrator.py",
+      "line": 438,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock"
+    },
+    {
+      "file": "codex/fix_orchestrator.py",
+      "line": 585,
+      "pattern": "use-db-context",
+      "category": "Other",
+      "module": "codex",
+      "message": "managers -"
+    },
+    {
+      "file": "codex/fix_orchestrator.py",
+      "line": 655,
+      "pattern": "use-uv-package",
+      "category": "Package Management",
+      "module": "codex",
+      "message": "manager -"
+    },
+    {
+      "file": "codex/fix_orchestrator.py",
+      "line": 69,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "codex",
+      "message": "coverage -"
+    },
+    {
+      "file": "codex/fix_orchestrator.py",
+      "line": 655,
+      "pattern": "use-pydantic",
+      "category": "Other",
+      "module": "codex",
+      "message": "validation -"
+    },
+    {
+      "file": "codex/fix_context_analyzer.py",
+      "line": 460,
+      "pattern": "no-cors",
+      "category": "Security",
+      "module": "codex",
+      "message": "wildcard -"
+    },
+    {
+      "file": "codex/fix_context_analyzer.py",
+      "line": 282,
+      "pattern": "mock-code",
+      "category": "Testing",
+      "module": "codex",
+      "message": "naming -"
+    },
+    {
+      "file": "codex/fix_context_analyzer.py",
+      "line": 349,
+      "pattern": "structured",
+      "category": "Other",
+      "module": "codex",
+      "message": "logging -"
+    },
+    {
+      "file": "codex/fix_context_analyzer.py",
+      "line": 22,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "codex",
+      "message": "coverage"
+    },
+    {
+      "file": "codex/ai_query.py",
+      "line": 160,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER use '*'"
+    },
+    {
+      "file": "codex/ai_query.py",
+      "line": 256,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock functions"
+    },
+    {
+      "file": "codex/ai_query.py",
+      "line": 131,
+      "pattern": "use-uv-package-manager",
+      "category": "Package Management",
+      "module": "codex",
+      "message": "Use uv"
+    },
+    {
+      "file": "codex/ai_query.py",
+      "line": 144,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use JSON"
+    },
+    {
+      "file": "codex/ai_query.py",
+      "line": 144,
+      "pattern": "sanitize-production",
+      "category": "Other",
+      "module": "codex",
+      "message": "errors -"
+    },
+    {
+      "file": "codex/ai_query.py",
+      "line": 256,
+      "pattern": "minimum-test-coverage",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Maintain"
+    },
+    {
+      "file": "codex/ai_query.py",
+      "line": 262,
+      "pattern": "use-pydantic-validation",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use"
+    },
+    {
+      "file": "codex/violation_analysis.py",
+      "line": 74,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER"
+    },
+    {
+      "file": "codex/violation_analysis.py",
+      "line": 75,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock"
+    },
+    {
+      "file": "codex/violation_analysis.py",
+      "line": 72,
+      "pattern": "use-uv-package",
+      "category": "Package Management",
+      "module": "codex",
+      "message": "manager -"
+    },
+    {
+      "file": "codex/violation_analysis.py",
+      "line": 75,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "codex",
+      "message": "coverage -"
+    },
+    {
+      "file": "codex/scan_registry.py",
+      "line": 105,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER use"
+    },
+    {
+      "file": "codex/scan_registry.py",
+      "line": 47,
+      "pattern": "secure-jwt-storage",
+      "category": "Security",
+      "module": "codex",
+      "message": "Store"
+    },
+    {
+      "file": "codex/scan_registry.py",
+      "line": 150,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock"
+    },
+    {
+      "file": "codex/scan_registry.py",
+      "line": 258,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use"
+    },
+    {
+      "file": "codex/scan_registry.py",
+      "line": 150,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "codex",
+      "message": "coverage -"
+    },
+    {
+      "file": "codex/cli.py",
+      "line": 351,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER use '*' in"
+    },
+    {
+      "file": "codex/cli.py",
+      "line": 341,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock functions must"
+    },
+    {
+      "file": "codex/cli.py",
+      "line": 334,
+      "pattern": "use-db-context-managers",
+      "category": "Other",
+      "module": "codex",
+      "message": "Always use"
+    },
+    {
+      "file": "codex/cli.py",
+      "line": 687,
+      "pattern": "use-uv-package-manager",
+      "category": "Package Management",
+      "module": "codex",
+      "message": "Use uv for"
+    },
+    {
+      "file": "codex/cli.py",
+      "line": 37,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use JSON"
+    },
+    {
+      "file": "codex/cli.py",
+      "line": 135,
+      "pattern": "minimum-test-coverage",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Maintain 80%"
+    },
+    {
+      "file": "codex/cli.py",
+      "line": 235,
+      "pattern": "use-pydantic-validation",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use Pydantic"
+    },
+    {
+      "file": "codex/config_cli.py",
+      "line": 142,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER use"
+    },
+    {
+      "file": "codex/config_cli.py",
+      "line": 148,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock"
+    },
+    {
+      "file": "codex/config_cli.py",
+      "line": 238,
+      "pattern": "use-uv-package-manager",
+      "category": "Package Management",
+      "module": "codex",
+      "message": "Use uv"
+    },
+    {
+      "file": "codex/config_cli.py",
+      "line": 148,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "codex",
+      "message": "coverage -"
+    },
+    {
+      "file": "codex/scan_context.py",
+      "line": 511,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER use"
+    },
+    {
+      "file": "codex/scan_context.py",
+      "line": 506,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock"
+    },
+    {
+      "file": "codex/scan_context.py",
+      "line": 98,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use JSON"
+    },
+    {
+      "file": "codex/scan_context.py",
+      "line": 183,
+      "pattern": "sanitize-production",
+      "category": "Other",
+      "module": "codex",
+      "message": "errors -"
+    },
+    {
+      "file": "codex/scan_context.py",
+      "line": 506,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "codex",
+      "message": "coverage -"
+    },
+    {
+      "file": "codex/portable_tools.py",
+      "line": 293,
+      "pattern": "use-uv-package",
+      "category": "Package Management",
+      "module": "codex",
+      "message": "manager -"
+    },
+    {
+      "file": "codex/portable_tools.py",
+      "line": 215,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use"
+    },
+    {
+      "file": "codex/portable_tools.py",
+      "line": 96,
+      "pattern": "sanitize-production",
+      "category": "Other",
+      "module": "codex",
+      "message": "errors -"
+    },
+    {
+      "file": "codex/portable_tools.py",
+      "line": 232,
+      "pattern": "use-pydantic",
+      "category": "Other",
+      "module": "codex",
+      "message": "validation -"
+    },
+    {
+      "file": "codex/settings.py",
+      "line": 66,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER use '*'"
+    },
+    {
+      "file": "codex/settings.py",
+      "line": 63,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock functions"
+    },
+    {
+      "file": "codex/settings.py",
+      "line": 63,
+      "pattern": "minimum-test-coverage",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Maintain"
+    },
+    {
+      "file": "codex/pattern_importer.py",
+      "line": 153,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock"
+    },
+    {
+      "file": "codex/pattern_importer.py",
+      "line": 39,
+      "pattern": "use-uv-package",
+      "category": "Package Management",
+      "module": "codex",
+      "message": "manager -"
+    },
+    {
+      "file": "codex/pattern_importer.py",
+      "line": 7,
+      "pattern": "sanitize-production",
+      "category": "Other",
+      "module": "codex",
+      "message": "errors"
+    },
+    {
+      "file": "codex/pattern_importer.py",
+      "line": 154,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "codex",
+      "message": "coverage -"
+    },
+    {
+      "file": "codex/pattern_importer.py",
+      "line": 150,
+      "pattern": "use-pydantic",
+      "category": "Other",
+      "module": "codex",
+      "message": "validation -"
+    },
+    {
+      "file": "codex/exceptions.py",
+      "line": 2,
+      "pattern": "sanitize-production",
+      "category": "Other",
+      "module": "codex",
+      "message": "errors -"
+    },
+    {
+      "file": "codex/gitignore_handler.py",
+      "line": 27,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER"
+    },
+    {
+      "file": "codex/gitignore_handler.py",
+      "line": 38,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock"
+    },
+    {
+      "file": "codex/gitignore_handler.py",
+      "line": 42,
+      "pattern": "use-uv-package",
+      "category": "Package Management",
+      "module": "codex",
+      "message": "manager -"
+    },
+    {
+      "file": "codex/gitignore_handler.py",
+      "line": 40,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "codex",
+      "message": "coverage -"
+    },
+    {
+      "file": "codex/pattern_extractor.py",
+      "line": 49,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock"
+    },
+    {
+      "file": "codex/pattern_extractor.py",
+      "line": 42,
+      "pattern": "use-uv-package",
+      "category": "Package Management",
+      "module": "codex",
+      "message": "manager -"
+    },
+    {
+      "file": "codex/pattern_extractor.py",
+      "line": 49,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "codex",
+      "message": "coverage -"
+    },
+    {
+      "file": "codex/scan_manager.py",
+      "line": 228,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER use"
+    },
+    {
+      "file": "codex/scan_manager.py",
+      "line": 28,
+      "pattern": "secure-jwt-storage",
+      "category": "Security",
+      "module": "codex",
+      "message": "Store JWT"
+    },
+    {
+      "file": "codex/scan_manager.py",
+      "line": 90,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock"
+    },
+    {
+      "file": "codex/scan_manager.py",
+      "line": 103,
+      "pattern": "use-db-context",
+      "category": "Other",
+      "module": "codex",
+      "message": "managers -"
+    },
+    {
+      "file": "codex/scan_manager.py",
+      "line": 228,
+      "pattern": "sanitize-production",
+      "category": "Other",
+      "module": "codex",
+      "message": "errors -"
+    },
+    {
+      "file": "codex/scan_manager.py",
+      "line": 40,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "codex",
+      "message": "coverage -"
+    },
+    {
+      "file": "codex/rules_cli.py",
+      "line": 92,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER use '*'"
+    },
+    {
+      "file": "codex/rules_cli.py",
+      "line": 98,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock functions"
+    },
+    {
+      "file": "codex/rules_cli.py",
+      "line": 8,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use JSON"
+    },
+    {
+      "file": "codex/rules_cli.py",
+      "line": 98,
+      "pattern": "minimum-test-coverage",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Maintain"
+    },
+    {
+      "file": "codex/rules_cli.py",
+      "line": 116,
+      "pattern": "use-pydantic-validation",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use"
+    },
+    {
+      "file": "codex/violation_reporter.py",
+      "line": 323,
+      "pattern": "no-cors",
+      "category": "Security",
+      "module": "codex",
+      "message": "wildcard -"
+    },
+    {
+      "file": "codex/violation_reporter.py",
+      "line": 334,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock"
+    },
+    {
+      "file": "codex/violation_reporter.py",
+      "line": 44,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use"
+    },
+    {
+      "file": "codex/violation_reporter.py",
+      "line": 338,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "codex",
+      "message": "coverage -"
+    },
+    {
+      "file": "codex/uv_check.py",
+      "line": 189,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER use '*'"
+    },
+    {
+      "file": "codex/uv_check.py",
+      "line": 38,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock functions"
+    },
+    {
+      "file": "codex/uv_check.py",
+      "line": 115,
+      "pattern": "use-uv-package-manager",
+      "category": "Package Management",
+      "module": "codex",
+      "message": "Use uv"
+    },
+    {
+      "file": "codex/uv_check.py",
+      "line": 12,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use JSON"
+    },
+    {
+      "file": "codex/mcp_server.py",
+      "line": 230,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER use"
+    },
+    {
+      "file": "codex/mcp_server.py",
+      "line": 108,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock"
+    },
+    {
+      "file": "codex/mcp_server.py",
+      "line": 47,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use JSON"
+    },
+    {
+      "file": "codex/mcp_server.py",
+      "line": 9,
+      "pattern": "sanitize-production",
+      "category": "Other",
+      "module": "codex",
+      "message": "errors -"
+    },
+    {
+      "file": "codex/mcp_server.py",
+      "line": 108,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "codex",
+      "message": "coverage -"
+    },
+    {
+      "file": "codex/mcp_server.py",
+      "line": 149,
+      "pattern": "use-pydantic-validation",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use"
+    },
+    {
+      "file": "codex/batch_fixer.py",
+      "line": 83,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER use"
+    },
+    {
+      "file": "codex/batch_fixer.py",
+      "line": 22,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock"
+    },
+    {
+      "file": "codex/batch_fixer.py",
+      "line": 112,
+      "pattern": "use-uv-package-manager",
+      "category": "Package Management",
+      "module": "codex",
+      "message": "Use"
+    },
+    {
+      "file": "codex/batch_fixer.py",
+      "line": 10,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use JSON"
+    },
+    {
+      "file": "codex/batch_fixer.py",
+      "line": 77,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "codex",
+      "message": "coverage -"
+    },
+    {
+      "file": "codex/interactive_fixer.py",
+      "line": 69,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER"
+    },
+    {
+      "file": "codex/interactive_fixer.py",
+      "line": 577,
+      "pattern": "secure-jwt",
+      "category": "Security",
+      "module": "codex",
+      "message": "storage -"
+    },
+    {
+      "file": "codex/interactive_fixer.py",
+      "line": 73,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock"
+    },
+    {
+      "file": "codex/interactive_fixer.py",
+      "line": 85,
+      "pattern": "use-db-context",
+      "category": "Other",
+      "module": "codex",
+      "message": "managers -"
+    },
+    {
+      "file": "codex/interactive_fixer.py",
+      "line": 398,
+      "pattern": "use-uv-package",
+      "category": "Package Management",
+      "module": "codex",
+      "message": "manager -"
+    },
+    {
+      "file": "codex/interactive_fixer.py",
+      "line": 74,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "codex",
+      "message": "Use"
+    },
+    {
+      "file": "codex/interactive_fixer.py",
+      "line": 208,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "codex",
+      "message": "coverage -"
+    },
+    {
+      "file": "codex/interactive_fixer.py",
+      "line": 75,
+      "pattern": "use-pydantic",
+      "category": "Other",
+      "module": "codex",
+      "message": "validation -"
+    },
+    {
+      "file": "tests/test_startup.py",
+      "line": 17,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "tests",
+      "message": "NEVER use"
+    },
+    {
+      "file": "tests/test_startup.py",
+      "line": 14,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "tests",
+      "message": "Mock"
+    },
+    {
+      "file": "tests/test_startup.py",
+      "line": 14,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "tests",
+      "message": "coverage -"
+    },
+    {
+      "file": "tests/test_sqlite_scanning.py",
+      "line": 24,
+      "pattern": "no-cors",
+      "category": "Security",
+      "module": "tests",
+      "message": "wildcard -"
+    },
+    {
+      "file": "tests/test_sqlite_scanning.py",
+      "line": 13,
+      "pattern": "mock-code",
+      "category": "Testing",
+      "module": "tests",
+      "message": "naming -"
+    },
+    {
+      "file": "tests/test_sqlite_scanning.py",
+      "line": 13,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "tests",
+      "message": "coverage"
+    },
+    {
+      "file": "tests/test_fts_direct.py",
+      "line": 13,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "tests",
+      "message": "NEVER"
+    },
+    {
+      "file": "tests/test_fts_direct.py",
+      "line": 11,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "tests",
+      "message": "Mock"
+    },
+    {
+      "file": "tests/test_fts_direct.py",
+      "line": 102,
+      "pattern": "use-uv-package",
+      "category": "Package Management",
+      "module": "tests",
+      "message": "manager -"
+    },
+    {
+      "file": "tests/test_fts_direct.py",
+      "line": 116,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "tests",
+      "message": "Use"
+    },
+    {
+      "file": "tests/test_fts_direct.py",
+      "line": 116,
+      "pattern": "sanitize-production",
+      "category": "Other",
+      "module": "tests",
+      "message": "errors"
+    },
+    {
+      "file": "tests/test_fts_direct.py",
+      "line": 29,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "tests",
+      "message": "coverage -"
+    },
+    {
+      "file": "tests/test_fts_direct.py",
+      "line": 94,
+      "pattern": "use-pydantic",
+      "category": "Other",
+      "module": "tests",
+      "message": "validation -"
+    },
+    {
+      "file": "tests/test_implementation.py",
+      "line": 71,
+      "pattern": "no-cors",
+      "category": "Security",
+      "module": "tests",
+      "message": "wildcard -"
+    },
+    {
+      "file": "tests/test_implementation.py",
+      "line": 15,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "tests",
+      "message": "Mock"
+    },
+    {
+      "file": "tests/test_implementation.py",
+      "line": 39,
+      "pattern": "use-uv-package",
+      "category": "Package Management",
+      "module": "tests",
+      "message": "manager"
+    },
+    {
+      "file": "tests/test_implementation.py",
+      "line": 15,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "tests",
+      "message": "coverage -"
+    },
+    {
+      "file": "tests/test_implementation.py",
+      "line": 52,
+      "pattern": "use-pydantic",
+      "category": "Other",
+      "module": "tests",
+      "message": "validation"
+    },
+    {
+      "file": "tests/test_sqlite_core.py",
+      "line": 364,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "tests",
+      "message": "NEVER"
+    },
+    {
+      "file": "tests/test_sqlite_core.py",
+      "line": 3,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "tests",
+      "message": "Mock"
+    },
+    {
+      "file": "tests/test_sqlite_core.py",
+      "line": 27,
+      "pattern": "use-db-context",
+      "category": "Other",
+      "module": "tests",
+      "message": "managers -"
+    },
+    {
+      "file": "tests/test_sqlite_core.py",
+      "line": 207,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "tests",
+      "message": "Use"
+    },
+    {
+      "file": "tests/test_sqlite_core.py",
+      "line": 524,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "tests",
+      "message": "coverage -"
+    },
+    {
+      "file": "tests/test_sqlite_core.py",
+      "line": 192,
+      "pattern": "use-pydantic",
+      "category": "Other",
+      "module": "tests",
+      "message": "validation -"
+    },
+    {
+      "file": "tests/test_safe_fixing.py",
+      "line": 234,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "tests",
+      "message": "NEVER"
+    },
+    {
+      "file": "tests/test_safe_fixing.py",
+      "line": 169,
+      "pattern": "secure-jwt",
+      "category": "Security",
+      "module": "tests",
+      "message": "storage -"
+    },
+    {
+      "file": "tests/test_safe_fixing.py",
+      "line": 12,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "tests",
+      "message": "Mock"
+    },
+    {
+      "file": "tests/test_safe_fixing.py",
+      "line": 188,
+      "pattern": "use-uv-package",
+      "category": "Package Management",
+      "module": "tests",
+      "message": "manager -"
+    },
+    {
+      "file": "tests/test_safe_fixing.py",
+      "line": 280,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "tests",
+      "message": "Use"
+    },
+    {
+      "file": "tests/test_safe_fixing.py",
+      "line": 55,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "tests",
+      "message": "coverage -"
+    },
+    {
+      "file": "tests/test_safe_fixing.py",
+      "line": 188,
+      "pattern": "use-pydantic",
+      "category": "Other",
+      "module": "tests",
+      "message": "validation -"
+    },
+    {
+      "file": "tests/test_mcp_protocol.py",
+      "line": 35,
+      "pattern": "secure-jwt",
+      "category": "Security",
+      "module": "tests",
+      "message": "storage -"
+    },
+    {
+      "file": "tests/test_mcp_protocol.py",
+      "line": 13,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "tests",
+      "message": "Mock"
+    },
+    {
+      "file": "tests/test_mcp_protocol.py",
+      "line": 101,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "tests",
+      "message": "Use"
+    },
+    {
+      "file": "tests/test_mcp_protocol.py",
+      "line": 34,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "tests",
+      "message": "coverage -"
+    },
+    {
+      "file": "tests/test_mcp_protocol.py",
+      "line": 268,
+      "pattern": "use-pydantic",
+      "category": "Other",
+      "module": "tests",
+      "message": "validation"
+    },
+    {
+      "file": "tests/test_cli_commands.py",
+      "line": 12,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "tests",
+      "message": "NEVER"
+    },
+    {
+      "file": "tests/test_cli_commands.py",
+      "line": 37,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "tests",
+      "message": "Mock"
+    },
+    {
+      "file": "tests/test_cli_commands.py",
+      "line": 3,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "tests",
+      "message": "coverage -"
+    },
+    {
+      "file": "tests/test_dogfooding.py",
+      "line": 29,
+      "pattern": "sanitize-production",
+      "category": "Other",
+      "module": "tests",
+      "message": "errors"
+    },
+    {
+      "file": "tests/test_dogfooding.py",
+      "line": 9,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "tests",
+      "message": "coverage -"
+    },
+    {
+      "file": "tests/test_quick_mcp.py",
+      "line": 12,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "tests",
+      "message": "Mock"
+    },
+    {
+      "file": "tests/test_quick_mcp.py",
+      "line": 5,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "tests",
+      "message": "coverage -"
+    },
+    {
+      "file": "fixers/__init__.py",
+      "line": 10,
+      "pattern": "secure-jwt-storage",
+      "category": "Security",
+      "module": "root",
+      "message": "Store JWT"
+    },
+    {
+      "file": "fixers/__init__.py",
+      "line": 12,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "root",
+      "message": "Use JSON"
+    },
+    {
+      "file": "fixers/external_tools_fixer.py",
+      "line": 13,
+      "pattern": "structured",
+      "category": "Other",
+      "module": "root",
+      "message": "logging -"
+    },
+    {
+      "file": "fixers/print_to_logging_fixer.py",
+      "line": 57,
+      "pattern": "no-cors",
+      "category": "Security",
+      "module": "root",
+      "message": "wildcard -"
+    },
+    {
+      "file": "fixers/print_to_logging_fixer.py",
+      "line": 13,
+      "pattern": "structured",
+      "category": "Other",
+      "module": "root",
+      "message": "logging"
+    },
+    {
+      "file": "fixers/fixer_orchestrator.py",
+      "line": 16,
+      "pattern": "secure-jwt",
+      "category": "Security",
+      "module": "root",
+      "message": "storage -"
+    },
+    {
+      "file": "fixers/fixer_orchestrator.py",
+      "line": 172,
+      "pattern": "mock-code",
+      "category": "Testing",
+      "module": "root",
+      "message": "naming -"
+    },
+    {
+      "file": "fixers/fixer_orchestrator.py",
+      "line": 71,
+      "pattern": "use-db-context",
+      "category": "Other",
+      "module": "root",
+      "message": "managers"
+    },
+    {
+      "file": "fixers/fixer_orchestrator.py",
+      "line": 20,
+      "pattern": "structured",
+      "category": "Other",
+      "module": "root",
+      "message": "logging -"
+    },
+    {
+      "file": "fixers/fixer_orchestrator.py",
+      "line": 172,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "root",
+      "message": "coverage"
+    },
+    {
+      "file": "fixers/hardcoded_paths_fixer.py",
+      "line": 122,
+      "pattern": "no-cors",
+      "category": "Security",
+      "module": "root",
+      "message": "wildcard -"
+    },
+    {
+      "file": "fixers/hardcoded_paths_fixer.py",
+      "line": 3,
+      "pattern": "secure-jwt",
+      "category": "Security",
+      "module": "root",
+      "message": "storage -"
+    },
+    {
+      "file": "fixers/hardcoded_paths_fixer.py",
+      "line": 13,
+      "pattern": "structured",
+      "category": "Other",
+      "module": "root",
+      "message": "logging -"
+    },
+    {
+      "file": "fixers/remaining_issues_fixer.py",
+      "line": 106,
+      "pattern": "no-cors",
+      "category": "Security",
+      "module": "root",
+      "message": "wildcard -"
+    },
+    {
+      "file": "fixers/remaining_issues_fixer.py",
+      "line": 13,
+      "pattern": "structured",
+      "category": "Other",
+      "module": "root",
+      "message": "logging"
+    },
+    {
+      "file": "scripts/import_patterns_unified.py",
+      "line": 21,
+      "pattern": "no-cors",
+      "category": "Security",
+      "module": "scripts",
+      "message": "wildcard"
+    },
+    {
+      "file": "scripts/import_patterns_unified.py",
+      "line": 69,
+      "pattern": "mock-code",
+      "category": "Testing",
+      "module": "scripts",
+      "message": "naming"
+    },
+    {
+      "file": "scripts/ai_query_interface.py",
+      "line": 121,
+      "pattern": "no-cors",
+      "category": "Security",
+      "module": "scripts",
+      "message": "wildcard -"
+    },
+    {
+      "file": "scripts/ai_query_interface.py",
+      "line": 141,
+      "pattern": "mock-code",
+      "category": "Testing",
+      "module": "scripts",
+      "message": "naming -"
+    },
+    {
+      "file": "scripts/ai_query_interface.py",
+      "line": 140,
+      "pattern": "structured",
+      "category": "Other",
+      "module": "scripts",
+      "message": "logging -"
+    },
+    {
+      "file": "scripts/ai_query_interface.py",
+      "line": 192,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "scripts",
+      "message": "coverage"
+    },
+    {
+      "file": "scripts/pattern_refiner.py",
+      "line": 84,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "scripts",
+      "message": "NEVER"
+    },
+    {
+      "file": "scripts/pattern_refiner.py",
+      "line": 42,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "scripts",
+      "message": "Mock"
+    },
+    {
+      "file": "scripts/pattern_refiner.py",
+      "line": 399,
+      "pattern": "use-db-context",
+      "category": "Other",
+      "module": "scripts",
+      "message": "managers"
+    },
+    {
+      "file": "scripts/pattern_refiner.py",
+      "line": 141,
+      "pattern": "structured-logging",
+      "category": "Other",
+      "module": "scripts",
+      "message": "Use"
+    },
+    {
+      "file": "scripts/pattern_refiner.py",
+      "line": 229,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "scripts",
+      "message": "coverage -"
+    },
+    {
+      "file": "scripts/evolution_tracker.py",
+      "line": 112,
+      "pattern": "no-cors",
+      "category": "Security",
+      "module": "scripts",
+      "message": "wildcard -"
+    },
+    {
+      "file": "scripts/evolution_tracker.py",
+      "line": 102,
+      "pattern": "mock-code",
+      "category": "Testing",
+      "module": "scripts",
+      "message": "naming -"
+    },
+    {
+      "file": "scripts/evolution_tracker.py",
+      "line": 102,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "scripts",
+      "message": "coverage"
+    },
+    {
+      "file": "scripts/check_organization.py",
+      "line": 27,
+      "pattern": "no-cors",
+      "category": "Security",
+      "module": "scripts",
+      "message": "wildcard -"
+    },
+    {
+      "file": "src/main.py",
+      "line": 1,
+      "pattern": "use-uv-package-manager",
+      "category": "Package Management",
+      "module": "root",
+      "message": "Use uv for speed"
+    },
+    {
+      "file": "src/main.py",
+      "line": 1,
+      "pattern": "use-pydantic-validation",
+      "category": "Other",
+      "module": "root",
+      "message": "Use Pydantic"
+    },
+    {
+      "file": "codex/rules/settings_rules.py",
+      "line": 89,
+      "pattern": "no-cors",
+      "category": "Security",
+      "module": "codex",
+      "message": "wildcard -"
+    },
+    {
+      "file": "codex/rules/settings_rules.py",
+      "line": 63,
+      "pattern": "secure-jwt",
+      "category": "Security",
+      "module": "codex",
+      "message": "storage -"
+    },
+    {
+      "file": "codex/rules/registry.py",
+      "line": 134,
+      "pattern": "no-cors-wildcard",
+      "category": "Security",
+      "module": "codex",
+      "message": "NEVER"
+    },
+    {
+      "file": "codex/rules/registry.py",
+      "line": 22,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock"
+    },
+    {
+      "file": "codex/rules/categories.py",
+      "line": 45,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock"
+    },
+    {
+      "file": "codex/rules/categories.py",
+      "line": 60,
+      "pattern": "use-pydantic",
+      "category": "Other",
+      "module": "codex",
+      "message": "validation -"
+    },
+    {
+      "file": "codex/rules/database_rules.py",
+      "line": 188,
+      "pattern": "no-cors",
+      "category": "Security",
+      "module": "codex",
+      "message": "wildcard -"
+    },
+    {
+      "file": "codex/rules/database_rules.py",
+      "line": 124,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "codex",
+      "message": "coverage"
+    },
+    {
+      "file": "codex/rules/loader.py",
+      "line": 24,
+      "pattern": "mock-code-naming",
+      "category": "Testing",
+      "module": "codex",
+      "message": "Mock"
+    },
+    {
+      "file": "codex/rules/loader.py",
+      "line": 24,
+      "pattern": "minimum-test",
+      "category": "Testing",
+      "module": "codex",
+      "message": "coverage -"
+    },
+    {
+      "file": "codex/data/default_patterns.py",
+      "line": 21,
+      "pattern": "no-cors",
+      "category": "Security",
+      "module": "codex",
+      "message": "wildcard -"
+    },
+    {
+      "file": "codex/data/default_patterns.py",
+      "line": 79,
+      "pattern": "secure-jwt",
+      "category": "Security",
+      "module": "codex",
+      "message": "storage -"
+    },
+    {
+      "file": "codex/data/default_patterns.py",
+      "line": 103,
+      "pattern": "mock-code",
+      "category": "Testing",
+      "module": "codex",
+      "message": "naming -"
+    },
+    {
+      "file": "codex/data/default_patterns.py",
+      "line": 140,
+      "pattern": "structured",
+      "category": "Other",
+      "module": "codex",
+      "message": "logging -"
+    }
+  ]
+}
