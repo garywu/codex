@@ -1,0 +1,463 @@
+[
+  {
+    "name": "zombie_versioned_files",
+    "category": "code_quality",
+    "priority": "HIGH",
+    "description": "Detect files with version suffixes that indicate zombie code",
+    "detection_rules": {
+      "file_patterns": [
+        ".*_v[0-9]+\\.py$",
+        ".*_v[0-9]+_[0-9]+\\.py$",
+        ".*_simple\\.py$",
+        ".*_legacy\\.py$",
+        ".*_backup\\.py$",
+        ".*_old\\.py$",
+        ".*_new\\.py$",
+        ".*_original\\.py$",
+        ".*_copy\\.py$"
+      ],
+      "excludes": [
+        "test_.*",
+        ".*_test\\.py$",
+        "migrations/.*"
+      ]
+    },
+    "rationale": "Zombie code accumulation leads to confusion and technical debt",
+    "fix_strategy": "consolidate_to_canonical",
+    "severity": "WARNING"
+  },
+  {
+    "name": "core_business_logic_separation",
+    "category": "architecture",
+    "priority": "CRITICAL",
+    "description": "All business logic must be in core package, never in CLI or interface layers",
+    "detection_rules": {
+      "file_patterns": [
+        ".*cli\\.py$",
+        "cli/.*\\.py$",
+        ".*interface.*\\.py$"
+      ],
+      "content_patterns": [
+        "class\\s+\\w+(?:Service|Manager|Handler|Engine|Processor|Repository|DAO)\\s*\\(",
+        "def\\s+(?:process|calculate|analyze|generate|transform|compute|execute)_\\w+",
+        "(?:async\\s+)?def\\s+\\w*(?:business|domain|logic)\\w*",
+        "class\\s+\\w*(?:Business|Domain|Logic)\\w*\\s*\\(",
+        "from\\s+.*\\b(?:models|entities|repositories|services)\\b.*import",
+        "import\\s+(?:pandas|numpy|scipy|sklearn|torch)",
+        "\\b(?:SELECT|INSERT|UPDATE|DELETE)\\b.*FROM",
+        "session\\.(?:query|add|commit|execute)",
+        "(?:for|while)\\s+\\w+\\s+in.*:.*(?:for|while)",
+        "try:\\s*\\n.*except\\s+\\w+.*:\\s*\\n.*(?:raise|return)"
+      ],
+      "excludes": [
+        "def\\s+.*(?:parse|format|display|print|show|render|output).*",
+        "typer\\.",
+        "click\\.",
+        "argparse\\.",
+        "console\\.",
+        "rich\\.",
+        "print\\s*\\(",
+        "input\\s*\\(",
+        "sys\\.exit"
+      ]
+    },
+    "rationale": "CLI should only handle user interaction, formatting, and argument parsing",
+    "fix_strategy": "move_to_core_package",
+    "severity": "ERROR"
+  },
+  {
+    "name": "cli_as_thin_layer",
+    "category": "architecture",
+    "priority": "HIGH",
+    "description": "CLI should only handle user interaction, formatting, and argument parsing",
+    "detection_rules": {
+      "file_patterns": [
+        ".*cli\\.py$",
+        "cli/.*\\.py$"
+      ],
+      "content_patterns": [
+        "def\\s+\\w+\\([^)]*\\):[^}]*?(?:(?:for|while)\\s+\\w+\\s+in.*:.*){2,}",
+        "def\\s+\\w+\\([^)]*\\):[^}]*?(?:try:\\s*.*?except.*:.*?){2,}",
+        "class\\s+\\w+:[^}]*?def\\s+(?!__init__|__str__|__repr__)\\w+.*?:",
+        "(?:async\\s+)?def\\s+\\w+\\([^)]*\\):[^}]*?(?:await\\s+)?\\w+\\.(?:save|create|update|delete|execute)",
+        "def\\s+\\w+\\([^)]*\\):[^}]*?(?:session|db|database)\\.",
+        "def\\s+\\w+\\([^)]*\\):[^}]*?(?:SELECT|INSERT|UPDATE|DELETE)"
+      ],
+      "excludes": [
+        "def\\s+main\\(",
+        "if\\s+__name__\\s*==\\s*['\"]__main__['\"]",
+        "typer\\.run",
+        "click\\.command",
+        "argparse\\."
+      ]
+    },
+    "rationale": "CLI must delegate all operations to core API with zero business logic",
+    "fix_strategy": "extract_to_core_api",
+    "severity": "WARNING"
+  },
+  {
+    "name": "unified_data_source_interface",
+    "category": "architecture",
+    "priority": "HIGH",
+    "description": "All data sources must be accessible through same interface regardless of type",
+    "detection_rules": {
+      "content_patterns": [
+        "class\\s+(\\w+)(?:Source|Client|API|Handler)\\s*\\([^)]*\\):[^}]*?def\\s+(?!status|download|search|generate)\\w+",
+        "class\\s+(\\w+)(?:Source|Client|API|Handler)\\s*\\([^)]*\\):[^}]*?(?!.*def\\s+status.*def\\s+download.*def\\s+search)",
+        "def\\s+(?:fetch|get|retrieve)_from_\\w+\\(",
+        "if\\s+source_type\\s*==\\s*['\"]\\w+['\"]:[^}]*?(?:if\\s+source_type\\s*==\\s*['\"]\\w+['\"]){2,}"
+      ],
+      "excludes": [
+        "class\\s+\\w+(?:Source|Client|API|Handler)\\s*\\([^)]*\\):[^}]*?def\\s+status.*def\\s+download.*def\\s+search.*def\\s+generate",
+        "ABC|abstractmethod"
+      ]
+    },
+    "rationale": "Consistent interface across web_apis, datasets, academic_databases, social_platforms, file_systems",
+    "fix_strategy": "implement_unified_interface",
+    "severity": "WARNING"
+  },
+  {
+    "name": "metadata_as_cached_data",
+    "category": "architecture",
+    "priority": "MEDIUM",
+    "description": "Dataset metadata should be treated as cached sample data, not configuration",
+    "detection_rules": {
+      "content_patterns": [
+        "metadata\\s*=\\s*\\{[^}]*['\"]config['\"]",
+        "class\\s+\\w*Metadata\\w*\\s*\\([^)]*\\):[^}]*?(?:save|persist|store)_config",
+        "def\\s+(?:load|read)_metadata\\([^)]*\\):[^}]*?(?:yaml|json|toml)\\.load",
+        "metadata\\.(?:save|write|persist)\\(",
+        "with\\s+open\\([^)]*metadata[^)]*['\"]w['\"]"
+      ],
+      "excludes": [
+        "cache",
+        "temp",
+        "sqlite",
+        "database"
+      ]
+    },
+    "rationale": "Metadata should use compressed SQLite storage for searchability",
+    "fix_strategy": "convert_to_cached_data",
+    "severity": "INFO"
+  },
+  {
+    "name": "settings_consolidation",
+    "category": "configuration",
+    "priority": "MANDATORY",
+    "description": "Single source of truth with Pydantic validation",
+    "detection_rules": {
+      "content_patterns": [
+        "class\\s+(\\w+)Settings\\s*\\([^)]*\\):",
+        "class\\s+(\\w+)Config\\s*\\([^)]*\\):",
+        "os\\.environ\\.get\\(['\"][^'\"]+['\"]\\s*,\\s*[^)]*\\)",
+        "config\\s*=\\s*\\{",
+        "settings\\s*=\\s*\\{"
+      ],
+      "file_patterns": [
+        ".*config.*\\.py$",
+        ".*settings.*\\.py$"
+      ],
+      "excludes": [
+        "BaseSettings",
+        "pydantic",
+        "Field"
+      ]
+    },
+    "rationale": "Environment variables > .env > config files > defaults hierarchy",
+    "fix_strategy": "consolidate_with_pydantic",
+    "severity": "ERROR"
+  },
+  {
+    "name": "structured_data_types",
+    "category": "architecture",
+    "priority": "HIGH",
+    "description": "Use structured data types (Pydantic models) instead of raw dictionaries",
+    "detection_rules": {
+      "content_patterns": [
+        "def\\s+\\w+\\([^)]*\\)\\s*->\\s*dict:",
+        "def\\s+\\w+\\([^)]*\\)\\s*->\\s*Dict\\[",
+        "return\\s*\\{[^}]*['\"]\\w+['\"]\\s*:",
+        "data\\s*=\\s*\\{[^}]*['\"]\\w+['\"]\\s*:",
+        "response\\s*=\\s*\\{[^}]*['\"]\\w+['\"]\\s*:"
+      ],
+      "excludes": [
+        "BaseModel",
+        "pydantic",
+        "dataclass",
+        "NamedTuple",
+        "typing\\.TypedDict"
+      ]
+    },
+    "rationale": "Structured types provide validation and type safety",
+    "fix_strategy": "convert_to_pydantic_models",
+    "severity": "WARNING"
+  },
+  {
+    "name": "lazy_loading_implementation",
+    "category": "performance",
+    "priority": "MEDIUM",
+    "description": "Initialize expensive components only when needed",
+    "detection_rules": {
+      "content_patterns": [
+        "class\\s+\\w+:[^}]*?def\\s+__init__\\([^)]*\\):[^}]*?(?:connect|initialize|setup)\\(",
+        "def\\s+__init__\\([^)]*\\):[^}]*?(?:self\\.\\w+\\s*=\\s*\\w+\\([^)]*expensive[^)]*\\)|self\\.\\w+\\s*=\\s*\\w+Connection\\()",
+        "import\\s+(?:pandas|numpy|scipy|sklearn|torch|tensorflow)",
+        "^(?!.*@property).*def\\s+\\w+\\([^)]*\\):[^}]*?(?:pd\\.|np\\.|torch\\.|tf\\.)"
+      ],
+      "excludes": [
+        "@property",
+        "lazy",
+        "functools\\.lru_cache",
+        "cached_property"
+      ]
+    },
+    "rationale": "Faster startup through delayed initialization",
+    "fix_strategy": "implement_lazy_loading",
+    "severity": "INFO"
+  },
+  {
+    "name": "compressed_sqlite_storage",
+    "category": "data_management",
+    "priority": "MEDIUM",
+    "description": "Use SQLite with compression for efficient metadata storage",
+    "detection_rules": {
+      "content_patterns": [
+        "def\\s+save_metadata\\([^)]*\\):[^}]*?(?:json\\.dump|pickle\\.dump|yaml\\.dump)",
+        "with\\s+open\\([^)]*metadata[^)]*['\"]wb?['\"]\\s*\\)",
+        "metadata\\.(?:to_csv|to_json|to_pickle)\\(",
+        "(?:json|pickle|yaml)\\.(?:dump|save)\\([^)]*metadata"
+      ],
+      "excludes": [
+        "sqlite",
+        "compress",
+        "zlib",
+        "gzip"
+      ]
+    },
+    "rationale": "SQLite with compression balances speed and storage efficiency",
+    "fix_strategy": "convert_to_compressed_sqlite",
+    "severity": "INFO"
+  },
+  {
+    "name": "health_monitoring_all_sources",
+    "category": "reliability",
+    "priority": "HIGH",
+    "description": "Health monitoring for all data sources",
+    "detection_rules": {
+      "content_patterns": [
+        "class\\s+(\\w+)(?:Source|Client|API|Handler)\\s*\\([^)]*\\):[^}]*?(?!.*def\\s+health)",
+        "class\\s+(\\w+)(?:Source|Client|API|Handler)\\s*\\([^)]*\\):[^}]*?(?!.*def\\s+status)"
+      ],
+      "excludes": [
+        "def\\s+health",
+        "def\\s+status",
+        "def\\s+ping",
+        "healthcheck"
+      ]
+    },
+    "rationale": "Monitor health and availability of each data source",
+    "fix_strategy": "add_health_monitoring",
+    "severity": "WARNING"
+  },
+  {
+    "name": "package_based_architecture",
+    "category": "architecture",
+    "priority": "MEDIUM",
+    "description": "CLI should be a package (cli/) not monolithic single file",
+    "detection_rules": {
+      "file_patterns": [
+        ".*cli\\.py$"
+      ],
+      "content_patterns": [
+        "def\\s+\\w+\\([^)]*\\):[^}]*?(?:def\\s+\\w+\\([^)]*\\):){5,}",
+        "class\\s+\\w+:[^}]*?(?:def\\s+\\w+\\([^)]*\\):){10,}"
+      ],
+      "excludes": [
+        "cli/__init__\\.py$",
+        "cli/\\w+\\.py$"
+      ]
+    },
+    "rationale": "Package structure over monolithic files for maintainability",
+    "fix_strategy": "convert_to_package_structure",
+    "severity": "INFO"
+  },
+  {
+    "name": "redundant_package_naming",
+    "category": "architecture",
+    "priority": "MEDIUM",
+    "description": "Remove project name redundancy in CLI commands and structure",
+    "detection_rules": {
+      "file_patterns": [
+        "codex/codex_\\w+\\.py$",
+        "hepha/hepha_\\w+\\.py$",
+        "hermes/hermes_\\w+\\.py$"
+      ],
+      "content_patterns": [
+        "class\\s+(?:Codex|Hepha|Hermes)\\w+\\s*\\(",
+        "def\\s+(?:codex|hepha|hermes)_\\w+\\(",
+        "@app\\.command\\(name=['\"](?:codex|hepha|hermes)-\\w+['\"]\\)"
+      ],
+      "excludes": [
+        "__init__\\.py$"
+      ]
+    },
+    "rationale": "Package scoping eliminates need for redundant naming",
+    "fix_strategy": "remove_redundant_prefixes",
+    "severity": "INFO"
+  },
+  {
+    "name": "cors_never_wildcard",
+    "category": "security",
+    "priority": "MANDATORY",
+    "description": "NEVER use wildcard (*) in production CORS origins",
+    "detection_rules": {
+      "content_patterns": [
+        "allow_origins\\s*=\\s*\\[\\s*[\"\\']?\\*[\"\\']?\\s*\\]",
+        "origins\\s*=\\s*\\[\\s*[\"\\']?\\*[\"\\']?\\s*\\]",
+        "Access-Control-Allow-Origin.*\\*",
+        "CORS.*origins.*\\*"
+      ],
+      "excludes": [
+        "#.*test",
+        "development",
+        "local",
+        "test_"
+      ]
+    },
+    "rationale": "Security vulnerability - specify exact allowed origins",
+    "fix_strategy": "specify_exact_origins",
+    "severity": "ERROR"
+  },
+  {
+    "name": "hardcoded_secrets",
+    "category": "security",
+    "priority": "CRITICAL",
+    "description": "Detect hardcoded secrets and credentials",
+    "detection_rules": {
+      "content_patterns": [
+        "(?:password|secret|key|token)\\s*=\\s*[\"\\'][^\"\\']{8,}[\"\\']",
+        "(?:api_key|auth_token|jwt_secret)\\s*=\\s*[\"\\'][^\"\\']+[\"\\']",
+        "Bearer\\s+[A-Za-z0-9_-]{20,}",
+        "(?:sk-|pk_)[A-Za-z0-9_-]{32,}"
+      ],
+      "excludes": [
+        "test_.*",
+        "example",
+        "placeholder",
+        "your_.*_here",
+        "fake",
+        "mock"
+      ]
+    },
+    "rationale": "Never commit secrets to version control",
+    "fix_strategy": "use_environment_variables",
+    "severity": "CRITICAL"
+  },
+  {
+    "name": "mock_naming_compliance",
+    "category": "security",
+    "priority": "MANDATORY",
+    "description": "Enforce strict mock code naming requirements",
+    "detection_rules": {
+      "content_patterns": [
+        "def\\s+((?!mock_)\\w*mock\\w*)\\s*\\(",
+        "def\\s+((?!mock_)\\w*fake\\w*)\\s*\\(",
+        "def\\s+((?!mock_)\\w*dummy\\w*)\\s*\\(",
+        "def\\s+((?!mock_)\\w*stub\\w*)\\s*\\(",
+        "class\\s+((?!Mock)\\w*Mock\\w*)\\s*\\(",
+        "class\\s+((?!Mock)\\w*Fake\\w*)\\s*\\(",
+        "class\\s+((?!Mock)\\w*Dummy\\w*)\\s*\\("
+      ],
+      "file_patterns": [
+        "(?!mock_).*mock.*\\.py$",
+        "(?!mock_).*fake.*\\.py$",
+        "(?!mock_).*dummy.*\\.py$"
+      ]
+    },
+    "rationale": "Files must start with mock_ prefix, functions with mock_ prefix, classes with Mock prefix",
+    "fix_strategy": "rename_to_mock_prefix",
+    "severity": "ERROR"
+  },
+  {
+    "name": "mock_warning_requirements",
+    "category": "security",
+    "priority": "MANDATORY",
+    "description": "Ensure all mock functions log warnings",
+    "detection_rules": {
+      "content_patterns": [
+        "def\\s+mock_\\w+\\s*\\([^)]*\\):[^}]*?(?!.*warning.*mock).*?(?=def|\\Z)"
+      ],
+      "required_patterns": [
+        "logfire\\.warning.*⚠️\\s*MOCK",
+        "logging\\.warning.*⚠️\\s*MOCK",
+        "logger\\.warning.*⚠️\\s*MOCK"
+      ]
+    },
+    "rationale": "All mock functions must log warnings for visibility",
+    "fix_strategy": "add_mock_warnings",
+    "severity": "ERROR"
+  },
+  {
+    "name": "pre_commit_skip_usage",
+    "category": "code_quality",
+    "priority": "HIGH",
+    "description": "Detect usage of SKIP flags in commits - ZERO TOLERANCE POLICY",
+    "detection_rules": {
+      "git_patterns": [
+        "SKIP=.*git\\s+commit",
+        "git\\s+commit.*--no-verify",
+        "pre-commit.*--no-verify"
+      ],
+      "commit_message_patterns": [
+        "SKIP=",
+        "skip.*pre-commit",
+        "ignore.*linting",
+        "will.*fix.*later"
+      ]
+    },
+    "rationale": "ALL PRE-COMMIT ERRORS MUST BE FIXED - NO EXCEPTIONS",
+    "fix_strategy": "enforce_pre_commit_compliance",
+    "severity": "ERROR"
+  },
+  {
+    "name": "multiple_access_points_support",
+    "category": "architecture",
+    "priority": "MEDIUM",
+    "description": "Architecture supports CLI, web APIs, SDKs from same core",
+    "detection_rules": {
+      "content_patterns": [
+        "def\\s+main\\([^)]*\\):[^}]*?(?:typer|click|argparse).*(?:fastapi|flask|django)",
+        "class\\s+\\w*CLI\\w*:[^}]*?(?:fastapi|flask|web)"
+      ],
+      "excludes": [
+        "core/",
+        "api/",
+        "from\\s+\\w+\\.core\\s+import"
+      ]
+    },
+    "rationale": "Core API should be accessible through multiple interfaces",
+    "fix_strategy": "separate_core_from_interfaces",
+    "severity": "INFO"
+  },
+  {
+    "name": "auto_discovery_components",
+    "category": "architecture",
+    "priority": "MEDIUM",
+    "description": "All data sources automatically discoverable through status/statistics",
+    "detection_rules": {
+      "content_patterns": [
+        "(?:sources|components)\\s*=\\s*\\[\\s*[\"\\']\\w+[\"\\']\\s*,",
+        "def\\s+(?:get|list)_(?:sources|components)\\([^)]*\\):[^}]*?return\\s*\\["
+      ],
+      "excludes": [
+        "auto_discover",
+        "discover_sources",
+        "dynamic",
+        "registry"
+      ]
+    },
+    "rationale": "Sources should be automatically discovered and configured",
+    "fix_strategy": "implement_auto_discovery",
+    "severity": "INFO"
+  }
+]

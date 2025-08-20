@@ -12,6 +12,15 @@ repos:
         require_serial: true
         description: "Run Codex pattern scanner for code quality"
 
+      # Organization scanner - ensure proper file structure
+      - id: codex-organization
+        name: Codex Organization Scanner
+        entry: uv run python scripts/check_organization.py
+        language: system
+        pass_filenames: false
+        always_run: true
+        description: "Check project file organization (minimum score: 80/100)"
+
   # Ruff - Astral's fast Python linter and formatter
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.8.0
