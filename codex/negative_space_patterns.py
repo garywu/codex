@@ -446,7 +446,7 @@ DISCOVERED PATTERNS ({len(patterns)} total):
    ❌ Problematic projects: {", ".join(pattern.examples["problematic"])}
 """
 
-        report += f"""
+        report += """
 INTEGRATION GUIDANCE:
 • Incorporate these patterns into code review checklists
 • Use as architectural decision guidelines for new projects

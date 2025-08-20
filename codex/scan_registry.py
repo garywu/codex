@@ -211,7 +211,7 @@ class MultipleImportsScan(BaseScan):
                             line_number=line_num,
                             matched_code=line,
                             message=import_group["message"],
-                            fix_suggestion=f"Remove this import and use only unified_database",
+                            fix_suggestion="Remove this import and use only unified_database",
                         )
                     )
 

@@ -51,21 +51,84 @@ target-version = "py311"
 required-version = ">=0.8.0"
 
 [tool.ruff.lint]
-select = ["E", "W", "F", "I", "UP", "B", "C4", "SIM", "ARG", "TCH", "RUF", "PL", "TRY", "FLY", "PERF", "LOG"]
-ignore = [
-    "E501",     # Line too long - we use 120 char limit
-    "B008",     # Function calls in argument defaults
-    "TRY003",   # Long exception messages
-    "PLR0913",  # Too many arguments
-    "ARG002",   # Unused arguments (often needed for interfaces)
-    "SIM105",   # Use contextlib.suppress (readability preference)
-    "PLR2004",  # Magic values (constants not always needed)
+# Intelligent selection: Focus on real issues, not style preferences
+select = [
+    "E",      # pycodestyle errors
+    "F",      # Pyflakes (undefined names, unused imports)
+    "I",      # isort (import sorting)
+    "UP",     # pyupgrade (Python version-specific)
+    "B",      # flake8-bugbear (common bugs)
+    "C4",     # flake8-comprehensions
+    "PERF",   # Performance anti-patterns
+    "RUF",    # Ruff-specific rules
 ]
-fixable = ["F401", "I", "UP", "RUF100", "RUF022"]
 
+# Extended selection for gradual adoption
+extend-select = [
+    "SIM",    # flake8-simplify (but allow some patterns)
+    "ARG",    # flake8-unused-arguments
+    "TRY",    # tryceratops (exception handling)
+]
+
+ignore = [
+    # Line length - handled by formatter
+    "E501",
+
+    # Legitimate patterns in our codebase
+    "PLC0415",  # Import outside top-level (needed for circular deps)
+    "B008",     # Function calls in argument defaults
+    "ARG002",   # Unused arguments (needed for interfaces/callbacks)
+
+    # Style preferences (not bugs)
+    "SIM102",   # Collapsible if (sometimes clearer as-is)
+    "SIM105",   # contextlib.suppress (explicit try/except clearer)
+    "SIM108",   # Ternary operator (not always more readable)
+
+    # Complexity metrics (refactor gradually)
+    "PLR0912",  # Too many branches
+    "PLR0913",  # Too many arguments
+    "PLR0915",  # Too many statements
+    "PLR0911",  # Too many return statements
+
+    # Design choices
+    "LOG015",   # Root logger (acceptable in CLI tools)
+    "TRY003",   # Long exception messages
+    "TRY300",   # Consider else (not always clearer)
+
+    # False positives
+    "PLR2004",  # Magic values (constants overkill for simple cases)
+    "PERF401",  # Manual list comp (sometimes more readable)
+    "RUF012",   # Mutable class attrs (we know what we're doing)
+]
+
+# Auto-fixable rules
+fixable = [
+    "F401",     # Remove unused imports
+    "I",        # Sort imports
+    "UP",       # Upgrade syntax
+    "F541",     # Remove f-string placeholders
+    "B007",     # Unused loop variables → _
+    "RUF100",   # Remove unused noqa
+]
+
+# Strict for new code, lenient for existing
 [tool.ruff.lint.per-file-ignores]
-"__init__.py" = ["E402", "F401", "F403"]
-"tests/*.py" = ["ARG", "PLR2004", "S101"]
+# CLI has many late imports and complex logic
+"codex/cli.py" = ["E402", "PLC0415", "PLR"]
+
+# Test files can be more relaxed
+"tests/**/*.py" = ["ARG", "PLR2004", "S101", "F841"]
+
+# Experimental code is exempt from most rules
+"experiments/**/*.py" = ["ALL"]
+"scripts/**/*.py" = ["ALL"]
+
+# __init__ files have different import patterns
+"**/__init__.py" = ["E402", "F401", "F403"]
+
+# Pattern files are data, not code
+"**/default_patterns.py" = ["E501"]
+"**/pattern_*.py" = ["E501"]
 
 [tool.mypy]
 python_version = "3.11"

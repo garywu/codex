@@ -264,7 +264,7 @@ async def handle_call_tool(name: str, arguments: dict[str, Any]) -> list[types.T
                 patterns = db_interface.list_all_patterns()[:max_patterns]
 
             if patterns:
-                context += f"**Relevant patterns for this file:**\n\n"
+                context += "**Relevant patterns for this file:**\n\n"
                 for pattern in patterns:
                     name = pattern.get("name", "Unknown")
                     description = pattern.get("description", "")
@@ -347,7 +347,7 @@ async def handle_call_tool(name: str, arguments: dict[str, Any]) -> list[types.T
                 "violations": violations,
             }
 
-            markdown = f"# Code Validation Results\n\n"
+            markdown = "# Code Validation Results\n\n"
             markdown += f"**Language**: {result['language']}\n"
             markdown += f"**Score**: {result['score']:.2f}\n"
             markdown += f"**Compliant**: {'✅ Yes' if result['is_compliant'] else '❌ No'}\n\n"

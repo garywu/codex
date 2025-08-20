@@ -77,7 +77,7 @@ class UVEnvironmentChecker:
                 if result.returncode == 0:
                     if not self.quiet:
                         logging.info(f"✅ Python {self.REQUIRED_PYTHON} installed via uv")
-                    self.warnings.append(f"Run with: uv run python")
+                    self.warnings.append("Run with: uv run python")
                     return True
                 else:
                     self.errors.append(f"Failed to install Python {self.REQUIRED_PYTHON}")

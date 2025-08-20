@@ -10,6 +10,7 @@ from typing import Any
 from cookiecutter.main import cookiecutter
 from farm_sdk import FarmClient, TrainingExample
 
+from .database import Database
 from .exceptions import AnalysisError, FarmAgentError, TemplateError
 from .models import (
     AnalysisResult,

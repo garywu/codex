@@ -198,7 +198,7 @@ class PatternExtractor:
                     description=f"Use {dep_name} version {version}",
                     detection_pattern="",
                     fix_template=f"uv add {dep_name.replace('_', '-')}",
-                    rationale=f"Required dependency for 2024 stack",
+                    rationale="Required dependency for 2024 stack",
                     example_good="",
                     example_bad="",
                     replaces="",
