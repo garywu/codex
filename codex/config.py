@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Any
 
 
-def load_config() -> dict[str, Any]:
+def load_config() -> tuple[dict[str, Any], Path]:
     """
     Load configuration from project-based files.
 
@@ -54,7 +54,8 @@ def load_toml_config(path: Path) -> dict[str, Any]:
 
     # Support both root-level and [codex] section
     if "codex" in data:
-        return data["codex"]
+        result: dict[str, Any] = data["codex"]
+        return result
     return data
 
 

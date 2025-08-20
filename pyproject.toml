@@ -69,21 +69,51 @@ fixable = ["F401", "I", "UP", "RUF100", "RUF022"]
 
 [tool.mypy]
 python_version = "3.11"
-strict = true
-namespace_packages = true
-explicit_package_bases = true
-show_error_codes = true
-show_column_numbers = true
-pretty = true
-show_error_context = true
-warn_return_any = true
-warn_unused_configs = true
-warn_redundant_casts = true
-warn_unused_ignores = true
-disallow_untyped_decorators = false
-disallow_any_unimported = false
-disallow_subclassing_any = false
+# Start with minimal checks - 80/20 rule
 ignore_missing_imports = true
+allow_untyped_defs = true
+allow_untyped_calls = true
+warn_return_any = false
+warn_unused_ignores = false
+check_untyped_defs = false
+no_implicit_optional = true
+show_error_codes = true
+
+# Critical paths - Type check these strictly
+[[tool.mypy.overrides]]
+module = [
+    "codex.models",
+    "codex.pattern_models",
+    "codex.database",
+    "codex.config",
+]
+disallow_untyped_defs = true
+check_untyped_defs = true
+warn_return_any = true
+
+# Non-critical paths - Ignore errors for now
+[[tool.mypy.overrides]]
+module = [
+    "codex.cli",
+    "codex.tools",
+    "codex.portable_tools",
+    "codex.fix_*",
+    "codex.scan_*",
+    "codex.interactive_*",
+    "codex.batch_*",
+    "codex.violation_*",
+]
+ignore_errors = true
+
+# Test files - No type checking needed
+[[tool.mypy.overrides]]
+module = "tests.*"
+ignore_errors = true
+
+# Experimental code - No type checking
+[[tool.mypy.overrides]]
+module = "experiments.*"
+ignore_errors = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

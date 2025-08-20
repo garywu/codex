@@ -15,29 +15,34 @@ import typer
 from rich.console import Console
 
 # Configure Rich Console for proper stdout/stderr separation
-console = Console(stderr=True)  # Status messages go to stderr
-data_console = Console(stderr=False)  # Data output goes to stdout
+_console = Console(stderr=True)  # Status messages go to stderr
+_data_console = Console(stderr=False)  # Data output goes to stdout
 
 
 # Fix for console.logging.info pattern that's used throughout the code
 class ConsoleLogger:
     """Wrapper to provide logging-like interface for Rich Console."""
 
-    def __init__(self, console):
+    def __init__(self, console: Console) -> None:
         self.console = console
 
-    def info(self, message):
+    def info(self, message: str) -> None:
         self.console.print(message)
 
-    def error(self, message):
+    def error(self, message: str) -> None:
         self.console.print(f"[red]{message}[/red]")
 
-    def warning(self, message):
+    def warning(self, message: str) -> None:
         self.console.print(f"[yellow]{message}[/yellow]")
 
 
-console.logging = ConsoleLogger(console)
-data_console.logging = ConsoleLogger(data_console)
+# Add logging interface with type ignore for dynamic attribute
+_console.logging = ConsoleLogger(_console)  # type: ignore[attr-defined]
+_data_console.logging = ConsoleLogger(_data_console)  # type: ignore[attr-defined]
+
+# Use the consoles with the understanding they have logging
+console = _console  # type: ignore[assignment]
+data_console = _data_console  # type: ignore[assignment]
 
 from rich.table import Table
 
