@@ -4,7 +4,6 @@ Rule loader - Automatically discovers and registers all rules.
 Following Ruff's pattern of modular rule loading.
 """
 
-
 from .categories import RulePrefix
 from .registry import Rule, registry
 
@@ -12,7 +11,6 @@ from .registry import Rule, registry
 def load_all_rules():
     """Load all rule modules and register their rules."""
     # Import rule modules
-    from .unified_database import UnifiedDatabase
 
     # Register rules from each module
     # settings_rules.register_settings_rules(registry)
@@ -49,8 +47,8 @@ def select_rules_from_config(config: dict) -> set[str]:
     selected = set()
 
     # Handle 'select' option (rules to enable)
-    if 'select' in config:
-        selectors = config['select']
+    if "select" in config:
+        selectors = config["select"]
         if isinstance(selectors, str):
             selectors = [selectors]
 
@@ -59,8 +57,8 @@ def select_rules_from_config(config: dict) -> set[str]:
             selected.update(r.code for r in rules)
 
     # Handle 'ignore' option (rules to disable)
-    if 'ignore' in config:
-        ignores = config['ignore']
+    if "ignore" in config:
+        ignores = config["ignore"]
         if isinstance(ignores, str):
             ignores = [ignores]
 
@@ -69,8 +67,8 @@ def select_rules_from_config(config: dict) -> set[str]:
             selected.difference_update(r.code for r in rules)
 
     # Handle 'extend-select' option (additional rules)
-    if 'extend_select' in config:
-        extends = config['extend_select']
+    if "extend_select" in config:
+        extends = config["extend_select"]
         if isinstance(extends, str):
             extends = [extends]
 
@@ -96,16 +94,16 @@ def format_rule_help(rule: Rule) -> str:
         lines.append(f"  Tags: {', '.join(rule.tags)}")
 
     if rule.examples:
-        if 'good' in rule.examples:
+        if "good" in rule.examples:
             lines.append("  Good example:")
-            for line in rule.examples['good'].split('\n'):
+            for line in rule.examples["good"].split("\n"):
                 lines.append(f"    {line}")
-        if 'bad' in rule.examples:
+        if "bad" in rule.examples:
             lines.append("  Bad example:")
-            for line in rule.examples['bad'].split('\n'):
+            for line in rule.examples["bad"].split("\n"):
                 lines.append(f"    {line}")
 
-    return '\n'.join(lines)
+    return "\n".join(lines)
 
 
 def list_rules_by_category() -> dict[RulePrefix, list[Rule]]:
@@ -122,6 +120,7 @@ def list_rules_by_category() -> dict[RulePrefix, list[Rule]]:
 
 # Initialize rules on module import
 _initialized = False
+
 
 def ensure_initialized():
     """Ensure rules are loaded."""

@@ -115,7 +115,6 @@ def main(
 def scan(
     paths: Annotated[list[Path] | None, typer.Argument(help="Files or directories to scan")] = None,
     fix: Annotated[bool, typer.Option("--fix", "-f", help="Apply automatic fixes")] = False,
-    config: Annotated[Path | None, typer.Option("--config", "-c", help="Config file path")] = None,
     quiet: Annotated[bool, typer.Option("--quiet", "-q", help="Minimal output")] = False,
     diff: Annotated[bool, typer.Option("--diff", help="Show diff of proposed fixes")] = False,
     exclude: Annotated[str | None, typer.Option("--exclude", help="Glob pattern to exclude")] = None,
@@ -138,6 +137,8 @@ def scan(
     ] = False,
     list_files: Annotated[bool, typer.Option("--list-files", help="List all files that would be scanned")] = False,
     explain: Annotated[bool, typer.Option("--explain", help="Verbose mode explaining every decision")] = False,
+    fail_on_violations: Annotated[bool, typer.Option("--fail-on-violations", help="Exit with code 1 if violations found (for CI/CD)")] = False,
+    recommendations: Annotated[bool, typer.Option("--recommendations", help="Include technology and architecture recommendations")] = False,
 ) -> None:
     """Scan files for pattern violations."""
 
@@ -145,8 +146,15 @@ def scan(
     if not paths:
         paths = [Path.cwd()]
 
-    # Load configuration
-    config_data = load_config(config)
+    # Load configuration with auto-init
+    from .config import auto_init_project, should_auto_init
+    
+    if should_auto_init():
+        auto_init_project(Path(".codex/config.toml"))
+        if not quiet:
+            console.print("[dim]Initialized .codex/config.toml for this project[/dim]")
+    
+    config_data, config_path = load_config()
 
     # Override tools setting if no_tools flag is set
     if no_tools:
@@ -295,7 +303,7 @@ def scan(
                     "scan_summary": {
                         "total_violations": total_violations,
                         "files_scanned": violation_reporter.files_scanned,
-                        "exit_code": 1 if total_violations > 0 else 0,
+                        "exit_code": 1 if (total_violations > 0 and fail_on_violations) else 0,
                         "scan_duration_ms": scan_context.total_duration_ms if scan_context else 0.0,
                     },
                     "violations": [
@@ -312,7 +320,7 @@ def scan(
                     ],
                 }
                 print(json.dumps(json_data, indent=2))
-                return 1 if total_violations > 0 else 0
+                return 1 if (total_violations > 0 and fail_on_violations) else 0
 
             if export_json:
                 # Export detailed report to JSON file
@@ -322,22 +330,32 @@ def scan(
                 # Export audit trail to JSON file
                 scan_context.export_audit_trail(export_audit)
 
+        # Technology recommendations if requested
+        if recommendations and not quiet:
+            from .recommendation_engine import ProjectArchitectureAnalyzer
+            analyzer = ProjectArchitectureAnalyzer(quiet=quiet)
+            tech_recommendations = analyzer.analyze_project(Path.cwd())
+            analyzer.print_recommendations(tech_recommendations)
+
         # Show final summary using console output (no logging prefixes)
         if total_violations > 0:
             if not quiet:
-                # Clean summary without logging prefixes
-                print(f"Found {total_violations} violation(s)", file=sys.stderr)
+                # Clean summary to stdout (not stderr)
+                console.print(f"Found {total_violations} violation(s)")
 
                 # Show scan context summary if available
                 if scan_context:
                     scan_context.print_decision_summary()
-            return 1
+            # New exit code logic: only fail if explicitly requested
+            return 1 if fail_on_violations else 0
         else:
             if not quiet:
                 message = "✓ No violations found"
                 if best_practices:
                     message += " (includes best practices analysis)"
-                print(message, file=sys.stderr)
+                if recommendations:
+                    message += " (with technology recommendations)"
+                console.print(message)
 
                 # Show scan context summary if available
                 if scan_context:
@@ -345,6 +363,135 @@ def scan(
             return 0
 
     exit_code = asyncio.run(_scan())
+    raise typer.Exit(exit_code)
+
+
+@app.command(name="precommit", help="Pre-commit hook mode - blocks commits on violations")
+def precommit(
+    paths: Annotated[list[Path] | None, typer.Argument(help="Files to check")] = None,
+    recommendations: Annotated[bool, typer.Option("--recommendations", help="Include technology recommendations")] = False,
+) -> None:
+    """Pre-commit hook mode that fails on violations to block commits."""
+    
+    # Force fail-on-violations for pre-commit hooks
+    import sys
+    from pathlib import Path
+    
+    if not paths:
+        paths = [Path.cwd()]
+    
+    # Call scan with pre-commit settings
+    sys.argv = ["codex", "scan", "--fail-on-violations", "--quiet"]
+    if recommendations:
+        sys.argv.append("--recommendations")
+    for path in paths:
+        sys.argv.append(str(path))
+    
+    # Re-invoke scan with pre-commit settings
+    from .config import auto_init_project, should_auto_init
+    
+    if should_auto_init():
+        auto_init_project(Path(".codex/config.toml"))
+    
+    config_data, config_path = load_config()
+    
+    async def _precommit_scan() -> int:
+        from .scanner import Scanner
+        scanner = Scanner(quiet=True)
+        
+        total_violations = 0
+        for path in paths:
+            if path.is_file():
+                result = await scanner.scan_file(path)
+                total_violations += len(result.violations) if result.violations else 0
+            elif path.is_dir():
+                results = await scanner.scan_directory(path)
+                for result in results:
+                    total_violations += len(result.violations) if result.violations else 0
+        
+        return 1 if total_violations > 0 else 0
+    
+    exit_code = asyncio.run(_precommit_scan())
+    raise typer.Exit(exit_code)
+
+
+@app.command(name="ci", help="CI/CD mode - structured output for automation")
+def ci(
+    paths: Annotated[list[Path] | None, typer.Argument(help="Files or directories to check")] = None,
+    format_output: Annotated[str, typer.Option("--format", help="Output format: json, text")] = "text",
+    recommendations: Annotated[bool, typer.Option("--recommendations", help="Include technology recommendations")] = False,
+    no_fail: Annotated[bool, typer.Option("--no-fail", help="Don't exit with error code on violations")] = False,
+) -> None:
+    """CI/CD mode with structured output for automation."""
+    
+    # Default to current directory if no paths specified
+    if not paths:
+        paths = [Path.cwd()]
+    
+    # Auto-init if needed
+    from .config import auto_init_project, should_auto_init
+    
+    if should_auto_init():
+        auto_init_project(Path(".codex/config.toml"))
+    
+    config_data, config_path = load_config()
+    
+    async def _check_scan() -> int:
+        from .scanner import Scanner
+        
+        scanner = Scanner(quiet=True)
+        all_violations = []
+        
+        for path in paths:
+            if path.is_file():
+                result = await scanner.scan_file(path)
+                if result.violations:
+                    all_violations.extend(result.violations)
+            elif path.is_dir():
+                results = await scanner.scan_directory(path)
+                for result in results:
+                    if result.violations:
+                        all_violations.extend(result.violations)
+        
+        # Technology recommendations if requested
+        if recommendations:
+            from .recommendation_engine import ProjectArchitectureAnalyzer
+            analyzer = ProjectArchitectureAnalyzer(quiet=True)
+            tech_recommendations = analyzer.analyze_project(Path.cwd())
+        else:
+            tech_recommendations = []
+        
+        # Output results
+        if format_output == "json":
+            import json
+            result = {
+                "violations": len(all_violations),
+                "files_scanned": len([p for p in paths if p.is_file()]),
+                "recommendations": [
+                    {
+                        "technology": rec.technology,
+                        "priority": rec.priority,
+                        "reason": rec.reason,
+                        "effort": rec.implementation_effort
+                    }
+                    for rec in tech_recommendations
+                ],
+                "exit_code": 1 if (len(all_violations) > 0 and not no_fail) else 0
+            }
+            print(json.dumps(result, indent=2))
+        else:
+            # Text output
+            if all_violations:
+                console.print(f"Found {len(all_violations)} violations")
+            else:
+                console.print("✓ No violations found")
+                
+            if tech_recommendations:
+                console.print(f"Found {len(tech_recommendations)} technology recommendations")
+        
+        return 1 if (len(all_violations) > 0 and not no_fail) else 0
+    
+    exit_code = asyncio.run(_check_scan())
     raise typer.Exit(exit_code)
 
 

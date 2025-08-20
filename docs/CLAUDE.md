@@ -41,6 +41,19 @@ codex validate src/main.py
 codex validate tests/ --language python
 ```
 
+#### **Technology Recommendations** (NEW! Use for architecture guidance)
+```bash
+# Get technology adoption recommendations
+codex scan --recommendations                    # Full project analysis
+codex precommit --recommendations              # Pre-commit with suggestions
+codex ci --recommendations                     # CI/CD with architecture guidance
+
+# Examples of what it detects:
+# - Multiple env vars → Recommend Pydantic Settings
+# - Manual validation → Recommend Pydantic Models  
+# - Basic logging → Recommend Logfire integration
+```
+
 #### **Specific Help** (When user has errors or needs explanations)
 ```bash
 # Explain specific patterns
@@ -95,6 +108,20 @@ codex validate . --quiet                          # Quick validation
 codex                                              # Scan current directory
 codex src/ --fix                                  # Scan with auto-fixes
 codex --quiet                                     # CI mode (exit codes only)
+```
+
+#### **Technology Recommendation Commands** (NEW!)
+```bash
+# Project-level architecture recommendations
+codex scan --recommendations                      # Technology adoption suggestions
+codex precommit --recommendations                 # Pre-commit with architecture guidance
+codex ci --recommendations                        # CI/CD with technology recommendations
+
+# Examples of recommendations:
+# - Detects multiple env vars → Suggests Pydantic Settings
+# - Finds manual validation → Recommends Pydantic Models
+# - Identifies basic logging → Suggests Logfire adoption
+# - Analyzes code patterns → Architecture improvement suggestions
 ```
 
 #### **Pattern Information Commands**
@@ -486,6 +513,15 @@ codex context --intent "writing tests" --ai
 # AI structures tests with DI for testability
 ```
 
+#### **Architecture Recommendations** (NEW!)
+```bash
+codex scan --recommendations
+# Returns: Technology adoption suggestions based on code analysis
+# - "Consider Pydantic Settings for environment configuration"
+# - "Adopt Pydantic Models for data validation in API endpoints"
+# - "Integrate Logfire for structured logging and observability"
+```
+
 #### **Code Review and Fixes**
 ```bash
 codex validate --code "problematic_code"
@@ -507,6 +543,7 @@ codex validate --code "problematic_code"
 - **🧪 testing**: pytest patterns, dependency injection
 - **💉 dependency_injection**: Constructor injection, testability
 - **🚨 ruff_errors**: Specific solutions for ruff violations
+- **🏛️ architecture_recommendations**: Technology adoption guidance (NEW!)
 
 ## ⚡ Performance for AI
 
@@ -564,6 +601,7 @@ codex validate --code "generated_code_here"
 - `codex context --file <path> --ai` - File context
 - `codex validate --code "<code>"` - Check compliance
 - `codex explain <pattern> --ai` - Pattern details
+- `codex scan --recommendations` - Architecture guidance (NEW!)
 
 **Key Patterns to Remember:**
 - **HTTP**: use-httpx (not requests)

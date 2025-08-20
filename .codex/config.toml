@@ -1,14 +1,41 @@
-project_name = "codex"
-scan_patterns = [ "**/*.py",]
-exclude_patterns = [ "__pycache__", "*.pyc", ".venv", "venv", ".pytest_cache", ".mypy_cache", ".coverage",]
-max_file_size = 10485760
-enabled_categories = [ "naming", "error_handling", "security", "testing",]
-min_priority = "HIGH"
-custom_patterns = []
-cache_enabled = true
-cache_ttl_hours = 24
-output_format = "human"
-quiet_mode = false
-pre_commit_enabled = true
-ci_mode = false
-parallel_scanning = true
+[codex]
+patterns = ["all"]
+exclude = [
+  "*.pyc",
+  "__pycache__",
+  ".git",
+  ".venv",
+  "venv",
+  "node_modules",
+  ".pytest_cache",
+  ".mypy_cache",
+  "dist",
+  "build",
+  "populate_*pattern*.py",
+  "*_rules.py",
+  "validate_violations.py",
+  "populate_ensemble*.py",
+  ".coverage",
+  "test-project",
+  "logs/",
+  "scan_results*",
+  "violation_analysis.json",
+  "negative_space_analysis.json",
+  "codex/cli.py",
+  "codex/config.py",
+  "codex/data/default_patterns.py",
+  "codex/ensemble_integration.py",
+  "codex/recommendation_engine.py",
+  "codex/rules/loader.py"
+]
+auto_fix = false
+enforce = ["mandatory", "critical", "high"]
+farm_url = "http://localhost:8001"
+quiet = false
+show_diff = false
+run_tools = true
+
+[codex.tools]
+ruff = true
+mypy = true
+typos = true

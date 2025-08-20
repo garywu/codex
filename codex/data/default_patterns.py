@@ -123,7 +123,7 @@ DEFAULT_PATTERNS = [
         "rationale": "Provides automatic validation, serialization, and documentation",
         "detection": {
             "keywords": ["fastapi", "request", "validation", "dict", "json.loads"],
-            "regex": "@(app|router)\\.(post|put|patch).*dict\\[|json\\.loads",
+            "regex": "@(app|router)\\.(post|put|patch).*dict\\[|json\\.loads()",
         },
         "fix": {"template": "Create Pydantic model for request body", "complexity": "medium"},
         "examples": {"good": "async def create_user(user: UserCreate):", "bad": "async def create_user(data: dict):"},

@@ -122,7 +122,7 @@ class IntegratedEnsembleScanner:
                     )
 
             except Exception as e:
-                if not self.quiet:
+                if self.verbose:  # Only show in verbose mode, not normal operation
                     print(f"Warning: Failed to convert rule {rule_type} for {pattern_name}: {e}")
 
         return rules

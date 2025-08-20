@@ -5,7 +5,7 @@ repos:
     hooks:
       - id: codex-scan
         name: Codex Pattern Scanner
-        entry: uv run codex scan
+        entry: uv run codex scan --fail-on-violations
         language: system
         pass_filenames: true
         types: [python]
