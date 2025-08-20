@@ -89,7 +89,7 @@ class BatchFixer:
                 lines[i] = line.replace(f"def {old_name}", f"def {new_name}")
 
                 # Add logging import if needed
-                if i == 0 or not any("import logging" in l for l in lines[:i]):
+                if i == 0 or not any("import logging" in line for line in lines[:i]):
                     lines.insert(0, "import logging")
 
                 # Add warning after function definition

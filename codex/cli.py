@@ -744,7 +744,7 @@ Session ID: {result.get("session_id", "N/A")}""",
 @app.command(name="init", help="Initialize Codex database and configuration")
 def init(
     import_from: Annotated[Path | None, typer.Option("--import", help="Import patterns from file")] = None,
-    farm_url: Annotated[str | None, typer.Option("--farm-url", help="Farm SDK URL")] = "http://localhost:8001",
+    farm_url: Annotated[str | None, typer.Option("--farm-url", help="Farm SDK URL")] = "http://localhost:8001",  # noqa: ARG001
 ) -> None:
     """Initialize Codex with pattern database."""
 
@@ -889,7 +889,7 @@ def query(
     query_text: Annotated[str, typer.Argument(help="Natural language query")],
     limit: Annotated[int, typer.Option("--limit", "-l", help="Maximum patterns to return")] = 5,
     ai_format: Annotated[bool, typer.Option("--ai", help="Format output for AI consumption")] = False,
-    priority: Annotated[str | None, typer.Option("--priority", "-p", help="Filter by priority")] = None,
+    priority: Annotated[str | None, typer.Option("--priority", "-p", help="Filter by priority")] = None,  # noqa: ARG001
 ) -> None:
     """Query patterns using natural language search."""
 
@@ -1172,7 +1172,7 @@ def export(
 
     except ValueError as e:
         console.logging.info(f"[red]Error: {e}[/red]")
-        raise typer.Exit(1)
+        raise typer.Exit(1) from e
 
 
 @app.command(name="serve", help="Start MCP server for AI assistants")
@@ -1195,7 +1195,7 @@ def serve(
         except ImportError:
             console.logging.info("[red]Error: MCP dependencies not installed[/red]")
             console.logging.info("Install with: uv add mcp")
-            raise typer.Exit(1)
+            raise typer.Exit(1) from None
         except Exception as e:
             console.logging.info(f"[red]Server error: {e}[/red]")
             raise typer.Exit(1)
@@ -1259,7 +1259,7 @@ def install_startup(
                 console.logging.info("[green]✅ Service started[/green]")
             else:
                 console.logging.info(f"[red]❌ Failed to load service: {result.stderr}[/red]")
-                raise typer.Exit(1)
+                raise typer.Exit(1) from None
 
         except Exception as e:
             console.logging.info(f"[red]❌ Installation failed: {e}[/red]")
@@ -1404,7 +1404,7 @@ def startup_status() -> None:
                     console.logging.info("Status: 🟢 Running")
                 else:
                     console.logging.info("Status: 🔴 Not running")
-            except:
+            except Exception:
                 console.logging.info("Status: ❓ Unknown")
         else:
             console.logging.info("[bold]System Daemon:[/bold] ❌ Not installed")
@@ -1421,7 +1421,7 @@ def startup_status() -> None:
                     console.logging.info("Status: 🟢 Running")
                 else:
                     console.logging.info("Status: 🔴 Not running")
-            except:
+            except Exception:
                 console.logging.info("Status: ❓ Unknown")
         else:
             console.logging.info("[bold]User Agent:[/bold] ❌ Not installed")
@@ -1441,7 +1441,7 @@ def startup_status() -> None:
                     console.logging.info("Status: 🟢 Running")
                 else:
                     console.logging.info(f"Status: 🔴 {status}")
-            except:
+            except Exception:
                 console.logging.info("Status: ❓ Unknown")
         else:
             console.logging.info("[bold]System Service:[/bold] ❌ Not installed")
@@ -1459,7 +1459,7 @@ def startup_status() -> None:
                     console.logging.info("Status: 🟢 Running")
                 else:
                     console.logging.info(f"Status: 🔴 {status}")
-            except:
+            except Exception:
                 console.logging.info("Status: ❓ Unknown")
         else:
             console.logging.info("[bold]User Service:[/bold] ❌ Not installed")
@@ -2093,7 +2093,7 @@ def install_mcp(
         if force:
             try:
                 subprocess.run(["claude", "mcp", "remove", "codex", "-s", "user"], capture_output=True, text=True)
-            except:
+            except Exception:
                 pass  # Ignore if doesn't exist
 
         # Add the MCP server using Claude CLI

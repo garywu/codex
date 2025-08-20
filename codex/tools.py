@@ -2,18 +2,22 @@
 External tool integration for Codex scanner.
 
 Runs mypy, ruff, and typos as part of the scanning process.
+Enforces proper Python environment (UV + Python 3.12 from venv).
 """
 
 import asyncio
 import json
 import logging
 import subprocess
+import sys
 from dataclasses import dataclass
 from enum import Enum
 from pathlib import Path
 from typing import Any
 
 from rich.console import Console
+
+from .python_env_enforcer import PythonEnvironmentEnforcer
 
 
 class ToolType(str, Enum):
@@ -46,11 +50,16 @@ class ToolRunner:
         fix: bool = False,
         config: dict[str, Any] | None = None,
     ):
-        """Initialize tool runner."""
+        """Initialize tool runner with environment enforcement."""
         self.quiet = quiet
         self.fix = fix
         self.config = config or {}
         self.console = Console(quiet=quiet)
+        self.env_enforcer = PythonEnvironmentEnforcer()
+
+        # Check environment once at startup
+        if not quiet:
+            self.env_enforcer.enforce_environment(strict=False)
 
         # Tool configurations
         self.tools_enabled = self.config.get(
@@ -110,8 +119,10 @@ class ToolRunner:
         return results
 
     async def run_ruff(self, paths: list[Path]) -> ToolResult:
-        """Run ruff linter on paths."""
-        cmd = ["ruff", "check"]
+        """Run ruff linter on paths with intelligent 80/20 defaults."""
+        # Use proper Python environment
+        cmd = self.env_enforcer.get_tool_cmd("ruff")
+        cmd.extend(["check"])
 
         # Add paths
         for path in paths:
@@ -123,6 +134,22 @@ class ToolRunner:
 
         # Add output format for parsing
         cmd.extend(["--output-format", "json"])
+
+        # If no config exists, use 80/20 intelligent defaults
+        if not Path("pyproject.toml").exists() and not Path("ruff.toml").exists() and not Path(".ruff.toml").exists():
+            # Apply 80/20 principle: Focus on real bugs, not style
+            cmd.extend(
+                [
+                    "--select",
+                    "E,F,I,UP,B,C4,RUF",  # Real issues
+                    "--ignore",
+                    "E501,PLC0415,B008,ARG002,SIM102,SIM105,SIM108,PLR0912,PLR0913,PLR0915,PLR0911,LOG015,TRY003,TRY300,PLR2004,PERF401,RUF012",  # Noise
+                    "--line-length",
+                    "120",
+                ]
+            )
+            if not self.quiet:
+                print("[Ruff] Using 80/20 mode: Focus on bugs, not style", file=sys.stderr)
 
         try:
             result = await self._run_command(cmd)
@@ -140,7 +167,12 @@ class ToolRunner:
             fixed = 0
             if self.fix and violations == 0 and result.returncode == 0:
                 # Run again without fix to see what was fixed
-                check_cmd = ["ruff", "check"] + [str(p) for p in paths] + ["--output-format", "json"]
+                check_cmd = (
+                    self.env_enforcer.get_tool_cmd("ruff")
+                    + ["check"]
+                    + [str(p) for p in paths]
+                    + ["--output-format", "json"]
+                )
                 check_result = await self._run_command(check_cmd)
                 if check_result.stdout:
                     try:
@@ -169,7 +201,9 @@ class ToolRunner:
 
     async def run_ty(self, paths: list[Path]) -> ToolResult:
         """Run ty type checker (Astral's fast type checker) on paths."""
-        cmd = ["ty", "check"]
+        # Use proper Python environment
+        cmd = self.env_enforcer.get_tool_cmd("ty")
+        cmd.extend(["check"])
 
         # Add paths
         for path in paths:
@@ -215,8 +249,9 @@ class ToolRunner:
         return await self.run_mypy(paths)
 
     async def run_mypy(self, paths: list[Path]) -> ToolResult:
-        """Run mypy type checker on paths."""
-        cmd = ["mypy"]
+        """Run mypy type checker on paths with intelligent 80/20 defaults."""
+        # Use proper Python environment
+        cmd = self.env_enforcer.get_tool_cmd("mypy")
 
         # Add paths
         for path in paths:
@@ -230,6 +265,21 @@ class ToolRunner:
             cmd.append("--config-file=pyproject.toml")
         elif Path("mypy.ini").exists():
             cmd.append("--config-file=mypy.ini")
+        else:
+            # No config - use 80/20 intelligent defaults
+            # Focus on critical paths, ignore UI/test noise
+            cmd.extend(
+                [
+                    "--ignore-missing-imports",
+                    "--allow-untyped-defs",
+                    "--allow-untyped-calls",
+                    "--no-warn-return-any",
+                    "--no-warn-unused-ignores",
+                    "--check-untyped-defs=false",
+                ]
+            )
+            if not self.quiet:
+                print("[MyPy] Using 80/20 mode: Type critical paths, not UI", file=sys.stderr)
 
         try:
             result = await self._run_command(cmd)
@@ -261,7 +311,8 @@ class ToolRunner:
 
     async def run_typos(self, paths: list[Path]) -> ToolResult:
         """Run typos spell checker on paths."""
-        cmd = ["typos"]
+        # Use proper Python environment (typos is not a Python tool, but check anyway)
+        cmd = self.env_enforcer.get_tool_cmd("typos")
 
         # Add paths
         for path in paths:
